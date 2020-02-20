@@ -1,0 +1,30 @@
+:root {
+    --background-color: var(-- #ebf7e3);
+    --button-color: var(--#9bd770);
+    --font-color: var(--#1b3409);
+    --headings-color: var(--#66b032);
+  
+}
+header{
+    background-color: #9bd770;
+    height: 400px;
+}
+h1, p{
+   color: #1b3409;
+    margin: 0 100px;
+    text-align: center; 
+}
+.nav{
+    background-color: white;
+}
+
+.home-button {
+    background-color:white;
+   
+}
+.pests{
+    color: #66b032;
+}
+#root{
+    color: rgb(32, 32, 32);
+}

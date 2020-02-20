@@ -1,12 +1,36 @@
+:root {
+  --background-color: var(-- #ebf7e3);
+  --button-color: var(--#9bd770);
+  --font-color: var(--#1b3409);
+  --headings-color: var(--#66b032);
+
+}
+
+
+
+h1 {
+  color: var(--font-color);
+  
+}
+
+
+
 .nav{
   display:grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   justify-content: center; 
-  width: 80%;
-  margin: 50px auto;
+  width: 100%;
+  padding: 25px 50px;
+  margin:  auto;
+  
 }
 #root {
-  margin: 50px;
+ 
+  background-color: #ebf7e3;
+  
+}
+.layout{
+  background-color: #ebf7e3;
 }
 
 .newPlants{
@@ -16,4 +40,19 @@
 form{
   display: grid;
   grid-template-rows: 1fr 1fr;
+}
+.home-button{
+  display: flex;
+  padding: 20px;
+  font-size: 21px;
+  margin: 30px  auto;
+
+}
+.pests{
+  text-decoration: none;
+  color: black;
+
+}
+.pests:hover {
+  color: pink;
 }

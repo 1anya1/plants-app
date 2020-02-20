@@ -1,0 +1,34 @@
+:root {
+    --background-color: var(-- #ebf7e3);
+    --button-color: var(--#9bd770);
+    --font-color: var(--#1b3409);
+    --headings-color: var(--#66b032);
+  
+}
+img{
+    height: 250px;
+    width: 250px;
+    border: 5px dotted gray; 
+    border-radius: 50%;
+}
+.allPlants{
+    display:grid; 
+    grid-template-columns: 1fr 1fr;
+}
+.plant{
+    display:grid;
+    grid-template-columns: 1fr ;
+    justify-content: center; 
+    justify-items: center; 
+    padding: 51px; 
+    background: white; 
+}
+ul{
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+li{
+    text-decoration: none;
+}

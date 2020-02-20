@@ -17,6 +17,7 @@ class Tracker extends React.Component {
             </div>
 
             <h1>My Plants</h1>
+                
             </div>
         )
     }

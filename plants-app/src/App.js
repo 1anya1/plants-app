@@ -19,7 +19,7 @@ class App extends React.Component {
   return (
     <React.Fragment>
     <Router>
-      <div>
+      <div className = 'layout'>
         <div className='nav'>
           <div>
             <Link to="/">Home</Link>
@@ -37,7 +37,7 @@ class App extends React.Component {
             <Link to="/tracker">Plant Tracker</Link>
           </div>
 
-      </div>
+        </div>
         
 
         <Switch>
