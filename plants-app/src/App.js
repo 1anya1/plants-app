@@ -13,7 +13,7 @@ import About from './components/About'
 import Plants from './components/Plants'
 import Pests from './components/Pests'
 import Footer from './components/Footer'
-
+import Tracker from './components/Tracker'
 class App extends React.Component {
   render(){
   return (
@@ -33,7 +33,11 @@ class App extends React.Component {
           <div>
             <Link to="/pests">Pests</Link>
           </div>
+          <div>
+            <Link to="/tracker">Plant Tracker</Link>
           </div>
+
+      </div>
         
 
         <Switch>
@@ -45,6 +49,9 @@ class App extends React.Component {
           </Route>
           <Route path="/pests">
             <Pests />
+          </Route>
+          <Route path="/tracker">
+            <Tracker />
           </Route>
           <Route path="/">
             <Home />

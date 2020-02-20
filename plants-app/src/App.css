@@ -1,10 +1,19 @@
 .nav{
   display:grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   justify-content: center; 
   width: 80%;
   margin: 50px auto;
 }
 #root {
   margin: 50px;
+}
+
+.newPlants{
+  display:grid;
+  grid-template-rows: 1fr 1fr;
+}
+form{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 }
