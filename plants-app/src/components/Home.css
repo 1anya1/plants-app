@@ -9,11 +9,7 @@ header{
     background-color: #9bd770;
     height: 400px;
 }
-h1, p{
-   color: #1b3409;
-    margin: 0 100px;
-    text-align: center; 
-}
+
 .nav{
     background-color: white;
 }
