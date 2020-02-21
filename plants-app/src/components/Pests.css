@@ -1,0 +1,18 @@
+.allPests{
+    display:grid; 
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 20px;
+  
+}
+.pest{
+    display:grid;
+    grid-template-columns: 1fr ;
+    justify-content: center; 
+    justify-items: start; 
+    padding: 20px; 
+    background: white; 
+    border: white solid 1px;
+    border-radius: 20px;
+    filter:drop-shadow(8px 8px 10px rgb(177, 174, 174) );
+    margin: 30px;
+}

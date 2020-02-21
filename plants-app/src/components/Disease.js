@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-class About extends React.Component {
+class Disease extends React.Component {
     render() {
         return(
             <div>
@@ -12,4 +12,4 @@ class About extends React.Component {
 
 }
 
-export default About;
+export default Disease;

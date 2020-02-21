@@ -338,6 +338,63 @@ const plantList= [
         id: 26
 
     },
+    {
+        name: "Snake Plant",
+        scientificName: 'Sansevieria trifasciata',
+        height: 'up to 4 feet',
+        temperature: '50-80 F',
+        light: 'bright, indirect light but can also tolorate low levels of light',
+        watering: 'water moderately',
+        humidity: 'NA',
+        issues: ['leaves falling sideways indicate that the plant is either over or underwatered', 'yellow leaves indicate that the plant has been overwatered, check for root rot', 'wrinkled leaves indicate the plant is thursty, water it'],
+        bugs: "mealybugs",
+        img: 'https://i.imgur.com/SFmEGKP.png',
+        id: 27
+
+    },
+    {
+        name: "ZZ Plant",
+        scientificName: 'Zamioculcas zamiifolia',
+        height: 'up to 3 feet',
+        temperature: '60-75 F',
+        light: 'bright indirect light but can also tolorate low levels of light',
+        watering: 'water moderately when top 2 inches of soil dried out',
+        humidity: 'NA',
+        issues: ['leaves dropping indicate the plant is in shock or the plant is too wet/dry', 'yellow leaves indicate that the plant has been overwatered, check for root rot', 'brown patches on leaves indicate sunburn'],
+        bugs: "mealybugs",
+        img: 'https://i.imgur.com/841j0ya.png',
+        id: 28
+
+    },
+    {
+        name: "Bonsai",
+        scientificName: 'various',
+        height: 'up to 20 inches',
+        temperature: '60-70 F',
+        light: 'bright indirect light',
+        watering: 'keep the soil moist but not wet',
+        humidity: 'mist leaves regularly',
+        issues: ['leaves dropping indicate the plant is in shock or the plant is too wet/dry', 'yellow leaves indicate that the plant has been overwatered, check for root rot', 'brown patches on leaves indicate sunburn'],
+        bugs: "mealybugs, scale insects, powdery mildew, spider mites",
+        img: 'https://i.imgur.com/BxnkIeI.png',
+        id: 29
+
+    },
+    {
+        name: "Croton",
+        scientificName: 'Codiaeum variegatum',
+        height: 'up to 20 inches',
+        temperature: '60-75 F',
+        light: 'bright indirect light',
+        watering: 'water when the top inch of soil feels dry',
+        humidity: 'mist leaves regularly',
+        issues: ['dropping leaves indicate there is temperature fluctuations or the plant is in dark spot', 'drooping leaves indicate overwatering or underwatering'],
+        bugs: " scale insects, spider mites",
+        img: 'https://i.imgur.com/iSxZnni.png',
+        id: 30
+
+    },
+
 
 
 

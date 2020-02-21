@@ -25,7 +25,21 @@ const pestList = [
         findThem: 'Black or brown sap sucking insects usually found on plants that spent time outdoors. Signs of infestasion include dull, molted leaves, silvery white streaks, and distorted growth.',
         treatment: 'Sticky traps can reduce numbers of thrips. Spray your plant with incesticide or biological control to get rid og this pest.',
         img:'https://i.imgur.com/iK0IAIO.png',
-        id: 3
+        id: 4
+    },
+    {
+        name: 'Spider Mites',
+        findThem: 'Look for foliage that has specks and webbing beween the leaves and stems. Spider mites are very small so sometimes examining your plant with magnifying glass can help you see the mites. ',
+        treatment: 'First thing quarantine infected plant, then spray the plant with insecticide to controll the population. ',
+        img:'https://i.imgur.com/NoxGr5d.png',
+        id: 5
+    },
+    {
+        name: 'Aphids',
+        findThem: 'They can be green, black, grey, or orange. Aphids suck sap which then colonizes sooty mold. They can also spread viruses.',
+        treatment: 'Yellow sticky trap and water spray works well to get rid of this pest.',
+        img:'https://i.imgur.com/Tb06kaO.png',
+        id: 6
     },
 ]
 

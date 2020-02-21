@@ -9,7 +9,7 @@ import {
   useParams
 } from "react-router-dom";
 import Home from './components/Home'
-import About from './components/About'
+import Disease from './components/Disease'
 import Plants from './components/Plants'
 import Pests from './components/Pests'
 import Footer from './components/Footer'
@@ -25,7 +25,7 @@ class App extends React.Component {
             <Link to="/">Home</Link>
           </div>
           <div>
-            <Link to="/about">About</Link>
+            <Link to="/disease">Disease</Link>
           </div>
           <div>
             <Link to="/plants">Plants</Link>
@@ -41,8 +41,8 @@ class App extends React.Component {
         
 
         <Switch>
-          <Route path="/about">
-            <About />
+          <Route path="/disease">
+            <Disease />
           </Route>
           <Route path="/plants">
             <Plants />

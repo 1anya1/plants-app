@@ -1,6 +1,6 @@
 import React from 'react'
 import pestList from './pestList'
-// import './Pest.css'
+import './Pests.css'
 
 class Pests extends React.Component {
     constructor(){
@@ -33,7 +33,7 @@ class Pests extends React.Component {
                             <div className = 'pest' key={item.id}>
                                     <img className='cards' src={item.img} alt={item.name}/>
                                         <p><b>Name: </b>{item.name}</p>
-                                        <p><b>Spot Them: </b> <i>{item.findThem}</i></p>
+                                        <p><b>Spot Them: </b> {item.findThem}</p>
                                         <p><b>Treatment: </b>{item.treatment}</p>
                                 </div>
                              ))}
