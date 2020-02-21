@@ -41,3 +41,9 @@ li{
 img.cards{
     margin: 30px auto;
 }
+.searchBar{
+    display: flex;
+  padding: 11px;
+  font-size: 21px;
+  margin: 30px  auto;
+}

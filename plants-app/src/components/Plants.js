@@ -26,11 +26,11 @@ class Plants extends React.Component {
             <div>
                 <header></header>
                 <div>
+                    <h1>Look thorugh the library of plant and search for plants but their name to find how to take care of them </h1>
                     <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
                     <div className = 'allPlants'>
                         {filteredData.map(item => (
                             <div className = 'plant' key={item.id}>
-                                {/* <div className = 'plant'> */}
                                     <img className='cards' src={item.img} alt={item.name}/>
                                         <p><b>Common Name: </b>{item.name}</p>
                                         <p><b>Scientific Name: </b> <i>{item.scientificName}</i></p>
@@ -39,16 +39,16 @@ class Plants extends React.Component {
                                         <p><b>Humidity: </b>{item.humidity}</p>
                                         <p> <b>Bugs: </b>{item.bugs}</p>
                                         <ul><b>Common Issues:</b>
+                                            <div><p></p></div>
                                             {item.issues.map(item => (
                                                 <li key={item}> <img src='https://i.imgur.com/vqgeRl4.png?2'/> {item}</li>
                                         ))}
                                          </ul>
                                 </div>
-                            //  </div>
-                        ))}
-                 </div>
-            </div>
-            </div>
+                             ))}
+                        </div>
+                    </div>
+                </div>
          
         )
     }
