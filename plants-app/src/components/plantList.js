@@ -130,7 +130,7 @@ const plantList= [
         id:10
     },
     {
-        name: "Heart-Leaf Philodendron",
+        name: "Heart-Leaf Phil",
         scientificName: 'Philodendron scandens',
         height: 'vines can get up to 4 feet long',
         temperature: '60-75 F',
@@ -273,7 +273,7 @@ const plantList= [
         id:21
     },
     {
-        name: "Chinese Money Tree",
+        name: "Money Tree",
         scientificName: 'Pilea peperomioides',
         height: 'up to 12 inches',
         temperature: '64-75 F',

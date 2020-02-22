@@ -1,0 +1,7 @@
+.diseaseCover{
+    background-image: url('https://i.imgur.com/OtjazOa.png');
+    padding: 50px 50px 50px 100px;
+    display: grid;
+    justify-content: start;
+    justify-items: center;
+}

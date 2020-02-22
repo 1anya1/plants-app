@@ -23,7 +23,7 @@ class App extends React.Component {
     <Router>
       <div className = 'layout'>
         <div className='nav'>
-        <img className='logo' src='https://i.imgur.com/2t5phWD.png'></img>
+        <img className='logo' src='https://i.imgur.com/ZcqvZ1m.png'></img>
         <div></div>
   
           <div className='link'>

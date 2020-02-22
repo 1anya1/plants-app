@@ -102,7 +102,7 @@
     
   }
   .logo{
-    width: 80px;
+    width: 130px;
 }
   .nav{
     padding: 50px 30px;
@@ -115,7 +115,7 @@
         grid-template-columns: 1fr 1fr;
   } 
     .logo{
-        width: 60px;
+        width: 120px;
     }
     .nav{
         padding: 50px;
@@ -167,6 +167,9 @@
     .header{
         font-size: 70px;
 
+    }
+    .logo{
+        width: 80px;
     }
 }
 @media screen and (max-width: 350px){

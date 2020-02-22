@@ -1,150 +1,114 @@
-/* :root {
-    --background-color: var(-- #ebf7e3);
-    --button-color: var(--#9bd770);
-    --font-color: var(--#1b3409);
-    --headings-color: var(--#66b032);
-  
-}
-.cards{
-    height: 250px;
-    width: 250px;
-    border: 5px double #66b032; 
-    border-radius: 50%;
-}
-.allPlants{
-    display:grid; 
-    grid-template-columns: 1fr 1fr 1fr;
-}
-.plant{
-    display:grid;
-    grid-template-columns: 1fr ;
-    justify-content: center; 
-    justify-items: start; 
-    padding: 20px; 
-    background: white; 
-    border: white solid 1px;
-    border-radius: 20px;
-    filter:drop-shadow(8px 8px 10px rgb(177, 174, 174) );
-    margin: 30px;
-}
-ul{
-    display: grid;
-    justify-items: start; 
-    justify-content: start;
-    padding:0;
-    
-}
-li{
-    list-style: none;
-    padding: 5px;  
-    justify-items: start;   
-}
-
-img.cards{
-    margin: 30px auto;
-}
-.searchBar{
-    display: flex;
-  padding: 11px;
-  font-size: 21px;
-  margin: 30px  auto;
-}
-
-
-@media screen and (min-width:700px),(max-width:1200px){
-    .allPlants{
-        display:grid; 
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media screen and (max-width:699px){
-    .allPlants{
-        display:grid; 
-        grid-template-columns: 1fr;
-    }
-} */
-
 
 .allPlants{
     display:grid; 
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
     justify-content: center;
     justify-items: center;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     padding: 50px; 
-    background-color: #bbe9d9;
+    background-color: #f4d2e0;
   
-  }
-  header.plantsCover{
-      background-image: url('https://i.imgur.com/cZDaNzb.png');
-      padding: 50px;
-  }
+}
+.mainPink{
+    background-color: #f4d2e0;
+}
+.plantsCover{
+    background-image: url('https://i.imgur.com/cZDaNzb.png');
+    padding: 50px 50px 50px 100px;
+    display: grid;
+    justify-content: start;
+    justify-items: center;
+}
 .searchBar{
     display: flex;
     padding: 11px;
     font-size: 21px;
     margin: 50px  auto;
 }
+.quotePink{
+    color:#ff87b9 ;
+    padding: 80px 200px;
+    font-size: 50px;
+    font-family: 'Montserrat', ;
 
-  .pop{
+}
+.postHeaderPink{
+    color:#ff87b9 ;
+    font-size: 50px;
+    text-align: center;
+    margin:0;
+    padding: 100px  0 0 0 ;
+    font-family: 'Montserrat';
+
+
+}
+.explanation{
+    font-size: 21px;
+    text-align: center;
+    font-family: 'Montserrat';
+    color:gray;
+}
+
+.pop{
     justify-content: center;
-    padding: 20px;
+    justify-items: center;
+    padding: 50px;
     border: rgb(187, 181, 181) solid 1px;
     box-shadow:pink;
     border-radius: 20px;
     background-color: white;
     
-  }
-  .pest{
-    display:grid;
-    grid-template-columns: 1fr ;
-    justify-content: center; 
-    justify-items: start; 
-    padding: 20px; 
-    background: white; 
-    border: white solid 1px;
-    border-radius: 20px;
-    margin: 30px;
-  }
-  
-  .cards{
+}
+
+.cardsPink{
+    display: grid;
+    margin: 5px auto;
     width: 200px;
     height: 200px;
-    border: 5px double #66b032; 
+    border: 5px double #ff87b9; 
     border-radius: 50%;
     padding: 10px auto;
-  }
-  .popUpCard{
+}
+.popUpCardPink{
     width: 200px;
     height: 200px;
-    border: 5px double #66b032; 
+    border: 5px double #ff87b9; 
     border-radius: 50%;
     margin: 1px auto;
-  }
-  ul{
+}
+ul{
     padding: 0;
-  }
-  li{
+}
+li{
     list-style-type: none;
-  }
-  button.modalButton{
-      display: flex;
-      margin: 10px auto;
-      border: white 1px solid; 
-      background-color: white;
-  }
+}
+button.modalButton{
+    display: flex;
+    margin: 10px auto;
+    border: white 1px solid; 
+    background-color: white;
+}
+.color{
+    font-family: 'Bungee';
+    text-align: center;
+    color:#ff87b9;
+    font-size: 25px;
+
+}
   
-  .color:hover {
-      color: pink;
-  }
+.color:hover {
+    color:#f4d2e0;
+}
+
 
   .modal {
     font-size: 18px;
+    font-family: 'Montserrat';
+    color: gray;
     padding: 30px;
     display: grid;
-    max-height: calc(100vh - 200px);
+    max-height: calc(100vh - 100px);
     overflow-y: auto;
    
   }
@@ -182,47 +146,118 @@ img.cards{
     border-radius: 18px;
     border: 1px solid #cfcece;
   }
-  @media screen and (max-width:1400px){
+  @media screen and (max-width: 1400px){
     .allPlants{
-        display:grid; 
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-}
-  @media screen and (max-width:1100px){
-    .allPlants{
-        display:grid; 
         grid-template-columns: 1fr 1fr 1fr;
-    }
-}
+  } 
 
-  @media screen and (max-width:800px){
+}
+  @media screen and (max-width: 1000px){
     .allPlants{
-        display:grid; 
         grid-template-columns: 1fr 1fr;
+  } 
+  .quotePink{
+    padding: 50px;
+    
+  }
+}
+@media screen and (max-width: 1000px){
+    .allPlants{
+        grid-template-columns: 1fr 1fr;
+  } 
+}
+@media screen and (max-width: 800px){
+    .allPests{
+        grid-template-columns: 1fr 1fr;
+  } 
+    .logo{
+        width: 120px;
+    }
+    .nav{
+        padding: 50px;
+        grid-template-columns: 1fr .25fr 1fr 1fr 1fr 1fr 1fr ;
+    }
+
+}
+@media screen and (max-width: 700px){
+    .allPlants{
+        grid-template-columns: 1fr;
+        padding: 30px;
+  } 
+  .quotePink{
+    padding: 50px 50px;
+    font-size: 30px;
+  }
+  .headerTwo{
+    display: flex;
+    font-size: 90px;
+    color: white;
+    
+}
+.intro{
+    padding: 50px ;
+    font-size: 21px;
+    font-family: 'Montserrat', ;
+}
+.intro{
+    padding: 50px ;
+    font-size: 21px;
+    font-family: 'Montserrat', ;
+
+}
+.plantsCover {
+    padding: 50px;
+    height: 300px;
+}
+.postHeaderPink{
+    font-size: 30px;
+    margin:0;
+    padding: 50px  0 0 0 ;
+
+}
+.modal {
+    font-size: 12px;
+}
+.popUpCardPink{
+    width: 100px;
+    height: 100px;
+    border: 5px double #ff87b9; 
+    justify-self: center;
+    border-radius: 50%;
+  }
+.popup-content{
+   width: 70%;
+}
+}
+@media screen and (max-width: 600px){
+  .pest{
+      margin: 20px 0;  
+    }
+    .quotePink{
+        padding:40px;
+        font-size: 25px;
+    }
+    .header{
+        font-size: 60px;
+
+    }
+    .logo{
+        width: 80px;
+    }
+    .explanation{
+        font-size: 16px;
+        text-align: center;
+        font-family: 'Montserrat';
+        color:gray;
     }
 }
-  
-  @media screen and (max-width:699px){
+@media screen and (max-width: 350px){
     .allPlants{
-        display:grid; 
         grid-template-columns: 1fr;
-    }
-    .popup-content.style{
-     width: 80%; 
-    }
-    .modal {
-        font-size: 12px;
-    }
-    .popUpCard{
-        width: 100px;
-        height: 100px;
-        border: 5px double #66b032; 
-        border-radius: 50%;
-      }
-   .popup-content{
-       width: 70%;
-   }
-  }
-   
-  
+        padding: 20px;
+  } 
+  .header{
+    font-size: 60px;   
+}
+}
   
