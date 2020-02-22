@@ -5,3 +5,19 @@
     justify-content: start;
     justify-items: center;
 }
+.intro {
+    background-color: white;
+}
+#purple{
+    background-color: #d4dbfc;
+}
+#purpleFont{
+    color: #8198ff;
+}
+#purpleBorder{
+    border-color: #8198ff;
+}
+#purpleFontBackground{
+    background-color: #d4dbfc;
+    color: #8198ff;
+}

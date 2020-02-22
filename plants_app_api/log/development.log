@@ -801,3 +801,213 @@ Processing by DiseasesController#index as */*
 Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 1872)
 
 
+Started GET "/diseases" for ::1 at 2020-02-22 11:28:55 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (2.1ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 2.1ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 11:29:18 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.7ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.7ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:09:33 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (1.5ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 10.2ms | ActiveRecord: 1.5ms | Allocations: 1947)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:10:56 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.4ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.4ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:11:09 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.4ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.4ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:18:51 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (1.0ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 11.6ms | ActiveRecord: 1.0ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:20:25 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.5ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.5ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:22:04 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (1.6ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 1.6ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:23:17 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.4ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.4ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:23:49 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.3ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.3ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:25:53 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (6.4ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 48ms (Views: 26.3ms | ActiveRecord: 6.4ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:26:59 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.7ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.7ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:28:26 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.3ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.3ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:29:05 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (1.4ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 1.4ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:30:14 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (2.4ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 2.4ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:30:54 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (1.6ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 1.6ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:31:42 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.5ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.5ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:32:59 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.4ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.4ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:37:46 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (5.7ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 89ms (Views: 79.8ms | ActiveRecord: 5.7ms | Allocations: 1873)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:39:34 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.5ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.5ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:39:47 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.6ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.6ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:40:21 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.4ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.4ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:43:26 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.3ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:47:07 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.9ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.9ms | Allocations: 1873)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:47:09 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.4ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.4ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:47:17 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.3ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 14:47:50 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (1.0ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 1.0ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 15:08:54 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (1.4ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 15.9ms | ActiveRecord: 1.4ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 15:09:33 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.4ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.4ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-22 15:12:10 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.7ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.7ms | Allocations: 1872)
+
+

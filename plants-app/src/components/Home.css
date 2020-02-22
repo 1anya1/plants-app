@@ -24,3 +24,7 @@ header{
 #root{
     color: rgb(32, 32, 32);
 }
+#id{
+    background-image:  linear-gradient(to left top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #81a3e8, #66aceb, #49b3e9, #00bae0, #00bfce, #00c2b5, #44c398);
+     
+}
