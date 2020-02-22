@@ -25,8 +25,10 @@ class Pests extends React.Component {
         return (
             <div>
                 <header className='bugsCover'> 
+                <div className='headerTwo'>
                    <h1 class='header'>PLANT  </h1> 
                    <h1 class='header'><i>PESTS</i> </h1> 
+                   </div>
                    
                 
                 </header>

@@ -23,20 +23,23 @@ class App extends React.Component {
     <Router>
       <div className = 'layout'>
         <div className='nav'>
-          <div>
-            <Link to="/">Home</Link>
+        <img className='logo' src='https://i.imgur.com/2t5phWD.png'></img>
+        <div></div>
+  
+          <div className='link'>
+            <Link className='navLink' to="/">Home</Link>
           </div>
-          <div>
-            <Link to="/disease">Disease</Link>
+          <div className='link'>
+            <Link className='navLink' to="/disease">Disease</Link>
           </div>
-          <div>
-            <Link to="/plants">Plants</Link>
+          <div className='link'>
+            <Link className='navLink' to="/plants">Plants</Link>
           </div>
-          <div>
-            <Link to="/pests">Pests</Link>
+          <div className='link'>
+            <Link className='navLink' to="/pests">Pests</Link>
           </div>
-          <div>
-            <Link to="/tracker">Plant Tracker</Link>
+          <div className='link'>
+            <Link className='navLink' to="/tracker">Plant Tracker</Link>
           </div>
 
         </div>

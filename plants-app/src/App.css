@@ -9,13 +9,26 @@
 h1{
   margin: 0px;
 }
+.logo{
+width: 150px;
+}
+.link{
+  display:grid;
+  margin: auto 5px;
+}
+.navLink{
+  text-decoration: none;
+  color: #44c398;
+  font-family: 'Montserrat';
 
+}
 .nav{
   display:grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
   justify-content: center; 
   justify-items: center;
-  padding: 25px 50px;
+  justify-self: center;
+  padding: 25px 100px;
   margin:  auto;
   
 }
