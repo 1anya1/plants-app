@@ -65,16 +65,29 @@ img.cards{
     }
 } */
 
-div.allPlants{
+
+.allPlants{
     display:grid; 
-    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
     justify-content: center;
     justify-items: center;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     padding: 50px; 
+    background-color: #bbe9d9;
   
   }
+  header.plantsCover{
+      background-image: url('https://i.imgur.com/cZDaNzb.png');
+      padding: 50px;
+  }
+.searchBar{
+    display: flex;
+    padding: 11px;
+    font-size: 21px;
+    margin: 50px  auto;
+}
+
   .pop{
     justify-content: center;
     padding: 20px;
@@ -126,49 +139,18 @@ div.allPlants{
   .color:hover {
       color: pink;
   }
+
   .modal {
     font-size: 18px;
     padding: 30px;
     display: grid;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
    
   }
-  @media screen and (max-width:1100px){
-    div.allPlants{
-        grid-template-columns: 1fr  1fr 1fr;
-    }
+  div.popup-content{
+      padding: 20px;
   }
-   @media screen and (min-width:700px),(max-width: 799px){
-    .allPests{
-      display:grid; 
-      grid-template-columns: 1fr 1fr;
-  } 
-   }
-  
-  @media screen and (max-width:699px){
-    div.allPlants{
-        display:grid; 
-        grid-template-columns: 1fr;
-    }
-    .popup-content{
-     width: 80%; 
-    }
-    .modal {
-        font-size: 12px;
-    }
-    .popUpCard{
-        width: 100px;
-        height: 100px;
-        border: 5px double #66b032; 
-        border-radius: 50%;
-      }
-   .popup-content{
-       width: 70%;
-   }
-  }
-   
-  
-  
-
   .modal > .header {
     width: 100%;
     border-bottom: 1px solid gray;
@@ -179,6 +161,7 @@ div.allPlants{
   .modal > .content {
     width: 100%;
     padding: 10px 5px;
+    
   }
   .modal > .actions {
     width: 100%;
@@ -199,3 +182,47 @@ div.allPlants{
     border-radius: 18px;
     border: 1px solid #cfcece;
   }
+  @media screen and (max-width:1400px){
+    .allPlants{
+        display:grid; 
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+  @media screen and (max-width:1100px){
+    .allPlants{
+        display:grid; 
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+  @media screen and (max-width:800px){
+    .allPlants{
+        display:grid; 
+        grid-template-columns: 1fr 1fr;
+    }
+}
+  
+  @media screen and (max-width:699px){
+    .allPlants{
+        display:grid; 
+        grid-template-columns: 1fr;
+    }
+    .popup-content.style{
+     width: 80%; 
+    }
+    .modal {
+        font-size: 12px;
+    }
+    .popUpCard{
+        width: 100px;
+        height: 100px;
+        border: 5px double #66b032; 
+        border-radius: 50%;
+      }
+   .popup-content{
+       width: 70%;
+   }
+  }
+   
+  
+  

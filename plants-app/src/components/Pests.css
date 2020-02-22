@@ -1,8 +1,17 @@
-div.allPests{
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap');
+
+
+.allPests{
     display:grid; 
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 20px;
-  
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding:  70px 50px;
+    background-color:#bbe9d9;
+}
+.header{
+    display: flex;
+    font-size: 130px;
+    color: white;
+    
 }
 .pest{
     display:grid;
@@ -10,31 +19,109 @@ div.allPests{
     justify-content: center; 
     justify-items: start; 
     padding: 20px; 
-    background: white; 
+    background:white ;
     border: white solid 1px;
     border-radius: 20px;
     filter:drop-shadow(8px 8px 10px rgb(177, 174, 174) );
     margin: 30px;
+    color:gray;
 }
-
-
-@media screen and (min-width:700px),(max-width:1000px){
-    div.allPests{
-        display:grid; 
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media screen and (max-width:699px){
-    div.allPests{
-        display:grid; 
-        grid-template-columns: 1fr;
-    }
+.bugsCover {
+    background-image: url('https://i.imgur.com/1U97Fn6.png');
+    padding: 50px 50px 50px 100px;;
 }
 .cards{
     width: 200px;
     height: 200px;
-    border: 5px double #66b032; 
+    border: 8px double #44c398; 
     border-radius: 50%;
     margin: 10px auto;
   }
+  .title {
+    margin: 30px auto 21px;
+    color: #44c398;
+  }
+.background{
+    background-color: white;
+}
+.postHeader{
+    color: #44c398;
+    font-size: 50px;
+    text-align: center;
+    background-color:#bbe9d9;
+    margin:0;
+    padding: 50px  0 0 0 ;
+
+}
+.searchBar{
+    background-color: white; 
+
+}
+.intro{
+    padding: 100px ;
+    font-size: 21px;
+    font-family: 'Montserrat', ;
+}
+ .quote{
+    color: #44c398;
+    padding: 80px 200px;
+    font-size: 50px;
+    font-family: 'Montserrat', ;
+
+}
+@media screen and (max-width: 1290px){
+    .allPests{
+        grid-template-columns: 1fr 1fr 1fr;
+  } 
+  .quote{
+    padding: 50px;
+    
+  }
+}
+@media screen and (max-width: 1000px){
+    .allPests{
+        grid-template-columns: 1fr 1fr;
+  } 
+  .quote{
+    padding: 30px;
+    
+  }
+}
+@media screen and (max-width: 800px){
+    .allPests{
+        grid-template-columns: 1fr 1fr;
+  } 
+}
+@media screen and (max-width: 700px){
+    .allPests{
+        grid-template-columns: 1fr;
+        padding: 30px;
+  } 
+  .quote{
+    padding: 50px 50px;
+    font-size: 30px;
+  }
+  .header{
+    display: flex;
+    font-size: 90px;
+    color: white;
+    
+}
+.intro{
+    padding: 50px ;
+    font-size: 21px;
+    font-family: 'Montserrat', ;
+}
+.bugsCover {
+    padding: 50px;
+    height: 300px;
+}
+.postHeader{
+    font-size: 30px;
+    text-align: center;
+    background-color:#bbe9d9;
+    margin:0;
+    padding: 50px  0 0 0 ;
+
+}
+}

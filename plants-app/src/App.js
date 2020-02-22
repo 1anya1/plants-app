@@ -14,6 +14,8 @@ import Plants from './components/Plants'
 import Pests from './components/Pests'
 import Footer from './components/Footer'
 import Tracker from './components/Tracker'
+
+
 class App extends React.Component {
   render(){
   return (

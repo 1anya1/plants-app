@@ -6,15 +6,9 @@
   --headings-color: var(--#66b032);
 
 }
-
-
-
-h1 {
-  color: var(--font-color);
-  
+h1{
+  margin: 0px;
 }
-
-
 
 .nav{
   display:grid;
@@ -26,8 +20,7 @@ h1 {
   
 }
 #root {
- 
-  background-color: #ebf7e3;
+
   font-family: 'Quicksand', ;
 
   

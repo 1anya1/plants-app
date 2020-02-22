@@ -27,7 +27,10 @@ class Plants extends React.Component {
             });
         return (
                 <div>
-                    <header></header>
+                    <header className='plantsCover'>
+                    <h1 class='header'>HOUSE  </h1> 
+                   <h1 class='header'><i>PLANTS</i> </h1> 
+                    </header>
                     <div>
                         <h1>Look thorugh the library of plant and search for plants but their name to find how to take care of them </h1>
                         <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
