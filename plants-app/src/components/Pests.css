@@ -1,4 +1,4 @@
-.allPests{
+div.allPests{
     display:grid; 
     grid-template-columns: 1fr 1fr 1fr;
     margin: 20px;
@@ -18,16 +18,23 @@
 }
 
 
-@media screen and (min-width:700px),(max-width:1200px){
-    .allPests{
+@media screen and (min-width:700px),(max-width:1000px){
+    div.allPests{
         display:grid; 
         grid-template-columns: 1fr 1fr;
     }
 }
 
 @media screen and (max-width:699px){
-    .allPests{
+    div.allPests{
         display:grid; 
         grid-template-columns: 1fr;
     }
 }
+.cards{
+    width: 200px;
+    height: 200px;
+    border: 5px double #66b032; 
+    border-radius: 50%;
+    margin: 10px auto;
+  }

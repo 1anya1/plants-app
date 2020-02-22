@@ -41,6 +41,20 @@ const pestList = [
         img:'https://i.imgur.com/Tb06kaO.png',
         id: 6
     },
+    {
+        name: 'Scale Insects',
+        findThem: 'These insects look like brown lups on the stem of the plant. The aslso secreat sticky sap which can lead to sooty mold. If not controlled your plant will weaken and the leaves will turn yellow.',
+        treatment: 'Rub them off or use insecticide otr biological control.',
+        img:'https://i.imgur.com/PrspHvw.png',
+        id: 7
+    },
+    {
+        name: 'Mealybugs',
+        findThem: 'White, slow moving insects usually form in a cluster. An infestation can lead to yellowing of leaves, leaf fall, and wilting.',
+        treatment: 'Rub insects off with damp cloth soaked in insecticide or try to spray the plant with incesticide weekly. It is very hard to get rid of this bug and best solution at times id to disgard the plant.',
+        img:'https://i.imgur.com/5PIBIzs.png',
+        id: 8
+    },
 ]
 
 export default pestList

@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --background-color: var(-- #ebf7e3);
     --button-color: var(--#9bd770);
     --font-color: var(--#1b3409);
@@ -63,4 +63,139 @@ img.cards{
         display:grid; 
         grid-template-columns: 1fr;
     }
-}
+} */
+
+div.allPlants{
+    display:grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    justify-content: center;
+    justify-items: center;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    padding: 50px; 
+  
+  }
+  .pop{
+    justify-content: center;
+    padding: 20px;
+    border: rgb(187, 181, 181) solid 1px;
+    box-shadow:pink;
+    border-radius: 20px;
+    background-color: white;
+    
+  }
+  .pest{
+    display:grid;
+    grid-template-columns: 1fr ;
+    justify-content: center; 
+    justify-items: start; 
+    padding: 20px; 
+    background: white; 
+    border: white solid 1px;
+    border-radius: 20px;
+    margin: 30px;
+  }
+  
+  .cards{
+    width: 200px;
+    height: 200px;
+    border: 5px double #66b032; 
+    border-radius: 50%;
+    padding: 10px auto;
+  }
+  .popUpCard{
+    width: 200px;
+    height: 200px;
+    border: 5px double #66b032; 
+    border-radius: 50%;
+    margin: 1px auto;
+  }
+  ul{
+    padding: 0;
+  }
+  li{
+    list-style-type: none;
+  }
+  button.modalButton{
+      display: flex;
+      margin: 10px auto;
+      border: white 1px solid; 
+      background-color: white;
+  }
+  
+  .color:hover {
+      color: pink;
+  }
+  .modal {
+    font-size: 18px;
+    padding: 30px;
+    display: grid;
+   
+  }
+  @media screen and (max-width:1100px){
+    div.allPlants{
+        grid-template-columns: 1fr  1fr 1fr;
+    }
+  }
+   @media screen and (min-width:700px),(max-width: 799px){
+    .allPests{
+      display:grid; 
+      grid-template-columns: 1fr 1fr;
+  } 
+   }
+  
+  @media screen and (max-width:699px){
+    div.allPlants{
+        display:grid; 
+        grid-template-columns: 1fr;
+    }
+    .popup-content{
+     width: 80%; 
+    }
+    .modal {
+        font-size: 12px;
+    }
+    .popUpCard{
+        width: 100px;
+        height: 100px;
+        border: 5px double #66b032; 
+        border-radius: 50%;
+      }
+   .popup-content{
+       width: 70%;
+   }
+  }
+   
+  
+  
+
+  .modal > .header {
+    width: 100%;
+    border-bottom: 1px solid gray;
+    font-size: 18px;
+    text-align: center;
+    padding: 5px;
+  }
+  .modal > .content {
+    width: 100%;
+    padding: 10px 5px;
+  }
+  .modal > .actions {
+    width: 100%;
+    padding: 10px 5px;
+    margin: auto;
+    text-align: center;
+  }
+  .modal > .close {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 2px 5px;
+    line-height: 20px;
+    right: -10px;
+    top: -10px;
+    font-size: 24px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #cfcece;
+  }
