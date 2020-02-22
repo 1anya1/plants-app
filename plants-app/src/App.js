@@ -17,6 +17,8 @@ import Tracker from './components/Tracker'
 
 
 class App extends React.Component {
+
+
   render(){
   return (
     <React.Fragment>
@@ -30,7 +32,7 @@ class App extends React.Component {
             <Link className='navLink' to="/">Home</Link>
           </div>
           <div className='link'>
-            <Link className='navLink' to="/disease">Disease</Link>
+            <Link className='navLink' to="/diseases">Disease</Link>
           </div>
           <div className='link'>
             <Link className='navLink' to="/plants">Plants</Link>
@@ -46,7 +48,7 @@ class App extends React.Component {
         
 
         <Switch>
-          <Route path="/disease">
+          <Route path="/diseases">
             <Disease />
           </Route>
           <Route path="/plants">
