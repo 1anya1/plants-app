@@ -12,9 +12,6 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link,
-    useRouteMatch,
-    useParams
   } from "react-router-dom";
 import Home from './components/Home'
 import Disease from './components/Disease'
@@ -27,14 +24,15 @@ const links = [
   { href: '/', text: 'Home' },
   { href: 'plants', text: 'Plants' },
   { href: 'diseases', text: 'Disease' },
-  { href: 'tracker', text: 'Tracker' },
   { href: 'pests', text: 'Pests' },
+  { href: 'tracker', text: 'Tracker' },
+  
   
 ];
 
-const createNavItem = ({ href, text, className }) => (
+const createNavItem = ({ href, text}) => (
   <NavItem>
-    <NavLink href={href} className={className}>{text}</NavLink>
+    <NavLink href={href} className="text-info" style={{fontSize: 18, fontWeight: 'bold'}}>{text}</NavLink>
   </NavItem>
 );
 
@@ -58,10 +56,10 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Navbar color="blue" light expand="md">
-          <NavbarBrand href="/"><img className='logo' src='https://i.imgur.com/ZcqvZ1m.png'></img></NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
+        <Navbar className="text-info" color="white" light expand="md">
+          <NavbarBrand href="/"><img className='logo' style={{width: 200}} src='https://i.imgur.com/ZcqvZ1m.png'></img></NavbarBrand>
+          <NavbarToggler  onClick={this.toggle} />
+          <Collapse  isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               {links.map(createNavItem)}
             </Nav>

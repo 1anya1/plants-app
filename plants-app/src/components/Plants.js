@@ -2,6 +2,8 @@ import React from 'react'
 import plantList from './plantList'
 import './Plants.css'
 import Popup from 'reactjs-popup'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import ModalP from "./Modal"
 
 
 class Plants extends React.Component {
@@ -16,6 +18,9 @@ class Plants extends React.Component {
     handleChange = event => {
         this.setState({ filter: event.target.value });
       };
+      toggle = event => {
+        this.setState({ modal: !this.state.modal, filter: event.target.value });
+      };
     
     render() {
             const { filter, plants } = this.state;
@@ -29,8 +34,8 @@ class Plants extends React.Component {
                 <div>
                     <header className='plantsCover'>
                     <div className='headerTwo'>
-                    <h1 class='header'>HOUSE  </h1> 
-                   <h1 class='header'><i>PLANTS</i> </h1> 
+                    <h1 className='header'>HOUSE  </h1> 
+                   <h1 className='header'><i>PLANTS</i> </h1> 
                    </div>
                     </header>
                     <div className='background'>
@@ -55,7 +60,7 @@ class Plants extends React.Component {
                                         <img className='cardsPink' src={item.img} alt={item.name}/>
                                         
                                       </div>
-                                            <Popup trigger={<h2 className ='color'>{item.name}</h2>} 
+                                             <Popup trigger={<h2 className ='color'>{item.name}</h2>} 
                                               modal
                                               closeOnDocumentClick
                                             >
@@ -83,7 +88,9 @@ class Plants extends React.Component {
                                               )}
     
     
-                                            </Popup>
+                                            </Popup> 
+                                            
+                                            <ModalP />
                                         
                                     </div>
                                  ))}
@@ -95,6 +102,66 @@ class Plants extends React.Component {
         }
     
     }
+    // class ModalExample extends React.Component {
+    //     constructor(props) {
+    //       super(props);
+    //       this.state = {
+    //         modal: false,
+    //         plants : plantList
+    //       };
+      
+    //       this.toggle = this.toggle.bind(this);
+    //     }
+      
+    //     toggle() {
+    //       this.setState({
+    //         modal: !this.state.modal,
+    //         plant: this.state.plantsz
+    //       });
+    //     }
+      
+    //     render() {
+    //       return (
+    //         <div>
+                
+    //           <Button color="danger" onClick={this.toggle, this.plant}>{this.props.buttonLabel}</Button>
+    //           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+    //             <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+    //             <ModalBody>
+    //             <div>
+    //             {this.state.plants.map( item =>{
+    //                     return (
+    //                         <div key={item.id} >
+    //                             {/* <img  src={item.img} alt={item.name}/> */}
+    //                                               <p><b>Common Name: </b>{item.name}</p>
+    //                                               <p><b>Scientific Name: </b> <i>{item.scientificName}</i></p>
+    //                                               <p><b>Height: </b>{item.height}</p>
+    //                                               <p><b>Temperature: </b>{item.temperature}</p>
+    //                                               <p><b>Humidity: </b>{item.humidity}</p>
+    //                                               <p> <b>Bugs: </b>{item.bugs}</p>
+    //                                               <ul><b>Common Issues:</b>
+    //                                                 <div><p></p></div>
+    //                                                 {item.issues.map(item => (
+    //                                                   <li key={item}> <img src='https://i.imgur.com/vqgeRl4.png?2'/> {item}</li>
+    //                                                 ))}
+    //                                               </ul>
+
+    //                         </div>
+    //                     )
+    //                 })}
+               
+                                          
+    //            </div>                           
+    //             </ModalBody>
+    //             <ModalFooter>
+    //               <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
+    //               <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+    //             </ModalFooter>
+    //           </Modal>
+    //         </div>
+    //       );
+    //     }
+    //   }
       
     
     export default Plants
