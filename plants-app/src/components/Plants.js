@@ -4,6 +4,7 @@ import './Plants.css'
 import Popup from 'reactjs-popup'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import ModalP from "./Modal"
+import { isModuleDeclaration } from '@babel/types';
 
 
 class Plants extends React.Component {
@@ -11,16 +12,34 @@ class Plants extends React.Component {
         super()
         this.state = {
             filter:'',
-            plants : plantList
+            plants : plantList,
+            modal: false,
+            show: null
         }
         this.handleChange = this.handleChange.bind(this)
+        this.toggle = this.toggle.bind(this)
+        this.handleShow = this.handleShow.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+        this.handleDisplay= this.handleDisplay.bind(this)
     }
     handleChange = event => {
         this.setState({ filter: event.target.value });
       };
       toggle = event => {
-        this.setState({ modal: !this.state.modal, filter: event.target.value });
+        this.setState({ modal: !this.state.modal, show: this.state.plants.id});
       };
+      handleClose() {
+        this.setState({show: null});
+      }
+    
+      handleShow(id) {
+        this.setState({show: id});
+      }
+    handleDisplay(){
+        this.setState({
+            display:[]
+        })
+    }
     
     render() {
             const { filter, plants } = this.state;
@@ -60,7 +79,28 @@ class Plants extends React.Component {
                                         <img className='cardsPink' src={item.img} alt={item.name}/>
                                         
                                       </div>
-                                             <Popup trigger={<h2 className ='color'>{item.name}</h2>} 
+                                      <Button  color="danger" onClick={this.toggle}>{item.name}</Button>
+                                      <Modal isOpen={this.state.modal} toggle={this.toggle} className={item.name}>
+                                          <ModalBody>
+                                          
+                                                  <img className='popUpCardPink' src={item.img} alt={item.name}/>
+                                                  <p><b>Common Name: </b>{item.name}</p>
+                                                  <p><b>Scientific Name: </b> <i>{item.scientificName}</i></p>
+                                                  <p><b>Height: </b>{item.height}</p>
+                                                  <p><b>Temperature: </b>{item.temperature}</p>
+                                                  <p><b>Humidity: </b>{item.humidity}</p>
+                                                  <p> <b>Bugs: </b>{item.bugs}</p>
+                                                  <ul><b>Common Issues:</b>
+                                                    <div><p></p></div>
+                                                    {item.issues.map(item => (
+                                                      <li key={item}> <img src='https://i.imgur.com/vqgeRl4.png?2'/> {item}</li>
+                                                    ))}
+                                                  </ul>
+                                           
+
+                                          </ModalBody>
+                                      </Modal>
+                                             {/* <Popup trigger={<h2 className ='color'>{item.name}</h2>} 
                                               modal
                                               closeOnDocumentClick
                                             >
@@ -88,9 +128,9 @@ class Plants extends React.Component {
                                               )}
     
     
-                                            </Popup> 
+                                            </Popup>  */}
                                             
-                                            <ModalP />
+                                           
                                         
                                     </div>
                                  ))}

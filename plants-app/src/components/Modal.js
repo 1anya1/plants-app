@@ -14,6 +14,7 @@ class ModalP extends React.Component {
       }
       this.toggle = this.toggle.bind(this);
       this.id = this.id.bind(this);
+      this.handleShow = this.handleShow.bind(this);
     }
   
     toggle() {
@@ -21,13 +22,16 @@ class ModalP extends React.Component {
     }
 
     id = event => {
-        this.setState({ button: this.state.plants.id });
+        this.setState({ button: event.target.value });
+      }
+      handleShow(id) {
+        this.setState({show: id});
       }
   
 render() {
     return (
         <div>
-             <Button color="danger" id={this.id} sonClick={this.toggle}>{this.props.buttonLabel}</Button>
+             <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                 <ModalHeader  toggle={this.toggle}>Header</ModalHeader>
                 <ModalBody>
