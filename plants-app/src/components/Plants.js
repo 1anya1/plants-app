@@ -2,6 +2,7 @@ import React from 'react'
 import plantList from './plantList'
 import './Plants.css'
 import PageFive from "./Modal"
+import Search from './Search'
 
 
 
@@ -27,6 +28,7 @@ class Plants extends React.Component {
                 typeof item[key]=== 'string' && item[key].toLowerCase().includes(lowercasedFilter)
               );
             });
+            
         return (
                 <div>
                     <header className='plantsCover'>
@@ -45,24 +47,25 @@ class Plants extends React.Component {
                     </div>
                     </div>
                      
-                    
+                   
                 <div className='mainPink'>
                         <h2 className= 'postHeaderPink'>Search House Plant</h2>
                             <p className='explanation'> Click on the name of the plant to learn more</p>
                         <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
-                        {/* <div className = 'allPlants'>
-                            {filteredData.map(item => (
-                                <div></div>
-                                 ))}
-                                 </div>  */}
-
-              <PageFive
-            
-              boxes={this.state.plants}
-              cbIndexes={this.state.id}
-              modals={this.state.modals}
+                        <div className = 'allPlants'>
+                            
+                               
+                                   <PageFive
+                                     boxes={this.state.plants}
+                                     cbIndexes={this.state.id}
+                                    modals={this.state.modals}
+                                    
+        
+                                    />
+                               
+                                 </div> 
               
-            />
+              
 
                                    
                                  

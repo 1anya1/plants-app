@@ -32,16 +32,10 @@ class PageFive extends Component {
       
   }
 
-  aButtonWow = props => {
-    console.log("Clicked!");
-  };
-
-
   render() {
     return (
-      <div className="container" container-lg>
-        
-        
+      <div className="container">
+       
         <div className="row">
           {this.props.boxes.map((box,id, name) => (
             <div key={id} >
@@ -109,6 +103,7 @@ class PageFive extends Component {
             </div>
           ))}
         </div>
+        
       </div>
     );
   }

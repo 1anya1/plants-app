@@ -54,4 +54,12 @@ Disease.create ([
         treatment: 'There is nothing you can do about it.',
         img:'https://i.imgur.com/v8htwsk.png',
     },
+]);
+Form.create ([
+    {
+        date: '2020-02-05',
+        title: 'Monstera',
+        notes: 'Checked the moisture on the plant. Looks like the soil has dried out, time to water. New leaf growth is coming in, the plant is getting better.',
+        img:'https://i.imgur.com/thomyxv.jpg',
+    }
 ])

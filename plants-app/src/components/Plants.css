@@ -301,5 +301,9 @@ button.modalButton{
     padding:40px;
     font-size: 25px;
 }
+.column{
+   
+   height: 400px;
+   width: 300px;
 }
-  
+}

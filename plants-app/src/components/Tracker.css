@@ -1,0 +1,42 @@
+form, .post{
+   width: 600px;
+   margin: 100px;
+   background-color:#d4dbfc;
+   padding: 50px;
+   border: white solid 1px;
+   border-radius: 20px;
+   filter:drop-shadow(8px 8px 10px rgb(206, 206, 206) );
+   margin: 30px;
+   color:gray;
+   margin: 50px auto;
+}
+@media screen and (max-width: 800px){
+    form{
+        width: 400px;
+     
+        background:white ;
+        padding: 50px;
+        border: white solid 1px;
+        border-radius: 20px;
+        filter:drop-shadow(8px 8px 10px rgb(177, 174, 174) );
+        margin: 30px;
+        color:gray;
+        margin: 50px auto;
+    }
+  } 
+
+
+@media screen and (max-width: 700px){
+    form{
+        width: 300px;
+     
+        background:white ;
+        padding: 50px;
+        border: white solid 1px;
+        border-radius: 20px;
+        filter:drop-shadow(8px 8px 10px rgb(177, 174, 174) );
+        margin: 30px;
+        color:gray;
+        margin: 50px auto;
+    }
+  } 
