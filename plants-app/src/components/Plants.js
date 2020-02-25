@@ -3,7 +3,7 @@ import plantList from './plantList'
 import './Plants.css'
 import Popup from 'reactjs-popup'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import ModalP from "./Modal"
+import PageFive from "./Modal"
 import { isModuleDeclaration } from '@babel/types';
 
 
@@ -20,14 +20,26 @@ class Plants extends React.Component {
         this.toggle = this.toggle.bind(this)
         this.handleShow = this.handleShow.bind(this);
         this.handleClose = this.handleClose.bind(this);
-        this.handleDisplay= this.handleDisplay.bind(this)
     }
     handleChange = event => {
         this.setState({ filter: event.target.value });
       };
-      toggle = event => {
-        this.setState({ modal: !this.state.modal, show: this.state.plants.id});
-      };
+    //   toggle = event => {
+    //     this.setState({ modal: !this.state.modal, show: this.state.plants.id});
+    //   };
+    toggle(box) {
+        console.log(box);
+        if(this.state.modal){
+          this.setState({
+            modal: null
+          });
+        } else{
+          this.setState({
+            modal: box.id
+          });
+        }
+          
+      }
       handleClose() {
         this.setState({show: null});
       }
@@ -35,11 +47,11 @@ class Plants extends React.Component {
       handleShow(id) {
         this.setState({show: id});
       }
-    handleDisplay(){
-        this.setState({
-            display:[]
-        })
-    }
+    // handleDisplay(){
+    //     this.setState({
+    //         display:[]
+    //     })
+    // }
     
     render() {
             const { filter, plants } = this.state;
@@ -74,67 +86,20 @@ class Plants extends React.Component {
                         <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
                         <div className = 'allPlants'>
                             {filteredData.map(item => (
-                                <div className = 'pop' key={item.id}>
-                                      <div>
-                                        <img className='cardsPink' src={item.img} alt={item.name}/>
-                                        
-                                      </div>
-                                      <Button  color="danger" onClick={this.toggle}>{item.name}</Button>
-                                      <Modal isOpen={this.state.modal} toggle={this.toggle} className={item.name}>
-                                          <ModalBody>
-                                          
-                                                  <img className='popUpCardPink' src={item.img} alt={item.name}/>
-                                                  <p><b>Common Name: </b>{item.name}</p>
-                                                  <p><b>Scientific Name: </b> <i>{item.scientificName}</i></p>
-                                                  <p><b>Height: </b>{item.height}</p>
-                                                  <p><b>Temperature: </b>{item.temperature}</p>
-                                                  <p><b>Humidity: </b>{item.humidity}</p>
-                                                  <p> <b>Bugs: </b>{item.bugs}</p>
-                                                  <ul><b>Common Issues:</b>
-                                                    <div><p></p></div>
-                                                    {item.issues.map(item => (
-                                                      <li key={item}> <img src='https://i.imgur.com/vqgeRl4.png?2'/> {item}</li>
-                                                    ))}
-                                                  </ul>
-                                           
-
-                                          </ModalBody>
-                                      </Modal>
-                                             {/* <Popup trigger={<h2 className ='color'>{item.name}</h2>} 
-                                              modal
-                                              closeOnDocumentClick
-                                            >
-                                      
-                                              {close => (
-                                              <div className = 'modal' key={item.id}>
-                                                  <img className='popUpCardPink' src={item.img} alt={item.name}/>
-                                                  <p><b>Common Name: </b>{item.name}</p>
-                                                  <p><b>Scientific Name: </b> <i>{item.scientificName}</i></p>
-                                                  <p><b>Height: </b>{item.height}</p>
-                                                  <p><b>Temperature: </b>{item.temperature}</p>
-                                                  <p><b>Humidity: </b>{item.humidity}</p>
-                                                  <p> <b>Bugs: </b>{item.bugs}</p>
-                                                  <ul><b>Common Issues:</b>
-                                                    <div><p></p></div>
-                                                    {item.issues.map(item => (
-                                                      <li key={item}> <img src='https://i.imgur.com/vqgeRl4.png?2'/> {item}</li>
-                                                    ))}
-                                                  </ul>
-                                                  <a className='close'
-                                                    onClick={close}>
-                                                      &times;
-                                                    </a>
-                                              </div> 
-                                              )}
-    
-    
-                                            </Popup>  */}
-                                            
-                                           
-                                        
-                                    </div>
+                                <div></div>
                                  ))}
-                            </div>
+                                 </div> 
+
+              <PageFive
+            
+              boxes={this.state.plants}
+              cbIndexes={this.state.id}
+              modals={this.state.modals}
+              
+            />
+
+                                   
+                                 
                         </div>
                     </div>
              

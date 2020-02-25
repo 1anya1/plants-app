@@ -9,14 +9,14 @@
     font-family: 'Montserrat';
 }
 .header{
-    display: grid;
+   
     font-size: 130px;
     color: white;
     font-family: 'Bungee';
     
 }
 .headerTwo{
-    display: grid;
+    /* display: grid; */
     justify-items: center;
 
 

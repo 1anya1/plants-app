@@ -1,13 +1,16 @@
 
-.allPlants{
+.column{
     display:grid; 
-    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    margin: 0;
+    grid-template-columns: 1fr  ;
     justify-content: center;
     justify-items: center;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     padding: 50px; 
     background-color: #f4d2e0;
+    height: 400px;
+    width: 300px;
   
 }
 .mainPink{
@@ -43,6 +46,7 @@
 
 
 }
+
 .explanation{
     font-size: 21px;
     text-align: center;
@@ -60,8 +64,16 @@
     background-color: white;
     
 }
+.column{
+    background-color: white; 
+    border: white solid 1px;
+    border-radius: 20px;
+    filter:drop-shadow(8px 8px 10px rgb(177, 174, 174) );
+    margin: 30px;
+    color:gray;
+}
 
-.cardsPink{
+.img{
     display: grid;
     margin: 5px auto;
     width: 200px;
@@ -69,8 +81,10 @@
     border: 5px double #ff87b9; 
     border-radius: 50%;
     padding: 10px auto;
+    background-color: white;
 }
 .popUpCardPink{
+    display: grid;
     width: 200px;
     height: 200px;
     border: 5px double #ff87b9; 
@@ -89,11 +103,19 @@ button.modalButton{
     border: white 1px solid; 
     background-color: white;
 }
-.color{
+.plantName{
     font-family: 'Bungee';
-    text-align: center;
     color:#ff87b9;
     font-size: 25px;
+    text-align: center;
+    padding: 30px 0 0 0;
+
+}
+.modal-header{
+    align-items: center;
+}
+/* .btn{
+    align-self: center;
 
 }
   
@@ -148,13 +170,13 @@ button.modalButton{
   }
   @media screen and (max-width: 1400px){
     .allPlants{
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
   } 
 
 }
   @media screen and (max-width: 1000px){
     .allPlants{
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
   } 
   .quotePink{
     padding: 50px;
@@ -229,6 +251,7 @@ button.modalButton{
    width: 70%;
 }
 }
+ */
 @media screen and (max-width: 600px){
   .pest{
       margin: 20px 0;  
@@ -251,13 +274,19 @@ button.modalButton{
         color:gray;
     }
 }
-@media screen and (max-width: 350px){
-    .allPlants{
-        grid-template-columns: 1fr;
-        padding: 20px;
-  } 
-  .header{
-    font-size: 60px;   
+
+@media screen and (max-width: 450px){
+    
+  h1.header{
+    font-size: 50px;   
+    line-height: 34px;
+}
+.plantsCover{
+    padding: 50px 50px 50px 10px;
+}
+.quotePink{
+    padding:40px;
+    font-size: 25px;
 }
 }
   
