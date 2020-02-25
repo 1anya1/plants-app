@@ -1,10 +1,8 @@
 import React from 'react'
 import plantList from './plantList'
 import './Plants.css'
-import Popup from 'reactjs-popup'
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import PageFive from "./Modal"
-import { isModuleDeclaration } from '@babel/types';
+
 
 
 class Plants extends React.Component {
@@ -13,46 +11,14 @@ class Plants extends React.Component {
         this.state = {
             filter:'',
             plants : plantList,
-            modal: false,
-            show: null
+           
         }
         this.handleChange = this.handleChange.bind(this)
-        this.toggle = this.toggle.bind(this)
-        this.handleShow = this.handleShow.bind(this);
-        this.handleClose = this.handleClose.bind(this);
     }
     handleChange = event => {
         this.setState({ filter: event.target.value });
       };
-    //   toggle = event => {
-    //     this.setState({ modal: !this.state.modal, show: this.state.plants.id});
-    //   };
-    toggle(box) {
-        console.log(box);
-        if(this.state.modal){
-          this.setState({
-            modal: null
-          });
-        } else{
-          this.setState({
-            modal: box.id
-          });
-        }
-          
-      }
-      handleClose() {
-        this.setState({show: null});
-      }
-    
-      handleShow(id) {
-        this.setState({show: id});
-      }
-    // handleDisplay(){
-    //     this.setState({
-    //         display:[]
-    //     })
-    // }
-    
+   
     render() {
             const { filter, plants } = this.state;
             const lowercasedFilter = filter.toLowerCase();
@@ -84,11 +50,11 @@ class Plants extends React.Component {
                         <h2 className= 'postHeaderPink'>Search House Plant</h2>
                             <p className='explanation'> Click on the name of the plant to learn more</p>
                         <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
-                        <div className = 'allPlants'>
+                        {/* <div className = 'allPlants'>
                             {filteredData.map(item => (
                                 <div></div>
                                  ))}
-                                 </div> 
+                                 </div>  */}
 
               <PageFive
             
@@ -107,117 +73,4 @@ class Plants extends React.Component {
         }
     
     }
-    // class ModalExample extends React.Component {
-    //     constructor(props) {
-    //       super(props);
-    //       this.state = {
-    //         modal: false,
-    //         plants : plantList
-    //       };
-      
-    //       this.toggle = this.toggle.bind(this);
-    //     }
-      
-    //     toggle() {
-    //       this.setState({
-    //         modal: !this.state.modal,
-    //         plant: this.state.plantsz
-    //       });
-    //     }
-      
-    //     render() {
-    //       return (
-    //         <div>
-                
-    //           <Button color="danger" onClick={this.toggle, this.plant}>{this.props.buttonLabel}</Button>
-    //           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-    //             <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
-    //             <ModalBody>
-    //             <div>
-    //             {this.state.plants.map( item =>{
-    //                     return (
-    //                         <div key={item.id} >
-    //                             {/* <img  src={item.img} alt={item.name}/> */}
-    //                                               <p><b>Common Name: </b>{item.name}</p>
-    //                                               <p><b>Scientific Name: </b> <i>{item.scientificName}</i></p>
-    //                                               <p><b>Height: </b>{item.height}</p>
-    //                                               <p><b>Temperature: </b>{item.temperature}</p>
-    //                                               <p><b>Humidity: </b>{item.humidity}</p>
-    //                                               <p> <b>Bugs: </b>{item.bugs}</p>
-    //                                               <ul><b>Common Issues:</b>
-    //                                                 <div><p></p></div>
-    //                                                 {item.issues.map(item => (
-    //                                                   <li key={item}> <img src='https://i.imgur.com/vqgeRl4.png?2'/> {item}</li>
-    //                                                 ))}
-    //                                               </ul>
-
-    //                         </div>
-    //                     )
-    //                 })}
-               
-                                          
-    //            </div>                           
-    //             </ModalBody>
-    //             <ModalFooter>
-    //               <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
-    //               <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-    //             </ModalFooter>
-    //           </Modal>
-    //         </div>
-    //       );
-    //     }
-    //   }
-      
-    
     export default Plants
-//             <div>
-//                 <header></header>
-//                 <div>
-//                     <h1>Look thorugh the library of plant and search for plants but their name to find how to take care of them </h1>
-//                     <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
-//                     <div className = 'allPlants'>
-//                         {filteredData.map(item => (
-//                             <div className = 'plant' key={item.id}>
-//                                     <img className='cards' src={item.img} alt={item.name}/>
-//                                         <h3>{item.name}</h3>
-//                                         <p><b>Scientific Name: </b> <i>{item.scientificName}</i></p>
-//                                         <p><b>Height: </b>{item.height}</p>
-//                                         <p><b>Temperature: </b>{item.temperature}</p>
-//                                         <p><b>Humidity: </b>{item.humidity}</p>
-//                                         <p> <b>Bugs: </b>{item.bugs}</p>
-//                                         <ul><b>Common Issues:</b>
-//                                             <div><p></p></div>
-//                                             {item.issues.map(item => (
-//                                                 <li key={item}> <img src='https://i.imgur.com/vqgeRl4.png?2'/> {item}</li>
-//                                         ))}
-//                                          </ul>
-//                                 </div>
-//                              ))}
-//                         </div>
-//                     </div>
-//                 </div>
-         
-//         )
-//     }
-
-// }
-
-// export default Plants
-
-
-
-{/* <div className = 'plant' key={item.id}>
-                                    <img className='cards' src={item.img} alt={item.name}/>
-                                        <h3>{item.name}</h3>
-                                        <p><b>Scientific Name: </b> <i>{item.scientificName}</i></p>
-                                        <p><b>Height: </b>{item.height}</p>
-                                        <p><b>Temperature: </b>{item.temperature}</p>
-                                        <p><b>Humidity: </b>{item.humidity}</p>
-                                        <p> <b>Bugs: </b>{item.bugs}</p>
-                                        <ul><b>Common Issues:</b>
-                                            <div><p></p></div>
-                                            {item.issues.map(item => (
-                                                <li key={item}> <img src='https://i.imgur.com/vqgeRl4.png?2'/> {item}</li>
-                                        ))}
-                                         </ul>
-                                </div> */}

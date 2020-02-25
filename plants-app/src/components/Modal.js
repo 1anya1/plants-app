@@ -38,17 +38,13 @@ class PageFive extends Component {
 
 
   render() {
-    let imageBaseURL = "/images/";
-
-
     return (
-      <div className="container">
+      <div className="container" container-lg>
         
         
         <div className="row">
           {this.props.boxes.map((box,id, name) => (
             <div key={id} >
-                    {/* <div className="col-md-12"> */}
                       <small>
                         <div className="column">
                          
@@ -109,7 +105,7 @@ class PageFive extends Component {
                         <br />
                         
                       </small>
-              {/* </div> */}
+            
             </div>
           ))}
         </div>
