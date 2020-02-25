@@ -10,11 +10,12 @@ form, .post{
    color:gray;
    margin: 50px auto;
 }
+
+
+
 @media screen and (max-width: 800px){
-    form{
+    form, .post{
         width: 400px;
-     
-        background:white ;
         padding: 50px;
         border: white solid 1px;
         border-radius: 20px;
@@ -27,10 +28,8 @@ form, .post{
 
 
 @media screen and (max-width: 700px){
-    form{
+    form, .post{
         width: 300px;
-     
-        background:white ;
         padding: 50px;
         border: white solid 1px;
         border-radius: 20px;

@@ -305,5 +305,7 @@ button.modalButton{
    
    height: 400px;
    width: 300px;
+}.row{
+    grid-template-columns: 1fr;
 }
 }

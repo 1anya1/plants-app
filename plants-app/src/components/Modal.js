@@ -36,7 +36,8 @@ class PageFive extends Component {
     return (
       <div className="container">
        
-        <div className="row">
+        <div className="row" >
+        
           {this.props.boxes.map((box,id, name) => (
             <div key={id} >
                       <small>

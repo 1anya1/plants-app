@@ -103,8 +103,8 @@ class Tracker extends React.Component {
         <FormGroup check row>
           <Col sm={{ size: 10, offset: 2 }}>
             <Button
-            style={{ backgroundColor: 'white', fontFamily: 'Montserrat', color:'#8198ff'}}>
-            >
+            style={{ backgroundColor: 'white', fontFamily: 'Montserrat', color:'#8198ff', borderColor: '#8198ff'}}>
+            
                 Submit</Button>
           </Col>
         </FormGroup>
