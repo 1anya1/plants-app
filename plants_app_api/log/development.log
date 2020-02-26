@@ -2078,3 +2078,10 @@ Processing by DiseasesController#index as */*
 Completed 200 OK in 221ms (Views: 196.2ms | ActiveRecord: 13.2ms | Allocations: 1872)
 
 
+Started GET "/diseases" for ::1 at 2020-02-26 00:50:19 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (4.5ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 170ms (Views: 133.9ms | ActiveRecord: 4.5ms | Allocations: 1947)
+
+
