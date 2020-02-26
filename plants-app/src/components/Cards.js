@@ -88,7 +88,7 @@ class Cards extends Component {
                                 </ul>
                             </ModalBody>
                                 
-                        <ModalFooter>
+                        <ModalFooter >
                           <Button color="secondary" onClick={this.toggle} style={{backgroundColor: '#ff87b9', borderColor:'#ff87b9'}}>
                               Back to Plants
                           </Button>

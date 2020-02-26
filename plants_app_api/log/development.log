@@ -2113,3 +2113,45 @@ Processing by DiseasesController#index as */*
 Completed 200 OK in 166ms (Views: 150.1ms | ActiveRecord: 4.9ms | Allocations: 1872)
 
 
+Started GET "/forms" for ::1 at 2020-02-26 02:54:42 -0800
+Processing by FormsController#index as */*
+  [1m[36mForm Load (2.3ms)[0m  [1m[34mSELECT "forms".* FROM "forms"[0m
+  ↳ app/controllers/forms_controller.rb:8:in `index'
+Completed 200 OK in 66ms (Views: 57.9ms | ActiveRecord: 2.3ms | Allocations: 1291)
+
+
+Started GET "/diseases" for ::1 at 2020-02-26 03:27:29 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (1.6ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 68ms (Views: 57.8ms | ActiveRecord: 1.6ms | Allocations: 1947)
+
+
+Started GET "/forms" for ::1 at 2020-02-26 03:27:31 -0800
+Processing by FormsController#index as */*
+  [1m[36mForm Load (0.6ms)[0m  [1m[34mSELECT "forms".* FROM "forms"[0m
+  ↳ app/controllers/forms_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 24.6ms | ActiveRecord: 0.6ms | Allocations: 1217)
+
+
+Started GET "/diseases" for ::1 at 2020-02-26 03:28:17 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (1.0ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 54ms (Views: 52.5ms | ActiveRecord: 1.0ms | Allocations: 1872)
+
+
+Started GET "/diseases" for ::1 at 2020-02-26 03:28:41 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.7ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 38ms (Views: 35.6ms | ActiveRecord: 0.7ms | Allocations: 1875)
+
+
+Started GET "/diseases" for ::1 at 2020-02-26 03:29:21 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.4ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 62ms (Views: 52.5ms | ActiveRecord: 0.4ms | Allocations: 1872)
+
+
