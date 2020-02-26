@@ -3,6 +3,7 @@ import plantList from './plantList'
 import './Plants.css'
 import PageFive from "./Modal"
 import Search from './Search'
+// import MyFilteringComponent from './Authentication'
 
 
 
@@ -53,15 +54,17 @@ class Plants extends React.Component {
                             <p className='explanation'> Click on the name of the plant to learn more</p>
                         <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
                         <div className = 'allPlants'>
-                            
-                               
+                        {filteredData.map(item => (
                                    <PageFive
                                      boxes={this.state.plants}
                                      cbIndexes={this.state.id}
                                     modals={this.state.modals}
-                                    
-        
-                                    />
+                                   />
+                        ))}
+                                                  
+                       
+                                 
+                                 
                                
                                  </div> 
               

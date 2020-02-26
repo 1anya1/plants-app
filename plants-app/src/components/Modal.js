@@ -12,11 +12,17 @@ class PageFive extends Component {
     this.state = {
       modal: false,
       plants: plantList,
+      filter:'',
     };
 
     this.toggle = this.toggle.bind(this);
+    this.handleChange = this.handleChange.bind(this)
     
   }
+  handleChange = event => {
+    this.setState({ filter: event.target.value });
+  };
+
 
   toggle(box) {
     console.log(box);
@@ -33,21 +39,32 @@ class PageFive extends Component {
   }
 
   render() {
+    const { filter, plants } = this.state;
+    const lowercasedFilter = filter.toLowerCase();
+    const filteredData = plants.filter(item => {
+      return Object.keys(item).some(key =>
+        typeof item[key]=== 'string' && item[key].toLowerCase().includes(lowercasedFilter)
+      );
+    });
+    
     return (
       <div className="container">
        
-        <div className="row" >
+        <div className="row" style = {{maxWidth: 1600, justifyContent: 'center'}}>
         
           {this.props.boxes.map((box,id, name) => (
             <div key={id} >
                       <small>
+                      
                         <div className="column">
+
                          
                             <span className="text-center genus-name">
                               <img className = 'img' src={box.img}></img>
                               
                             </span>
-                          
+                            
+                              
                             <span>
                               <Button
                                 color="white"
@@ -96,6 +113,7 @@ class PageFive extends Component {
                                 </ModalFooter>
                               </Modal>
                             </span>
+                           
                         </div>
                         <br />
                         

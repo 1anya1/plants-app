@@ -124,6 +124,9 @@ button.modalButton{
     padding: 30px 0 0 0;
 
 }
+.plantName:hover{
+    color: #44c398;
+}
 .modal-header{
     align-items: center;
 }
@@ -288,24 +291,65 @@ button.modalButton{
     }
 }
 
+
+@media screen and  (max-width: 1200px ){
+    .column{
+        /* display:grid; 
+       align-self: center;
+       align-items: center;
+       align-content: center;
+       margin: 5px auto;
+       grid-template-columns: 1fr  ;
+       justify-content: center;
+       justify-items: center;
+       grid-column-gap: 20px;
+       grid-row-gap: 20px;
+       padding: 50px; 
+       background-color: #f4d2e0; */
+       height: 400px;
+       width: 400px;
+     
+   }
+
+}
+ @media screen and (max-width: 980px){
+    .column{
+        height: 400px;
+        width: 300px;
+    }
+ 
+ }
+ @media screen and (max-width: 780px){
+    .column{
+        height: 400px;
+        width: 500px;
+    }
+ 
+ }
+ @media screen and (max-width: 600px){
+    .column{
+        height: 400px;
+        width: 400px;
+    }
+ 
+ }
+
 @media screen and (max-width: 450px){
     
-  h1.header{
-    font-size: 50px;   
-    line-height: 34px;
-}
-.plantsCover{
-    padding: 50px 50px 50px 10px;
-}
-.quotePink{
-    padding:40px;
-    font-size: 25px;
-}
-.column{
-   
-   height: 400px;
-   width: 300px;
-}.row{
-    grid-template-columns: 1fr;
-}
-}
+    h1.header{
+      font-size: 50px;   
+      line-height: 34px;
+  }
+  .plantsCover{
+      padding: 50px 50px 50px 10px;
+  }
+  .quotePink{
+      padding:40px;
+      font-size: 25px;
+  }
+  .column{
+     
+     height: 400px;
+     width: 300px;
+  }
+  }
