@@ -2092,3 +2092,24 @@ Processing by FormsController#index as */*
 Completed 200 OK in 68ms (Views: 50.1ms | ActiveRecord: 5.2ms | Allocations: 1218)
 
 
+Started GET "/forms" for ::1 at 2020-02-26 02:32:15 -0800
+Processing by FormsController#index as */*
+  [1m[36mForm Load (1.1ms)[0m  [1m[34mSELECT "forms".* FROM "forms"[0m
+  ↳ app/controllers/forms_controller.rb:8:in `index'
+Completed 200 OK in 111ms (Views: 76.7ms | ActiveRecord: 1.1ms | Allocations: 1293)
+
+
+Started GET "/forms" for ::1 at 2020-02-26 02:33:47 -0800
+Processing by FormsController#index as */*
+  [1m[36mForm Load (2.8ms)[0m  [1m[34mSELECT "forms".* FROM "forms"[0m
+  ↳ app/controllers/forms_controller.rb:8:in `index'
+Completed 200 OK in 85ms (Views: 75.7ms | ActiveRecord: 2.8ms | Allocations: 1196)
+
+
+Started GET "/diseases" for ::1 at 2020-02-26 02:35:33 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (4.9ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 166ms (Views: 150.1ms | ActiveRecord: 4.9ms | Allocations: 1872)
+
+
