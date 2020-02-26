@@ -8,13 +8,14 @@ class Cards extends Component {
     this.state = {
       modal: null,
       filter:'',
+      cards:[]
       
     };
     this.toggle = this.toggle.bind(this);
     this.handleChange = this.handleChange.bind(this)
    
   }
-  componentWillMount = () => {
+  componentDidMount = () => {
     this.setState({
         cards: this.props.cards,
         

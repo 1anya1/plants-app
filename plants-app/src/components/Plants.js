@@ -10,25 +10,11 @@ class Plants extends React.Component {
     constructor(){
         super()
         this.state = {
-            // filter:'',
             plants : plantList,
-           
         }
-        // this.handleChange = this.handleChange.bind(this)
     }
-    // handleChange = event => {
-    //     this.setState({ filter: event.target.value });
-    //   };
-   
+ 
     render() {
-            // const { filter, plants } = this.state;
-            // const lowercasedFilter = filter.toLowerCase();
-            // const filteredData = plants.filter(item => {
-            //   return Object.keys(item).some(key =>
-            //     typeof item[key]=== 'string' && item[key].toLowerCase().includes(lowercasedFilter)
-            //   );
-            // });
-            
         return (
                 <div>
                     <header className='plantsCover'>
