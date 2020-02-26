@@ -6,13 +6,30 @@ class Cards extends Component {
     super(props);
 
     this.state = {
-      modal: null
+      modal: null,
+      filter:'',
+      
     };
     this.toggle = this.toggle.bind(this);
+    this.handleChange = this.handleChange.bind(this)
+   
   }
+  componentWillMount = () => {
+    this.setState({
+        cards: this.props.cards,
+        
+
+    })
+  }
+  handleChange = event => {
+    console.log(this.handleChange)
+    this.setState({ 
+      filter: event.target.value,
+    });
+  };
+
 
   toggle(card) {
-    console.log(card);
     if(this.state.modal){
       this.setState({
         modal: null
@@ -26,10 +43,19 @@ class Cards extends Component {
   }
 
   render() {
+    const { filter, cards } = this.state;
+    const lowercasedFilter = filter.toLowerCase();
+    const filteredData = cards.filter(item => {
+      return Object.keys(item).some(key =>
+        typeof item[key]=== 'string' && item[key].toLowerCase().includes(lowercasedFilter)
+      );
+    });
     return (
       <div className="container">
+        <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
         <div className="row" style = {{maxWidth: 1600, justifyContent: 'center'}}>
-          {this.props.cards.map((card,id) => (
+        {filteredData.map((card, id) => (
+          //  {this.props.cards.map((card,id) => (
             <div key={id} >
               <small>
                 <div className="column">
@@ -41,18 +67,13 @@ class Cards extends Component {
                         <h3 className= 'plantName'>{card.name}</h3>
                       </Button>
 
-                      <Modal
-                        style={{ zIndex: 100987977 }}
-                        isOpen={this.state.modal === card.id}
-                        toggle={this.toggle}
-                        className={this.props.className}
-                        >
+                      <Modal isOpen={this.state.modal === card.id} toggle={this.toggle}>
 
                           <ModalHeader toggle={this.toggle} cssModule={{'modal-title': 'w-100 text-center'}}>
                             <p className='plantName'> {card.name}</p>
                           </ModalHeader>
 
-                            <ModalBody>
+                            <ModalBody style={{color: 'gray'}}>
                               <img className='popUpCardPink' src={card.img} alt={card.name}/>
                               <p><b>Scientific Name: </b> <i>{card.scientificName}</i></p>
                               <p><b>Height: </b>{card.height}</p>
@@ -61,13 +82,13 @@ class Cards extends Component {
                               <p> <b>Bugs: </b>{card.bugs}</p>
                               <ul><b>Common Issues:</b>
                                 {card.issues.map(item => (
-                                  <li key={item} alt={card.name}> <img src='https://i.imgur.com/vqgeRl4.png?2'/> {item}</li>
+                                  <li key={item} > <img src='https://i.imgur.com/vqgeRl4.png?2' alt={card.name}/> {item}</li>
                                         ))}
                                 </ul>
                             </ModalBody>
                                 
                         <ModalFooter>
-                          <Button color="secondary" onClick={this.toggle}>
+                          <Button color="secondary" onClick={this.toggle} style={{backgroundColor: '#ff87b9', borderColor:'#ff87b9'}}>
                               Back to Plants
                           </Button>
                                 

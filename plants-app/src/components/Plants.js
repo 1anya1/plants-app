@@ -2,8 +2,7 @@ import React from 'react'
 import plantList from './plantList'
 import './Plants.css'
 import Cards from "./Cards"
-import Search from './Search'
-// import MyFilteringComponent from './Authentication'
+
 
 
 
@@ -52,15 +51,12 @@ class Plants extends React.Component {
                 <div className='mainPink'>
                         <h2 className= 'postHeaderPink'>Search House Plant</h2>
                         <p className='explanation'> Click on the name of the plant to learn more</p>
-                        <input className = 'searchBar' placeholder='search' />
                         <div className = 'allPlants'>
                             <Cards cards={this.state.plants}/>
                        </div>        
                         </div>
                 </div>
-             
             )
         }
-    
     }
     export default Plants
