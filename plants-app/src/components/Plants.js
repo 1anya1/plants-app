@@ -28,7 +28,8 @@ class Plants extends React.Component {
                             <p><b id='pink'style={{fontSize: 30}}>Houseplants</b> or indoor plants are plants that grow indoors. 
                                 Houseplants are popular because they are relatively easy to take care of, provide health benefits 
                                 and can be used in a variety of indoor décor themes.</p>
-                            <h3 className ='quote' id='pink'> "Healthy plants will be less likely to to fall prey to incects than stressed and unhalthy plants."</h3>
+                            <h3 className ='quote' id='pink'> "Plants provide health benefits 
+                                and can be used in a variety of indoor décor themes."</h3>
                             
                             <p><b id='pink'style={{fontSize: 30}}>If</b> you’re caring for 
                                 indoor plants for the first time, our ultimate guide will provide you with the necessary 
