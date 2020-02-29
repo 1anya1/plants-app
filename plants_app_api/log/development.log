@@ -3727,3 +3727,281 @@ Processing by FormsController#index as */*
 Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.6ms | Allocations: 1291)
 
 
+Started GET "/forms" for ::1 at 2020-02-29 05:43:21 -0800
+Processing by FormsController#index as */*
+  [1m[36mForm Load (5.6ms)[0m  [1m[34mSELECT "forms".* FROM "forms"[0m
+  ↳ app/controllers/forms_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 19.5ms | ActiveRecord: 5.6ms | Allocations: 1196)
+
+
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (118.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "plants_app_api_development"[0m
+  [1m[35m (35.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "plants_app_api_test"[0m
+  [1m[35m (234.4ms)[0m  [1m[35mCREATE DATABASE "plants_app_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (98.8ms)[0m  [1m[35mCREATE DATABASE "plants_app_api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (5.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (4.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "diseases" CASCADE[0m
+  [1m[35m (50.7ms)[0m  [1m[35mCREATE TABLE "diseases" ("id" bigserial primary key, "name" character varying, "findThem" character varying, "treatment" character varying, "img" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "forms" CASCADE[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "forms" ("id" bigserial primary key, "date" date, "title" character varying, "notes" character varying, "img" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200225072523)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200222160310);
+
+[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-02-29 13:46:34.426503"], ["updated_at", "2020-02-29 13:46:34.426503"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "4d329e0543795175895689aa163e38d523fc8c58"], ["created_at", "2020-02-29 13:46:34.439518"], ["updated_at", "2020-02-29 13:46:34.439518"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "diseases" CASCADE[0m
+  [1m[35m (41.3ms)[0m  [1m[35mCREATE TABLE "diseases" ("id" bigserial primary key, "name" character varying, "findThem" character varying, "treatment" character varying, "img" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "forms" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "forms" ("id" bigserial primary key, "date" date, "title" character varying, "notes" character varying, "img" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200225072523)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200222160310);
+
+[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-02-29 13:46:34.559437"], ["updated_at", "2020-02-29 13:46:34.559437"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.9ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-02-29 13:46:34.567480"], ["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "4d329e0543795175895689aa163e38d523fc8c58"], ["created_at", "2020-02-29 13:46:34.575502"], ["updated_at", "2020-02-29 13:46:34.575502"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (1.1ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Root Rot"], ["findThem", "This is the #1 plant killer and is casused by overwatering. This is a fungal infection that targets the roots of the plant turning it's leaves yellow to brown eventually collapsing it. Affected roots will turn soft and brown."], ["treatment", "Remove the plant from soil to check the roots. Using sharp clean sheers cut off affected roots, treat with fungicide, and repot into new soil."], ["img", "https://i.imgur.com/VsH68v1.png"], ["created_at", "2020-02-29 13:46:34.663398"], ["updated_at", "2020-02-29 13:46:34.663398"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.5ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Leaf Spot"], ["findThem", "This is characterized by brown or black spots on the leaves of the plant that are usually surrounded by yellow halo, eventually kill the leaf. This is caused by overwatering, overcrowded conditions."], ["treatment", "Stop misting your plant, remove any affected leaves and treat your plant with fungicide."], ["img", "https://i.imgur.com/qmdb9KL.png"], ["created_at", "2020-02-29 13:46:34.674738"], ["updated_at", "2020-02-29 13:46:34.674738"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.8ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Gray Mold"], ["findThem", "Typically you will find this mold anywhere or all over the plant especially in cool and damp conditions."], ["treatment", "If this happens, water your plant from below, remove affected areas, and treat your plant with fungicide. Water and mist your plant less frequently"], ["img", "https://i.imgur.com/AwtKGPT.png"], ["created_at", "2020-02-29 13:46:34.682500"], ["updated_at", "2020-02-29 13:46:34.682500"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.7ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Crown  and Stem Rot"], ["findThem", "The lower part of the plant will be dark, mushy, and rotten and is caused by overwatering and cold conditions."], ["treatment", "You can try to save your plant by removing the affected areas, treating it with fungicide, and moving it to well vented warm environment."], ["img", "https://i.imgur.com/Bv0wxOE.png"], ["created_at", "2020-02-29 13:46:34.692329"], ["updated_at", "2020-02-29 13:46:34.692329"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.6ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Powdery Mildew"], ["findThem", "This mildew resembles white dust and usually occurs in overcrowded, underwatered plants. It can also be triggered by hot and humid locations."], ["treatment", "Remove affected leaves from the plant and increase air circulation."], ["img", "https://i.imgur.com/ookSOHA.png"], ["created_at", "2020-02-29 13:46:34.701767"], ["updated_at", "2020-02-29 13:46:34.701767"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.5ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Oedema"], ["findThem", "These are growths on the botom side of the leaf. It is caused by waterlogging, high humidity, and low light."], ["treatment", "Water your plant less frequently and move it to a brighter spot."], ["img", "https://i.imgur.com/hSb4pWg.png"], ["created_at", "2020-02-29 13:46:34.710920"], ["updated_at", "2020-02-29 13:46:34.710920"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.4ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sooty Mold"], ["findThem", "This black fungus grows on the waste on insects. This mold blocks light and plant's pores."], ["treatment", "Clean affected parts of the plant with lukewarm cloth and check for insect infestation."], ["img", "https://i.imgur.com/L2NNSUq.png"], ["created_at", "2020-02-29 13:46:34.723876"], ["updated_at", "2020-02-29 13:46:34.723876"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (1.6ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Viruses"], ["findThem", "Signs include distorted growth, yellow leaves, and white streaks in the flower. Viruses are usually transmitted by insects."], ["treatment", "There is nothing you can do about it."], ["img", "https://i.imgur.com/v8htwsk.png"], ["created_at", "2020-02-29 13:46:34.731378"], ["updated_at", "2020-02-29 13:46:34.731378"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mForm Create (1.4ms)[0m  [1m[32mINSERT INTO "forms" ("date", "title", "notes", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["date", "2020-02-05"], ["title", "Monstera"], ["notes", "Checked the moisture on the plant. Looks like the soil has dried out, time to water. New leaf growth is coming in, the plant is getting better."], ["img", "https://i.imgur.com/thomyxv.jpg"], ["created_at", "2020-02-29 13:46:34.758590"], ["updated_at", "2020-02-29 13:46:34.758590"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.5ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Root Rot"], ["findThem", "This is the #1 plant killer and is casused by overwatering. This is a fungal infection that targets the roots of the plant turning it's leaves yellow to brown eventually collapsing it. Affected roots will turn soft and brown."], ["treatment", "Remove the plant from soil to check the roots. Using sharp clean sheers cut off affected roots, treat with fungicide, and repot into new soil."], ["img", "https://i.imgur.com/VsH68v1.png"], ["created_at", "2020-02-29 13:46:45.951629"], ["updated_at", "2020-02-29 13:46:45.951629"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.2ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Leaf Spot"], ["findThem", "This is characterized by brown or black spots on the leaves of the plant that are usually surrounded by yellow halo, eventually kill the leaf. This is caused by overwatering, overcrowded conditions."], ["treatment", "Stop misting your plant, remove any affected leaves and treat your plant with fungicide."], ["img", "https://i.imgur.com/qmdb9KL.png"], ["created_at", "2020-02-29 13:46:45.956193"], ["updated_at", "2020-02-29 13:46:45.956193"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.2ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Gray Mold"], ["findThem", "Typically you will find this mold anywhere or all over the plant especially in cool and damp conditions."], ["treatment", "If this happens, water your plant from below, remove affected areas, and treat your plant with fungicide. Water and mist your plant less frequently"], ["img", "https://i.imgur.com/AwtKGPT.png"], ["created_at", "2020-02-29 13:46:45.960474"], ["updated_at", "2020-02-29 13:46:45.960474"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.2ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Crown  and Stem Rot"], ["findThem", "The lower part of the plant will be dark, mushy, and rotten and is caused by overwatering and cold conditions."], ["treatment", "You can try to save your plant by removing the affected areas, treating it with fungicide, and moving it to well vented warm environment."], ["img", "https://i.imgur.com/Bv0wxOE.png"], ["created_at", "2020-02-29 13:46:45.964671"], ["updated_at", "2020-02-29 13:46:45.964671"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.2ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Powdery Mildew"], ["findThem", "This mildew resembles white dust and usually occurs in overcrowded, underwatered plants. It can also be triggered by hot and humid locations."], ["treatment", "Remove affected leaves from the plant and increase air circulation."], ["img", "https://i.imgur.com/ookSOHA.png"], ["created_at", "2020-02-29 13:46:45.967913"], ["updated_at", "2020-02-29 13:46:45.967913"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.2ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Oedema"], ["findThem", "These are growths on the botom side of the leaf. It is caused by waterlogging, high humidity, and low light."], ["treatment", "Water your plant less frequently and move it to a brighter spot."], ["img", "https://i.imgur.com/hSb4pWg.png"], ["created_at", "2020-02-29 13:46:45.971038"], ["updated_at", "2020-02-29 13:46:45.971038"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.6ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sooty Mold"], ["findThem", "This black fungus grows on the waste on insects. This mold blocks light and plant's pores."], ["treatment", "Clean affected parts of the plant with lukewarm cloth and check for insect infestation."], ["img", "https://i.imgur.com/L2NNSUq.png"], ["created_at", "2020-02-29 13:46:45.974154"], ["updated_at", "2020-02-29 13:46:45.974154"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.3ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Viruses"], ["findThem", "Signs include distorted growth, yellow leaves, and white streaks in the flower. Viruses are usually transmitted by insects."], ["treatment", "There is nothing you can do about it."], ["img", "https://i.imgur.com/v8htwsk.png"], ["created_at", "2020-02-29 13:46:45.979259"], ["updated_at", "2020-02-29 13:46:45.979259"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mForm Create (0.3ms)[0m  [1m[32mINSERT INTO "forms" ("date", "title", "notes", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["date", "2020-02-05"], ["title", "Monstera"], ["notes", "Checked the moisture on the plant. Looks like the soil has dried out, time to water. New leaf growth is coming in, the plant is getting better."], ["img", "https://i.imgur.com/thomyxv.jpg"], ["created_at", "2020-02-29 13:46:45.994334"], ["updated_at", "2020-02-29 13:46:45.994334"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (53.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "plants_app_api_development"[0m
+  [1m[35m (30.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "plants_app_api_test"[0m
+  [1m[35m (235.6ms)[0m  [1m[35mCREATE DATABASE "plants_app_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (75.1ms)[0m  [1m[35mCREATE DATABASE "plants_app_api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "diseases" CASCADE[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "diseases" ("id" bigserial primary key, "name" character varying, "findThem" character varying, "treatment" character varying, "img" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "forms" CASCADE[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "forms" ("id" bigserial primary key, "date" date, "title" character varying, "notes" character varying, "img" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200225072523)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200222160310);
+
+[0m
+  [1m[35m (72.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-02-29 13:47:31.432215"], ["updated_at", "2020-02-29 13:47:31.432215"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "4d329e0543795175895689aa163e38d523fc8c58"], ["created_at", "2020-02-29 13:47:31.449039"], ["updated_at", "2020-02-29 13:47:31.449039"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "diseases" CASCADE[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "diseases" ("id" bigserial primary key, "name" character varying, "findThem" character varying, "treatment" character varying, "img" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "forms" CASCADE[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "forms" ("id" bigserial primary key, "date" date, "title" character varying, "notes" character varying, "img" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200225072523)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200222160310);
+
+[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-02-29 13:47:31.522965"], ["updated_at", "2020-02-29 13:47:31.522965"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-02-29 13:47:31.528243"], ["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "4d329e0543795175895689aa163e38d523fc8c58"], ["created_at", "2020-02-29 13:47:31.533201"], ["updated_at", "2020-02-29 13:47:31.533201"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (1.9ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Root Rot"], ["findThem", "This is the #1 plant killer and is casused by overwatering. This is a fungal infection that targets the roots of the plant turning it's leaves yellow to brown eventually collapsing it. Affected roots will turn soft and brown."], ["treatment", "Remove the plant from soil to check the roots. Using sharp clean sheers cut off affected roots, treat with fungicide, and repot into new soil."], ["img", "https://i.imgur.com/VsH68v1.png"], ["created_at", "2020-02-29 13:47:31.573876"], ["updated_at", "2020-02-29 13:47:31.573876"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.2ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Leaf Spot"], ["findThem", "This is characterized by brown or black spots on the leaves of the plant that are usually surrounded by yellow halo, eventually kill the leaf. This is caused by overwatering, overcrowded conditions."], ["treatment", "Stop misting your plant, remove any affected leaves and treat your plant with fungicide."], ["img", "https://i.imgur.com/qmdb9KL.png"], ["created_at", "2020-02-29 13:47:31.579089"], ["updated_at", "2020-02-29 13:47:31.579089"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.2ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Gray Mold"], ["findThem", "Typically you will find this mold anywhere or all over the plant especially in cool and damp conditions."], ["treatment", "If this happens, water your plant from below, remove affected areas, and treat your plant with fungicide. Water and mist your plant less frequently"], ["img", "https://i.imgur.com/AwtKGPT.png"], ["created_at", "2020-02-29 13:47:31.582102"], ["updated_at", "2020-02-29 13:47:31.582102"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.2ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Crown  and Stem Rot"], ["findThem", "The lower part of the plant will be dark, mushy, and rotten and is caused by overwatering and cold conditions."], ["treatment", "You can try to save your plant by removing the affected areas, treating it with fungicide, and moving it to well vented warm environment."], ["img", "https://i.imgur.com/Bv0wxOE.png"], ["created_at", "2020-02-29 13:47:31.585243"], ["updated_at", "2020-02-29 13:47:31.585243"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.2ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Powdery Mildew"], ["findThem", "This mildew resembles white dust and usually occurs in overcrowded, underwatered plants. It can also be triggered by hot and humid locations."], ["treatment", "Remove affected leaves from the plant and increase air circulation."], ["img", "https://i.imgur.com/ookSOHA.png"], ["created_at", "2020-02-29 13:47:31.588586"], ["updated_at", "2020-02-29 13:47:31.588586"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.3ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Oedema"], ["findThem", "These are growths on the botom side of the leaf. It is caused by waterlogging, high humidity, and low light."], ["treatment", "Water your plant less frequently and move it to a brighter spot."], ["img", "https://i.imgur.com/hSb4pWg.png"], ["created_at", "2020-02-29 13:47:31.592599"], ["updated_at", "2020-02-29 13:47:31.592599"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.2ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sooty Mold"], ["findThem", "This black fungus grows on the waste on insects. This mold blocks light and plant's pores."], ["treatment", "Clean affected parts of the plant with lukewarm cloth and check for insect infestation."], ["img", "https://i.imgur.com/L2NNSUq.png"], ["created_at", "2020-02-29 13:47:31.605358"], ["updated_at", "2020-02-29 13:47:31.605358"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.2ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Viruses"], ["findThem", "Signs include distorted growth, yellow leaves, and white streaks in the flower. Viruses are usually transmitted by insects."], ["treatment", "There is nothing you can do about it."], ["img", "https://i.imgur.com/v8htwsk.png"], ["created_at", "2020-02-29 13:47:31.609247"], ["updated_at", "2020-02-29 13:47:31.609247"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mForm Create (0.5ms)[0m  [1m[32mINSERT INTO "forms" ("date", "title", "notes", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["date", "2020-02-05"], ["title", "Monstera"], ["notes", "Checked the moisture on the plant. Looks like the soil has dried out, time to water. New leaf growth is coming in, the plant is getting better."], ["img", "https://i.imgur.com/thomyxv.jpg"], ["created_at", "2020-02-29 13:47:31.621121"], ["updated_at", "2020-02-29 13:47:31.621121"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (3.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "diseases" CASCADE[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "diseases" ("id" bigserial primary key, "name" character varying, "findThem" character varying, "treatment" character varying, "img" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "forms" CASCADE[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "forms" ("id" bigserial primary key, "date" date, "title" character varying, "notes" character varying, "img" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (3.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "diseases" CASCADE[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "diseases" ("id" bigserial primary key, "name" character varying, "findThem" character varying, "treatment" character varying, "img" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "forms" CASCADE[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "forms" ("id" bigserial primary key, "date" date, "title" character varying, "notes" character varying, "img" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2020-02-29 13:48:05.891458"], ["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-02-29 13:48:05.899367"], ["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.7ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Root Rot"], ["findThem", "This is the #1 plant killer and is casused by overwatering. This is a fungal infection that targets the roots of the plant turning it's leaves yellow to brown eventually collapsing it. Affected roots will turn soft and brown."], ["treatment", "Remove the plant from soil to check the roots. Using sharp clean sheers cut off affected roots, treat with fungicide, and repot into new soil."], ["img", "https://i.imgur.com/VsH68v1.png"], ["created_at", "2020-02-29 13:48:11.877092"], ["updated_at", "2020-02-29 13:48:11.877092"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.2ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Leaf Spot"], ["findThem", "This is characterized by brown or black spots on the leaves of the plant that are usually surrounded by yellow halo, eventually kill the leaf. This is caused by overwatering, overcrowded conditions."], ["treatment", "Stop misting your plant, remove any affected leaves and treat your plant with fungicide."], ["img", "https://i.imgur.com/qmdb9KL.png"], ["created_at", "2020-02-29 13:48:11.881207"], ["updated_at", "2020-02-29 13:48:11.881207"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.3ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Gray Mold"], ["findThem", "Typically you will find this mold anywhere or all over the plant especially in cool and damp conditions."], ["treatment", "If this happens, water your plant from below, remove affected areas, and treat your plant with fungicide. Water and mist your plant less frequently"], ["img", "https://i.imgur.com/AwtKGPT.png"], ["created_at", "2020-02-29 13:48:11.884336"], ["updated_at", "2020-02-29 13:48:11.884336"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.2ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Crown  and Stem Rot"], ["findThem", "The lower part of the plant will be dark, mushy, and rotten and is caused by overwatering and cold conditions."], ["treatment", "You can try to save your plant by removing the affected areas, treating it with fungicide, and moving it to well vented warm environment."], ["img", "https://i.imgur.com/Bv0wxOE.png"], ["created_at", "2020-02-29 13:48:11.888008"], ["updated_at", "2020-02-29 13:48:11.888008"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.2ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Powdery Mildew"], ["findThem", "This mildew resembles white dust and usually occurs in overcrowded, underwatered plants. It can also be triggered by hot and humid locations."], ["treatment", "Remove affected leaves from the plant and increase air circulation."], ["img", "https://i.imgur.com/ookSOHA.png"], ["created_at", "2020-02-29 13:48:11.891083"], ["updated_at", "2020-02-29 13:48:11.891083"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.2ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Oedema"], ["findThem", "These are growths on the botom side of the leaf. It is caused by waterlogging, high humidity, and low light."], ["treatment", "Water your plant less frequently and move it to a brighter spot."], ["img", "https://i.imgur.com/hSb4pWg.png"], ["created_at", "2020-02-29 13:48:11.894298"], ["updated_at", "2020-02-29 13:48:11.894298"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.2ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sooty Mold"], ["findThem", "This black fungus grows on the waste on insects. This mold blocks light and plant's pores."], ["treatment", "Clean affected parts of the plant with lukewarm cloth and check for insect infestation."], ["img", "https://i.imgur.com/L2NNSUq.png"], ["created_at", "2020-02-29 13:48:11.897436"], ["updated_at", "2020-02-29 13:48:11.897436"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDisease Create (0.2ms)[0m  [1m[32mINSERT INTO "diseases" ("name", "findThem", "treatment", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Viruses"], ["findThem", "Signs include distorted growth, yellow leaves, and white streaks in the flower. Viruses are usually transmitted by insects."], ["treatment", "There is nothing you can do about it."], ["img", "https://i.imgur.com/v8htwsk.png"], ["created_at", "2020-02-29 13:48:11.900973"], ["updated_at", "2020-02-29 13:48:11.900973"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mForm Create (0.4ms)[0m  [1m[32mINSERT INTO "forms" ("date", "title", "notes", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["date", "2020-02-05"], ["title", "Monstera"], ["notes", "Checked the moisture on the plant. Looks like the soil has dried out, time to water. New leaf growth is coming in, the plant is getting better."], ["img", "https://i.imgur.com/thomyxv.jpg"], ["created_at", "2020-02-29 13:48:11.910804"], ["updated_at", "2020-02-29 13:48:11.910804"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/diseases" for ::1 at 2020-02-29 05:48:23 -0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.4ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 8.2ms | ActiveRecord: 4.6ms | Allocations: 6093)
+
+
+Started GET "/forms" for ::1 at 2020-02-29 05:48:32 -0800
+Processing by FormsController#index as */*
+  [1m[36mForm Load (2.1ms)[0m  [1m[34mSELECT "forms".* FROM "forms"[0m
+  ↳ app/controllers/forms_controller.rb:8:in `index'
+Completed 200 OK in 26ms (Views: 12.1ms | ActiveRecord: 12.2ms | Allocations: 4591)
+
+
