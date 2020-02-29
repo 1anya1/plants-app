@@ -63,6 +63,20 @@ class Tracker extends React.Component {
     console.log(this.state.posts)
     return (
         <div>
+            <header className='cover homeTracker'>
+                <div className='title'>
+                    <h1 className='header1'>PLANT</h1> 
+                    <h1 className='header1' ><i>TRACKER</i> </h1> 
+                  </div>
+            </header>
+
+            <div className='intro purple'>
+                    <p><b id='purple'style={{fontSize: 30}}>Keep</b> track of your plant progress here. 
+                    Add the date and a note to the status of your plants. If you want to you can also add a 
+                    photo that you can reference to later.</p>
+            </div>
+
+
       <Form className='form' onSubmit={this.handleSubmit}
       style={{ backgroundColor: '#e8ecff', fontFamily: 'Montserrat'}}>
 
@@ -118,7 +132,7 @@ class Tracker extends React.Component {
                   <h1>{ post.title }</h1>
                   <h4>{ post.date}</h4>
                   <p>{ post.notes}</p>
-                  <img 
+                  <img  className='trackerImage'
                   style={{ width: 200, fontFamily: 'Montserrat', color:'#8198ff'}}
                   src={ post.img}></img>
                   
