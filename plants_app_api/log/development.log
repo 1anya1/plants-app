@@ -3720,3 +3720,10 @@ Processing by FormsController#index as */*
 Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 1196)
 
 
+Started GET "/forms" for ::1 at 2020-02-29 05:40:04 -0800
+Processing by FormsController#index as */*
+  [1m[36mForm Load (0.6ms)[0m  [1m[34mSELECT "forms".* FROM "forms"[0m
+  ↳ app/controllers/forms_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.6ms | Allocations: 1291)
+
+

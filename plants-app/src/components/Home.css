@@ -9,7 +9,7 @@
     border-radius: 5px;
     filter:drop-shadow(8px 8px 10px rgba(237, 240, 77, 0.801) );
     display: grid;
-    margin: 30px auto 100px;
+    margin: 50px auto;
     border:  #44c398 3px solid;
 }
 a.buttonGreen{
@@ -114,6 +114,13 @@ a.buttonGreen{
     padding: 100px 0;
 }
 
+.footer{
+    padding: 50px;
+    font-family: 'Montserrat';
+    color: gray;
+    font-size: 15px;
+    background-color:rgba(237, 240, 77, 0.801);
+}
 
   @media screen and (max-width: 3000px){
     .backgroundColor, .intro{
