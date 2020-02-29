@@ -117,7 +117,7 @@ class Tracker extends React.Component {
                   <h4>{ post.date}</h4>
                   <p>{ post.notes}</p>
                   <img 
-                  style={{ width: 100, fontFamily: 'Montserrat', color:'#8198ff'}}
+                  style={{ width: 200, fontFamily: 'Montserrat', color:'#8198ff'}}
                   src={ post.img}></img>
                   
               </div>
