@@ -15,16 +15,16 @@ class Home extends React.Component{
                 <div className='intro home'>
                     <p><b style={{color: '#0bbd86', fontSize: 30}}>Sun</b>, water and soil are crucial to the life of 
                     house plants. Most plants you purchase will come with a quick reference guide. But do you really 
-                    know what your plant needs? </p>
+                    know what your plant needs?  </p>
                          <div className='imagesHome'>
                              <div> <img style={{height:50}} src='https://i.imgur.com/TS5uE6r.png'></img></div>
                              <div> <img style={{height:50}} src='https://i.imgur.com/TS5uE6r.png'></img></div>
                              <div> <img style={{height:50}} src='https://i.imgur.com/TS5uE6r.png'></img></div>
                          </div>
 
-                    <p><b style={{color: '#0bbd86', fontSize: 30}}>Plantly</b> is a house plant app that has it all. 
-                    Search common house plants, learn about their care, gain understanding on how to identify 
-                    deisease and common pests.</p>
+                    <p><b style={{color: '#0bbd86', fontSize: 30}}>Keeping</b> plants around the house isn’t as scary as you might think; you 
+                    just need to know what they like in order to keep your indoor garden both happy and green. Plantly is a house plant app that has it all. 
+                    Search common house plants, learn about plant care and gain understanding on how to identify deisease and common pests.</p>
                         <div><img  className= "banner" src="https://i.imgur.com/ZVbCAnD.png"></img></div>
                         <button className = 'home-button'><Link to="/plants" className='buttonGreen'>Discover House Plants</Link></button>
                     
