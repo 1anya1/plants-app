@@ -35,8 +35,8 @@ class Plants extends React.Component {
                                 information to allow your green friends to thrive.</p> 
                         </div>          
                         <div className='backgroundColor' id='lightPink'>
-                            <h2 className= 'postHeaderPink'>Search House Plant</h2>
-                                <p className='explanation'> Click on the name of the plant to learn more</p>
+                            <h2 className= 'header2' id='pink'>Search House Plant</h2>
+                                <h3 className='header3'> Click on the name of the plant to learn more</h3>
                                     <div className = 'allPlants'>
                                         <Cards cards={this.state.plants}/>
                                     </div>        

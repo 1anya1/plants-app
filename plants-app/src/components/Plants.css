@@ -1,6 +1,5 @@
 .plantsCover{
-    background-image: url('https://i.imgur.com/cZDaNzb.png');
-    
+    background-image: url('https://i.imgur.com/cZDaNzb.png');   
 }
 #lightPink{
     background-color: #f4d2e0;
@@ -8,24 +7,6 @@
 #pink{
     color:#ff87b9 ;
 }
-.column{
-    display:grid; 
-    align-self: center;
-    align-items: center;
-    align-content: center;
-    margin: 5px auto;
-    grid-template-columns: 1fr  ;
-    justify-content: center;
-    justify-items: center;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    padding: 50px; 
-    background-color: #f4d2e0;
-    height: 400px;
-    width: 300px;
-  
-}
-
 .searchBar{
     display: flex;
     padding: 11px;
@@ -33,46 +14,20 @@
     margin: 50px  auto;
     outline: none;
 }
-#pink{
-    color:#ff87b9 ;
-}
-/* .postHeaderPink{
-    color:#ff87b9 ;
-    font-size: 50px;
-    text-align: center;
-    margin:0;
-    padding: 100px  0 0 0 ;
-    font-family: 'Montserrat';
-
-
-} */
-
-.explanation{
-    font-size: 21px;
-    text-align: center;
-    font-family: 'Montserrat';
-    color:gray;
-}
-
-.pop{
+.column{
+    display:grid; 
     justify-content: center;
     justify-items: center;
-    padding: 50px;
-    border: rgb(187, 181, 181) solid 1px;
-    box-shadow:pink;
-    border-radius: 20px;
-    background-color: white;
-    
-}
-.column{
+    padding: 50px; 
     background-color: white; 
     border: white solid 1px;
     border-radius: 20px;
-    filter:drop-shadow(8px 8px 10px rgb(177, 174, 174) );
+    filter:drop-shadow(8px 8px 10px rgba(237, 240, 77, 0.801) );
     margin: 30px;
     color:gray;
+    height: 400px;
+    width: 300px;
 }
-
 .img{
     display: grid;
     margin: 5px auto;
@@ -97,85 +52,6 @@ ul{
 li{
     list-style-type: none;
 }
-button.modalButton{
-    display: flex;
-    margin: 10px auto;
-    border: white 1px solid; 
-    background-color: white;
-}
-.plantName{
-    font-family: 'Bungee';
-    color:#ff87b9;
-    font-size: 25px;
-    text-align: center;
-    padding: 30px 0 0 0;
-
-}
-.plantName:hover{
+/* .itemname.hover:hover{
     color: #44c398;
-}
-.modal-header{
-    align-items: center;
-}
-
-@media screen and (max-width: 600px){
-  .pest{
-      margin: 20px 0;  
-    }
-    .header{
-        font-size: 60px;
-
-    }
-    .logo{
-        width: 80px;
-    }
-    .explanation{
-        font-size: 16px;
-        text-align: center;
-        font-family: 'Montserrat';
-        color:gray;
-    }
-}
-
-
-@media screen and  (max-width: 1200px ){
-    .column{
-       height: 400px;
-       width: 400px;
-     
-   }
-
-}
- @media screen and (max-width: 980px){
-    .column{
-        height: 400px;
-        width: 300px;
-    }
- 
- }
- @media screen and (max-width: 780px){
-    .column{
-        height: 400px;
-        width: 500px;
-    }
- 
- }
- @media screen and (max-width: 600px){
-    .column{
-        height: 400px;
-        width: 400px;
-    }
- 
- }
-
-@media screen and (max-width: 450px){
-    
-  .plantsCover{
-      padding: 50px 50px 50px 10px;
-  }
-  .column{
-     
-     height: 400px;
-     width: 300px;
-  }
-  }
+} */

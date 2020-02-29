@@ -11,7 +11,6 @@ class Home extends React.Component{
                         <h1 className='header1'>WELCOME TO</h1> 
                         <h1 className='header1' ><i>PLANTLY</i> </h1> 
                     </div>
-                        {/* <h4 className='header3'> One stop resource for plant care 💜</h4> */}
                 </header>
                 <div className='intro home'>
                     <p><b style={{color: '#0bbd86', fontSize: 30}}>Sun</b>, water and soil are crucial to the life of 

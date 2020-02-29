@@ -3090,3 +3090,24 @@ Processing by DiseasesController#index as */*
 Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.4ms | Allocations: 1872)
 
 
+Started GET "/diseases" for ::1 at 2020-02-29 02:49:11 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.9ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 17.8ms | ActiveRecord: 0.9ms | Allocations: 1947)
+
+
+Started GET "/diseases" for ::1 at 2020-02-29 02:49:25 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.6ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 36ms (Views: 35.4ms | ActiveRecord: 0.6ms | Allocations: 1873)
+
+
+Started GET "/diseases" for ::1 at 2020-02-29 02:50:28 -0800
+Processing by DiseasesController#index as */*
+  [1m[36mDisease Load (0.3ms)[0m  [1m[34mSELECT "diseases".* FROM "diseases"[0m
+  ↳ app/controllers/diseases_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 1873)
+
+

@@ -63,17 +63,35 @@ a.buttonGreen{
     color: white;
     font-family: 'Bungee';
 }
+.header2{
+    font-size: 50px;
+    text-align: center;
+    margin:0;
+    padding: 100px  0 0 0 ;
+    font-family: 'Montserrat';
+}
+.header3{
+    font-family: 'Montserrat';
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    font-weight: bolder
+    
+}
 .quote{
     padding: 30px;
     font-size: 50px;
     font-family: 'Montserrat';
 
 }
-.header3{
-    font-family: 'Montserrat';
-    color: white;
-    
+.itemName{
+    font-family: 'Bungee';
+    font-size: 25px;
+    text-align: center;
+    padding: 30px 0 0 0;
+
 }
+
 
 
 
@@ -84,7 +102,7 @@ a.buttonGreen{
     .header{
         padding: 0 400px;
     }
-    .header3, .title{
+    .title{
         padding-left: 400px;
     }
   }
@@ -92,7 +110,7 @@ a.buttonGreen{
     .backgroundColor, .intro{
         padding: 100px 300px;
     }
-    .header3, .title{
+    .title{
         padding-left: 300px;
     }
     .header1{
@@ -109,7 +127,7 @@ a.buttonGreen{
     .header1{
         font-size: 100px;
     }
-    .header3, .title{
+    .title{
         padding-left: 200px;
     }
   }
@@ -120,7 +138,7 @@ a.buttonGreen{
     .cover{
         height: 300px;
     }
-    .header3, .title{
+    .title{
         padding-left: 150px;
     }
     .header1{
@@ -136,16 +154,16 @@ a.buttonGreen{
     }
     .quote{
         font-size: 30px;
-  }
-  .header1{
-    font-size: 70px;
-}
-  .header3, .title{
+    }
+    .header1{
+        font-size: 70px;
+    }
+    .title{
         padding-left: 100px;
     }
-  .cover{
+    .cover{
     height: 250px;
-}
+    }
   }
   @media screen and (max-width: 600px){
   .pest{
@@ -159,7 +177,7 @@ a.buttonGreen{
         padding: 50px 70px;
     }
   
-    .header3, .title{
+    .title{
         padding-left: 70px;
     }
     .quote{
@@ -179,7 +197,7 @@ a.buttonGreen{
     .backgroundColor, .intro{
         padding: 50px 50px;
     }
-    .header3, .title{
+    .title{
         padding-left: 50px;
     }
     .quote{

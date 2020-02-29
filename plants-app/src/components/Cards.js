@@ -56,7 +56,6 @@ class Cards extends Component {
         <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
         <div className="row" style = {{maxWidth: 1600, justifyContent: 'center'}}>
         {filteredData.map((card, id) => (
-          //  {this.props.cards.map((card,id) => (
             <div key={id} >
               <small>
                 <div className="column">
@@ -65,13 +64,13 @@ class Cards extends Component {
                     </span>
                     <span>
                       <Button color="white" size="lg" onClick={this.toggle.bind(this, card)}>
-                        <h3 className= 'plantName'>{card.name}</h3>
+                        <h3 className='itemName hover' id='pink'>{card.name}</h3>
                       </Button>
 
                       <Modal isOpen={this.state.modal === card.id} toggle={this.toggle}>
 
                           <ModalHeader toggle={this.toggle} cssModule={{'modal-title': 'w-100 text-center'}}>
-                            <p className='plantName'> {card.name}</p>
+                            <p className='itemName' id='pink'> {card.name}</p>
                           </ModalHeader>
 
                             <ModalBody style={{color: 'gray'}}>
