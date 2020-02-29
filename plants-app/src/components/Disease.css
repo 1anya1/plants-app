@@ -1,19 +1,12 @@
-.diseaseCover{
+.diseasePage{
     background-image: url('https://i.imgur.com/OtjazOa.png');
-    padding: 50px 50px 50px 100px;
-    display: grid;
-    justify-content: start;
-    justify-items: center;
 }
-.intro {
-    background-color: white;
-}
+
 #purple{
-    background-color: #d4dbfc;
-}
-#purpleFont{
     color: #8198ff;
 }
+/* background-color: #d4dbfc; */
+
 #purpleBorder{
     border-color: #8198ff;
 }
@@ -21,3 +14,15 @@
     background-color: #d4dbfc;
     color: #8198ff;
 }
+.subtitle{
+    font-family: 'Bungee';
+    display: grid;
+    margin: 0 auto;
+    justify-items: center;
+
+}
+@media screen and (max-width: 1100px){
+    .subtitle{
+        font-size: 18px;
+    }
+  }

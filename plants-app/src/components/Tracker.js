@@ -57,6 +57,8 @@ class Tracker extends React.Component {
        })
        .catch(error => console.log(error))
     }
+
+    
   render() {
     console.log(this.state.posts)
     return (

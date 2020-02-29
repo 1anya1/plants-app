@@ -1,44 +1,30 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import plantList from './plantList'
+import React, { Component } from 'react'
 
+class Search extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      plants: ""
+    }
+  }
+  
+  handleChange = (e) => {
+    this.setState({
+      plants: e.target.value
+    })
+    this.props.onChange(event.target.value)
+  }
+  
+  render() {
+    return (
+      <div>
+        <label htmlFor="filter">Filter by Poet: </label>
+        <input type="text" id="filter" 
+          value={this.state.plants} 
+          onChange={this.handleChange}/>
+      </div>
+      )
+  }
+}
 
-
-    const plants = plantList
-      function Search() {
-        const [searchTerm, setSearchTerm] = React.useState("");
-        const [searchResults, setSearchResults] = React.useState([]);
-        const handleChange = e => {
-          setSearchTerm(e.target.value);
-        };
-        React.useEffect(() => {
-          const results = plants.filter(plant =>{
-            return Object.keys(plant).some(key =>
-                typeof plant[key]=== 'string' && plant[key].toLowerCase().includes(searchTerm)
-              );
-          }
-           
-          );
-          setSearchResults(results);
-        }, [searchTerm]);
-        return (
-          <div className="App">
-            <input
-              type="text"
-              placeholder="Search"
-              value={searchTerm}
-              onChange={handleChange}
-            />
-            <ul>
-              {searchResults.map(item => (
-                <li>{item}</li>
-              ))}
-            </ul>
-          </div>
-        );
-      }
-    
-    
-export default Search
-
- 
+export default filterForm

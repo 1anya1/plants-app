@@ -6,9 +6,7 @@
   --headings-color: var(--#66b032);
 
 }
-h1{
-  margin: 0px;
-}
+
 .logo, .navbar-brand{
 width: 50px;
 }
@@ -67,3 +65,4 @@ form{
 .pests:hover {
   color: pink;
 }
+
