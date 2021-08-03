@@ -1,7 +1,15 @@
 
-.nav{
-    background-color: white;
+:root{
+    --peach: #D89687;
+    --white: #EAECE8;
+    --forest-green: #017260;
+    --peach: #D89687;
+    --turquise: #316879;
+    --periwinkle: #A7C3DF;
 }
+/* nav{
+    color: blue;
+} */
 
 .home-button {
     background-color: white;
@@ -13,29 +21,19 @@
     border:  #44c398 3px solid;
 }
 a.buttonGreen{
-    color: #44c398;
+    color: var(--peach);
     font-family: 'Bungee';
     
 }
 
-#root{
-    color: rgb(32, 32, 32);
-}
 .cover{
-    height: 500px; 
-}
-.homePage{
-    background-image: url('https://i.imgur.com/3GTWeTE.png');    
+    height: 60vh; 
+    top: -100px;
+    background-image: url('../img/home.jpeg'); 
+    position: relative;
+    z-index: -1;  
 }
 
-.imagesHome{
-    display: grid;
-    width: 60%;
-    grid-template-columns: .5fr .5fr .5fr;
-    padding: 30px 0;
-    margin: 0 auto;
-
-}
 .banner{
     width: 80%;
     display: grid;

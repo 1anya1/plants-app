@@ -1,0 +1,27 @@
+:root{
+    --peach: #D89687;
+    --white: #EAECE8;
+    --forest-green: #017260;
+    --peach: #D89687;
+    --turquise: #316879;
+    --periwinkle: #A7C3DF;
+}
+
+.navbar-brand{
+    background-image: url('..//img/logo.svg');
+    height: 1.5em;
+    width: 15%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  
+}
+.navbar-toggler{
+    border: unset !important;
+
+}
+.nav-link{
+    color: var(--forest-green) !important; 
+}
+.navbar-toggler-icon{
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='rgba%281, 114, 96, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important;
+}

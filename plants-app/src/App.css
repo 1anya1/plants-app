@@ -1,17 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 :root {
-  --background-color: var(-- #ebf7e3);
+  --background-color: var(-- #EAECE8);
   --button-color: var(--#9bd770);
   --font-color: var(--#1b3409);
   --headings-color: var(--#66b032);
 
+  --white: #EAECE8;
+  --green: #017260;
+  --peach: #D89687;
+  --turquise: #316879;
+  --periwinkle: #A7C3DF;
+
+
+}
+
+nav{
+  background-color: var(--turquise);
+  height: 200px;
+}
+
+
+/* nav{
+  background-color: var(--peach);
 }
 
 .logo, .navbar-brand{
 width: 50px;
 }
-.nav-link {
-  color: blue;
+.navink {
+  color: var(--green);
 }
 
 .link{
@@ -20,7 +37,7 @@ width: 50px;
 }
 .navLink{
   text-decoration: none;
-  color: #44c398;
+  color: var(--peach);
   font-family: 'Montserrat';
 
 }
@@ -32,12 +49,6 @@ width: 50px;
   justify-self: center;
   padding: 25px 100px;
   margin:  auto;
-  
-}
-#root {
-
-  font-family: 'Quicksand', ;
-
   
 }
 
@@ -65,4 +76,4 @@ form{
 .pests:hover {
   color: pink;
 }
-
+ */

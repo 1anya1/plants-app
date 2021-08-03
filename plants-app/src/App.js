@@ -32,7 +32,7 @@ const links = [
 
 const createNavItem = ({ href, text}) => (
   <NavItem>
-    <NavLink href={href} className="text-info" style={{fontSize: 18, fontWeight: 'bold'}}>{text}</NavLink>
+    <NavLink href={href}>{text}</NavLink>
   </NavItem>
 );
 
@@ -56,8 +56,8 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Navbar className="text-info" color="white" light expand="md">
-          <NavbarBrand href="/"><img className='logo' style={{width: 200}} src='https://i.imgur.com/ZcqvZ1m.png'></img></NavbarBrand>
+        <Navbar light expand="md">
+          <NavbarBrand href="/"></NavbarBrand>
           <NavbarToggler  onClick={this.toggle} />
           <Collapse  isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
