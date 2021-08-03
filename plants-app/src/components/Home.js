@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import './Home.css'
-import './Nav.css'
+import './Home.scss'
+import './Nav.scss'
 
 class Home extends React.Component{
     render() {
@@ -9,8 +9,6 @@ class Home extends React.Component{
             <div>
                  <header className='cover homePage'>
                      <div className='title'>
-                        <h1 className='header1'>WELCOME TO</h1> 
-                        <h1 className='header1' ><i>PLANTLY</i> </h1> 
                     </div>
                 </header>
                 <div className='intro home'>

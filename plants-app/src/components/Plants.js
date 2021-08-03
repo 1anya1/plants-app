@@ -1,6 +1,6 @@
 import React from 'react'
 import plantList from './plantList'
-import './Plants.css'
+import './Plants.scss'
 import Cards from "./Cards"
 
 

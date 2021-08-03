@@ -1,5 +1,5 @@
 import React from 'react'
-import './Disease.css'
+import './Disease.scss'
 
 class Disease extends React.Component {
     state = {

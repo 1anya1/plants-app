@@ -1,5 +1,5 @@
 import React from 'react';
-import './Tracker.css'
+import './Tracker.scss'
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 
