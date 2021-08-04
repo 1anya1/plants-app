@@ -2,7 +2,17 @@
 @import 'sass/fonts';
 @import 'sass/colors';
 @import  'sass/break-points';
+@import 'sass/base';
 body {
   margin: 0;
 
+}
+.intro{
+  padding: 50px 100px;
+  @include bp-large{
+    padding: 40px 50px;
+  }
+  @include bp-small{
+    padding: 30px 20px;
+  }
 }

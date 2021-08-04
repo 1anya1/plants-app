@@ -18,7 +18,7 @@ class Disease extends React.Component {
     render() {
         console.log(this.state.disease)
         return(
-            <div>
+            <div id ='main'>
                 <header className='cover diseasePage'>
                     <div className='title'>
                         <h1 className='header1' >  Plant</h1> 
