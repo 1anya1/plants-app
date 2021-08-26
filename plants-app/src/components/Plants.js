@@ -1,10 +1,10 @@
 import React from 'react'
 import plantList from './plantList'
 import './Plants.scss'
-// import Cards from "./Cards"
+import Cards from "./Cards"
 
 
-
+const icons = ['fertilizing.svg']
 
 class Plants extends React.Component {
     constructor(){
@@ -38,7 +38,7 @@ class Plants extends React.Component {
                             <h2 className= 'header2' id='pink'>Search House Plant</h2>
                                 <h3 className='header3'> Click on the name of the plant to learn more</h3>
                                     <div className = 'allPlants'>
-                                        {/* <Cards cards={this.state.plants}/> */}
+                                        <Cards cards={this.state.plants}/>
                                     </div>        
                         </div>
                 </div>

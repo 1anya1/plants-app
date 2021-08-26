@@ -2,9 +2,25 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import './Home.scss'
 import './Nav.scss'
+// import {ReactComponent as Sun} from '../img/svg/sun.svg'
+import mySVG from './Svg.js'
+
+
+const careType = [ 'Watering', 'Lighting','Propagating','Temperature','Humidity', 'Repotting', 'Fertilizing', 'Cleaning','Vacation Care'
+    ]
+
+const careList = careType.map((el,id)=>{
+    return <p className='care-list' key={id}>{el}</p>
+})
+
+
+const images = ['../img/svg/fertilizing.svg', '../img/svg/vacation.svg']
 
 class Home extends React.Component{
+    
     render() {
+        console.log(typeof mySVG)
+        console.log(careList)
         return (
             <div id='main'>
                  <header className='cover'>
@@ -13,6 +29,14 @@ class Home extends React.Component{
                     </h1>
                 </header>
                 <div className='intro'>
+                    <div>
+                        {careList}
+                        < mySVG.Sun/>
+                        
+                    
+                       
+                    </div>
+                    <img src ={require('../img/svg/vacation.svg').default} />
                     <p> Sun, water and soil are crucial to the life of 
                     house plants. Most plants you purchase will come with a quick reference guide. But do you really 
                     know what your plant needs? </p>

@@ -1,108 +1,86 @@
 import React, { Component } from "react";
+import Modal from './Modal';
 
 
-// class Cards extends Component {
-//   constructor(props) {
-//     super(props);
+class Cards extends Component {
+  constructor(props) {
+    super(props);
 
-//     this.state = {
-//       modal: null,
-//       filter:'',
-//       cards:[]
+    this.state = {
+      modal: null,
+      filter:'',
+      cards:[],
+      isOpen: false,
       
-//     };
-//     this.toggle = this.toggle.bind(this);
-//     this.handleChange = this.handleChange.bind(this)
+    };
+    this.toggle = this.toggle.bind(this);
+    this.handleChange = this.handleChange.bind(this)
+
    
-//   }
-//   componentDidMount = () => {
-//     this.setState({
-//         cards: this.props.cards,
+  }
+  componentDidMount = () => {
+    this.setState({
+        cards: this.props.cards,
         
 
-//     })
-//   }
-//   handleChange = event => {
-//     console.log(this.handleChange)
-//     this.setState({ 
-//       filter: event.target.value,
-//     });
-//   };
+    })
+  }
+  handleChange = event => {
+    console.log(this.handleChange)
+    this.setState({ 
+      filter: event.target.value,
+    });
+  };
+  handleClick() {
+    this.setState(prevState => ({
+      isOpen: !prevState.isOpen
+    }));
+  }
 
 
-//   toggle(card) {
-//     if(this.state.modal){
-//       this.setState({
-//         modal: null
-//       });
-//     } else{
-//       this.setState({
-//         modal: card.id
-//       });
-//     }
+  toggle(card) {
+    console.log(card)
+    if(this.state.modal){
+      this.setState({
+        modal: null
+      });
+    } else{
+      this.setState({
+        modal: card
+      });
+    }
       
-//   }
+  }
 
-//   render() {
-//     const { filter, cards } = this.state;
-//     const lowercasedFilter = filter.toLowerCase();
-//     const filteredData = cards.filter(item => {
-//       return Object.keys(item).some(key =>
-//         typeof item[key]=== 'string' && item[key].toLowerCase().includes(lowercasedFilter)
-//       );
-//     });
-//     return (
-//       <div className="container">
-//         <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
-//         <div className="row" style = {{maxWidth: 1600, justifyContent: 'center'}}>
-//         {filteredData.map((card, id) => (
-//             <div key={id} >
-//               <small>
-//                 <div className="column">
-//                     <span className="text-center genus-name">
-//                         <img className = 'img' src={card.img} alt={card.name}></img>
-//                     </span>
-//                     <span>
-//                       <Button color="white" size="lg" onClick={this.toggle.bind(this, card)}>
-//                         <h3 className='itemName hover' id='pink'>{card.name}</h3>
-//                       </Button>
+  render() {
+    const { filter, cards } = this.state;
+    const lowercasedFilter = filter.toLowerCase();
+    const filteredData = cards.filter(item => {
+      return Object.keys(item).some(key =>
+        typeof item[key]=== 'string' && item[key].toLowerCase().includes(lowercasedFilter)
+      );
+    });
+    return (
+     
+      <div className="container">
+        <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
+        <div className="row">
+        {filteredData.map((card, id) => (
+          <div className='card' key={card.name}>
+              <div className="image">
+                <img className = 'img' src={card.img} alt={card.name}></img>
+              </div>
+              <button onClick={this.toggle.bind(this, card)}>{card.name}</button>
+            </div>     
+            ))}
+        </div> 
+        <Modal modal= {this.state.modal} open={this.state.isOpen}/>
+      </div>
+  
+    
+    );
+  }
+}
+export default Cards;
 
-//                       <Modal isOpen={this.state.modal === card.id} toggle={this.toggle}>
-
-//                           <ModalHeader toggle={this.toggle} cssModule={{'modal-title': 'w-100 text-center'}}>
-//                             <p className='itemName' id='pink'> {card.name}</p>
-//                           </ModalHeader>
-
-//                             <ModalBody style={{color: 'gray'}}>
-//                               <img className='popUpCardPink' src={card.img} alt={card.name}/>
-//                               <p><b>Scientific Name: </b> <i>{card.scientificName}</i></p>
-//                               <p><b>Height: </b>{card.height}</p>
-//                               <p><b>Temperature: </b>{card.temperature}</p>
-//                               <p><b>Humidity: </b>{card.humidity}</p>
-//                               <p> <b>Bugs: </b>{card.bugs}</p>
-//                               <ul><b>Common Issues:</b>
-//                                 {card.issues.map(item => (
-//                                   <li key={item} > <img src='https://i.imgur.com/vqgeRl4.png?2' alt={card.name}/> {item}</li>
-//                                         ))}
-//                                 </ul>
-//                             </ModalBody>
-                                
-//                         <ModalFooter >
-//                           <Button color="secondary" onClick={this.toggle} style={{backgroundColor: '#ff87b9', borderColor:'#ff87b9'}}>
-//                               Back to Plants
-//                           </Button>
-                                
-//                         </ModalFooter>      
-//                       </Modal>
-//                     </span>
-//                   </div>
-//                   <br />    
-//                </small>
-//             </div>
-//             ))}
-//         </div> 
-//       </div>
-//     );
-//   }
-// }
-// export default Cards;
+     

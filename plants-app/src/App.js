@@ -23,7 +23,7 @@ const links = [
 ];
 
 const createNavItem = ({ href, text}) => (
-  <a className='link' href={href}>{text}</a>
+  <a className='link' key={href} href={href}>{text}</a>
 );
 
 export default class App extends Component {
