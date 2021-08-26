@@ -1,12 +1,18 @@
 import React from "react";
 export default class Modal extends React.Component {
+    constructor(props){
+        super(props)
+        this.handleClick = this.handleClick.bind(this)
+        
+    }
+    handleClick(){
+        this.props.handleClick(this.props.modal)
+    }
   render() {
-      console.log(this.props.modal)
-      console.log(this.props.isOPen)
          if(this.props.modal !==null){
              console.log('lets return something')
              return(
-                <div className ='modal'> 
+                <div className={this.props.open ? "modal hide" : "modal"} > 
                      <h1 className='itemName'> {this.props.modal.name}</h1>
                      <div className = 'plant-info'>
                      <img className='popUpCardPink' src={this.props.modal.img} alt={this.props.modal.name}/>
@@ -21,7 +27,7 @@ export default class Modal extends React.Component {
                                    ))}
                            </ul>
                            </div>
-                           <button>Back to Plant</button>
+                           <button onClick = {this.handleClick}>Back to Plant</button>
                 </div>
              )
          } else{

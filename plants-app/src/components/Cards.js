@@ -10,11 +10,12 @@ class Cards extends Component {
       modal: null,
       filter:'',
       cards:[],
-      isOpen: false,
+     
       
     };
     this.toggle = this.toggle.bind(this);
     this.handleChange = this.handleChange.bind(this)
+  
 
    
   }
@@ -26,20 +27,14 @@ class Cards extends Component {
     })
   }
   handleChange = event => {
-    console.log(this.handleChange)
     this.setState({ 
       filter: event.target.value,
     });
   };
-  handleClick() {
-    this.setState(prevState => ({
-      isOpen: !prevState.isOpen
-    }));
-  }
+
 
 
   toggle(card) {
-    console.log(card)
     if(this.state.modal){
       this.setState({
         modal: null
@@ -60,10 +55,11 @@ class Cards extends Component {
         typeof item[key]=== 'string' && item[key].toLowerCase().includes(lowercasedFilter)
       );
     });
+
     return (
      
-      <div className="container">
-        <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
+      <div className="container" >
+        <input className = 'searchBar' placeholder='search' value={filter} onChange={this.toggle} />
         <div className="row">
         {filteredData.map((card, id) => (
           <div className='card' key={card.name}>
@@ -74,7 +70,7 @@ class Cards extends Component {
             </div>     
             ))}
         </div> 
-        <Modal modal= {this.state.modal} open={this.state.isOpen}/>
+        <Modal modal={this.state.modal}  handleClick={this.toggle}/>
       </div>
   
     
