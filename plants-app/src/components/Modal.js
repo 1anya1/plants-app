@@ -16,7 +16,7 @@ export default class Modal extends React.Component {
                     <div className={'card'+this.props.modal.id}>
                      <h1 className='itemName'> {this.props.modal.name}</h1>
                      <div className = 'plant-info'>
-                     <img className='popUpCardPink' src={this.props.modal.img} alt={this.props.modal.name}/>
+                     <img className='popUpCardPink' src={require('..//img/plants/'+ this.props.modal.img).default} alt={this.props.modal.name}/>
                      <p><b>Scientific Name: </b> <i>{this.props.modal.scientificName}</i></p>
                              <p><b>Height: </b>{this.props.modal.height}</p>
                              <p><b>Temperature: </b>{this.props.modal.temperature}</p>
@@ -24,7 +24,7 @@ export default class Modal extends React.Component {
                             <p> <b>Bugs: </b>{this.props.modal.bugs}</p>
                              <ul><b>Common Issues:</b>
                              {this.props.modal.issues.map(item => (
-                               <li key={item} > <img src='https://i.imgur.com/vqgeRl4.png?2' alt={this.props.modal.name}/> {item}</li>
+                               <li key={item} > <img src={require('..//img/plants/aloe-vera.png').default} alt={this.props.modal.name}/> {item}</li>
                                    ))}
                            </ul>
                            </div>

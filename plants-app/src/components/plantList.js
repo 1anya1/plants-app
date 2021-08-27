@@ -1,3 +1,4 @@
+import image from '..'
 const plantList= [
     {
         name: "Monstera",
@@ -9,7 +10,7 @@ const plantList= [
         humidity: 'mist plant once or twice a week',
         issues: ['yellow leaves indicate overwatering', 'brown tips or edges indicate low humidity or cool temperatures'],
         bugs: "mealybugs",
-        img: '../img/plants/monstera.png',
+        img: 'monstera.png',
         id:1
     },
     {
@@ -22,7 +23,7 @@ const plantList= [
         humidity: 'needs lots of humidity, set on pebble tray or mist leaves regylarly',
         issues: ['brown leaves indicate not enough humidity or hard water', 'faded or scorched leaves indicate too much sunlight', 'folding leaves at night is expected of this plant, so dont worry ;)'],
         bugs: "spider mites",
-        img: 'https://i.imgur.com/qOdEYy0.png',
+        img: 'prayer-plant.png',
         id:2
     },
     {
@@ -35,7 +36,7 @@ const plantList= [
         humidity: 'mist leaves regularly avoiding flowers',
         issues: ['no flowering indicates the plant is not getting enough light', 'pale yellow leaves indicate overwatering', 'leave tips brown indicate air is not humid enough '],
         bugs: "mealy bugs, spider mites",
-        img: 'https://i.imgur.com/6iqNPQA.png',
+        img: 'anthrium.png',
         id:3
     },
     {
@@ -48,7 +49,7 @@ const plantList= [
         humidity: 'avoid water on leaves',
         issues: ['white powdere on leves is mildew to to poor air circulation', 'loosing leaves indicated overwatering or hot conditions', 'yellow leaves indicate too much or too little water/light '],
         bugs: "aphids, spider mites, whiteflies, thrips",
-        img: 'https://i.imgur.com/yalGIid.png',
+        img: 'begonia.png',
         id:4
     },
     {
@@ -61,7 +62,7 @@ const plantList= [
         humidity: 'keep crown moist at all times',
         issues: ['brown leaf tips indicate dry air or hard water', 'leaves turning yellow indicate plant outgrew container'],
         bugs: "amealybugs, scale insects",
-        img: 'https://i.imgur.com/6xlaWgB.png',
+        img: 'bromeliad.png',
         id:5
     },
     {
@@ -74,7 +75,7 @@ const plantList= [
         humidity: 'needs lots of humidity, set on pebble tray or mist leaves regylarly',
         issues: ['droopy leaves indicate overwatering', 'brown leaves indicate not enough humidity or hard water', 'faded or scorched leaves indicate too much sunlight'],
         bugs: "spider mites",
-        img: 'https://i.imgur.com/omVODqb.png',
+        img: 'calethia.png',
         id:6
     },
     {
@@ -87,7 +88,7 @@ const plantList= [
         humidity: 'NA',
         issues: ['black spots indicate overwatering', 'pale yellow leaves indicate not enough light or overwatering', 'wrinkled leaves indicate the plant is underwatered'],
         bugs: "scale insects",
-        img: 'https://i.imgur.com/JffHNOJ.png',
+        img: 'aloe-vera.png',
         id:7
     }, 
     {
@@ -100,7 +101,7 @@ const plantList= [
         humidity: 'NA',
         issues: ['brown streaks indicate overwatering in cool conditions', 'brown tips indicate underwatering or plant is getting too much hot air', 'pale leaves indicate lack of water or harsh sunlight conditions'],
         bugs: "spider mites",
-        img: 'https://i.imgur.com/qeXUCzP.png',
+        img: 'spider-plant.png',
         id:8
     },
     {
@@ -113,7 +114,7 @@ const plantList= [
         humidity: 'NA',
         issues: ['brown streaks indicate overwatering in cool conditions', 'brown tips indicate underwatering or plant is getting too much hot air', 'pale leaves indicate lack of water or harsh sunlight conditions'],
         bugs: "spider mites",
-        img: 'https://i.imgur.com/Jyx0adV.png',
+        img: 'pothos.png',
         id:9
     },
     {
@@ -126,7 +127,7 @@ const plantList= [
         humidity: 'NA',
         issues: ['yellow leaves indicate overwatering ', 'shriveled leaves and stems indicate underwatering', 'leggy plant indicated needs more light'],
         bugs: "mealybugs",
-        img: 'https://i.imgur.com/Z1TjahN.png',
+        img: 'jade-plant.png',
         id:10
     },
     {
@@ -139,7 +140,7 @@ const plantList= [
         humidity: 'provide humidity by misting the leaves regularly',
         issues: ['yellow lower leaves indicate cold environment ', 'pale leaves indicate too much direct light', 'leaves dropping indicate drafty cold environment'],
         bugs: "mealybugs",
-        img: 'https://i.imgur.com/LYOywdj.png',
+        img:'philodendron.png',
         id:11
     },
     {
@@ -152,7 +153,7 @@ const plantList= [
         humidity: 'provide humidity by misting the leaves regularly',
         issues: ['yellow lower leaves indicate cold environment ', 'pale leaves indicate too much direct light', 'leaves dropping indicate drafty cold environment'],
         bugs: "mealybugs",
-        img: 'https://i.imgur.com/y7gKEc5.png',
+        img: 'dracaena.png',
         id:12
     },
     {
@@ -165,7 +166,7 @@ const plantList= [
         humidity: 'NA',
         issues: ['brown leaf tips indicate chemicals in the water', 'yellow leaves indicate underwatering or too much sun', 'yellow stems indicate underwatering, overfeeding, or temperature fluctuations'],
         bugs: "mealybugs",
-        img: 'https://i.imgur.com/ScDluFV.png',
+        img: 'bamboo.png',
         id:13
     },
     {
@@ -178,7 +179,7 @@ const plantList= [
         humidity: 'NA',
         issues: ['brown, red, or discolored patches on leaves indicate sunburn', 'yellow or soggy leaves indicate overwatering', 'shriveling leaves indicate underwatering'],
         bugs: "mealybugs",
-        img: 'https://i.imgur.com/tX9dky6.png',
+        img: 'succulent.png',
         id:14
     },
     {
@@ -191,7 +192,7 @@ const plantList= [
         humidity: 'mist plant every couple of days',
         issues: ['pale leaves are normal, happen with age', 'brown tips or edges indicate the air is too dry', 'yellow leaves indicate the plant is either too hot or dry', 'no more flowering is normal during warmer months'],
         bugs: "mealybugs, spider mites",
-        img: 'https://i.imgur.com/tfRZXm5.png',
+        img: 'monstera.png',
         id:15
     },
     {
@@ -204,7 +205,7 @@ const plantList= [
         humidity: 'mist leaves occasionally',
         issues: ['leaf loss indicate plant stress', 'brown tips or edges indicate low humidity', 'small patches on leaves indicate leaf spot disease'],
         bugs: "mealybugs, scale insects, spider mites",
-        img: 'https://i.imgur.com/GyznXGj.png',
+        img: 'ficus.png',
         id:16
     },
     {
@@ -217,7 +218,7 @@ const plantList= [
         humidity: 'mist leaves occasionally',
         issues: ['leaf loss indicate plant stress', 'brown tips or edges indicate low humidity', 'small patches on leaves indicate leaf spot disease'],
         bugs: "mealybugs, scale insects, spider mites",
-        img: 'https://i.imgur.com/PepVlIJ.png',
+        img: 'rubber-tree.png',
         id:17
     },
     {
@@ -230,7 +231,7 @@ const plantList= [
         humidity: 'mist leaves daily',
         issues: ['yellow leaves indicate overwatering', 'brown tips or edges indicate low humidity', 'plant collops indicate underwatering'],
         bugs: "aphids",
-        img: 'https://i.imgur.com/lVbSFKQ.png',
+        img: 'nerve-plant.png',
         id:18
     },
     {
@@ -243,7 +244,7 @@ const plantList= [
         humidity: 'mist leaves daily',
         issues: ['yellow leaves indicate overwatering', 'brown tips or edges indicate low humidity', 'plant collops indicate underwatering'],
         bugs: "aphids",
-        img: 'https://i.imgur.com/ChPKBg0.png',
+        img: 'polkadot-plant.png',
         id:19
     },
     {
@@ -256,7 +257,7 @@ const plantList= [
         humidity: 'mist plant on warm days',
         issues: ['dropping leaves indicate overwatering or excess cold in winter', 'no bloom indicates the plant is yong or the plant does not get enough light'],
         bugs: "spider mites",
-        img: 'https://i.imgur.com/JBI9TDy.png',
+        img: 'hoya.png',
         id:20
     },
     {
@@ -269,7 +270,7 @@ const plantList= [
         humidity: 'mist plant on warm days',
         issues: ['leggy plant indicates the room is too warm', 'brown tips or edges indicate low humidity '],
         bugs: "mealybugs, whiteflies, scale insects,alphids",
-        img: 'https://i.imgur.com/ITPmh9F.png',
+        img: 'english-ivy.png',
         id:21
     },
     {
@@ -282,7 +283,7 @@ const plantList= [
         humidity: 'mist leaves occasionally',
         issues: ['yellow leaves indicate overwatering'],
         bugs: "NA",
-        img:'https://i.imgur.com/rIPun36.png',
+        img:'plea.png',
         id:22
     },
     {
@@ -295,7 +296,7 @@ const plantList= [
         humidity: 'mist leaves frequently',
         issues: ['pale leaves indicate too much sun', 'brown tips or edges indicate low humidity'],
         bugs: "scale insects, spider mites, mealybugs",
-        img: 'https://i.imgur.com/c6AfiN4.png',
+        img: 'boston-fern.png',
         id:23
     },
     {
@@ -308,7 +309,7 @@ const plantList= [
         humidity: 'mist leaves frequently',
         issues: ['pale leaves indicate too much sun', 'brown tips or edges indicate low humidity'],
         bugs: "scale insects, spider mites, mealybugs",
-        img:'https://i.imgur.com/uL2UBAH.png',
+        img:'birds-nest.png',
         id:24
     },
     {
@@ -321,7 +322,7 @@ const plantList= [
         humidity: 'NA',
         issues: ['shriveled leaves indicate plant is not getting enough water', 'yellow leaves indicate underfeeding of plant'],
         bugs: "scale insects, mealybugs",
-        img:'https://i.imgur.com/pcbpQWG.png',
+        img:'monstera.png',
         id:25
     },
     {
@@ -334,7 +335,7 @@ const plantList= [
         humidity: 'requires high humidity',
         issues: [' plant may get brown patches due to too much sun or not enough humidity'],
         bugs: "prone to mealybugs, scale, and spider mites",
-        img: 'https://i.imgur.com/9NWEl1K.png',
+        img: 'alocasia.png',
         id: 26
 
     },
@@ -348,7 +349,7 @@ const plantList= [
         humidity: 'NA',
         issues: ['leaves falling sideways indicate that the plant is either over or underwatered', 'yellow leaves indicate that the plant has been overwatered, check for root rot', 'wrinkled leaves indicate the plant is thursty, water it'],
         bugs: "mealybugs",
-        img: 'https://i.imgur.com/SFmEGKP.png',
+        img: 'snake-plant.png',
         id: 27
 
     },
@@ -362,7 +363,7 @@ const plantList= [
         humidity: 'NA',
         issues: ['leaves dropping indicate the plant is in shock or the plant is too wet/dry', 'yellow leaves indicate that the plant has been overwatered, check for root rot', 'brown patches on leaves indicate sunburn'],
         bugs: "mealybugs",
-        img: 'https://i.imgur.com/841j0ya.png',
+        img: 'zz-plant.png',
         id: 28
 
     },
@@ -376,7 +377,7 @@ const plantList= [
         humidity: 'mist leaves regularly',
         issues: ['leaves dropping indicate the plant is in shock or the plant is too wet/dry', 'yellow leaves indicate that the plant has been overwatered, check for root rot', 'brown patches on leaves indicate sunburn'],
         bugs: "mealybugs, scale insects, powdery mildew, spider mites",
-        img: 'https://i.imgur.com/BxnkIeI.png',
+        img: 'bonsai.png',
         id: 29
 
     },
@@ -390,7 +391,7 @@ const plantList= [
         humidity: 'mist leaves regularly',
         issues: ['dropping leaves indicate there is temperature fluctuations or the plant is in dark spot', 'drooping leaves indicate overwatering or underwatering'],
         bugs: " scale insects, spider mites",
-        img: 'https://i.imgur.com/iSxZnni.png',
+        img: 'croton.png',
         id: 30
 
     },

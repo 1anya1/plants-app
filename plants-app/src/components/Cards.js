@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Modal from './Modal';
 
 
+
+
 class Cards extends Component {
   constructor(props) {
     super(props);
@@ -68,12 +70,14 @@ class Cards extends Component {
         
       <div className='card' key={card.name}>
           <div className="image">
-            <img className = 'img' src={require(card.img)} alt={card.name}></img>
+            <img className = 'img' src={require('..//img/plants/' + card.img).default} alt={card.name}></img>
           </div>
-          <button onClick={this.toggle.bind(this, card)}>{card.name}</button>
+          <h2>{card.name}</h2>
+          <p>{card.scientificName}</p>
+          <button onClick={this.toggle.bind(this, card)}>Learn More</button>
         </div>     
         ))
-  
+        
 
     return (
      
@@ -83,6 +87,7 @@ class Cards extends Component {
           {myData}
         </div> 
         <Modal modal={this.state.modal}  handleClick={this.toggle}/>
+        <img scr='src/'></img>
       </div>
   
     
