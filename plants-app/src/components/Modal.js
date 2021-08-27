@@ -12,7 +12,8 @@ export default class Modal extends React.Component {
          if(this.props.modal !==null){
              console.log('lets return something')
              return(
-                <div className={this.props.open ? "modal hide" : "modal"} > 
+                <div className= "modal" > 
+                    <div className={'card'+this.props.modal.id}>
                      <h1 className='itemName'> {this.props.modal.name}</h1>
                      <div className = 'plant-info'>
                      <img className='popUpCardPink' src={this.props.modal.img} alt={this.props.modal.name}/>
@@ -29,9 +30,10 @@ export default class Modal extends React.Component {
                            </div>
                            <button onClick = {this.handleClick}>Back to Plant</button>
                 </div>
+                </div>
              )
          } else{
-             return ( null)
+             return <div className="modal hide"> </div>
          }
 
   }

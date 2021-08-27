@@ -10,10 +10,12 @@ class Cards extends Component {
       modal: null,
       filter:'',
       cards:[],
+    
      
       
     };
     this.toggle = this.toggle.bind(this);
+    this.pageToggle = this.pageToggle.bind(this)
     this.handleChange = this.handleChange.bind(this)
   
 
@@ -27,6 +29,7 @@ class Cards extends Component {
     })
   }
   handleChange = event => {
+    console.log(event.target.value)
     this.setState({ 
       filter: event.target.value,
     });
@@ -46,29 +49,38 @@ class Cards extends Component {
     }
       
   }
-
+  pageToggle() {
+    console.log(this.filter)
+      
+  }
   render() {
     const { filter, cards } = this.state;
+    const searchCard = cards;
     const lowercasedFilter = filter.toLowerCase();
     const filteredData = cards.filter(item => {
       return Object.keys(item).some(key =>
         typeof item[key]=== 'string' && item[key].toLowerCase().includes(lowercasedFilter)
       );
     });
+    console.log(filteredData.length)
+    
+      const myData = filteredData.map((card, id) => (
+        
+      <div className='card' key={card.name}>
+          <div className="image">
+            <img className = 'img' src={require(card.img)} alt={card.name}></img>
+          </div>
+          <button onClick={this.toggle.bind(this, card)}>{card.name}</button>
+        </div>     
+        ))
+  
 
     return (
      
       <div className="container" >
-        <input className = 'searchBar' placeholder='search' value={filter} onChange={this.toggle} />
+        <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
         <div className="row">
-        {filteredData.map((card, id) => (
-          <div className='card' key={card.name}>
-              <div className="image">
-                <img className = 'img' src={card.img} alt={card.name}></img>
-              </div>
-              <button onClick={this.toggle.bind(this, card)}>{card.name}</button>
-            </div>     
-            ))}
+          {myData}
         </div> 
         <Modal modal={this.state.modal}  handleClick={this.toggle}/>
       </div>

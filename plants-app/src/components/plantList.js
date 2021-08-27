@@ -9,7 +9,7 @@ const plantList= [
         humidity: 'mist plant once or twice a week',
         issues: ['yellow leaves indicate overwatering', 'brown tips or edges indicate low humidity or cool temperatures'],
         bugs: "mealybugs",
-        img: 'https://i.imgur.com/N2il6nV.png',
+        img: '../img/plants/monstera.png',
         id:1
     },
     {
