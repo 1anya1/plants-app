@@ -15,6 +15,7 @@ nav{
     align-items: center;
     position: relative;
     z-index: 100;
+    width: 100vw;
     @include bp-large{
         padding:  30px 50px 0;
     }

@@ -13,10 +13,10 @@ export default class Modal extends React.Component {
              console.log('lets return something')
              return(
                 <div className= "modal" > 
-                    <div className={'card'+this.props.modal.id}>
-                     <h1 className='itemName'> {this.props.modal.name}</h1>
+                    <div className='modal-card'>
                      <div className = 'plant-info'>
                      <img className='popUpCardPink' src={require('..//img/plants/'+ this.props.modal.img).default} alt={this.props.modal.name}/>
+                     <h2 className='itemName'> {this.props.modal.name}</h2>
                      <p><b>Scientific Name: </b> <i>{this.props.modal.scientificName}</i></p>
                              <p><b>Height: </b>{this.props.modal.height}</p>
                              <p><b>Temperature: </b>{this.props.modal.temperature}</p>

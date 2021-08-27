@@ -44,10 +44,12 @@ class Cards extends Component {
       this.setState({
         modal: null
       });
+      document.body.style.overflow = "unset";
     } else{
       this.setState({
         modal: card
       });
+      document.body.style.overflow = "hidden";
     }
       
   }
@@ -64,7 +66,8 @@ class Cards extends Component {
         typeof item[key]=== 'string' && item[key].toLowerCase().includes(lowercasedFilter)
       );
     });
-    console.log(filteredData.length)
+    console.log(document.querySelector('body'))
+  
     
       const myData = filteredData.map((card, id) => (
         
@@ -87,7 +90,6 @@ class Cards extends Component {
           {myData}
         </div> 
         <Modal modal={this.state.modal}  handleClick={this.toggle}/>
-        <img scr='src/'></img>
       </div>
   
     
