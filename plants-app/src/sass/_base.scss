@@ -1,18 +1,138 @@
+html{
+  font-size: 62.5%;	
+}
 body {
 	margin:0;
 	padding:0;
 	overflow-x: hidden;
 	font-family: $body-font;
-	font-size: 16px;
+	
+	
+
 	
 }
 * {
 	box-sizing: border-box; 
 }
-h1, h2, h3, h4, h5, button {
+h1, h2, h3, h4, h5, p, button {
 	font-family: $header-font;
 	margin-top: 0;
 	margin-bottom: 1rem;
+}
+
+h1{
+  font-weight: 600;
+	font-size: 5.3rem;
+  text-transform: uppercase;
+	margin-bottom: 3rem;
+	@include bp-large{
+		font-size: 4.3rem;
+	}
+	@include bp-medium{
+		font-size: 3rem;
+	}
+	@include bp-small{
+		font-size: 3rem;
+	}
+	
+}
+h2{
+  font-weight: 600;
+	font-size: 2.5rem;
+	letter-spacing: 0.175rem;
+	margin-bottom: 3.5rem;
+	padding-bottom: 10px;
+  color: $peach;
+	text-transform: uppercase;
+    @include bp-large{
+		margin-bottom: 3rem;
+		font-size: 2.5rem;
+	}
+	@include bp-medium{
+		font-size: 2rem;
+		letter-spacing: 0.11rem;
+		margin-bottom: 1rem;
+	}
+}
+
+h3{
+  font-weight: 500;
+  color: $forest-green;
+	font-size: 2.5rem;
+  @include bp-large{
+    font-size: 2rem;
+  }
+  @include bp-medium{
+    font-size: 1.8rem;
+  }
+
+}
+h4,ul{
+  font-weight: 600;
+	font-size: 2rem;
+  color: $white;
+	@include bp-medium{
+		font-size: 1.9rem;
+	}
+}
+h5,li{
+  font-weight: 200;
+	font-size: 1.8rem;
+  color: $white;
+  font-family: $body-font;
+	@include bp-medium{
+		font-size: 1.5rem;
+	}
+}
+h6{
+    font-weight: 600;
+	letter-spacing: 0.08rem;
+	font-size: 1.6rem;
+	@include bp-medium{
+		font-size: 1.5rem;
+		letter-spacing: 0.075rem;
+	}
+}
+p{
+    font-family: $body-font;
+    font-weight: 200;
+	font-size: 2rem;
+	@include bp-x-large{
+		font-size: 1.8rem;
+	}
+	@include bp-medium{
+		font-size: 1.6rem;
+	}	
+}
+
+//Links
+a {
+    font-family: $link-font;
+	text-transform: uppercase;
+    transition: color 1s;
+	font-size: 1.8rem;
+	font-weight: 600;
+	letter-spacing: 0.08rem;
+	
+	text-decoration: unset;
+	cursor: pointer;
+	@include bp-medium{
+		letter-spacing: 0.075rem;
+	}
+	@include bp-small{
+	}
+	&:hover, &:active, &:focus {
+        transition: all .5s;
+        text-decoration: underline;
+	}
+}
+
+//Images 
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: auto;
 }
 
 a{
