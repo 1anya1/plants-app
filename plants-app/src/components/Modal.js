@@ -22,28 +22,24 @@ export default class Modal extends React.Component {
              return(
                 <div className= "modal" > 
                     <div className='modal-card'>
-                    <img className='popUpCardPink' src={require('..//img/plants/'+ this.props.modal.img).default} alt={this.props.modal.name}/>
+                        <img className='popUpCardPink' src={require('..//img/plants/'+ this.props.modal.img).default} alt={this.props.modal.name}/>
                         <div className = 'plant-info'>
                         <h2 className='itemName'> {this.props.modal.name}</h2>
                         <div>
-                            <h4>Scientific Name: </h4>
-                            <h5>{this.props.modal.scientificName}</h5>
+                            <h4>Scientific Name: <span className='scientific'>{this.props.modal.scientificName}</span></h4>
+                            
                         </div>
                         <div>
-                            <h4>Height:</h4>
-                            <h5>{this.props.modal.height}</h5>
+                            <h4>Height: <span>{this.props.modal.height}</span></h4>
                         </div>
                         <div>
-                            <h4>Temperature: </h4>
-                            <h5>{this.props.modal.temperature}</h5>
+                            <h4>Temperature:<span>{this.props.modal.temperature}</span> </h4>
                         </div>
                         <div>
-                            <h4>Humidity: </h4>
-                            <h5>{this.props.modal.humidity}</h5>
+                            <h4>Humidity: <span>{this.props.modal.humidity}</span></h4>
                         </div>
                         <div>
-                            <h4>Pests:</h4>
-                            <h5>{this.props.modal.bugs}</h5>
+                            <h4>Pests:<span>{this.props.modal.bugs}</span></h4>
                         </div>
                         <ul>Common Issues:
                              {this.props.modal.issues.map(item => (

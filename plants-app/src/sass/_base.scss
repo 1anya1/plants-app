@@ -19,6 +19,19 @@ h1, h2, h3, h4, h5, p, button {
 	margin-top: 0;
 	margin-bottom: 1rem;
 }
+span, p {
+  font-family: $body-font;
+}
+button{
+  font-size: 1.6rem;
+  font-weight: 600;
+  font-family: $header-font;
+  border:none;
+  box-shadow: unset;
+  text-transform: uppercase;
+  
+
+}
 
 h1{
   font-weight: 600;
@@ -38,7 +51,7 @@ h1{
 }
 h2{
   font-weight: 600;
-	font-size: 2.5rem;
+	font-size: 3.5rem;
 	letter-spacing: 0.175rem;
 	margin-bottom: 3.5rem;
 	padding-bottom: 10px;
@@ -46,24 +59,24 @@ h2{
 	text-transform: uppercase;
     @include bp-large{
 		margin-bottom: 3rem;
-		font-size: 2.5rem;
+		font-size: 3rem;
 	}
 	@include bp-medium{
-		font-size: 2rem;
+		font-size: 2.5rem;
 		letter-spacing: 0.11rem;
-		margin-bottom: 1rem;
+		margin-bottom: 2rem;
 	}
 }
 
 h3{
   font-weight: 500;
   color: $forest-green;
-	font-size: 2.5rem;
+	font-size: 2.8rem;
   @include bp-large{
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   @include bp-medium{
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
 }
