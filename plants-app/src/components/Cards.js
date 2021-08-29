@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+
+import React, { Component } from 'react';
 import Modal from './Modal';
 
 
@@ -12,7 +13,7 @@ class Cards extends Component {
       modal: null,
       filter:'',
       cards:[],
-    
+
      
       
     };
@@ -73,7 +74,7 @@ class Cards extends Component {
         
       <div className='card' key={card.name}>
           <div className="image">
-            <img className = 'img' src={require('..//img/plants/' + card.img).default} alt={card.name}></img>
+            <img className = 'img' height='300px' width='400px' loading='lazy' src={require('..//img/plants/' + card.img).default} alt={card.name}></img>
           </div>
           <h3>{card.name}</h3>
           <p>{card.scientificName}</p>
@@ -89,7 +90,9 @@ class Cards extends Component {
         <div className="row">
           {myData}
         </div> 
-        <Modal modal={this.state.modal}  handleClick={this.toggle}/>
+   
+          <Modal modal={this.state.modal}  handleClick={this.toggle}/>
+
       </div>
   
     
