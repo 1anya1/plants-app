@@ -17,8 +17,7 @@ const links = [
   { href: '/', text: 'Home' },
   { href: 'plants', text: 'Plants' },
   { href: 'diseases', text: 'Disease' },
-  { href: 'pests', text: 'Pests' },
-  { href: 'tracker', text: 'Tracker' },
+  { href: 'pests', text: 'Pests' }
   
   
 ];
@@ -75,9 +74,6 @@ class App extends Component {
           <Route path="/pests">
             <Pests />
           </Route>
-          {/* <Route path="/tracker">
-            <Tracker />
-          </Route> */}
           <Route path="/">
             <Home />
           </Route>
