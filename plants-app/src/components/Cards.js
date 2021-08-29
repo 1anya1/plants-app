@@ -74,7 +74,7 @@ class Cards extends Component {
         
       <div className='card' key={card.name}>
           <div className="image">
-            <img className = 'img' height='300px' width='400px' loading='lazy' src={require('..//img/plants/' + card.img).default} alt={card.name}></img>
+            <img className = 'img'  height='300px' width='400px' loading='lazy' src={require('..//img/plants/' + card.img).default} alt={card.name}></img>
           </div>
           <h3>{card.name}</h3>
           <p>{card.scientificName}</p>
