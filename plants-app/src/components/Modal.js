@@ -57,4 +57,3 @@ export default class Modal extends React.Component {
 
   }
 }
-{/* <img src={require('..//img/plants/aloe-vera.png').default} alt={this.props.modal.name}/> */}

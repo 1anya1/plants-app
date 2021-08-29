@@ -4,7 +4,7 @@ import './Plants.scss'
 import Cards from "./Cards"
 
 
-const icons = ['fertilizing.svg']
+
 
 class Plants extends React.Component {
     constructor(){

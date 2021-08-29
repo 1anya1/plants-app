@@ -11,6 +11,7 @@ import Plants from './components/Plants'
 import Pests from './components/Pests'
 import Footer from './components/Footer'
 // import Tracker from './components/Tracker'
+// import './index.scss';
 
 const links = [
   { href: '/', text: 'Home' },
@@ -26,7 +27,7 @@ const createNavItem = ({ href, text}) => (
   <a className='link' key={href} href={href}>{text}</a>
 );
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -88,3 +89,4 @@ export default class App extends Component {
   }
 }
 
+export default App

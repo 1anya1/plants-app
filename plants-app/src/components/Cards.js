@@ -61,7 +61,6 @@ class Cards extends Component {
   }
   render() {
     const { filter, cards } = this.state;
-    const searchCard = cards;
     const lowercasedFilter = filter.toLowerCase();
     const filteredData = cards.filter(item => {
       return Object.keys(item).some(key =>

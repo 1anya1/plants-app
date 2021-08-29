@@ -1,4 +1,4 @@
-import image from '..'
+
 const plantList= [
     {
         name: "Monstera",

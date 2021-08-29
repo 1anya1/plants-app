@@ -14,7 +14,7 @@ const careList = careType.map((el,id)=>{
 })
 
 
-const images = ['../img/svg/fertilizing.svg', '../img/svg/vacation.svg']
+
 
 class Home extends React.Component{
     
