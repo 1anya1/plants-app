@@ -46,6 +46,11 @@ export default class Modal extends React.Component {
                                <li key={item} > {svg} {item}</li>
                                    ))}
                         </ul>
+                       <div className = 'highlights'>
+                           {this.props.modal.petFriendly===true ? <p>pet friendly</p> : null}
+                           {this.props.modal.lowLight===true ? <p>Low Light</p> : null}
+                           {this.props.modal.hangingPlant===true ? <p>Hanging Plant</p> : null}
+                       </div>
                     </div>
                     <button onClick = {this.handleClick}>Back to Plant</button>
                     </div>
