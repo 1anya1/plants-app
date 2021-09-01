@@ -14,11 +14,7 @@ class Cards extends Component {
       filter:'',
       option:'',
       cards:[],
-      defaultValue: '',
-
-
-     
-      
+      defaultValue: '', 
     };
     this.toggle = this.toggle.bind(this);
     this.handleChange = this.handleChange.bind(this)
@@ -35,28 +31,20 @@ class Cards extends Component {
   }
 
   handleChange = event => {
-    console.log(event.target.value)
     this.setState({ 
       filter: event.target.value,
       option: '',
-      defaultValue: 'allPlants',
-    
-      
+      defaultValue: 'allPlants', 
     });
   };
   
   handleOption = event => {
-    console.log(event.target.value)
     this.setState({ 
       option: event.target.value,
       filter:'',
       defaultValue:event.target.value,
-
     });
   };
-
-
-
   toggle(card) {
     if(this.state.modal){
       this.setState({
@@ -81,7 +69,6 @@ class Cards extends Component {
           return typeof item[key]=== 'string' && item[key].toLowerCase().includes(lowercasedFilter) 
         }
         else if (option.length>0){
-          console.log(option)
           if(option==='allPlants'){
             return cards
           } else{
@@ -116,13 +103,21 @@ class Cards extends Component {
     return (
      
       <div className="container" >
-        <div className='search-bar'>
-          <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
-        </div>
-        <div className='dropDown'>
-          <select name="plants" id="plants" onChange={this.handleOption} value={this.state.defaultValue}>
-            {options.map(opt=> Object.keys(opt).map((key, id)=> <option name={opt[key]} key={id} value={key} >{opt[key]}</option>))}
-          </select>
+          <div className='search'>
+            <div className='heading'>
+              <h3 className= 'header2' id='pink'>Search Common House Plants</h3>
+              {/* <p className='header3'> Click on the name of the plant to learn more</p> */}
+            </div>
+            <div className='search-menu'>
+             <div className='search-bar'>
+               <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
+             </div>
+             <div className='dropDown'>
+                <select name="plants" id="plants" onChange={this.handleOption} value={this.state.defaultValue}>
+                   {options.map(opt=> Object.keys(opt).map((key, id)=> <option name={opt[key]} key={id} value={key} >{opt[key]}</option>))}
+                </select>
+             </div>
+             </div>
         </div>
         <div className="row">
           {myData}

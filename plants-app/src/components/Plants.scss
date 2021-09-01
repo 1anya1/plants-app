@@ -1,6 +1,43 @@
 @import '../sass/_colors.scss';
 @import "../sass/_break-points.scss";
+.container{
+    .search{
+    padding: 3rem;
+    background-color: $blush;
+    width: 78.5%;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    .search-menu{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .search-bar{
+            width: 43vw;
+            input{
+                width: 100%;
+                height: 4rem;
+                padding: 0 1rem;
+                border-radius: .5rem;
+                border: unset;
+            }
+        }
+        .dropDown{
+            width: 43rem;
+            select{
+                width: 100%;
+                height: 4rem;
+                border-radius: .5rem;
+                border: unset;
+                padding: 0 1rem;
+            }
+        }
+    }
 
+
+    }
+}
 .row{
     display: flex;
     justify-content: center;
@@ -152,7 +189,7 @@
     align-content: center;
     align-items: center;
     justify-content: space-between;
-    transition: top .5s ease-in-out;
+    transition: all .5s ease-in-out;
     z-index: 1;
     .modal-card{
         margin: 5%;

@@ -34,13 +34,9 @@ class Plants extends React.Component {
                                 indoor plants for the first time, our ultimate guide will provide you with the necessary 
                                 information to allow your green friends to thrive.</p> 
                         </div>          
-                        <div className='backgroundColor' id='lightPink'>
-                            <h2 className= 'header2' id='pink'>Search House Plant</h2>
-                                <h3 className='header3'> Click on the name of the plant to learn more</h3>
-                                    <div className = 'allPlants'>
+                    <div className = 'allPlants'>
                                         <Cards cards={this.state.plants}/>
-                                    </div>        
-                        </div>
+                    </div>       
                 </div>
             )
         }
