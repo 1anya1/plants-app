@@ -14,7 +14,7 @@ class Cards extends Component {
       filter:'',
       option:'',
       cards:[],
-      defaultValue: '', 
+      
     };
     this.toggle = this.toggle.bind(this);
     this.handleChange = this.handleChange.bind(this)
@@ -26,15 +26,15 @@ class Cards extends Component {
   componentDidMount = () => {
     this.setState({
         cards: this.props.cards,
-        defaultValue: 'allPlants',
+        option: 'allPlants',
     })
   }
 
   handleChange = event => {
     this.setState({ 
       filter: event.target.value,
-      option: '',
-      defaultValue: 'allPlants', 
+      // option: '',
+      // defaultValue: 'allPlants', 
     });
   };
   
@@ -63,26 +63,22 @@ class Cards extends Component {
   render() {
     const { filter, cards, option, defaultValue } = this.state;
     const lowercasedFilter = filter.toLowerCase();
-    const filteredData = cards.filter(item => {
+    const optionChoice = cards.filter(item => {
       return Object.keys(item).some(key =>{
-        if(filter.length > 0){
-          return typeof item[key]=== 'string' && item[key].toLowerCase().includes(lowercasedFilter) 
-        }
-        else if (option.length>0){
-          if(option==='allPlants'){
-            return cards
-          } else{
-            return key===option && item[key]===true
-          }
-        }
-        else{
+        if(option==='allPlants'){
           return cards
+        } else {
+          return key===option && item[key]===true
         }
-        }
-        
+      })
+    });
+    console.log(optionChoice)
+    const filteredData = optionChoice.filter(item => {
+      return Object.keys(item).some(key =>{
+              return typeof item[key]=== 'string' && item[key].toLowerCase().includes(lowercasedFilter) 
+        } 
       );
     });
-    console.log(filteredData)
     const myData = filteredData.map((card, id) => ( 
       <div className='card' key={card.name}>
           <div className="image">
@@ -99,6 +95,7 @@ class Cards extends Component {
      {lowLight: 'Low Light Plants'},
      {hangingPlant: 'Hanging Plants'}
    ]
+   console.log(option)
 
     return (
      
@@ -109,13 +106,13 @@ class Cards extends Component {
               {/* <p className='header3'> Click on the name of the plant to learn more</p> */}
             </div>
             <div className='search-menu'>
-             <div className='search-bar'>
-               <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
-             </div>
-             <div className='dropDown'>
+               <div className='dropDown'>
                 <select name="plants" id="plants" onChange={this.handleOption} value={this.state.defaultValue}>
                    {options.map(opt=> Object.keys(opt).map((key, id)=> <option name={opt[key]} key={id} value={key} >{opt[key]}</option>))}
                 </select>
+             </div>
+             <div className='search-bar'>
+               <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
              </div>
              </div>
         </div>
@@ -132,3 +129,22 @@ class Cards extends Component {
 export default Cards;
 
      
+// const filteredData = cards.filter(item => {
+//   return Object.keys(item).some(key =>{
+//     if(filter.length > 0){
+//       return typeof item[key]=== 'string' && item[key].toLowerCase().includes(lowercasedFilter) 
+//     }
+//     else if (option.length>0){
+//       if(option==='allPlants'){
+//         return cards
+//       } else{
+//         return key===option && item[key]===true
+//       }
+//     }
+//     else{
+//       return cards
+//     }
+//     }
+    
+//   );
+// });

@@ -30,24 +30,58 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isToggleOn: true
+      isToggleOn: true,
+      scrolling:'',
+      navShow: null,
     };
 
     // This binding is necessary to make `this` work in the callback
     this.handleClick = this.handleClick.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
   }
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll, { passive: true })
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
+
   handleClick() {
     this.setState(prevState => ({
       isToggleOn: !prevState.isToggleOn
     }));
   }
+  handleScroll(e){
+    let currentScroll = window.scrollY;
+    if(currentScroll < 100){
+      this.setState({
+        navShow: null,
+        scrolling: currentScroll
+      })
+    } else if(this.state.scrolling > currentScroll ){
+      this.setState({
+        navShow: 'show-nav',
+        scrolling: currentScroll
+      })
+    } else{
+      if(this.state.scrolling < currentScroll ){
+        this.setState({
+          navShow: 'hide-nav',
+          scrolling: currentScroll
+        })
+    }
+  }
+}
+ 
 
   render() {
     console.log(this.state.isToggleOn)
+    console.log(this.state.scrolling)
+    console.log(this.state.navShow)
     return (
      
-      <main className={this.state.isToggleOn ? null : 'noscroll' }>
-        <nav>
+      <main className={this.state.isToggleOn ? null : 'noscroll' } onScroll={console.log('scrolling')}>
+        <nav className={this.state.navShow}>
           <div className='logo'></div>
           <div className='menu' >
             {links.map(createNavItem)}

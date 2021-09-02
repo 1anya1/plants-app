@@ -13,9 +13,10 @@ nav{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    position: fixed;
     z-index: 100;
     width: 100vw;
+    transition: background-color .1s  ease;
     @include bp-large{
         padding:  30px 50px 0;
     }
@@ -99,4 +100,12 @@ nav{
     }
     
 }
-
+.show-nav{
+    top: 0;
+    background-color: $white;
+    transition: top .5s ease-in-out, background-color .5s ease-in;
+}
+.hide-nav{
+    top: -100vh;
+    transition: top .5s ease-in-out, background-color .5s ease-out;
+}

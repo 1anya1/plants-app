@@ -2,7 +2,6 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import './Home.scss'
 import './Nav.scss'
-// import {ReactComponent as Sun} from '../img/svg/sun.svg'
 import mySVG from './Svg.js'
 
 
@@ -19,15 +18,13 @@ const careList = careType.map((el,id)=>{
 class Home extends React.Component{
     
     render() {
-        console.log(typeof mySVG)
-        console.log(careList)
         return (
             <div id='main'>
-                 <header className='cover'>
+                 <div className='cover'>
                      <h1 className='header'>
                          A Place To track and watch your plants grow
                     </h1>
-                </header>
+                </div>
                 <div className='intro'>
                     <div>
                         {careList}
