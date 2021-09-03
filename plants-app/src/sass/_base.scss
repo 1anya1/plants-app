@@ -6,10 +6,6 @@ body {
 	padding:0;
 	overflow-x: hidden;
 	font-family: $body-font;
-	
-	
-
-	
 }
 * {
 	box-sizing: border-box; 
@@ -92,8 +88,9 @@ h4,ul{
 h5,li{
   font-weight: 200;
 	font-size: 1.8rem;
-  color: $white;
+  color: $gray;
   font-family: $body-font;
+  margin-bottom: unset;
 	@include bp-medium{
 		font-size: 1.5rem;
 	}
@@ -110,7 +107,8 @@ h6{
 p{
     font-family: $body-font;
     font-weight: 200;
-	font-size: 2rem;
+	  font-size: 2rem;
+    color: $gray;
 	@include bp-x-large{
 		font-size: 1.8rem;
 	}
@@ -158,8 +156,8 @@ a{
     &:hover, &:active, &:focus {
         transition: all 1s;
         color: $turquise;
-        font-size: 22px;
         text-decoration: underline;
+        text-underline-offset: .5rem;
 	}
 }
 

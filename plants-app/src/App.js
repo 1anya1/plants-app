@@ -10,14 +10,18 @@ import Disease from './components/Disease'
 import Plants from './components/Plants'
 import Pests from './components/Pests'
 import Footer from './components/Footer'
+import CareTips from './components/CareTips'
 // import Tracker from './components/Tracker'
 // import './index.scss';
 
+import mySVG from './components/Svg'
+import logo from './components/Logo'
 const links = [
   { href: '/', text: 'Home' },
   { href: 'plants', text: 'Plants' },
   { href: 'diseases', text: 'Disease' },
-  { href: 'pests', text: 'Pests' }
+  { href: 'pests', text: 'Pests' },
+  {href:'care-tips', text: 'Care Tips'}
   
   
 ];
@@ -75,14 +79,11 @@ class App extends Component {
  
 
   render() {
-    console.log(this.state.isToggleOn)
-    console.log(this.state.scrolling)
-    console.log(this.state.navShow)
     return (
      
       <main className={this.state.isToggleOn ? null : 'noscroll' } onScroll={console.log('scrolling')}>
         <nav className={this.state.navShow}>
-          <div className='logo'></div>
+          <a href='/' className='logo'> <logo.Logo /></a>
           <div className='menu' >
             {links.map(createNavItem)}
           </div>
@@ -107,6 +108,9 @@ class App extends Component {
           </Route>
           <Route path="/pests">
             <Pests />
+          </Route>
+          <Route path="/care-tips">
+            <CareTips />
           </Route>
           <Route path="/">
             <Home />

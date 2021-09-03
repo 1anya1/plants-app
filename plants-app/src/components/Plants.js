@@ -2,7 +2,7 @@ import React from 'react'
 import plantList from './plantList'
 import './Plants.scss'
 import Cards from "./Cards"
-
+import CareTips from './CareTips'
 
 
 
@@ -28,7 +28,7 @@ class Plants extends React.Component {
                         <p>A couple of words on plants... Proper watering and lighting are the most important components of 
                     indoor plant care. Humidity and temperatures also play a role. The trick is to try to mimic the climate of the place 
                     that plant came from.</p>
-                      
+                      <CareTips/>
                             
                             <p><b id='pink'style={{fontSize: 30}}>If</b> you’re caring for 
                                 indoor plants for the first time, our ultimate guide will provide you with the necessary 

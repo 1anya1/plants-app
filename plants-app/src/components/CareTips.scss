@@ -1,0 +1,56 @@
+@import '../index.scss';
+#care-tips{
+    padding-top: 200px;
+    width: 80%;
+    .care-list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-items: start;
+       
+       a{
+           &:hover{
+            .care{
+                svg{
+                    g{
+                        fill: $forest-green;
+                        transition: fill .5s ease-in-out;
+                    }
+                    path{
+                        fill: $forest-green;
+                        transition: fill .5s ease-in-out;
+                    }
+                }
+
+            }
+            
+           }
+        .care{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            svg{
+                height: 5rem;
+                width: auto;
+                g{
+                    fill: $peach;
+                    transition: fill .5s ease-in-out;
+                }
+                path{
+                    fill: $peach;
+                    transition: fill .5s ease-in-out;
+                }
+               
+            }
+            h5{
+                padding-left: 1rem;
+            }
+    
+        }
+
+       }
+        
+    }
+
+}

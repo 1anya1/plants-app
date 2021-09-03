@@ -28,7 +28,7 @@ class Home extends React.Component{
                 <div className='intro'>
                     <div>
                         {careList}
-                        < mySVG.Sun/>
+                       
                         
                     
                        

@@ -24,12 +24,11 @@ nav{
         padding: 30px 20px 0;
     }
     .logo{
-        background-image: url('..//img/plantly.svg');
+        // background-image: url('..//img/plantly.svg');
         height: 2em;
         width: 50%;
         background-size: contain;
-        background-repeat: no-repeat;
-      
+        background-repeat: no-repeat; 
     }
     .link{
         padding-left: 15px;
@@ -103,7 +102,7 @@ nav{
 .show-nav{
     top: 0;
     background-color: $white;
-    transition: top .5s ease-in-out, background-color .5s ease-in;
+    transition: top .5s ease-in-out;
 }
 .hide-nav{
     top: -100vh;

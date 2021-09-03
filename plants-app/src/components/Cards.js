@@ -61,7 +61,7 @@ class Cards extends Component {
   }
 
   render() {
-    const { filter, cards, option, defaultValue } = this.state;
+    const { filter, cards, option } = this.state;
     const lowercasedFilter = filter.toLowerCase();
     const optionChoice = cards.filter(item => {
       return Object.keys(item).some(key =>{
@@ -72,7 +72,6 @@ class Cards extends Component {
         }
       })
     });
-    console.log(optionChoice)
     const filteredData = optionChoice.filter(item => {
       return Object.keys(item).some(key =>{
               return typeof item[key]=== 'string' && item[key].toLowerCase().includes(lowercasedFilter) 
@@ -103,7 +102,6 @@ class Cards extends Component {
           <div className='search'>
             <div className='heading'>
               <h3 className= 'header2' id='pink'>Search Common House Plants</h3>
-              {/* <p className='header3'> Click on the name of the plant to learn more</p> */}
             </div>
             <div className='search-menu'>
                <div className='dropDown'>
@@ -129,22 +127,3 @@ class Cards extends Component {
 export default Cards;
 
      
-// const filteredData = cards.filter(item => {
-//   return Object.keys(item).some(key =>{
-//     if(filter.length > 0){
-//       return typeof item[key]=== 'string' && item[key].toLowerCase().includes(lowercasedFilter) 
-//     }
-//     else if (option.length>0){
-//       if(option==='allPlants'){
-//         return cards
-//       } else{
-//         return key===option && item[key]===true
-//       }
-//     }
-//     else{
-//       return cards
-//     }
-//     }
-    
-//   );
-// });

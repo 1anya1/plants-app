@@ -92,10 +92,6 @@
         max-width: 550px;
         max-height:900px;
         display:grid;
-        
-
-        
-        
             .image{
                 overflow: hidden;
                 width: 100%;
@@ -110,7 +106,6 @@
                     height: 75vw;
                 }
 
-              
                 &:before {
                     content: '';
                     position: absolute;
@@ -124,23 +119,6 @@
                         background: rgba(234, 236, 232, 1)
                     }
                 }
-                
-                // @include bp-x-large{
-                //     width: 30vw;
-                //     height: 30vw;
-                // }
-                // @include bp-large{
-                //     width: 20vw;
-                //     height: 20vw;
-                // }
-                // @include bp-medium{
-                //     width: 80vw;
-                //     height: 80vw;
-                // }
-                // @include bp-small{
-                //     width: 90vw;
-                //     height: 90vw;
-                // }
                 
                 .img{
                     object-fit: cover;
@@ -173,7 +151,7 @@
                 height: 7rem;
                 background-color: $blush;
                 margin-bottom: unset;
-                color: $forest-green;
+                color: $gray;
                 &:hover{
                     background-color: $peach;
                     color: $white;
