@@ -2,21 +2,11 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import './Home.scss'
 import './Nav.scss'
-import mySVG from './Svg.js'
 
+import myData from './data/Homepage'
 
-const careType = [ 'Watering', 'Lighting','Propagating','Temperature','Humidity', 'Repotting', 'Fertilizing', 'Cleaning','Vacation Care'
-    ]
-
-const careList = careType.map((el,id)=>{
-    return <p className='care-list' key={id}>{el}</p>
-})
-
-
-
-
+console.log(myData.Part1)
 class Home extends React.Component{
-    
     render() {
         return (
             <div id='main'>
@@ -26,36 +16,11 @@ class Home extends React.Component{
                     </h1>
                 </div>
                 <div className='intro'>
-                    <div>
-                        {careList}
-                       
-                        
+                    { myData.Part1.map(el=> <p>{el}</p>)}
+                    {myData.Header.map(el=><h2>{el}</h2>)}
+                    { myData.Part2.map(el=> <p>{el}</p>)}
+                    <button className = 'home-button'><Link to="/plants" className='buttonGreen'>Discover House Plants</Link></button>
                     
-                       
-                    </div>
-                    <img src ={require('../img/svg/vacation.svg').default} />
-                    <p> Sun, water and soil are crucial to the life of 
-                    house plants. Most plants you purchase will come with a quick reference guide. But do you really 
-                    know what your plant needs? </p>
-
-                    <p>Keeping plants around the house isn’t as scary as you might think; you 
-                    just need to know what they like in order to keep your indoor garden both happy and green. </p>
-
-                    <p>Houseplants or indoor plants are plants that grow indoors. 
-                    Houseplants are popular because they are relatively easy to take care of, provide health benefits 
-                    and can be used in a variety of indoor décor themes.</p>
-                    
-                    <h2> "Plants provide health benefits and can be used in a variety of indoor décor themes."</h2>
-
-                    <p>Plantly is a house plant app that has it all. 
-                    Search common house plants, learn about plant care and gain understanding on how to identify deisease and common pests.</p>
-
-                    <p> Our library contains the most popular house palnts that continues to grow</p>
-                        <button className = 'home-button'><Link to="/plants" className='buttonGreen'>Discover House Plants</Link></button>
-                    
-                    <p>Keep track of your plants using our tracker. Add dates, notes,
-                     and photos that you can always refer back to. </p>
-        
                 </div> 
             </div>
         )

@@ -22,7 +22,7 @@ export default class Modal extends React.Component {
              return(
                 <div className= "modal" > 
                     <div className='modal-card'>
-                        <img className='popUpCardPink' loading='lazy' src={require('..//img/plants/'+ this.props.modal.img).default} alt={this.props.modal.name}/>
+                        <img className='popUpCardPink' loading='lazy' src={require('../../img/plants/'+ this.props.modal.img).default} alt={this.props.modal.name}/>
                         <div className = 'plant-info'>
                         <h2 className='itemName'> {this.props.modal.name}</h2>
                         <div>

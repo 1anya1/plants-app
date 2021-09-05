@@ -7,14 +7,14 @@ import {
   } from "react-router-dom";
 import Home from './components/Home'
 import Disease from './components/Disease'
-import Plants from './components/Plants'
+import Plants from './components/Plants/Plants'
 import Pests from './components/Pests'
 import Footer from './components/Footer'
-import CareTips from './components/CareTips'
+import CareTips from './components/Plants/CareTips'
 // import Tracker from './components/Tracker'
 // import './index.scss';
 
-import mySVG from './components/Svg'
+
 import logo from './components/Logo'
 const links = [
   { href: '/', text: 'Home' },
@@ -22,8 +22,6 @@ const links = [
   { href: 'diseases', text: 'Disease' },
   { href: 'pests', text: 'Pests' },
   {href:'care-tips', text: 'Care Tips'}
-  
-  
 ];
 
 const createNavItem = ({ href, text}) => (

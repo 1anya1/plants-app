@@ -1,10 +1,6 @@
 
 import React, { Component } from 'react';
 import Modal from './Modal';
-
-
-
-
 class Cards extends Component {
   constructor(props) {
     super(props);
@@ -17,11 +13,7 @@ class Cards extends Component {
       
     };
     this.toggle = this.toggle.bind(this);
-    this.handleChange = this.handleChange.bind(this)
-
-  
-
-   
+    this.handleChange = this.handleChange.bind(this) 
   }
   componentDidMount = () => {
     this.setState({
@@ -29,12 +21,9 @@ class Cards extends Component {
         option: 'allPlants',
     })
   }
-
   handleChange = event => {
     this.setState({ 
       filter: event.target.value,
-      // option: '',
-      // defaultValue: 'allPlants', 
     });
   };
   
@@ -81,7 +70,7 @@ class Cards extends Component {
     const myData = filteredData.map((card, id) => ( 
       <div className='card' key={card.name}>
           <div className="image">
-            <img className = 'img'  height='300px' width='400px' loading='lazy' src={require('..//img/plants/' + card.img).default} alt={card.name}></img>
+            <img className = 'img'  height='300px' width='400px' loading='lazy' src={require('../../img/plants/' + card.img).default} alt={card.name}></img>
           </div>
           <h3>{card.name}</h3>
           <p>{card.scientificName}</p>
