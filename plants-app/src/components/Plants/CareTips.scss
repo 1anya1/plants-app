@@ -1,12 +1,17 @@
 @import '../../index.scss';
 
 #care-tips{
-    padding-top: 200px;
-    width: 80%;
+   
+   
+    .careHeading{
+       text-align: center;
+    }
     .care-list{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         justify-items: start;
+        width: 80%;
+        margin: 0 auto;
        
        a{
           

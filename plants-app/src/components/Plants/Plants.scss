@@ -231,6 +231,7 @@
                 margin-bottom: unset;
                 width: fit-content;
                 display:inline;
+                color: $white;
                 span{
                     font-weight: 200;
 	                font-size: 1.8rem;
@@ -259,6 +260,7 @@
             li{
                 list-style: none;
                 margin-top: 1rem;
+                color: $white;
                 svg{
                     height: 2rem;
                     width: 2rem;
