@@ -1,0 +1,47 @@
+@import '../../index.scss';
+
+#care-tips{
+   
+   
+    .careHeading{
+       text-align: center;
+    }
+    .care-list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-items: start;
+        width: 80%;
+        margin: 0 auto;
+       
+       a{
+          
+        .care{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            svg{
+                height: 5rem;
+                width: auto;
+                g{
+                    fill: $peach;
+                    transition: fill .5s ease-in-out;
+                }
+                path{
+                    fill: $peach;
+                    transition: fill .5s ease-in-out;
+                }
+               
+            }
+            h5{
+                padding-left: 1rem;
+            }
+    
+        }
+
+       }
+        
+    }
+
+}

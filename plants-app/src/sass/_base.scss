@@ -1,0 +1,202 @@
+html{
+  font-size: 62.5%;	
+}
+body {
+	margin:0;
+	padding:0;
+	overflow-x: hidden;
+	font-family: $body-font;
+}
+* {
+	box-sizing: border-box; 
+}
+h1, h2, h3, h4, h5, p, button {
+	font-family: $header-font;
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+span, p {
+  font-family: $body-font;
+}
+button{
+  font-size: 1.6rem;
+  font-weight: 600;
+  font-family: $header-font;
+  border:none;
+  box-shadow: unset;
+  text-transform: uppercase;
+  margin: 0;
+  
+
+}
+
+h1{
+  font-weight: 600;
+	font-size: 5.3rem;
+  text-transform: uppercase;
+	margin-bottom: 3rem;
+	@include bp-large{
+		font-size: 4.3rem;
+	}
+	@include bp-medium{
+		font-size: 3rem;
+	}
+	@include bp-small{
+		font-size: 3rem;
+	}
+	
+}
+h2{
+  font-weight: 600;
+	font-size: 3.5rem;
+	letter-spacing: 0.175rem;
+	margin-bottom: 3.5rem;
+	padding-bottom: 10px;
+  color: $peach;
+	text-transform: uppercase;
+    @include bp-large{
+		margin-bottom: 3rem;
+		font-size: 3rem;
+	}
+	@include bp-medium{
+		font-size: 2.5rem;
+		letter-spacing: 0.11rem;
+		margin-bottom: 2rem;
+	}
+}
+
+h3{
+  font-weight: 500;
+  color: $forest-green;
+	font-size: 2.8rem;
+  @include bp-large{
+    font-size: 2.5rem;
+  }
+  @include bp-medium{
+    font-size: 2rem;
+  }
+
+}
+h4,ul{
+  font-weight: 600;
+	font-size: 2rem;
+  color: $gray;
+	@include bp-medium{
+		font-size: 1.9rem;
+	}
+}
+h5,li{
+  font-weight: 200;
+	font-size: 1.8rem;
+  color: $gray;
+  font-family: $body-font;
+  margin-bottom: unset;
+	@include bp-medium{
+		font-size: 1.5rem;
+	}
+}
+h6{
+    font-weight: 600;
+	letter-spacing: 0.08rem;
+	font-size: 1.6rem;
+	@include bp-medium{
+		font-size: 1.5rem;
+		letter-spacing: 0.075rem;
+	}
+}
+p{
+    font-family: $body-font;
+    font-weight: 200;
+	  font-size: 2rem;
+    color: $gray;
+	@include bp-x-large{
+		font-size: 1.8rem;
+	}
+	@include bp-medium{
+		font-size: 1.6rem;
+	}	
+}
+
+//Links
+a {
+    font-family: $link-font;
+	text-transform: uppercase;
+    transition: color 1s;
+	font-size: 1.8rem;
+	font-weight: 600;
+	letter-spacing: 0.08rem;
+	
+	text-decoration: unset;
+	cursor: pointer;
+	@include bp-medium{
+		letter-spacing: 0.075rem;
+	}
+	@include bp-small{
+	}
+	&:hover, &:active, &:focus {
+        transition: all .5s;
+        text-decoration: underline;
+	}
+}
+
+//Images 
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: auto;
+}
+
+a{
+    font-size: 20px;
+    color: $forest-green;
+    font-family: $link-font;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:hover, &:active, &:focus {
+        transition: all 1s;
+        color: $turquise;
+        text-decoration: underline;
+        text-underline-offset: .5rem;
+	}
+}
+
+h1{
+    font-family: $header-font;
+    text-transform: capitalize;
+    color: $gray;
+}
+
+#main{
+    position: relative;
+}
+.intro{
+    padding: 50px 100px;
+    @include bp-large{
+      padding: 40px 50px;
+    }
+    @include bp-small{
+      padding: 30px 20px;
+    }
+  }
+
+  .cover{
+    height: 90vh; 
+    max-height: 600px;
+    position: relative;
+    z-index: -1;  
+    background-size: cover;
+    background-position: center top;
+    min-height: 600px;
+    &:after {
+        content:'';
+        position:absolute;
+        left:0; top:0;
+        width: 100vw;
+        height: 100%;
+        display:inline-block;
+        background-color: $peach;
+        opacity: .2;
+    }
+
+}

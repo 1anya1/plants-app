@@ -1,0 +1,42 @@
+
+$size-xx-large: 1700px;
+$size-x-large: 1280px;
+$size-large: 1024px;
+$size-medium: 768px;
+$size-small: 568px;
+//Breakpoints for mobile
+@mixin bp-xx-large {
+  @media only screen and (max-width: $size-xx-large) {
+    @content;
+  }
+}
+
+@mixin bp-x-large {
+    @media only screen and (max-width: $size-x-large) {
+      @content;
+    }
+  }
+  
+  @mixin bp-large {
+    @media only screen and (max-width: $size-large) {
+      @content;
+    }
+  }
+  
+  @mixin bp-medium {
+    @media only screen and (max-width: $size-medium) {
+      @content;
+    }
+  }
+  
+  @mixin bp-small {
+    @media only screen and (max-width: $size-small) {
+      @content;
+    }
+  }
+  @mixin bp-custom($size-custom) {
+    @media only screen and (max-width: $size-custom) {
+      @content;
+    }
+  }
+  

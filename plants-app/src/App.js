@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-} from 'reactstrap';
+import './App.scss';
 import {
     BrowserRouter as Router,
     Switch,
@@ -15,56 +7,95 @@ import {
   } from "react-router-dom";
 import Home from './components/Home'
 import Disease from './components/Disease'
-import Plants from './components/Plants'
+import Plants from './components/Plants/Plants'
 import Pests from './components/Pests'
 import Footer from './components/Footer'
-import Tracker from './components/Tracker'
+import CareTips from './components/Plants/CareTips'
+// import Tracker from './components/Tracker'
+// import './index.scss';
 
+
+import logo from './components/Logo'
 const links = [
   { href: '/', text: 'Home' },
   { href: 'plants', text: 'Plants' },
   { href: 'diseases', text: 'Disease' },
   { href: 'pests', text: 'Pests' },
-  { href: 'tracker', text: 'Tracker' },
-  
-  
+  {href:'care-tips', text: 'Care Tips'}
 ];
 
 const createNavItem = ({ href, text}) => (
-  <NavItem>
-    <NavLink href={href} className="text-info" style={{fontSize: 18, fontWeight: 'bold'}}>{text}</NavLink>
-  </NavItem>
+  <a className='link' key={href} href={href}>{text}</a>
 );
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      isOpen: false
+      isToggleOn: true,
+      scrolling:'',
+      navShow: null,
     };
 
-    this.toggle = this.toggle.bind(this);
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll, { passive: true })
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
+  handleClick() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
   }
-  
+  handleScroll(e){
+    let currentScroll = window.scrollY;
+    if(currentScroll < 100){
+      this.setState({
+        navShow: null,
+        scrolling: currentScroll
+      })
+    } else if(this.state.scrolling > currentScroll ){
+      this.setState({
+        navShow: 'show-nav',
+        scrolling: currentScroll
+      })
+    } else{
+      if(this.state.scrolling < currentScroll ){
+        this.setState({
+          navShow: 'hide-nav',
+          scrolling: currentScroll
+        })
+    }
+  }
+}
+ 
+
   render() {
     return (
-      <div>
-        <Navbar className="text-info" color="white" light expand="md">
-          <NavbarBrand href="/"><img className='logo' style={{width: 200}} src='https://i.imgur.com/ZcqvZ1m.png'></img></NavbarBrand>
-          <NavbarToggler  onClick={this.toggle} />
-          <Collapse  isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+     
+      <main className={this.state.isToggleOn ? null : 'noscroll' } onScroll={console.log('scrolling')}>
+        <nav className={this.state.navShow}>
+          <a href='/' className='logo'> <logo.Logo /></a>
+          <div className='menu' >
+            {links.map(createNavItem)}
+          </div>
+          <div className='hamburger' onClick={this.handleClick}>
+            <div className={this.state.isToggleOn ? 'bars' : 'bars active' }>
+              <div className='bar one'></div>
+              <div className='bar two'></div>
+              <div className='bar three'></div>
+            </div>
+            <div className={this.state.isToggleOn ? 'collapse mobile-nav' : 'show mobile-nav'}>
               {links.map(createNavItem)}
-            </Nav>
-          </Collapse>
-        </Navbar>
+              </div>
+          </div>
+        </nav>
         <Router>
         <Switch>
           <Route path="/diseases">
@@ -76,8 +107,8 @@ export default class App extends Component {
           <Route path="/pests">
             <Pests />
           </Route>
-          <Route path="/tracker">
-            <Tracker />
+          <Route path="/care-tips">
+            <CareTips />
           </Route>
           <Route path="/">
             <Home />
@@ -85,8 +116,9 @@ export default class App extends Component {
         </Switch>
         </Router>
         <Footer />
-      </div>
+      </main>
     );
   }
 }
 
+export default App

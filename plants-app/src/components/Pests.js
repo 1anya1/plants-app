@@ -1,6 +1,6 @@
 import React from 'react'
 import pestList from './pestList'
-import './Pests.css'
+import './Pests.scss'
 
 class Pests extends React.Component {
     constructor(){
