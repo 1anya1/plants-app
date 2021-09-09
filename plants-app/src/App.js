@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.scss';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-  } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Home from './components/Home'
 import Disease from './components/Disease'
 import Plants from './components/Plants/Plants'
@@ -18,7 +14,7 @@ import CareTips from './components/Plants/CareTips'
 import Registration from './components/Registration'
 import Login from './components/registrations/Login'
 import Signup from './components/registrations/Signup'
-import Form  from './components/Form'
+import MyPlants  from './components/MyPlants.js'
 
 import logo from './components/Logo'
 const links = [
@@ -84,6 +80,7 @@ class App extends Component {
   }
 }
 loginStatus = () => {
+
   axios.get('http://localhost:4000/logged_in', {withCredentials: true})
   .then(response => {
     if (response.data.logged_in) {
@@ -103,13 +100,22 @@ handleLogin = (data) => {
   })
 }
 handleLogout = () => {
+  console.log('logged out')
   this.setState({
   isLoggedIn: false,
   user: {},
   user_id: null
   })
+} 
+handleClickExit = () => {
+  axios.delete('http://localhost:4000/logout', {withCredentials: true})
+  .then(response => {
+    console.log(response)
+    this.handleLogout()
+    this.history.push('/')
+  })
+  .catch(error => console.log(error))
 }
- 
 
   render() {
     console.log(this.state.isLoggedIn)
@@ -122,7 +128,18 @@ handleLogout = () => {
           <a href='/' className='logo'> <logo.Logo /></a>
           <div className='menu' >
             {links.map(createNavItem)}
+            { !this.state.isLoggedIn  && <>
+       <a href='/login'>Log In</a>
+       <a href='/signup'>Sign Up</a>
+      
+       </>
+       }
+       { this.state.isLoggedIn && 
+        <a href='/logout' onClick={this.handleClickExit} >Log Out</a>
+       }
           </div>
+          <div>
+     </div>
           <div className='hamburger' onClick={this.handleClick}>
             <div className={this.state.isToggleOn ? 'bars' : 'bars active' }>
               <div className='bar one'></div>
@@ -147,11 +164,11 @@ handleLogout = () => {
               <Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
               )} />
           <Route path={'/signup'} render={props => (
-              <Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
+              <Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
               )} />
           {this.state.isLoggedIn  &&
-            <Route path={'/form'} render={props => (
-              <Form {...props} userId={this.state.user_id}/>
+            <Route path={'/my-plants'} render={props => (
+              < MyPlants {...props} userId={this.state.user_id}/>
               )}/>
           } 
           <Route path={'/'} render={()=> <Home/>}/>

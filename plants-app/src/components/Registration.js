@@ -3,7 +3,7 @@ import axios from 'axios'
 import {Link} from 'react-router-dom'
 const Registration = (props) => {
   const handleClick = () => {
-    axios.post('http://localhost:4000/logout', {withCredentials: true})
+    axios.delete('http://localhost:4000/logout', {withCredentials: true})
     .then(response => {
       console.log(response)
       props.handleLogout()
@@ -16,13 +16,13 @@ const Registration = (props) => {
     
      <div>
        { !props.loggedInStatus  && <>
-       <Link to='/login'>Log In</Link>
-       <Link to='/signup'>Sign Up</Link>
+       <a href='/login'>Log In</a>
+       <a href='/signup'>Sign Up</a>
+      
        </>
        }
-       { props.loggedInStatus ? 
-         <Link to='/logout' onClick={handleClick}>Log Out</Link> : 
-         null
+       { props.loggedInStatus && 
+        <a href='/logout' onClick={handleClick} >Log Out</a>
        }
      </div>
    );

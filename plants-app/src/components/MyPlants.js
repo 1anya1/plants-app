@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-class Disease extends React.Component {
+class MyPlants extends React.Component {
     constructor(props){
         super(props)
         this.state={
@@ -61,9 +61,9 @@ class Disease extends React.Component {
     
     render(){
         const title = this.state.title;
-        console.log(typeof title)
-        console.log(this.state.plants)
-        console.log(this.state.title)
+       
+        console.log(this.state.plants.length)
+        
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>
@@ -78,10 +78,15 @@ class Disease extends React.Component {
             Add Plant
           </button>
                 </form>
+            {}
+            <div>
+            {this.state.plants.map((el, idx)=><h1 key={idx}>{el.title}</h1>)}
+            </div>
+            
             </div>
         )
     }
 
 }
 
-export default Disease
+export default MyPlants

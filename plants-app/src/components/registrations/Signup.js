@@ -40,7 +40,7 @@ axios.post('http://localhost:4000/users', {user}, {withCredentials: true})
     .catch(error => console.log('api errors:', error))
   };
 redirect = () => {
-    this.props.history.push('/registration')
+    this.props.history.push('/')
   }
 handleErrors = () => {
     return (
