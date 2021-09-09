@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './App.scss';
 import {
     BrowserRouter as Router,
@@ -14,6 +15,10 @@ import CareTips from './components/Plants/CareTips'
 // import Tracker from './components/Tracker'
 // import './index.scss';
 
+import Registration from './components/Registration'
+import Login from './components/registrations/Login'
+import Signup from './components/registrations/Signup'
+import Form  from './components/Form'
 
 import logo from './components/Logo'
 const links = [
@@ -35,6 +40,9 @@ class App extends Component {
       isToggleOn: true,
       scrolling:'',
       navShow: null,
+      isLoggedIn: false,
+      user: {},
+      user_id: null,
     };
 
     // This binding is necessary to make `this` work in the callback
@@ -42,7 +50,8 @@ class App extends Component {
     this.handleScroll = this.handleScroll.bind(this);
   }
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll, { passive: true })
+    window.addEventListener('scroll', this.handleScroll, { passive: true });
+    this.loginStatus()
   }
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
@@ -74,9 +83,38 @@ class App extends Component {
     }
   }
 }
+loginStatus = () => {
+  axios.get('http://localhost:4000/logged_in', {withCredentials: true})
+  .then(response => {
+    if (response.data.logged_in) {
+      this.handleLogin(response)
+    } else {
+      this.handleLogout()
+    }
+  })
+  .catch(error => console.log('api errors:', error))
+}
+handleLogin = (data) => {
+  console.log(data)
+  this.setState({
+    isLoggedIn: true,
+    user: data.user,
+    user_id: data.data.user.id
+  })
+}
+handleLogout = () => {
+  this.setState({
+  isLoggedIn: false,
+  user: {},
+  user_id: null
+  })
+}
  
 
   render() {
+    console.log(this.state.isLoggedIn)
+    console.log(this.state.user_id)
+    
     return (
      
       <main className={this.state.isToggleOn ? null : 'noscroll' } onScroll={console.log('scrolling')}>
@@ -98,21 +136,25 @@ class App extends Component {
         </nav>
         <Router>
         <Switch>
-          <Route path="/diseases">
-            <Disease />
-          </Route>
-          <Route path="/plants">
-            <Plants />
-          </Route>
-          <Route path="/pests">
-            <Pests />
-          </Route>
-          <Route path="/care-tips">
-            <CareTips />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
+          <Route path={'/disease'} render={()=> <Disease />}/>
+          <Route path={'/plants'} render={()=> <Plants />}/>
+          <Route path={'/pests'} render={()=> <Pests/>}/>
+          <Route path={'/care-tips'} render={()=> <CareTips/>}/>
+          <Route path={'/registration'} render={props => (
+              <Registration {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn} />
+              )}/>
+          <Route path={'/login'} render={props => (
+              <Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
+              )} />
+          <Route path={'/signup'} render={props => (
+              <Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
+              )} />
+          {this.state.isLoggedIn  &&
+            <Route path={'/form'} render={props => (
+              <Form {...props} userId={this.state.user_id}/>
+              )}/>
+          } 
+          <Route path={'/'} render={()=> <Home/>}/>
         </Switch>
         </Router>
         <Footer />
