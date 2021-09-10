@@ -10,7 +10,7 @@ class Disease extends React.Component {
         this.getDisease()
     }
     getDisease = () =>{
-        fetch('http://localhost:3000/diseases')
+        fetch('http://localhost:3001/diseases')
             .then(response => response.json())
             .then(json => this.setState({ disease: json }))
         .catch(error => console.error(error))
