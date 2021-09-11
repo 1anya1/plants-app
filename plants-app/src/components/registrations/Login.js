@@ -71,13 +71,13 @@ return (
             value={username}
             onChange={this.handleChange}
           />
-          <input
+          {/* <input
             placeholder="email"
             type="text"
             name="email"
             value={email}
             onChange={this.handleChange}
-          />
+          /> */}
           <input
             placeholder="password"
             type="password"
