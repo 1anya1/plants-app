@@ -44,7 +44,7 @@ handleSubmit = (event) => {
     .catch(error => console.log('api errors:', error))
   };
 redirect = () => {
-    this.props.history.push('/')
+    this.props.history.push('/my-plants')
   }
 handleErrors = () => {
     return (
@@ -71,13 +71,13 @@ return (
             value={username}
             onChange={this.handleChange}
           />
-          <input
+          {/* <input
             placeholder="email"
             type="text"
             name="email"
             value={email}
             onChange={this.handleChange}
-          />
+          /> */}
           <input
             placeholder="password"
             type="password"

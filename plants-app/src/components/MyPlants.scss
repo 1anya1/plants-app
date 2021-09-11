@@ -1,0 +1,26 @@
+@import '../index.scss';
+
+#my-plants{
+    .cover{
+        background-image: url(../img/plant-tracker.png);
+        position: relative;
+        .header{
+            position: absolute;
+            top: 45%;
+            padding-left: 12rem;
+        }
+    }
+    form{
+        input{
+            font-size: 1.6rem;
+        }
+    }
+    .my-list{
+        .plant{
+            img{
+                height: 100px;
+                width: 100px;
+            }
+        }
+    }
+}

@@ -37,6 +37,7 @@ class App extends Component {
       isLoggedIn: false,
       user: {},
       user_id: null,
+      username: null,
     };
 
     // This binding is necessary to make `this` work in the callback
@@ -93,7 +94,8 @@ handleLogin = (response) => {
   this.setState({
     isLoggedIn: true,
     user: response.data.user,
-    user_id: response.data.user.id
+    user_id: response.data.user.id, 
+    username: response.data.user.username
   })
 }
 handleLogout = () => {
@@ -131,8 +133,10 @@ handleClickExit = (e) => {
               <a className='link' href='/signup'>Sign Up</a>
                </>
             }
-            { this.state.isLoggedIn && 
+            { this.state.isLoggedIn && <>
+            <a className='link' href='/my-plants'> My Plants</a>
             <a className='link'  href='/' onClick={this.handleClickExit} >Log Out</a>
+            </>
             }
          </div>
           <div className='hamburger' onClick={this.handleClick}>
@@ -148,8 +152,10 @@ handleClickExit = (e) => {
               <a className='link' href='/signup'>Sign Up</a>
                </>
             }
-            { this.state.isLoggedIn && 
-            <a className='link'  href='/logout' onClick={this.handleClickExit} >Log Out</a>
+            { this.state.isLoggedIn && <>
+            <a className='link' href='/my-plants'> My Plants</a>
+            <a className='link'  href='/' onClick={this.handleClickExit} >Log Out</a>
+            </>
             }
               </div>
           </div>
@@ -159,9 +165,7 @@ handleClickExit = (e) => {
           <Route path={'/disease'} render={()=> <Disease />}/>
           <Route path={'/plants'} render={()=> <Plants />}/>
           <Route path={'/pests'} render={()=> <Pests/>}/>
-          {this.state.isLoggedIn  &&
-            <Route path={'/care-tips'} render={()=> <CareTips/>}/>
-        }
+          <Route path={'/care-tips'} render={()=> <CareTips/>}/>
           <Route path={'/registration'} render={props => (
               <Registration {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn} />
               )}/>
@@ -171,9 +175,9 @@ handleClickExit = (e) => {
           <Route path={'/signup'} render={props => (
               <Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
               )} />
-          {this.state.isLoggedIn  &&
+          {this.state.isLoggedIn  && 
             <Route path={'/my-plants'} render={props => (
-              < MyPlants {...props} userId={this.state.user_id}/>
+              < MyPlants {...props} userId={this.state.user_id} name={this.state.username}/>
               )}/>
           } 
           <Route path={'/'} render={()=> <Home/>}/>
