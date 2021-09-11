@@ -8,8 +8,6 @@ import Plants from './components/Plants/Plants'
 import Pests from './components/Pests'
 import Footer from './components/Footer'
 import CareTips from './components/Plants/CareTips'
-// import Tracker from './components/Tracker'
-// import './index.scss';
 
 import Registration from './components/Registration'
 import Login from './components/registrations/Login'
@@ -80,8 +78,7 @@ class App extends Component {
   }
 }
 loginStatus = () => {
-
-  axios.get('http://localhost:4000/logged_in', {withCredentials: true})
+  axios.get('https://salty-peak-61296.herokuapp.com/logged_in', {withCredentials: true})
   .then(response => {
     if (response.data.logged_in) {
       this.handleLogin(response)
@@ -91,12 +88,12 @@ loginStatus = () => {
   })
   .catch(error => console.log('api errors:', error))
 }
-handleLogin = (data) => {
-  console.log(data)
+handleLogin = (response) => {
+  console.log(response)
   this.setState({
     isLoggedIn: true,
-    user: data.user,
-    user_id: data.data.user.id
+    user: response.data.user,
+    user_id: response.data.user.id
   })
 }
 handleLogout = () => {
@@ -107,8 +104,9 @@ handleLogout = () => {
   user_id: null
   })
 } 
-handleClickExit = () => {
-  axios.delete('http://localhost:4000/logout', {withCredentials: true})
+handleClickExit = (e) => {
+  e.preventDefault()
+  axios.delete('https://salty-peak-61296.herokuapp.com/logout', {withCredentials: true})
   .then(response => {
     console.log(response)
     this.handleLogout()
@@ -129,17 +127,14 @@ handleClickExit = () => {
           <div className='menu' >
             {links.map(createNavItem)}
             { !this.state.isLoggedIn  && <>
-       <a href='/login'>Log In</a>
-       <a href='/signup'>Sign Up</a>
-      
-       </>
-       }
-       { this.state.isLoggedIn && 
-        <a href='/logout' onClick={this.handleClickExit} >Log Out</a>
-       }
-          </div>
-          <div>
-     </div>
+              <a  className='link' href='/login'>Log In</a>
+              <a className='link' href='/signup'>Sign Up</a>
+               </>
+            }
+            { this.state.isLoggedIn && 
+            <a className='link'  href='/' onClick={this.handleClickExit} >Log Out</a>
+            }
+         </div>
           <div className='hamburger' onClick={this.handleClick}>
             <div className={this.state.isToggleOn ? 'bars' : 'bars active' }>
               <div className='bar one'></div>
@@ -148,6 +143,14 @@ handleClickExit = () => {
             </div>
             <div className={this.state.isToggleOn ? 'collapse mobile-nav' : 'show mobile-nav'}>
               {links.map(createNavItem)}
+              { !this.state.isLoggedIn  && <>
+              <a  className='link' href='/login'>Log In</a>
+              <a className='link' href='/signup'>Sign Up</a>
+               </>
+            }
+            { this.state.isLoggedIn && 
+            <a className='link'  href='/logout' onClick={this.handleClickExit} >Log Out</a>
+            }
               </div>
           </div>
         </nav>
@@ -156,7 +159,9 @@ handleClickExit = () => {
           <Route path={'/disease'} render={()=> <Disease />}/>
           <Route path={'/plants'} render={()=> <Plants />}/>
           <Route path={'/pests'} render={()=> <Pests/>}/>
-          <Route path={'/care-tips'} render={()=> <CareTips/>}/>
+          {this.state.isLoggedIn  &&
+            <Route path={'/care-tips'} render={()=> <CareTips/>}/>
+        }
           <Route path={'/registration'} render={props => (
               <Registration {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn} />
               )}/>
