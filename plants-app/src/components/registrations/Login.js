@@ -29,11 +29,11 @@ handleSubmit = (event) => {
       password: password
     }
     
-    axios.post('http://localhost:4000/login', {user}, {withCredentials: true})
+    axios.post('https://salty-peak-61296.herokuapp.com/login', {user}, {withCredentials: true})
     
     .then(response => {
       if (response.data.logged_in) {
-        this.props.handleLogin(response.data)
+        this.props.handleLogin(response)
         this.redirect()
       } else {
         this.setState({

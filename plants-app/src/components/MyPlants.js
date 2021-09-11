@@ -14,7 +14,7 @@ class MyPlants extends React.Component {
         this.handleData()
     }
     handleData(){
-        axios.get(`http://localhost:4000/users/${this.props.userId}`)
+        axios.get(`https://salty-peak-61296.herokuapp.com/users/${this.props.userId}`)
         .then(response => {
             console.log(response.data)
                 if(response.data){
@@ -40,7 +40,7 @@ class MyPlants extends React.Component {
         let todo = {
           title: title
         }
-    axios.post(`http://localhost:4000/users/${this.props.userId}/todos`, {todo})
+    axios.post(`https://salty-peak-61296.herokuapp.com/users/${this.props.userId}/todos`, {todo})
         .then(response => {
           if (response.data.status === 'created') {
           } else {

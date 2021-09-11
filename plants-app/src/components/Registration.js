@@ -3,7 +3,7 @@ import axios from 'axios'
 import {Link} from 'react-router-dom'
 const Registration = (props) => {
   const handleClick = () => {
-    axios.delete('http://localhost:4000/logout', {withCredentials: true})
+    axios.delete('https://salty-peak-61296.herokuapp.com/logout', {withCredentials: true})
     .then(response => {
       console.log(response)
       props.handleLogout()
