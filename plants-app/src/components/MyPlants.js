@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import './MyPlants.scss'
 
 class MyPlants extends React.Component {
     constructor(props){
@@ -65,7 +66,12 @@ class MyPlants extends React.Component {
         console.log(this.state.plants.length)
         
         return(
-            <div>
+            <div id="my-plants">
+              <div className='cover'>
+                     <h1 className='header'>
+                        Welcome back,  {this.props.name}!
+                    </h1>
+                </div>
                 <form onSubmit={this.handleSubmit}>
                     <input
                         placeholder="title"
