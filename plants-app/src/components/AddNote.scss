@@ -1,3 +1,30 @@
+@import '../index.scss';
+#plant-logs{
+    .modal{
+        display:none;
+    }
+    .modal-show{
+        display: block;
+    }
+.notes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:stretch;
+
+    .note{
+        width: 30vw;
+        border: $peach 1px solid;
+        margin: 1rem;
+        
+        svg{
+            height: 50px;
+            width: 50px;
+        }
+    }
+
+}
 .care-box{
     display: flex;
     flex-direction: row;
@@ -34,5 +61,5 @@
         
 
     }
-   
+}
 }

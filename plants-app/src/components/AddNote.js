@@ -16,6 +16,8 @@ class AddNote extends Component {
             comment: '',
             img: '', 
             date: '',
+            modal: false,
+            note_id: '',
         }
     }
      componentDidMount(){
@@ -92,26 +94,68 @@ class AddNote extends Component {
         })
         this.handleNote()
       };
+      deleteNote=(id)=>{
+          this.setState({
+              modal: true,
+              note_id: id
+          })
+          
+      }
+      deleteRoute=async ()=>{
+        
+         await axios.delete(`https://salty-peak-61296.herokuapp.com/users/${this.props.userId}/todos/${this.state.id}/plants/${this.state.note_id}`)
+        .then(response => {
+            if (response.data) {
+                this.setState({
+                    modal: false,
+                    note_id: '',
+                })   
+              
+            } else {
+              this.setState({
+                errors: response.data.errors
+              })
+            }
+          })
+          .catch(error => console.log('api errors:', error))
+          this.handleNote();
+      }
+      cancelDelete=()=>{
+        this.setState({
+            modal: false,
+            note_id: '',
+        })  
+      }
+      
     render(){
         console.log('this is the date' + this.state.date)
+        console.log('note id' + this.state.note_id)
          
         return(
-            <>
+            < div id='plant-logs'>
              <div className='cover'>
                      <h1 className='header'>
                         Welcome back,  {this.props.name}!
                     </h1>
                 </div>
+                <div className='modal' className={this.state.modal ? 'modal modal-show' : 'modal'}>
+                    <h2>Are you sure you want to delete?</h2>
+                    <div className='confirm-delete'>
+                        <button onClick={this.deleteRoute}>yes</button>
+                        <button onClick={this.cancelDelete}>no</button>
+                    </div>
+                </div>  
             <div className='notes'>
                 {this.state.notes.map((el, idx)=>{
-                    return(
+                    return(     
                         <div className='note' key={`entry${idx}`}>
-                            <div>{el.date}</div>    
+                            <h4>{el.date}</h4>    
                             {el.water===true && <mySVG.Watering />}
                             {el.fertilize===true && <mySVG.Fertilizer />}
                             {el.prune===true && <mySVG.Propagating />}
                             {el.repot && <mySVG.Repotting />}
-                            <div>{el.notes}</div>                     
+                            <p>{el.notes}</p>    
+                            <button onClick={() => this.deleteNote(el.id)}>Delete</button>       
                         </div>
 
                     )
@@ -126,6 +170,7 @@ class AddNote extends Component {
                     name="date"
                     value={this.state.date}
                     onChange={this.handleChange}
+                    required
                 />
                 <div className='care-box'>
                 <div className='care-type'>
@@ -172,7 +217,6 @@ class AddNote extends Component {
                 </div>
                 <textarea
                     placeholder='notes'
-                    
                     name='comment'
                     value={this.state.comment}
                     rows="5" cols="33"
@@ -186,7 +230,7 @@ class AddNote extends Component {
         
           
           </form>
-            </>
+            </div>
         )
     }
 
