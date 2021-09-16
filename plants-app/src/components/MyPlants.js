@@ -127,7 +127,7 @@ class MyPlants extends React.Component {
                       <button id='active' placeholder="submit" type="submit"> Add Plant</button>
                     }
                     {!this.state.image_uploaded &&
-                      <button id='disabled'> Add Plant</button>
+                      <button id='disabled' disabled> Add Plant</button>
                     }
                 </form>
             <div className='my-list'>
