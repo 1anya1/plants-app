@@ -4,10 +4,34 @@
     .care-type{
         display: flex;
         flex-direction: column;
-        svg{
-            height: 30px;
-            width: 30px;
+        input{
+            display: none;
+        }
+        label{
+            svg{
+                height: 30px;
+                width: 30px;
+                &:hover, &:focus{
+                    g{
+                        fill: pink;
+                   }
+                    path{
+                        fill: pink;
+                    }
+                }
+                }
             }
+            .clicked{
+                g{
+                    fill: pink;
+                }
+                path{
+                    fill: pink;
+                }
+               
+                
+            }
+        
 
     }
    

@@ -71,6 +71,7 @@ class MyPlants extends React.Component {
             url:'',
             image_uploaded: false,
           });
+        
       };
 
     imageUpload=(e)=>{

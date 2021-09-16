@@ -54,7 +54,7 @@ class AddNote extends Component {
           [name]: value
         })
       };
-      handleSubmit = (event) => {
+      handleSubmit = async (event) => {
         event.preventDefault()
         const {water, fertilize, prune, repot, comment,img, date} = this.state
         let plant = {
@@ -67,7 +67,7 @@ class AddNote extends Component {
             date: date
         }
         
-        axios.post(`https://salty-peak-61296.herokuapp.com/users/${this.props.userId}/todos/${this.state.id}/plants`, {plant})
+        await axios.post(`https://salty-peak-61296.herokuapp.com/users/${this.props.userId}/todos/${this.state.id}/plants`, {plant})
         
         .then(response => {
           if (response.data.logged_in) {
@@ -80,6 +80,17 @@ class AddNote extends Component {
           }
         })
         .catch(error => console.log('api errors:', error))
+        this.setState({
+            water: false, 
+            fertilize: false,
+            prune: false, 
+            repot: false,
+            comment: '',
+            img: '', 
+            date: '',
+
+        })
+        this.handleNote()
       };
     render(){
         console.log('this is the date' + this.state.date)
@@ -125,7 +136,7 @@ class AddNote extends Component {
                         onChange={this.handleInputChange}
                         checked={this.state.water}
                     />
-                    <mySVG.Watering />
+                    <label className='option' htmlFor="watered"><mySVG.Watering className={this.state.water ? 'clicked' : null} /></label>
                 </div>
                 <div className='care-type'>
                     <input
@@ -135,7 +146,8 @@ class AddNote extends Component {
                         onChange={this.handleInputChange}
                         checked={this.state.fertilize}
                     />
-                    <mySVG.Fertilizer />
+                    <label className='option'  htmlFor="fertilize" ><mySVG.Fertilizer className={this.state.fertilize ? 'clicked' : null}/></label>
+                    
                 </div>
                  <div className='care-type'>
                     <input
@@ -144,8 +156,8 @@ class AddNote extends Component {
                         name="prune"
                         onChange={this.handleInputChange}
                         checked={this.state.prune}
-                    />
-                    <mySVG.Propagating />
+                    /> 
+                    <label className='option'  htmlFor="prune" ><mySVG.Propagating className={this.state.prune ? 'clicked' : null} /></label>
                 </div>
                 <div className='care-type'>
                     <input
@@ -155,7 +167,7 @@ class AddNote extends Component {
                         onChange={this.handleInputChange}
                         checked={this.state.repot}
                     />
-                    <mySVG.Repotting />
+                    <label className='option'  htmlFor="repot" ><mySVG.Repotting className={this.state.repot ? 'clicked' : null} /></label>
                 </div>
                 </div>
                 <textarea
