@@ -1,0 +1,69 @@
+@import '../../index.scss';
+.modal{
+    display:none;
+   
+    .delete-modal-contnet{
+        width: 650px;
+        position: relative;
+        height: fit-content;
+        top: 30%;
+        margin: 0 auto;
+        background-color: $blush;
+        padding: 4rem;
+        @include bp-medium{
+            width: 90%;
+        }
+        @include bp-small{
+            padding: 2rem;
+        }
+        h3{
+          width: 70%;
+          margin-bottom: 3rem;
+            @include bp-medium{
+                width: 90%;
+                margin: auto;
+                margin-bottom: 2rem;
+            }
+        } 
+        svg{
+            position: absolute;
+            // top: 50%;
+            // transform: translate(0, -50%);
+            height: 70%;
+            width: 30%;
+            bottom: 2.5rem;
+            right:0;
+            @include bp-medium{
+                display: none;
+            }
+        }
+        .confirm-delete{
+            display: flex;
+            flex-direction: row;
+            @include bp-medium{
+                flex-direction: column;   
+            }
+            button{
+                width: 30%;
+                margin-right:  3rem;
+                background-color: $forest-green;
+                border-radius: 1rem;
+                margin-top: 2rem;
+                @include bp-medium{
+                    width:90%;
+                    margin-right: unset;
+                    margin: auto;
+                    margin-top: 2rem; 
+                   
+                }
+                @include bp-small{
+                    height: 5rem;
+
+                }
+            }
+        }
+    }
+}
+.modal-show{
+    display: block;
+}

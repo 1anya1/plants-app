@@ -18,7 +18,6 @@ export default class Modal extends React.Component {
     }
   render() {
          if(this.props.modal !==null){
-             console.log('lets return something')
              return(
                 <div className= "modal" > 
                     <div className='modal-card'>

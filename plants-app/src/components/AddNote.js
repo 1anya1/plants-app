@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import mySVG from './data/Svg.js'
 import './AddNote.scss'
+import logo from './Logo.js'
+import DeleteModal from './modaDelete/ModalDelete.js'
 
 class AddNote extends Component {
     constructor(props){
@@ -99,6 +101,7 @@ class AddNote extends Component {
               modal: true,
               note_id: id
           })
+          document.body.style.overflow = "hidden";
           
       }
       deleteRoute=async ()=>{
@@ -110,7 +113,7 @@ class AddNote extends Component {
                     modal: false,
                     note_id: '',
                 })   
-              
+                document.body.style.overflow = "unset";
             } else {
               this.setState({
                 errors: response.data.errors
@@ -125,7 +128,9 @@ class AddNote extends Component {
             modal: false,
             note_id: '',
         })  
+        document.body.style.overflow = "unset";
       }
+      
       
     render(){
         console.log('this is the date' + this.state.date)
@@ -133,18 +138,14 @@ class AddNote extends Component {
          
         return(
             < div id='plant-logs'>
-             <div className='cover'>
+                <div className='cover'>
                      <h1 className='header'>
                         Welcome back,  {this.props.name}!
                     </h1>
                 </div>
-                <div className='modal' className={this.state.modal ? 'modal modal-show' : 'modal'}>
-                    <h2>Are you sure you want to delete?</h2>
-                    <div className='confirm-delete'>
-                        <button onClick={this.deleteRoute}>yes</button>
-                        <button onClick={this.cancelDelete}>no</button>
-                    </div>
-                </div>  
+                <DeleteModal delete={this.state.modal} deleteRoute={this.deleteRoute} cancelDelete={this.cancelDelete} />
+            
+             
             <div className='notes'>
                 {this.state.notes.map((el, idx)=>{
                     return(     
