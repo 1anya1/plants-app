@@ -13,6 +13,7 @@ import Registration from './components/Registration'
 import Login from './components/registrations/Login'
 import Signup from './components/registrations/Signup'
 import MyPlants  from './components/MyPlants.js'
+import AddNote from './components/AddNote.js'
 
 import logo from './components/Logo'
 const links = [
@@ -38,6 +39,7 @@ class App extends Component {
       user: {},
       user_id: null,
       username: null,
+      plant_id: null,
     };
 
     // This binding is necessary to make `this` work in the callback
@@ -175,9 +177,14 @@ handleClickExit = (e) => {
           <Route path={'/signup'} render={props => (
               <Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
               )} />
+            {this.state.isLoggedIn  && 
+            <Route path={'/my-plants/logs'} render={props => (
+              < AddNote {...props} userId={this.state.user_id} name={this.state.username}/>
+              )}/>
+          } 
           {this.state.isLoggedIn  && 
             <Route path={'/my-plants'} render={props => (
-              < MyPlants {...props} userId={this.state.user_id} name={this.state.username}/>
+              < MyPlants {...props} userId={this.state.user_id} name={this.state.username} plant_id={this.state.plant_id}/>
               )}/>
           } 
           <Route path={'/'} render={()=> <Home/>}/>
