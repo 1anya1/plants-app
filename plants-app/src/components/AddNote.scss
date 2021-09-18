@@ -10,7 +10,7 @@
         }
     }
     .leger{
-        display: flex;
+        display: none;
         flex-direction: row;
         svg{
 
@@ -23,6 +23,8 @@
 .notes{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 2rem;
+    row-gap: 2rem;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -31,40 +33,48 @@
     @include bp-large{
         grid-template-columns: 1fr 1fr;
     }
+  
     @include bp-medium{
         grid-template-columns: 1fr;
     }
+  
 
     .note{
-        border: $peach 1px solid;
-        margin: 1rem;
+        border: $blush 1.5px solid;
         padding: 4rem;
         border-radius: 1rem;
-        width: 30vw;
-        @include bp-large{
-            width: 45vw;
-        }
-        @include bp-medium{
-            width: 90vw; 
-        }
+        width: 100%;
+       
         h4{
-            padding-bottom: 3rem;
+            color: $gray;
+            margin-bottom: 3.6rem;
         }
-        h5{
-            margin-bottom: 1rem;
+        h3{
+            margin-bottom: 2.6rem;
         }
         .todos{
             margin-bottom: 2rem;
+            display: flex;
+            flex-direction: row;
             svg{
-                height: 40px;
-                width: 40px;
+                height: 45px;
+                width: 45px;
                 margin-right: 2rem;
+                path{
+                    fill: $gray;
+                }
             }
 
         }
         p{
-            margin-bottom: 2rem;
+            margin-bottom: 2.6rem;
         }
+      button{
+          height: 7rem;
+          background-color: $blush;
+          border-radius: 1rem;
+          padding: 0 2rem; 
+      }
        
     }
 

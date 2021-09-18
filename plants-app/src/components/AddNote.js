@@ -174,7 +174,7 @@ class AddNote extends Component {
                     return(     
                         <div className='note' key={`entry${idx}`}>
                             <h4>{el.date}</h4>    
-                            <h5>Notes:</h5>
+                            <h3>Notes:</h3>
                             <div className='todos'>
                             {el.water===true && <mySVG.Watering  />}
                             {el.fertilize===true && <mySVG.Fertilizer />}
