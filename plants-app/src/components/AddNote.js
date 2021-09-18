@@ -133,9 +133,14 @@ class AddNote extends Component {
       
       
     render(){
-        console.log('this is the date' + this.state.date)
-        console.log('note id' + this.state.note_id)
+    
+        let sortedNotes = this.state.notes.sort((a,b)=>{
+            var c = new Date(a.date);
+            var d = new Date(b.date);
+            return d-c;
+        });
          
+        console.log(sortedNotes)
         return(
             < div id='plant-logs'>
                 <div className='cover'>
@@ -144,19 +149,40 @@ class AddNote extends Component {
                     </h1>
                 </div>
                 <DeleteModal delete={this.state.modal} deleteRoute={this.deleteRoute} cancelDelete={this.cancelDelete} />
-            
+                <div className='leger'>
+                    <div>
+                        <mySVG.Watering />
+                        <h5>Water</h5>
+                    </div>
+                    <div>
+                        <mySVG.Fertilizer />
+                        <h5>Fertilize</h5>
+                    </div>
+                    <div>
+                        <mySVG.Propagating/>
+                        <h5>Prune</h5>
+                    </div>
+                    <div>
+                        <mySVG.Repotting />
+                        <h5>Repot</h5>
+                    </div>
+                </div>
              
             <div className='notes'>
-                {this.state.notes.map((el, idx)=>{
+                
+                {sortedNotes.map((el, idx)=>{
                     return(     
                         <div className='note' key={`entry${idx}`}>
                             <h4>{el.date}</h4>    
-                            {el.water===true && <mySVG.Watering />}
+                            <h5>Notes:</h5>
+                            <div className='todos'>
+                            {el.water===true && <mySVG.Watering  />}
                             {el.fertilize===true && <mySVG.Fertilizer />}
                             {el.prune===true && <mySVG.Propagating />}
                             {el.repot && <mySVG.Repotting />}
+                            </div>
                             <p>{el.notes}</p>    
-                            <button onClick={() => this.deleteNote(el.id)}>Delete</button>       
+                            <button onClick={() => this.deleteNote(el.id)}>Remove Note</button>       
                         </div>
 
                     )
