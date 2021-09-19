@@ -138,6 +138,8 @@ class MyPlants extends React.Component {
                 <div id="my-plants" className='intro'>
                 <DeleteModal delete={this.state.modal} deleteRoute={this.deleteRoute} cancelDelete={this.cancelDelete} />
                 <form onSubmit={this.handleSubmit}>
+                  <h3>Add New Plant</h3>
+                  <div className='inputs'>
                     <input
                         placeholder="title"
                         required="required"
@@ -147,12 +149,14 @@ class MyPlants extends React.Component {
                         onChange={this.handleChange}
                     />
                     <input type='file' required="required" onChange={this.imageUpload}/>
+                    </div>
                     {this.state.image_uploaded  &&
                       <button id='active' placeholder="submit" type="submit"> Add Plant</button>
                     }
                     {!this.state.image_uploaded &&
                       <button id='disabled' disabled> Add Plant</button>
                     }
+                    
                 </form>
             <div className='my-list'>
              {plants > 0 && <>
@@ -163,14 +167,15 @@ class MyPlants extends React.Component {
                   </div>
                   <h3 key={idx}>{el.title}</h3>
                   <div className='buttons'>
-                  <button value={el.id} onClick={this.deleteNote}>Delete</button>
-                  <button>
-                  <Link className='viewNotes' to={{
-                    pathname: `/my-plants/logs`,
-                    state: { 
-                    plant_id: el.id
-                  }}}>Notes</Link>
-                  </button>
+                    <button id='notes'> 
+                      <Link className='viewNotes' to={{
+                        pathname: `/my-plants/logs`,
+                        state: { 
+                          plant_id: el.id
+                        }}}>Notes</Link>
+                    </button>
+                    <button id='delete' value={el.id} onClick={this.deleteNote}>Delete</button>
+
                   </div>
                   {/* <button value={el.id} >Add Note</button> */}
                 </div>

@@ -50,6 +50,11 @@
                 background-color: $forest-green;
                 border-radius: 1rem;
                 margin-top: 2rem;
+                transition: all .5s ease-in-out;
+                &:hover, &:focus, &:active{
+                    background-color: $peach;
+                    transition: all .5s ease-in-out;
+                }
                 @include bp-medium{
                     width:90%;
                     margin-right: unset;

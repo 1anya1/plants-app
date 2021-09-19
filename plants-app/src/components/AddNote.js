@@ -176,7 +176,7 @@ class AddNote extends Component {
                 <div className='form-inputs'>
                 <input
                     type= 'date'
-                    placeholder='Sep 20, 2021'
+                    placeholder='Date:   '
                     name="date"
                     value={this.state.date}
                     onChange={this.handleChange}

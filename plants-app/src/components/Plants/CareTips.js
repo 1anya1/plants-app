@@ -10,15 +10,14 @@ const careType = [ 'Sun', 'Watering', 'Humidity', 'Temperature', 'Fertilizing', 
 class CareTips extends React.Component{
     render(){
        return (
-        
-        <div id='care-tips'>
-            <header className=' cover plantsCover'>
-                <div className='title'>
-                    <h1 className='header1'>HOUSE  </h1> 
-                    <h1 className='header1'><i>PLANTS</i> </h1> 
-                </div>
-            </header>  
-            <div className='intro'>
+        <>
+        <div class='care-tips'>
+            <div className=' cover plantsCover'>
+                   <h1>Care Tips </h1>
+            </div>
+        </div>  
+        <div id='care-tips' className='intro'>
+            <div>
                 <p>A couple of words on plants... Proper watering and lighting are the most important components of indoor plant care. Humidity and temperatures also play a role. The trick is to try to mimic the climate of the place that plant came from.</p>
                 <p>If you’re caring for indoor plants for the first time, this short guide will get you started on the right path.</p> 
              </div>    
@@ -28,9 +27,6 @@ class CareTips extends React.Component{
                  const Component = mySVG[el]
                  const Data = careTips[careType[idx]]
                  
-                 
-
-           
                 return (
                 <>
                 <div className='symbols'>
@@ -48,7 +44,6 @@ class CareTips extends React.Component{
         <div>
             {careType.map((el, idx)=>{
                 const Data = careTips[el]
-                
                 return(
                     <>
                     <h3 id={el}>{careType[idx]}</h3>
@@ -67,6 +62,7 @@ class CareTips extends React.Component{
             })}
         </div>
         </div>
+        </>
        ) 
     }
 }

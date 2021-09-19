@@ -239,9 +239,17 @@ input,select,textarea{
   font-family: $body-font;
   color: $gray;
   background-color: white;
-  -webkit-appearance:none;
+  // -webkit-appearance:none;
 
 }
 
-
-
+input::-webkit-date-and-time-value {
+  height: 1.5em;
+}
+@include bp-large{
+  input[type="date"]:not(:valid):before {
+    content: attr(placeholder);
+    padding-right: 1rem;
+    
+  }
+}

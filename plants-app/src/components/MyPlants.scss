@@ -1,19 +1,101 @@
 @import '../index.scss';
+
 .my-plants{
     background-image: url(../img/many-houseplants.png);
 }
 
 #my-plants{
+    .buttons{
+        display: flex;
+        #notes{
+            background-color: $forest-green;
+            &:hover, &:focus, &:active{
+                background-color: $peach;
+            }
+            a{
+                color: white;
+                font-family: $body-font;
+                font-size: 1.6rem;
+                font-weight: 600;
+                text-decoration: unset;
+            }
+        }
+        #delete{
+            width: 55%;
+        }
+    }
     form{
-        input{
-            font-size: 1.6rem;
+        display: flex;
+        flex-direction: column;
+        background-color: $blush;
+        padding: 3rem;
+        margin: 0 auto;
+        border-radius: 10px;
+        margin-bottom: 3rem;
+        h3{
+            margin-bottom: 3rem;
+        }
+        .inputs{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include bp-large{
+                flex-direction: column;
+            }
+            input{
+                font-size: 1.6rem;
+                width: 49%;
+                border: unset;
+                height: 4rem;
+                padding: 0 1rem;
+                border-radius: 1rem;
+                @include bp-large{
+                    width: 100%;
+                    margin-bottom: 1rem;
+                }
+            }
+            input[type=file]::file-selector-button {
+                border:unset;
+                height: 100%;
+                background-color: $peach;
+                transition: 1s;
+                padding-left: unset;
+                padding: 0 1rem;
+                color: white;
+                font-family: $body-font;
+                width: 40%;
+                margin-right: 2rem;
+                @include bp-large{
+                    width: 50%;
+                }
+              }
+            input[type='file']{
+                padding-left: unset;
+            }
+        }
+        button{ 
+            margin: auto;
+            margin-top: 2rem;
+            height: 4rem;
+            width: fit-content;
+            background-color: $peach;
+            padding: 0 2rem; 
+            bottom: 0;
+            align-self: flex-end;
+            position: relative;
+            color: white;
+            border-radius: 1rem;
         }
         #disabled{
             background-color: gray;
+            color:lightgray;
+            cursor: not-allowed;
+            
         }
         #active{
-            background-color: $forest-green;
+            background-color: $peach;
         }
+       
     }
     .my-list{
         display: grid;
