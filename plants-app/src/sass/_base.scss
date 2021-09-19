@@ -181,11 +181,41 @@ h1{
   }
 
   .cover{
+
+      h1{
+        position:relative;
+        top: 50%;
+        color: $forest-green;
+        background-color: white;
+        position: absolute;
+        z-index: 2;
+        width: 55%;
+        margin-bottom: 0;
+        height: fit-content;
+        padding: 3rem;
+        text-transform: capitalize lowercase;
+        text-align: center;
+        border-radius: 0 5rem 5rem 0;
+        @include bp-x-large{
+          width: 65%;
+        }
+        @include bp-large{
+          width: 70%;
+          padding: 2rem;
+        }
+        @include bp-medium{
+          width: 75%;
+        }
+        @include bp-small{
+          width: 85%;
+        }
+    }
+    
     height: 500px; 
     position: relative;
     z-index: -1;  
     background-size: cover;
-    background-position: center top;
+    background-position: center;
     @include bp-medium{
       height: 450px;
     }
@@ -198,15 +228,14 @@ h1{
         left:0; top:0;
         width: 100vw;
         height: 100%;
-        display:inline-block;
-        background-color: $peach;
-        opacity: .2;
-    }
-    .title{
-      position: absolute;
-      top: 45%;
-      padding-left: 12rem;
-      color: $white;
+        display:inline-block; 
+        background: linear-gradient(to top,  rgba(216, 150, 135, .2), rgba(216, 150, 135, .2), rgba(216, 150, 135, .2),rgba(255, 255, 255, .6), rgba(255, 255, 255, 1.0));
+        // opacity: .2;
     }
 
+}
+input,select,textarea{
+  font-size: 1.8rem;
+  font-family: $body-font;
+  color: $gray;
 }

@@ -8,14 +8,9 @@
     .search{
     padding: 3rem;
     background-color: $blush;
-    width: 78.5%;
     margin: 0 auto;
     border-radius: 10px;
     margin-bottom: 3rem;
-    margin-top: 3rem;
-    @include bp-medium{
-        width: 80%;
-    }
     .search-menu{
         display: flex;
         align-items: center;
@@ -62,7 +57,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     display: grid;
-    width: 80%;
     margin: 0 auto;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     @include bp-xx-large{
@@ -73,11 +67,10 @@
     }
     @include bp-medium{
         grid-template-columns: 1fr 1fr;   
-        width: 90%;
+        
     }
     @include bp-small{
         grid-template-columns: 1fr;   
-        width: 80%;
         margin: 0 auto;
     }
   

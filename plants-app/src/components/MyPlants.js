@@ -3,6 +3,7 @@ import axios from 'axios'
 import './MyPlants.scss'
 import {uploadFile} from 'react-s3'
 import {Link} from 'react-router-dom'
+import DeleteModal from './modaDelete/ModalDelete.js'
 
 const config = {
   bucketName: 'plantly-user-uploads',
@@ -20,6 +21,8 @@ class MyPlants extends React.Component {
             url: '',
             image_uploaded: false,
             user_id: null,
+            modal: false,
+            id: '',
         }
         this.handleData = this.handleData.bind(this)
     }
@@ -88,18 +91,36 @@ class MyPlants extends React.Component {
         console.log(err)
       })
     }
-    handleDelete=(event)=>{
-      event.preventDefault()
-      const id = event.target.value
-      axios.delete(`https://salty-peak-61296.herokuapp.com/users/${this.props.userId}/todos/${id}}`)
+    deleteRoute=(event)=>{
+      axios.delete(`https://salty-peak-61296.herokuapp.com/users/${this.props.userId}/todos/${this.state.id}}`)
        .then(response => {
          if(response.status===200){
           this.handleData()
          } 
        })
        .catch(error => console.log('api errors:', error))
+       this.setState({
+        modal: false,
+      })  
+      document.body.style.overflow = "unset";
     }
- 
+    deleteNote=(event)=>{
+      console.log(event)
+      const id = event.target.value
+      this.setState({
+          modal: true,
+          id: id,
+      })
+      document.body.style.overflow = "hidden";
+      
+  }
+  cancelDelete=()=>{
+    this.setState({
+        modal: false,
+        id: '',
+    })  
+    document.body.style.overflow = "unset";
+  }
    
     
     render(){
@@ -107,12 +128,15 @@ class MyPlants extends React.Component {
         const plants = this.state.plants.length
       console.log(this.state.plants)
         return(
-            <div id="my-plants">
-              <div className='cover'>
+          <>
+              <div className='cover my-plants'>
                      <h1 className='header'>
                         Welcome back,  {this.props.name}!
                     </h1>
                 </div>
+                
+                <div id="my-plants" className='intro'>
+                <DeleteModal delete={this.state.modal} deleteRoute={this.deleteRoute} cancelDelete={this.cancelDelete} />
                 <form onSubmit={this.handleSubmit}>
                     <input
                         placeholder="title"
@@ -134,14 +158,20 @@ class MyPlants extends React.Component {
              {plants > 0 && <>
                {this.state.plants.map((el, idx)=>{
                 return <div className='plant' key={el.id}>
-                  <h1 key={idx}>{el.title}</h1>
-                  <img key={el.url} src={el.url} />
-                  <button value={el.id} onClick={this.handleDelete}>Delete</button>
-                  <Link to={{
+                  <div className = 'plant-img'>
+                    <img key={el.url} src={el.url} />
+                  </div>
+                  <h3 key={idx}>{el.title}</h3>
+                  <div className='buttons'>
+                  <button value={el.id} onClick={this.deleteNote}>Delete</button>
+                  <button>
+                  <Link className='viewNotes' to={{
                     pathname: `/my-plants/logs`,
                     state: { 
                     plant_id: el.id
                   }}}>Notes</Link>
+                  </button>
+                  </div>
                   {/* <button value={el.id} >Add Note</button> */}
                 </div>
               })}
@@ -156,6 +186,7 @@ class MyPlants extends React.Component {
            </div>
             
             </div>
+            </>
         )
     }
 

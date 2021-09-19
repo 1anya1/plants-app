@@ -142,12 +142,13 @@ class AddNote extends Component {
          
         console.log(sortedNotes)
         return(
-            < div id='plant-logs'>
-                <div className='cover'>
+            <>
+             <div className='cover plant-logs'>
                      <h1 className='header'>
                         Welcome back,  {this.props.name}!
                     </h1>
                 </div>
+            < div id='plant-logs' className='intro'>
                 <DeleteModal delete={this.state.modal} deleteRoute={this.deleteRoute} cancelDelete={this.cancelDelete} />
                 <div className='leger'>
                     <div>
@@ -169,28 +170,9 @@ class AddNote extends Component {
                 </div>
              
             <div className='notes'>
-                
-                {sortedNotes.map((el, idx)=>{
-                    return(     
-                        <div className='note' key={`entry${idx}`}>
-                            <h4>{el.date}</h4>    
-                            <h3>Notes:</h3>
-                            <div className='todos'>
-                            {el.water===true && <mySVG.Watering  />}
-                            {el.fertilize===true && <mySVG.Fertilizer />}
-                            {el.prune===true && <mySVG.Propagating />}
-                            {el.repot && <mySVG.Repotting />}
-                            </div>
-                            <p>{el.notes}</p>    
-                            <button onClick={() => this.deleteNote(el.id)}>Remove Note</button>       
-                        </div>
-
-                    )
-                })}
-
-                
-            </div>
             <form onSubmit={this.handleSubmit}>
+                <h3>Add A New Note</h3>
+                <div className='form-inputs'>
                 <input
                     placeholder="date"
                     type="date"
@@ -249,6 +231,7 @@ class AddNote extends Component {
                     rows="5" cols="33"
                     onChange={this.handleChange}
                 />
+                </div>
         
           
           <button placeholder="submit" type="submit">
@@ -257,7 +240,30 @@ class AddNote extends Component {
         
           
           </form>
+                
+                {sortedNotes.map((el, idx)=>{
+                    return(     
+                        <div className='note' key={`entry${idx}`}>
+                            <h4>{el.date}</h4>    
+                            <h3>Notes:</h3>
+                            <div className='todos'>
+                            {el.water===true && <mySVG.Watering  />}
+                            {el.fertilize===true && <mySVG.Fertilizer />}
+                            {el.prune===true && <mySVG.Propagating />}
+                            {el.repot && <mySVG.Repotting />}
+                            </div>
+                            <p>{el.notes}</p>    
+                            <button onClick={() => this.deleteNote(el.id)}>Remove Note</button>       
+                        </div>
+
+                    )
+                })}
+
+                
             </div>
+            
+            </div>
+            </>
         )
     }
 

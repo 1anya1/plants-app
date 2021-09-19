@@ -87,7 +87,7 @@ class Cards extends Component {
 
     return (
      
-      <div className="container" >
+      <div className="container intro" >
           <div className='search'>
             <div className='heading'>
               <h3 className= 'header2' id='pink'>Search Common House Plants</h3>

@@ -1,14 +1,8 @@
 @import '../index.scss';
+.plant-logs{
+    background-image: url(../img/plant-tracker.png);
+}
 #plant-logs{
-    .cover{
-        background-image: url(../img/plant-tracker.png);
-        h1{
-            position:relative;
-            top: 50%;
-            transform: translate (0, -50%);
-
-        }
-    }
     .leger{
         display: none;
         flex-direction: row;
@@ -25,11 +19,8 @@
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 2rem;
     row-gap: 2rem;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items:stretch;
-    justify-items: center;
+    align-items: stretch;
     @include bp-large{
         grid-template-columns: 1fr 1fr;
     }
@@ -40,22 +31,29 @@
   
 
     .note{
-        border: $blush 1.5px solid;
-        padding: 4rem;
+        border: $blush 1px solid;
+        padding: 3rem 0;
         border-radius: 1rem;
         width: 100%;
-       
+        padding-bottom: 0rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
         h4{
             color: $gray;
             margin-bottom: 3.6rem;
+            padding: 0 3rem ;
         }
         h3{
             margin-bottom: 2.6rem;
+            padding: 0 3rem ;
         }
         .todos{
             margin-bottom: 2rem;
             display: flex;
             flex-direction: row;
+            padding: 0 3rem ;
             svg{
                 height: 45px;
                 width: 45px;
@@ -68,12 +66,18 @@
         }
         p{
             margin-bottom: 2.6rem;
+            padding: 0 3rem ;
         }
       button{
           height: 7rem;
+          width: 100%;
           background-color: $blush;
-          border-radius: 1rem;
+          border-radius: 0 0 1rem 1rem;
           padding: 0 2rem; 
+          bottom: 0;
+          align-self: flex-end;
+          position: relative;
+          margin-top:auto;
       }
        
     }
@@ -90,30 +94,61 @@
         }
         label{
             svg{
-                height: 30px;
-                width: 30px;
-                &:hover, &:focus{
-                    g{
-                        fill: pink;
-                   }
-                    path{
-                        fill: pink;
-                    }
-                }
+                height: 40px;
+                width: 40px;
+                margin-right: 2rem;
                 }
             }
             .clicked{
                 g{
-                    fill: pink;
+                    fill: $gray;
                 }
                 path{
-                    fill: pink;
+                    fill:$gray;
                 }
                
                 
             }
         
 
+    }
+}
+form{
+    background-color: $blush;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    overflow: hidden;
+   
+    padding-bottom: 0;
+    
+    .form-inputs{
+        margin-bottom: 2.6rem;
+        padding: 0 3rem;
+    }
+    h3{
+        margin-bottom: 3.6rem;
+        padding: 0 3rem;
+        padding-top: 3rem;
+    }
+    textarea{
+        width: 90%;
+    }
+    input,.care-type{
+        margin-bottom: 2.6rem;
+    }
+    button{
+        height: 7rem;
+        width: 100%;
+        background-color: white;
+        border-radius: 0 0 1rem 1rem;
+        padding: 0 2rem; 
+        bottom: 0;
+        align-self: flex-end;
+        position: relative;
+        margin-top:auto;
+        color: $forest-green;
+        border: $blush 1px solid;
     }
 }
 }
