@@ -191,7 +191,7 @@ h1{
         z-index: 2;
         width: 55%;
         margin-bottom: 0;
-        height: fit-content;
+        height: unset;
         padding: 3rem;
         text-transform: capitalize lowercase;
         text-align: center;
@@ -238,4 +238,10 @@ input,select,textarea{
   font-size: 1.8rem;
   font-family: $body-font;
   color: $gray;
+  background-color: white;
+  -webkit-appearance:none;
+
 }
+
+
+

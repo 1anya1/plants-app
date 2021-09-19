@@ -20,6 +20,7 @@ class AddNote extends Component {
             date: '',
             modal: false,
             note_id: '',
+        
         }
     }
      componentDidMount(){
@@ -174,8 +175,8 @@ class AddNote extends Component {
                 <h3>Add A New Note</h3>
                 <div className='form-inputs'>
                 <input
-                    placeholder="date"
-                    type="date"
+                    type= 'date'
+                    placeholder='Sep 20, 2021'
                     name="date"
                     value={this.state.date}
                     onChange={this.handleChange}
