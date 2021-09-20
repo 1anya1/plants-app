@@ -191,7 +191,7 @@ class AddNote extends Component {
                         onChange={this.handleInputChange}
                         checked={this.state.water}
                     />
-                    <label className='option' htmlFor="watered"><mySVG.Watering className={this.state.water ? 'clicked' : null} /></label>
+                    <label className='option' htmlFor="watered" className={this.state.water ? 'clicked' : null} ><mySVG.Watering /></label>
                 </div>
                 <div className='care-type'>
                     <input
@@ -201,7 +201,7 @@ class AddNote extends Component {
                         onChange={this.handleInputChange}
                         checked={this.state.fertilize}
                     />
-                    <label className='option'  htmlFor="fertilize" ><mySVG.Fertilizer className={this.state.fertilize ? 'clicked' : null}/></label>
+                    <label className='option'  htmlFor="fertilize" className={this.state.fertilize ? 'clicked' : null}><mySVG.Fertilizer /></label>
                     
                 </div>
                  <div className='care-type'>
@@ -212,7 +212,7 @@ class AddNote extends Component {
                         onChange={this.handleInputChange}
                         checked={this.state.prune}
                     /> 
-                    <label className='option'  htmlFor="prune" ><mySVG.Propagating className={this.state.prune ? 'clicked' : null} /></label>
+                    <label className='option'  htmlFor="prune" className={this.state.prune ? 'clicked' : null}><mySVG.Propagating /></label>
                 </div>
                 <div className='care-type'>
                     <input
@@ -222,7 +222,7 @@ class AddNote extends Component {
                         onChange={this.handleInputChange}
                         checked={this.state.repot}
                     />
-                    <label className='option'  htmlFor="repot" ><mySVG.Repotting className={this.state.repot ? 'clicked' : null} /></label>
+                    <label className='option'  htmlFor="repot"  className={this.state.repot ? 'clicked' : null} ><mySVG.Repotting/></label>
                 </div>
                 </div>
                 <textarea

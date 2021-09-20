@@ -55,16 +55,19 @@
                 }
             }
             input[type=file]::file-selector-button {
+                appearance:none;
                 border:unset;
+                border-radius: 1rem 0 0 1rem;
                 height: 100%;
+                font-size: 1.6rem;
                 background-color: $peach;
-                transition: 1s;
-                padding-left: unset;
                 padding: 0 1rem;
                 color: white;
                 font-family: $body-font;
-                width: 40%;
+                width: 50%;
                 margin-right: 2rem;
+                text-align: left;
+                padding-left: 1rem;
                 @include bp-large{
                     width: 50%;
                 }
@@ -93,7 +96,7 @@
             
         }
         #active{
-            background-color: $peach;
+            background-color: $forest-green;
         }
        
     }

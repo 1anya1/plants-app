@@ -86,8 +86,10 @@
 .care-box{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    max-width: 285px;
+
     
-    column-gap: 2rem;
     .care-type{
         display: flex;
         flex-direction: column;
@@ -95,20 +97,21 @@
             display: none;
         }
         label{
+            background-color: white;
+            padding: 1rem;
+            border-radius: 1rem;
             svg{
                 height: 40px;
                 width: 40px;
                 }
             }
             .clicked{
-                g{
-                    fill: $gray;
+                background-color: $forest-green;
+                svg{
+                    path{
+                        fill:white;
+                    }
                 }
-                path{
-                    fill:$gray;
-                }
-               
-                
             }
         
 
