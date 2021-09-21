@@ -1,7 +1,8 @@
 @import '../../index.scss';
 .care-tips{
-    background-image: url(../../img/plant-care.png);
-    position: center;
+    .cover{
+        background-image: url(../../img/plant-care.png);
+    }
 }
 #care-tips{
     .careHeading{
