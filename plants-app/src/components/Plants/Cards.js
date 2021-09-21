@@ -72,8 +72,11 @@ class Cards extends Component {
           <div className="image">
             <img className = 'img'  height='300px' width='400px' loading='lazy' src={require('../../img/plants/' + card.img).default} alt={card.name}></img>
           </div>
+          <div className='plant-id'>
           <h3>{card.name}</h3>
           <p>{card.scientificName}</p>
+
+          </div>
           <button onClick={this.toggle.bind(this, card)}>Learn More</button>
       </div>     
     ))
