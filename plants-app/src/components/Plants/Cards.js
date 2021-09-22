@@ -73,8 +73,8 @@ class Cards extends Component {
             <img className = 'img'  height='300px' width='400px' loading='lazy' src={require('../../img/plants/' + card.img).default} alt={card.name}></img>
           </div>
           <div className='plant-id'>
-          <h3>{card.name}</h3>
-          <p>{card.scientificName}</p>
+          <h5>{card.name}</h5>
+          <div className='subtitle'>{card.scientificName}</div>
 
           </div>
           <button onClick={this.toggle.bind(this, card)}>Learn More</button>
@@ -93,7 +93,7 @@ class Cards extends Component {
       <div className="container intro" >
           <div className='search'>
             <div className='heading'>
-              <h3 className= 'header2' id='pink'>Search Common House Plants</h3>
+              <h4 className= 'header2' id='pink'>Search Common House Plants</h4>
             </div>
             <div className='search-menu'>
                <div className='dropDown'>

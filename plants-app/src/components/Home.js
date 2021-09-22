@@ -11,9 +11,9 @@ class Home extends React.Component{
         return (
             <div id='main'>
                  <div className='cover'>
-                     <h1 className='header'>
+                     <h3>
                          A Place To track and watch your plants grow
-                    </h1>
+                    </h3>
                 </div>
                 <div className='intro'>
                     { myData.Part1.map((el, idx)=> <p key={idx}>{el}</p>)}

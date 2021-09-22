@@ -40,7 +40,7 @@
                             fill: $white;
                         }
                     }
-                    h5{
+                    h6{
                         color: $white;
                         
                     }
@@ -61,8 +61,9 @@
                 height: 5rem;
                 width: 5rem;
                 @include bp-large{
-                    height: 4rem;
-                    width: 4rem;
+                    height: 3rem;
+                    width: 3rem;
+
                 }
                 g{
                     fill: $peach;
@@ -78,6 +79,10 @@
                 color: $peach;
                 margin-bottom: unset;
                 margin-left: 1em;
+                @include bp-large{
+                    font-size: 1.4rem ;
+                   
+                }
             }
     
         }

@@ -46,7 +46,7 @@ class CareTips extends React.Component{
                 const Data = careTips[el]
                 return(
                     <>
-                    <h3 id={el}>{careType[idx]}</h3>
+                    <div className='overline' id={el}>{careType[idx]}</div>
                     {Data.map((el, idx)=>{
                        
                         if(idx%2===0){
