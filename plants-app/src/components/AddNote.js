@@ -145,9 +145,9 @@ class AddNote extends Component {
         return(
             <>
              <div className='cover plant-logs'>
-                     <h1 className='header'>
+                     <h3 className='header'>
                         Welcome back,  {this.props.name}!
-                    </h1>
+                    </h3>
                 </div>
             < div id='plant-logs' className='intro'>
                 <DeleteModal delete={this.state.modal} deleteRoute={this.deleteRoute} cancelDelete={this.cancelDelete} />
@@ -172,7 +172,7 @@ class AddNote extends Component {
              
             <div className='notes'>
             <form onSubmit={this.handleSubmit}>
-                <h3>Add A New Note</h3>
+                <h5>Add A New Note</h5>
                 <div className='form-inputs'>
                 <input
                     type= 'date'
@@ -245,8 +245,8 @@ class AddNote extends Component {
                 {sortedNotes.map((el, idx)=>{
                     return(     
                         <div className='note' key={`entry${idx}`}>
-                            <h4>{el.date}</h4>    
-                            <h3>Notes:</h3>
+                            <div className='overline'>{el.date}</div>    
+                            <h5>Notes:</h5>
                             <div className='todos'>
                             {el.water===true && <mySVG.Watering  />}
                             {el.fertilize===true && <mySVG.Fertilizer />}

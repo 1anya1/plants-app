@@ -19,7 +19,7 @@ class DeleteModal extends Component {
         return(
             <div className='modal' className={this.props.delete ? 'modal modal-show' : 'modal'}>
             <div className='delete-modal-contnet'>
-            <h3>Are you sure you want to delete this note?</h3>
+            <h4>Are you sure you want to delete this?</h4>
             < logo.Plant />
             <div className='confirm-delete'>
                 <button onClick={this.deleteRoute}>yes</button>

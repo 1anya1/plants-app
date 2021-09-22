@@ -130,15 +130,15 @@ class MyPlants extends React.Component {
         return(
           <>
               <div className='cover my-plants'>
-                     <h1 className='header'>
+                     <h3 className='header'>
                         Welcome back,  {this.props.name}!
-                    </h1>
+                    </h3>
                 </div>
                 
                 <div id="my-plants" className='intro'>
                 <DeleteModal delete={this.state.modal} deleteRoute={this.deleteRoute} cancelDelete={this.cancelDelete} />
                 <form onSubmit={this.handleSubmit}>
-                  <h3>Add New Plant</h3>
+                  <h4>Add New Plant</h4>
                   <div className='inputs'>
                     <input
                         placeholder="title"
@@ -165,7 +165,7 @@ class MyPlants extends React.Component {
                   <div className = 'plant-img'>
                     <img key={el.url} src={el.url} />
                   </div>
-                  <h3 key={idx}>{el.title}</h3>
+                  <h5 key={idx}>{el.title}</h5>
                   <div className='buttons'>
                     <button id='notes'> 
                       <Link className='viewNotes' to={{

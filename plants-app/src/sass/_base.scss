@@ -23,7 +23,7 @@ h1 {
   font-size: 9.6rem;
   letter-spacing: -1.5px;
   @include bp-large{
-    font-weight: 8.4rem;
+    font-size: 8.4rem;
   }
 }
 
@@ -33,7 +33,7 @@ h2 {
   color: $peach;
   letter-spacing: -0.5px;
   @include bp-large{
-    font-weight: 5.25rem;
+    font-size: 5.25rem;
   }
 }
 
@@ -42,7 +42,7 @@ h3 {
   color: $forest-green;
   font-weight: 500;
   @include bp-large{
-    font-weight: 4.2rem;
+    font-size: 4.2rem;
   }
 }
 
@@ -51,7 +51,7 @@ h4 {
   font-weight: 500;
   letter-spacing: 0.25px;
   @include bp-large{
-    font-weight: 2.975rem;
+    font-size: 2.975rem;
   }
 }
 
@@ -60,7 +60,7 @@ h5 {
   font-weight: 500;
   color: $forest-green;
   @include bp-large{
-    font-weight: 2.1rem;
+    font-size: 2.1rem;
   }
 }
 h6{
