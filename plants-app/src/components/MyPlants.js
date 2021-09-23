@@ -180,7 +180,6 @@ class MyPlants extends React.Component {
                   {/* <button value={el.id} >Add Note</button> */}
                 </div>
               })}
-              <button className='manage-plants'>Manage Plants</button>
              </>
              }
              { plants < 1 && 
@@ -190,7 +189,7 @@ class MyPlants extends React.Component {
           
             
            </div>
-            
+           <button className='manage-plants'>Manage Plants</button>
             </div>
             </>
         )
