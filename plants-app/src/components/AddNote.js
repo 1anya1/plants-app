@@ -151,28 +151,10 @@ class AddNote extends Component {
                 </div>
             < div id='plant-logs' className='intro'>
                 <DeleteModal delete={this.state.modal} deleteRoute={this.deleteRoute} cancelDelete={this.cancelDelete} />
-                <div className='leger'>
-                    <div>
-                        <mySVG.Watering />
-                        <h5>Water</h5>
-                    </div>
-                    <div>
-                        <mySVG.Fertilizer />
-                        <h5>Fertilize</h5>
-                    </div>
-                    <div>
-                        <mySVG.Propagating/>
-                        <h5>Prune</h5>
-                    </div>
-                    <div>
-                        <mySVG.Repotting />
-                        <h5>Repot</h5>
-                    </div>
-                </div>
              
             <div className='notes'>
             <form onSubmit={this.handleSubmit}>
-                <h5>Add A New Note</h5>
+                <h4>Add A New Note</h4>
                 <div className='form-inputs'>
                 <input
                     type= 'date'
@@ -246,7 +228,7 @@ class AddNote extends Component {
                     return(     
                         <div className='note' key={`entry${idx}`}>
                             <div className='overline'>{el.date}</div>    
-                            <h5>Notes:</h5>
+                            <h4>Notes:</h4>
                             <div className='todos'>
                             {el.water===true && <mySVG.Watering  />}
                             {el.fertilize===true && <mySVG.Fertilizer />}

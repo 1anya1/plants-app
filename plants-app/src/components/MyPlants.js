@@ -180,6 +180,7 @@ class MyPlants extends React.Component {
                   {/* <button value={el.id} >Add Note</button> */}
                 </div>
               })}
+              <button className='manage-plants'>Manage Plants</button>
              </>
              }
              { plants < 1 && 
