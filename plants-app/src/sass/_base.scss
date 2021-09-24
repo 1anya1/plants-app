@@ -1,5 +1,6 @@
 html{
   font-size: 62.5%;	
+  
 }
 body {
 	margin:0;
@@ -10,6 +11,7 @@ body {
 * {
 	box-sizing: border-box; 
 }
+
 
 h1, h2, h3, h4, h5, p, button {
 	font-family: $header-font;
@@ -258,14 +260,18 @@ a{
           color: white;
           margin-right: unset;
           &:hover, &:focus{
-            // background-color: ;
+            background-color: $blush;
           }
         }
       }
       #two{
         border: 1px solid $peach;
+        background-color: white;
         @include bp-x-large{
           margin-right: unset;
+          &:hover, &:focus{
+            background-color: $blush;
+          }
         }
       }
     }
@@ -328,6 +334,9 @@ input,select,textarea,input::placeholder{
     text-transform: capitalize;
     width: 100%;
     height: 4rem;
+    -webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
     @include bp-large{
       font-size: 2.1rem;
     }
