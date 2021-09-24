@@ -296,9 +296,12 @@ a{
       .home-image{
         height: 100%;
         position: relative;
-        img{
-          content: url('../img/home-vector-1.svg');
-          width: 90%;
+        .img{
+          background-image: url('../img/home-vector-1.svg');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          height: 90%;
           position: absolute;
           bottom: -20%;
           left: 50%;
@@ -323,7 +326,7 @@ a{
 
     
 }
-input,select,textarea,input::placeholder{
+input,select,textarea{
     font-size: 2.4rem;
     font-weight: 500;
     color: $gray;
@@ -331,7 +334,6 @@ input,select,textarea,input::placeholder{
     border: unset;
     border-bottom: 1px solid $forest-green;
     background-color: unset;
-    text-transform: capitalize;
     width: 100%;
     height: 4rem;
     border-radius: unset;
@@ -348,7 +350,12 @@ input,select,textarea,input::placeholder{
     
     
 }
-
+input::placeholder{
+  color: gray;
+}
+textarea{
+  background-color: white;
+}
 input,select, textarea{
   margin-bottom: 2rem;
   outline:none;

@@ -107,8 +107,8 @@ class Cards extends Component {
              </div>
         </div>
         <div id='blob'>
-          <img class='blob'></img>
-          <img className='leaf'></img>
+          <div class='blob'></div>
+          <div className='leaf'></div>
         </div>
           
         </div>

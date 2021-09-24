@@ -12,7 +12,9 @@ class Home extends React.Component{
             <div id='main'>
                  <div className='cover'>
                      <div className='square'>
-                         <div className='home-image'><img></img></div>
+                         <div className='home-image'>
+                             <div className='img'></div>
+                         </div>
                      </div>
                      <div className='header-content'>
                         <h4>track and watch your plants grow</h4>

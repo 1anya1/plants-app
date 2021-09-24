@@ -7,6 +7,7 @@
     height: 600px;
     background-color: $blush;
     position: relative;
+    overflow: hidden;
     
     @include bp-medium{
         height: 450px;
@@ -22,30 +23,44 @@
         left: 50%;
         right: -50%;
         transform: translate(-50%, -50%);
-        height: 78%;
+        height: 75%;
         max-width: 1500px;
         @include bp-large{
             width: unset;
-            height: 80%;
-            
+            height: 80%;   
+        }
+        @include bp-small{
+            width: unset;
+            height: 100%;  
+            top: 62%; 
         }
         
         .blob{
             position: absolute;
-            content: url('../../img/blob.svg');
+            background-image: url('../../img/blob.svg');
+            background-repeat: no-repeat;
+            background-position: center;
             height: 100%;
+            width: 100%;
+            background-size: contain;
             @include bp-medium{
                 width: unset;
                 left: 50%;
                 right: -50%;
                 transform: translate(-50%, 0);
+                background-size: cover;
             }
         }
         .leaf{
             position: absolute;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100%;
+            width: 100%;
+            background-size: contain;
             bottom: -15px;
             right: 5%;
-            content: url('../../img/leaf-plants.svg');
+            background-image: url('../../img/leaf-plants.svg');
             transform: rotate(45deg);
             height: 40%;
             width: 40%;
