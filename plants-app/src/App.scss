@@ -8,9 +8,10 @@
 .log-in{
     background-color: white;
     border: 1px solid $gray;
-    padding: 1rem 1rem;
+    padding: 1rem 1.5rem;
     color: $gray;
     transition: all .5s ease-in-out;
+    border-radius: 3rem;
     &:hover, &:focus{
         transition: all .5s ease-in-out;
         background-color: $forest-green;
@@ -28,9 +29,10 @@
 .sign-up{
     background-color: unset;
     border: 1px solid $forest-green;
-    padding: 1rem 1rem;
+    padding: 1rem 1.5rem;
     color: $forest-green;
     transition: all .5s ease-in-out;
+    border-radius: 3rem;
     &:hover, &:focus{
         background-color: $blush;
         transition: all .5s ease-in-out;

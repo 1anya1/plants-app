@@ -18,7 +18,7 @@ export default class Modal extends React.Component {
                             <img className='popUpCardPink' loading='lazy' src={require('../../img/plants/'+ this.props.modal.img).default} alt={this.props.modal.name}/>
                         </div>
                         <div className = 'plant-info'>
-                        <h5 className='itemName'> {this.props.modal.name}</h5>
+                        <h4 className='itemName'> {this.props.modal.name}</h4>
                         <div className='plant-spec'>
                             <div className='subtitle2'>Scientific Name</div>
                             <div className='body italic'>{this.props.modal.scientificName}</div>
