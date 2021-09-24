@@ -11,9 +11,19 @@ class Home extends React.Component{
         return (
             <div id='main'>
                  <div className='cover'>
-                     <h3>
-                         A Place To track and watch your plants grow
-                    </h3>
+                     <div className='square'>
+                         <div className='home-image'><img></img></div>
+                     </div>
+                     <div className='header-content'>
+                        <h4>track and watch your plants grow</h4>
+                        <div className='subtitle'>This is the subtitle text. Add some content here that will make it easier for user to make a desicion to search plants and create an account</div>
+                        <div class='buttons'>
+                            <button id='one'>Log In</button>
+                            <button id='two'>View Plants</button>
+                        </div>
+
+                     </div>
+                     
                 </div>
                 <div className='intro'>
                     { myData.Part1.map((el, idx)=> <p key={idx}>{el}</p>)}

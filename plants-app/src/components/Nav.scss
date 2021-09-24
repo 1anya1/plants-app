@@ -8,7 +8,7 @@ main{
     position: fixed;
   }
 nav{
-    padding:  30px 100px;
+    padding:  30px 50px;
     display: flex !important;
     flex-direction: row;
     justify-content: space-between;
@@ -86,6 +86,7 @@ nav{
             z-index: 1;
             .link{
                 display: unset;
+                margin: 0 0 1rem 10%;
             }
         }
         .show{
