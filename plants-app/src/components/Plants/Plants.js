@@ -17,9 +17,7 @@ class Plants extends React.Component {
     render() {
         return (
                 <div>
-                    <header className=' cover plantsCover'>
-                        <h1 className='header1'>HOUSE Plants </h1> 
-                    </header>      
+                        
                     <div className = 'allPlants'>
                                         <Cards cards={this.state.plants}/>
                     </div>       

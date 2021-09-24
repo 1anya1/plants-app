@@ -69,15 +69,16 @@ class Cards extends Component {
     });
     const myData = filteredData.map((card, id) => ( 
       <div className='card' key={card.name}>
+
           <div className="image">
             <img className = 'img'  height='300px' width='400px' loading='lazy' src={require('../../img/plants/' + card.img).default} alt={card.name}></img>
           </div>
           <div className='plant-id'>
-          <h5>{card.name}</h5>
-          <div className='subtitle'>{card.scientificName}</div>
-
+            <h5>{card.name}</h5>
+            <div className='subtitle'>{card.scientificName}</div>
           </div>
           <button onClick={this.toggle.bind(this, card)}>Learn More</button>
+          
       </div>     
     ))
    const options =[
@@ -89,15 +90,14 @@ class Cards extends Component {
    console.log(option)
 
     return (
+      <>
      
-      <div className="container intro" >
+      <div className="container " >
           <div className='search'>
-            <div className='heading'>
-              <h4 className= 'header2' id='pink'>Search Common House Plants</h4>
-            </div>
+              <h4>Search Common House Plants</h4>
             <div className='search-menu'>
                <div className='dropDown'>
-                <select name="plants" id="plants" onChange={this.handleOption} value={this.state.defaultValue}>
+                <select name="plants" id="plants" onChange={this.handleOption} value={this.state.defaultValue}> 
                    {options.map(opt=> Object.keys(opt).map((key, id)=> <option name={opt[key]} key={id} value={key} >{opt[key]}</option>))}
                 </select>
              </div>
@@ -106,11 +106,17 @@ class Cards extends Component {
              </div>
              </div>
         </div>
-        <div className="row">
-          {myData}
-        </div> 
-          <Modal modal={this.state.modal}  handleClick={this.toggle}/>
+        <div id='blob'>
+          <img class='blob'></img>
+          <img className='leaf'></img>
         </div>
+          
+        </div>
+        <div className="row intro">
+        {myData}
+        <Modal modal={this.state.modal}  handleClick={this.toggle}/>
+      </div> 
+      </>
   
     
     );
