@@ -69,12 +69,16 @@ class Cards extends Component {
     });
     const myData = filteredData.map((card, id) => ( 
       <div className='card' key={card.name}>
+
           <div className="image">
             <img className = 'img'  height='300px' width='400px' loading='lazy' src={require('../../img/plants/' + card.img).default} alt={card.name}></img>
           </div>
-          <h3>{card.name}</h3>
-          <p>{card.scientificName}</p>
-          <button onClick={this.toggle.bind(this, card)}>Learn More</button>
+          <div className='plant-id'>
+            <h5>{card.name}</h5>
+            <div className='subtitle'>{card.scientificName}</div>
+          </div>
+          <button  className='button-bottom' onClick={this.toggle.bind(this, card)}>Learn More</button>
+          
       </div>     
     ))
    const options =[
@@ -86,15 +90,22 @@ class Cards extends Component {
    console.log(option)
 
     return (
+      <>
      
-      <div className="container" >
+      <div className="container " >
           <div className='search'>
-            <div className='heading'>
-              <h3 className= 'header2' id='pink'>Search Common House Plants</h3>
-            </div>
-            <div className='search-menu'>
+              <h3>Search Common House Plants</h3>
+        </div>
+        <div id='blob'>
+          <div class='blob'></div>
+          <div className='leaf'></div>
+          <div className='leaf2'></div>
+        </div>
+          
+        </div>
+        <div className='search-menu'>
                <div className='dropDown'>
-                <select name="plants" id="plants" onChange={this.handleOption} value={this.state.defaultValue}>
+                <select name="plants" id="plants" onChange={this.handleOption} value={this.state.defaultValue}> 
                    {options.map(opt=> Object.keys(opt).map((key, id)=> <option name={opt[key]} key={id} value={key} >{opt[key]}</option>))}
                 </select>
              </div>
@@ -102,12 +113,11 @@ class Cards extends Component {
                <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
              </div>
              </div>
-        </div>
-        <div className="row">
-          {myData}
-        </div> 
-          <Modal modal={this.state.modal}  handleClick={this.toggle}/>
-        </div>
+        <div className="row intro">
+        {myData}
+        <Modal modal={this.state.modal}  handleClick={this.toggle}/>
+      </div> 
+      </>
   
     
     );

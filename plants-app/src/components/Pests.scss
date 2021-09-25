@@ -1,21 +1,26 @@
+@import '../index.scss';
 .pestPage {
-    background-image: url('https://i.imgur.com/1U97Fn6.png');
+   
+    .row{
+        .card{
+            object-fit: cover;
+            
+            .image{
+                height:100%;
+                max-height: 300px;
+                margin: unset;
+                @include bp-large{
+                    max-height: 200px;
+                }
+                
+                
+            }
+            .plant-id{
+                margin-top: auto;
+            }
+        }
+    }
 }
-#green{
-    color: #44c398;
-}
-.green{
-    color: #44c398;
-}
-#lightGreen{
-    background-color: #bbe9d9;
-}
-.cards{
-    width: 200px;
-    height: 200px;
-    border: 8px double #44c398; 
-    border-radius: 50%;
-    margin: 10px auto;
-  }
+
  
 

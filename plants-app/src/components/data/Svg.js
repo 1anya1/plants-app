@@ -8,6 +8,7 @@ import {ReactComponent as Watering} from '../../img/svg/watering.svg'
 import {ReactComponent as Propagating} from '../../img/svg/propagating.svg'
 
 
+
 const mySVG = {
     Sun,
     Watering,
@@ -17,6 +18,7 @@ const mySVG = {
     Repotting,
     Propagating,
     Vacation,
+
 
     
 

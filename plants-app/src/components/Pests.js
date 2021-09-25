@@ -23,8 +23,8 @@ class Pests extends React.Component {
               );
             });
         return (
-            <div>
-                <header className='cover pestPage '> 
+            <div className=' pestPage' >
+                <header className='cover'> 
                     <div className='title'>
                         <h1 class='header1'>PLANT  </h1> 
                    <    h1 class='header1'><i>PESTS</i> </h1> 
@@ -43,18 +43,19 @@ class Pests extends React.Component {
                     You are most likely to find these pests on buds, stems, leaves, and the soil of your plant</p>
                 </div>  
 
-                    <div className='backgroundColor' id='lightGreen'>
-                        <h2 className= 'header2' id='green'>Common House Plant Pests</h2>
-                            <div className = 'rowLayout'>
+                    <div className='row intro' >
                                 {filteredData.map(item => (
-                            <div className = 'cardItem' key={item.id}>
-                                    <img className='cards' src={item.img} alt={item.name}/>
-                                        <h1 className = 'itemName'id='green'>{item.name}</h1>
-                                        <p><b>Spot Them: </b> {item.findThem}</p>
-                                        <p><b>Treatment: </b>{item.treatment}</p>
+                            <div className = 'card' key={item.id}>
+                                    <img className='image' src={item.img} alt={item.name}/>
+                                        <div className='plant-id'> 
+                                            <h5>{item.name}</h5>
+                                            <div class="subtitle2">Spot Them</div>
+                                            <p>{item.findThem}</p>
+                                            <div class="subtitle2">Treatment</div>
+                                            <p>{item.treatment}</p>
+                                        </div>
                                 </div>
                              ))}
-                        </div>
                         </div>
                     
                 </div>

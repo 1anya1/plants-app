@@ -8,7 +8,7 @@ main{
     position: fixed;
   }
 nav{
-    padding:  30px 100px;
+    padding:  30px 50px;
     display: flex !important;
     flex-direction: row;
     justify-content: space-between;
@@ -17,18 +17,25 @@ nav{
     z-index: 100;
     width: 100vw;
     transition: background-color .1s  ease;
-    @include bp-large{
-        padding:  30px 50px 0;
-    }
+    align-items: center;
     @include bp-small{
-        padding: 30px 20px 0;
+        padding:  30px 20px 0;
     }
+    
     .logo{
-        // background-image: url('..//img/plantly.svg');
-        height: 2em;
-        width: fit-content;
-        background-size: contain;
-        background-repeat: no-repeat; 
+      width: fit-content;
+      background-size: contain;
+      background-repeat: no-repeat; 
+    //   height: 3rem;
+
+        svg{
+            height: 3rem;
+            width: 10rem;
+            @include bp-medium{
+                height: 2.5rem;
+            }
+               
+        }
     }
     .link{
         padding-left: 15px;
@@ -84,8 +91,12 @@ nav{
             align-items: flex-start;
             justify-content: center;
             z-index: 1;
+            @include bp-medium{
+                width: 75vw;
+            }
             .link{
                 display: unset;
+                margin: 0 0 1rem 10%;
             }
         }
         .show{
@@ -95,6 +106,9 @@ nav{
         .collapse{
             right: -50%;
             transition: right .5s ease-out;
+            @include bp-medium{
+                right: -75vw;
+            }
         }
     }
     

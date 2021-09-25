@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import mySVG from './data/Svg.js'
 import './AddNote.scss'
+import logo from './Logo.js'
+import DeleteModal from './modaDelete/ModalDelete.js'
 
 class AddNote extends Component {
     constructor(props){
@@ -18,6 +20,7 @@ class AddNote extends Component {
             date: '',
             modal: false,
             note_id: '',
+        
         }
     }
      componentDidMount(){
@@ -99,6 +102,7 @@ class AddNote extends Component {
               modal: true,
               note_id: id
           })
+          document.body.style.overflow = "hidden";
           
       }
       deleteRoute=async ()=>{
@@ -110,7 +114,7 @@ class AddNote extends Component {
                     modal: false,
                     note_id: '',
                 })   
-              
+                document.body.style.overflow = "unset";
             } else {
               this.setState({
                 errors: response.data.errors
@@ -125,48 +129,36 @@ class AddNote extends Component {
             modal: false,
             note_id: '',
         })  
+        document.body.style.overflow = "unset";
       }
       
+      
     render(){
-        console.log('this is the date' + this.state.date)
-        console.log('note id' + this.state.note_id)
+    
+        let sortedNotes = this.state.notes.sort((a,b)=>{
+            var c = new Date(a.date);
+            var d = new Date(b.date);
+            return d-c;
+        });
          
+        console.log(sortedNotes)
         return(
-            < div id='plant-logs'>
-             <div className='cover'>
-                     <h1 className='header'>
+            <>
+             <div className='cover plant-logs'>
+                     <h3 className='header'>
                         Welcome back,  {this.props.name}!
-                    </h1>
+                    </h3>
                 </div>
-                <div className='modal' className={this.state.modal ? 'modal modal-show' : 'modal'}>
-                    <h2>Are you sure you want to delete?</h2>
-                    <div className='confirm-delete'>
-                        <button onClick={this.deleteRoute}>yes</button>
-                        <button onClick={this.cancelDelete}>no</button>
-                    </div>
-                </div>  
+            < div id='plant-logs' className='intro'>
+                <DeleteModal delete={this.state.modal} deleteRoute={this.deleteRoute} cancelDelete={this.cancelDelete} />
+             
             <div className='notes'>
-                {this.state.notes.map((el, idx)=>{
-                    return(     
-                        <div className='note' key={`entry${idx}`}>
-                            <h4>{el.date}</h4>    
-                            {el.water===true && <mySVG.Watering />}
-                            {el.fertilize===true && <mySVG.Fertilizer />}
-                            {el.prune===true && <mySVG.Propagating />}
-                            {el.repot && <mySVG.Repotting />}
-                            <p>{el.notes}</p>    
-                            <button onClick={() => this.deleteNote(el.id)}>Delete</button>       
-                        </div>
-
-                    )
-                })}
-
-                
-            </div>
             <form onSubmit={this.handleSubmit}>
+                <h4>Add A New Note</h4>
+                <div className='form-inputs'>
                 <input
-                    placeholder="date"
-                    type="date"
+                    type= 'date'
+                    placeholder='Date:   '
                     name="date"
                     value={this.state.date}
                     onChange={this.handleChange}
@@ -181,7 +173,7 @@ class AddNote extends Component {
                         onChange={this.handleInputChange}
                         checked={this.state.water}
                     />
-                    <label className='option' htmlFor="watered"><mySVG.Watering className={this.state.water ? 'clicked' : null} /></label>
+                    <label className='option' htmlFor="watered" className={this.state.water ? 'clicked' : null} ><mySVG.Watering /></label>
                 </div>
                 <div className='care-type'>
                     <input
@@ -191,7 +183,7 @@ class AddNote extends Component {
                         onChange={this.handleInputChange}
                         checked={this.state.fertilize}
                     />
-                    <label className='option'  htmlFor="fertilize" ><mySVG.Fertilizer className={this.state.fertilize ? 'clicked' : null}/></label>
+                    <label className='option'  htmlFor="fertilize" className={this.state.fertilize ? 'clicked' : null}><mySVG.Fertilizer /></label>
                     
                 </div>
                  <div className='care-type'>
@@ -202,7 +194,7 @@ class AddNote extends Component {
                         onChange={this.handleInputChange}
                         checked={this.state.prune}
                     /> 
-                    <label className='option'  htmlFor="prune" ><mySVG.Propagating className={this.state.prune ? 'clicked' : null} /></label>
+                    <label className='option'  htmlFor="prune" className={this.state.prune ? 'clicked' : null}><mySVG.Propagating /></label>
                 </div>
                 <div className='care-type'>
                     <input
@@ -212,7 +204,7 @@ class AddNote extends Component {
                         onChange={this.handleInputChange}
                         checked={this.state.repot}
                     />
-                    <label className='option'  htmlFor="repot" ><mySVG.Repotting className={this.state.repot ? 'clicked' : null} /></label>
+                    <label className='option'  htmlFor="repot"  className={this.state.repot ? 'clicked' : null} ><mySVG.Repotting/></label>
                 </div>
                 </div>
                 <textarea
@@ -222,6 +214,7 @@ class AddNote extends Component {
                     rows="5" cols="33"
                     onChange={this.handleChange}
                 />
+                </div>
         
           
           <button placeholder="submit" type="submit">
@@ -230,7 +223,30 @@ class AddNote extends Component {
         
           
           </form>
+                
+                {sortedNotes.map((el, idx)=>{
+                    return(     
+                        <div className='note' key={`entry${idx}`}>
+                            <div className='overline'>{el.date}</div>    
+                            <h4>Notes:</h4>
+                            <div className='todos'>
+                            {el.water===true && <mySVG.Watering  />}
+                            {el.fertilize===true && <mySVG.Fertilizer />}
+                            {el.prune===true && <mySVG.Propagating />}
+                            {el.repot && <mySVG.Repotting />}
+                            </div>
+                            <p>{el.notes}</p>    
+                            <button onClick={() => this.deleteNote(el.id)}>Remove Note</button>       
+                        </div>
+
+                    )
+                })}
+
+                
             </div>
+            
+            </div>
+            </>
         )
     }
 
