@@ -46,6 +46,9 @@ h3 {
   @include bp-large{
     font-size: 4.2rem;
   }
+  @include bp-small{
+    font-size: 3.8rem;
+}
 }
 
 h4 {
@@ -126,31 +129,6 @@ p, li, .body{
   font-weight: 400;
 }
 
-button{
-  font-size: 1.4rem;
-  font-weight: 600;
-  letter-spacing: 1.25px;
-  font-family: $body-font;
-  border:none;
-  box-shadow: unset;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-a {
-  font-family: $body-font;
-  letter-spacing: 1.25px;
-	text-transform: uppercase;
-  transition: color 1s;
-	font-size: 1.4rem;
-	font-weight: 600;
-	text-decoration: unset;
-	cursor: pointer;
-	&:hover, &:active, &:focus {
-        transition: all .5s;
-        text-decoration: underline;
-	}
-}
 
 //Images 
 img {
@@ -167,6 +145,7 @@ a{
     font-family: $body-font;
     text-decoration: none;
     text-transform: uppercase;
+    font-weight: 600;
     &:hover, &:active, &:focus {
         transition: all 1s;
         color: $forest-green;
@@ -174,9 +153,6 @@ a{
         text-underline-offset: .5rem;
 	}
 }
-// #main{
-//     position: relative;
-// }
 .intro{
     padding: 50px 100px;
     @include bp-large{
@@ -186,157 +162,72 @@ a{
       padding: 30px 20px;
     }
   }
+    button{
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 1.25px;
+      font-family: $body-font;
+      border:none;
+      box-shadow: unset;
+      text-transform: uppercase;
+      margin: 0;
+      background-color: white;;
+      padding: 1rem 1.5rem;
+      color: $gray;
+      transition: all .5s ease-in-out;
+      border-radius: 3rem;
+        &:hover, &:focus{
+            transition: all .5s ease-in-out;
+            background-color: $forest-green;
+            border-color: $forest-green;
+            color: white;
+    
+        }
+    }
 
-  .cover{
-    position: relative;
-    z-index: -1;  
-    background-size: cover;
-    background-position: center;
-    height: 600px;
-    @include bp-x-large{
-     height: 800px;
-    }
-    @include bp-small{
-      height: 675px;
-    }
-    .header-content{
-      padding-left: 100px;
-      position:relative;
-      width: 45%;
-      top: 50%;
-      transform: translate(0, -50%);
-     
-      @include bp-x-large{
-        top: 21%;
-        transform: unset;
-        width: 80%;
-        margin: 0 auto;
-        text-align: center;
-        padding-left:unset;
-      }
-      @include bp-medium{
-        top: 15%;
-      }
-      h4{
-        color: $gray;
-        z-index: 2;
-        margin-bottom: 0;
-        height: unset;
-        text-transform: capitalize;
-        text-align: center;
-        border-radius: 0 5rem 5rem 0;
-        text-align: left;
-        margin-bottom: 1rem; 
-        @include bp-x-large{
-         width: 100%;
-         text-align: center;
-         }
-      }
-      .subtitle{
-        font-style: normal;
-        margin-bottom: 4rem;
-        color: $gray;
-      }
-    .buttons{
-      display: flex;
-      flex-direction: row;
-      @include bp-x-large{
-        justify-content: center;
-        column-gap: 1rem;
-      }
-      button{
+.button-bottom{
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 1.25px;
+      font-family: $body-font;
+      box-shadow: unset;
+      text-transform: uppercase;
+      margin: 0;
+      width: 100%;
+      height: 7rem;
+      background-color: $periwinkle;
+      margin-bottom: unset;
+      color: $gray;
+      border-radius: 0 0 3rem 3rem;
+      transition: background-color .5s ease-in-out,;
+      @include bp-small{
         height: 5rem;
-        padding: 0 2rem;
-        margin-right: 2rem;
-        width: 45%;
-        color: $gray;
-        max-width: 220px;
-        border-radius: 3rem;
+        font-size: 1.2rem;
+        margin-top: auto;
       }
-      #one{
-        background-color: $peach;
-        @include bp-x-large{
-          background-color: $forest-green;
-          color: white;
-          margin-right: unset;
-          &:hover, &:focus{
-            background-color: $blush;
+      &:hover{
+        background-color: $blush;
+        transition: background-color .5s ease-in-out, color .5s ease-in-out;
+      &:before {
+        background: rgba(234, 236, 232, 1);
           }
-        }
-      }
-      #two{
-        border: 1px solid $peach;
-        background-color: white;
-        @include bp-x-large{
-          margin-right: unset;
-          &:hover, &:focus{
-            background-color: $blush;
-          }
-        }
-      }
-    }
-
-    }
-
-      
-    .square{
-      position: absolute;
-      height: 80%;
-      width: 45%;
-      background-color: $peach;
-      top: 0;
-      right: 0;
-      min-width: 670px;
-      border-bottom-left-radius: 50px;
-      @include bp-x-large{
-        width: 100%;
-        min-width: unset;
-        border-radius: unset;
-      }
-      .home-image{
-        height: 100%;
-        position: relative;
-        .img{
-          background-image: url('../img/home-vector-1.svg');
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: contain;
-          height: 90%;
-          position: absolute;
-          bottom: -20%;
-          left: 50%;
-          right: -50%;
-          transform: translate(-50%, 0);
-          max-height: 350px; 
-          min-height: 150px;
-          @include bp-x-large{
-            min-height: unset;
-          }
-          @include bp-medium{
+              }
+              
 
           }
-        }
-       
-        
-      }
-
-    }
-    
 
 
-    
-}
 input,select,textarea{
     font-size: 2.4rem;
     font-weight: 500;
     color: $gray;
     font-family: $body-font;
-    border: unset;
-    border-bottom: 1px solid $forest-green;
-    background-color: unset;
+    border: $blush solid 1px ;
+    background-color: white;
     width: 100%;
-    height: 4rem;
-    border-radius: unset;
+    height: 7rem;
+    border-radius: 50rem;
+    padding: 0 10%;
     -webkit-appearance: none;         
     -moz-appearance: none;
     appearance: none;
@@ -345,12 +236,14 @@ input,select,textarea{
     }
     @include bp-medium{
       font-size: 1.8rem;
+      border-radius: 30rem;
+      height: 5rem;
     }
     
     
     
 }
-input::placeholder{
+input::placeholder, select::placeholder{
   color: gray;
 }
 textarea{
@@ -371,5 +264,134 @@ input::-webkit-date-and-time-value {
     
   }
 }
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 3rem;
+  column-gap: 3rem;
+  align-items: stretch;
+  @include bp-large{
+      row-gap: 2rem;
+      column-gap: 2rem;
+  }
+  @include bp-small{
+      row-gap: 1rem;
+      column-gap: 1rem;
+  }
+
+  .card{
+      z-index: 0;
+      position: relative;
+      border-radius: 50px;
+      overflow: hidden;
+      width: 30%;
+      border: .1px $periwinkle solid;
+      display:flex;
+      flex-direction: column;
+      @include bp-large{
+          width: 30%;
+      }
+      @include bp-medium{
+          width: 47%;
+          border-radius: 30px;
+      }
+      @include bp-small{
+          width: 48%;
+         
+      }
+      @include bp-x-small{
+          width: 100%;
+         
+      }
+          .image{
+              overflow: hidden;
+              width: 100%;
+              position: relative;
+              @include bp-large{
+                  height: 200px;
+              }
+              @include bp-small{
+                  width: 100%;
+                  height: auto
+              }
+              
+              &:before {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  bottom: 0;
+                  right: 0;
+                  z-index: 1;
+                  background-image: linear-gradient(
+                      rgba(255, 255, 255, 0) 0%,
+                      rgba(255, 255, 255, .1) 55%,
+                      rgba(255, 255, 255, 1) 100%
+                  );
+           
+              }
+              
+              .img{
+                  object-fit: cover;
+                  object-position: top center;
+                  height: 100%;
+                  width: 100%;
+                  position: relative;
+                  @include bp-small{
+                      object-position: center top;
+                      min-height: 120px;
+                      
+                  }
+                  @include bp-x-small{
+                      height: 160px;
+                  }
+                  
+                  
+                      
+                   
+              }
+          }
+        .plant-id{
+            padding: 0 10%;
+            padding-bottom: 2rem;
+            margin-top:auto;
+            @include bp-small{
+              padding-bottom: 0;
+              position: relative;
+              z-index:3;
+              top: -1rem;
+              height: 3rem;
+
+            }
+            h5{
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              @include bp-small{
+                  color: $gray;
+                  text-align: center;
+                  
+                 
+              }
+              
+            }
+            .subtitle{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                @include bp-small{
+                    display: none;
+                    padding-bottom: 0;
+                }
+            }
+        }
+  
+      
+  }
+  
+}
+
 
 

@@ -77,7 +77,7 @@ class Cards extends Component {
             <h5>{card.name}</h5>
             <div className='subtitle'>{card.scientificName}</div>
           </div>
-          <button onClick={this.toggle.bind(this, card)}>Learn More</button>
+          <button  className='button-bottom' onClick={this.toggle.bind(this, card)}>Learn More</button>
           
       </div>     
     ))
@@ -94,8 +94,16 @@ class Cards extends Component {
      
       <div className="container " >
           <div className='search'>
-              <h4>Search Common House Plants</h4>
-            <div className='search-menu'>
+              <h3>Search Common House Plants</h3>
+        </div>
+        <div id='blob'>
+          <div class='blob'></div>
+          <div className='leaf'></div>
+          <div className='leaf2'></div>
+        </div>
+          
+        </div>
+        <div className='search-menu'>
                <div className='dropDown'>
                 <select name="plants" id="plants" onChange={this.handleOption} value={this.state.defaultValue}> 
                    {options.map(opt=> Object.keys(opt).map((key, id)=> <option name={opt[key]} key={id} value={key} >{opt[key]}</option>))}
@@ -105,13 +113,6 @@ class Cards extends Component {
                <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
              </div>
              </div>
-        </div>
-        <div id='blob'>
-          <div class='blob'></div>
-          <div className='leaf'></div>
-        </div>
-          
-        </div>
         <div className="row intro">
         {myData}
         <Modal modal={this.state.modal}  handleClick={this.toggle}/>

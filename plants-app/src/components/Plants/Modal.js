@@ -51,7 +51,7 @@ export default class Modal extends React.Component {
                            {this.props.modal.hangingPlant===true ? <SVG.HangingPlant/>  : null}
                        </div>
                     </div>
-                    <button onClick = {this.handleClick}>Back to Plant</button>
+                    <button  className='button-bottom'onClick = {this.handleClick}>Back to Plant</button>
                     </div>
                 </div>
              )
