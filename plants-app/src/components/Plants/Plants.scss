@@ -241,12 +241,20 @@
     margin-top: 10rem;
     background-color: $blush;
     border-radius: 50px;
+    padding: 4rem;
+    column-gap: 4rem;
     @include bp-large{
         flex-direction: column;
+        margin-top: 5rem;
+        
     }
     .search-bar{
         width: 100%;
-        
+        input{
+            @include bp-large{
+                margin-bottom: unset;
+            }
+        }   
     }
     .dropDown{
         width: 100%;
