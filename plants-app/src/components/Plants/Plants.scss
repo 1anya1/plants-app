@@ -246,23 +246,57 @@
     @include bp-large{
         flex-direction: column;
         margin-top: 5rem;
+        row-gap: 2rem;
         
     }
     .search-bar{
         width: 100%;
+        position: relative;
         input{
-            @include bp-large{
-                margin-bottom: unset;
+            margin-bottom: 0;
+            padding: 0 8rem 0;
+            @include bp-medium{
+                padding: 0 6rem 0;
             }
-        }   
+        }
+        svg{
+            position: absolute;
+            left: 0;
+            height: 30px;
+            width: 30px;
+            top: 50%;
+            transform: translate(0, -50%);
+            margin-left: 3rem;
+            @include bp-medium{
+                height: 20px;
+                width: 20px;
+             
+            }
+           
+        }
+
     }
     .dropDown{
         width: 100%;
+        position: relative;
         select{
-            &::marker{
-
+            margin-bottom: 0;
+            padding-left: 3rem;
+        }
+        svg{
+            position: absolute;
+            right: 0;
+            height: 30px;
+            width: 30px;
+            top: 50%;
+            transform: translate(0, -50%);
+            margin-right: 3rem;
+            @include bp-medium{
+                height: 20px;
+                width: 20px;
             }
         }
+
     }
 }
 

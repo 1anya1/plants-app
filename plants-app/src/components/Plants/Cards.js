@@ -1,6 +1,10 @@
 
 import React, { Component } from 'react';
 import Modal from './Modal';
+import {FaSistrix} from "react-icons/fa";
+import { FaCaretDown } from "react-icons/fa";
+
+
 class Cards extends Component {
   constructor(props) {
     super(props);
@@ -68,8 +72,7 @@ class Cards extends Component {
       );
     });
     const myData = filteredData.map((card, id) => ( 
-      <div className='card' key={card.name}>
-
+      <div className='card' key={card.name}> 
           <div className="image">
             <img className = 'img'  height='300px' width='400px' loading='lazy' src={require('../../img/plants/' + card.img).default} alt={card.name}></img>
           </div>
@@ -105,12 +108,15 @@ class Cards extends Component {
         </div>
         <div className='search-menu'>
                <div className='dropDown'>
-                <select name="plants" id="plants" onChange={this.handleOption} value={this.state.defaultValue}> 
+                <select name="plants" id="plants" onChange={this.handleOption}> 
+                    <option value="" disabled selected>All Plants</option>
                    {options.map(opt=> Object.keys(opt).map((key, id)=> <option name={opt[key]} key={id} value={key} >{opt[key]}</option>))}
                 </select>
+                <FaCaretDown />
              </div>
              <div className='search-bar'>
-               <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
+               <input className='searchBar'  placeholder='Search...' value={filter} onChange={this.handleChange} />
+               <FaSistrix />
              </div>
              </div>
         <div className="row intro">
