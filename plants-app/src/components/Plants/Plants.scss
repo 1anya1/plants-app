@@ -187,40 +187,45 @@
        
 
     .plant-info{
-        width: 90%;
+        width: 80%;
         margin: 0 auto;
         padding: 3rem 0;
         h4{
             margin-bottom: 2rem;
+            color: $gray;
+        }
+        .subtitle{
+            font-style:normal;
+            color: $gray;
+        }
+        .italic{
+            font-style: italic;
+        }
+        .subtitle2{
             color: $forest-green;
         }
         .plant-spec{
-            margin: 2rem 0;
+            padding: 1rem 0;
         }
         ul{
             padding-left: unset;
             color: $gray;
             margin-top: unset;
+            padding: 1rem 0;
+            color: $forest-green;
             li{
-                list-style: none;
-                margin-top: 1rem;
+                list-style: inside;
+                margin-top: .5rem;
                 color: $gray;
                 font-family: $body-font;
                 margin-bottom: unset;
-            }
-        }
-        .highlights{
-            display: flex;
-            display: none;
-            flex-direction: row;
-            padding-top: 3rem;
-            margin-bottom: 1rem;
-            svg{
-                height: 50px;
-                width: 50px;
-                margin-right: 2rem;
-               
-                
+                text-transform: lowercase;
+                &:first-child{
+                    margin-top: 1.5rem;
+                }
+                &::marker{
+                    // color: $forest-green;
+                }
             }
         }
     }
@@ -247,6 +252,8 @@
         flex-direction: column;
         margin-top: 5rem;
         row-gap: 2rem;
+        border-radius: 3rem;
+        padding: 3rem;
         
     }
     .search-bar{

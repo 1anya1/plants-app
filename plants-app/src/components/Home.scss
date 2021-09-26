@@ -168,8 +168,11 @@
               @include bp-x-large{
                 min-height: unset;
               }
+              @include bp-large{
+                height: 40%;
+              }
               @include bp-small{
-                height: 45%;
+                height: 30%;
               }
               @include bp-x-small{
                   height: 30%;
