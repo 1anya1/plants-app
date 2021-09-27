@@ -167,13 +167,13 @@ class MyPlants extends React.Component {
                   </div>
                   <h5 key={idx}>{el.title}</h5>
                   <div className='buttons'>
-                    <button id='notes'> 
-                      <Link className='viewNotes' to={{
+                  <Link className='viewNotes' to={{
                         pathname: `/my-plants/logs`,
                         state: { 
                           plant_id: el.id
-                        }}}>Notes</Link>
-                    </button>
+                        }}}><button className='button-bottom'> 
+                      Notes
+                    </button></Link>
                     <button id='delete' value={el.id} onClick={this.deleteNote}>Delete</button>
 
                   </div>
@@ -183,13 +183,13 @@ class MyPlants extends React.Component {
              </>
              }
              { plants < 1 && 
-             <h1>Sorry, but you do not have any entries</h1>
+             <h4>Sorry, but you do not have any entries</h4>
 
              }
           
             
            </div>
-           <button className='manage-plants'>Manage Plants</button>
+           <button>Manage Plants</button>
             </div>
             </>
         )

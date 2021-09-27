@@ -1,27 +1,30 @@
 import React from 'react'
 import pestList from './pestList'
 import './Pests.scss'
+import { FaPlus } from "react-icons/fa";
+
 
 class Pests extends React.Component {
     constructor(){
         super()
         this.state = {
-            filter:'',
-            pests : pestList
+            cards: pestList,
+            toggle: false,
+            id: null
         }
-        this.handleChange = this.handleChange.bind(this)
+        this.expand = this.expand.bind(this);
     }
-    handleChange = event => {
-        this.setState({ filter: event.target.value });
-      };
+    
+    expand (item){
+        console.log(item.id)
+        this.setState({
+            toggle: !this.state.toggle,
+            id: this.state.id===null? item.id : null,
+         });
+    }
     render() {
-        const { filter, pests } = this.state;
-            const lowercasedFilter = filter.toLowerCase();
-            const filteredData = pests.filter(item => {
-              return Object.keys(item).some(key =>
-                typeof item[key]=== 'string' && item[key].toLowerCase().includes(lowercasedFilter)
-              );
-            });
+    console.log(this.state.id)
+    console.log(this.state.cards)
         return (
             <div className=' pestPage' >
                 <header className='cover'> 
@@ -43,11 +46,11 @@ class Pests extends React.Component {
                 </div>   */}
 
                     <div className='column intro' >
-                                {filteredData.map(item => (
+                                {this.state.cards.map(item => (
                             <div className = 'card' key={item.id}> 
-                                 <button className='accordion'> <h4>{item.name}</h4></button>
+                                 <div className='accordion' key={item.id} onClick={this.expand.bind(this, item)}> <h5>{item.name}</h5>< FaPlus/></div>
                               
-                                    <div className='hidden'>
+                                    <div id='pest-card' className={this.state.id===item.id && this.state.toggle ? null: 'hidden'} >
                                         <div className='pest-id'> 
                                             <div className='img'><img className='image' src={item.img} alt={item.name}/></div>
                                             <h5>{item.name}</h5>
