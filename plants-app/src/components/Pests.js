@@ -48,7 +48,7 @@ class Pests extends React.Component {
                     <div className='column intro' >
                                 {this.state.cards.map(item => (
                             <div className = 'card' key={item.id}> 
-                                 <div className='accordion' key={item.id} onClick={this.expand.bind(this, item)}> <h5>{item.name}</h5>< FaPlus/></div>
+                                 <div className='accordion' key={item.id} onClick={this.expand.bind(this, item)}> <h5>{item.name}</h5>< FaPlus className={this.state.id===item.id && this.state.toggle ? 'open':null} /></div>
                               
                                     <div id='pest-card' className={this.state.id===item.id && this.state.toggle ? 'show': 'hidden'} >
                                             <div className='img'><img className='image' src={item.img} alt={item.name}/></div>

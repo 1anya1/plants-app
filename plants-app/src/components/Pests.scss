@@ -27,6 +27,14 @@
                     right: 2rem;
                     height: 20px;
                     width: 20px;
+                    transform: unset;
+                    transition: transform .5s ease-in;
+
+                }
+                .open{
+                    transition: transform .5s ease-in;
+                    transform: rotate(
+                        45deg);
                 }
                 
            }
@@ -72,19 +80,22 @@
             
             
             .hidden{
-                max-height:0px;
+                height:0;
                 overflow: hidden;
-                transition: max-height .5s ease-in-out, opacity .5s ease-in-out; 
-                padding-top: unset;
+                transition: height .5s ease-in-out, padding-top .5s ease-in-out, opacity .5s ease-in-out; 
+                padding-top: 0;
                 opacity: 0;
             }
             .show{
                 padding-top: 5rem;
                 padding-bottom: 3rem;
-                max-height: 600px;
-                height:  100%;
-                transition: max-height .5s ease-in-out, opacity .5s ease-in-out; 
+                height:  350px;
+                transition: height .5s ease-in-out, opacity 1s ease-in-out; 
                 opacity:1;
+                @include bp-small{
+                    height: 100%;
+                    transition: height .5s ease-in-out, opacity 1s ease-in-out; 
+                }
             }
             .plant-id{
                 margin-top: auto;
