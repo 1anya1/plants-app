@@ -19,7 +19,7 @@ class Pests extends React.Component {
         console.log(item.id)
         this.setState({
             toggle: !this.state.toggle,
-            id: this.state.id===null? item.id : null,
+            id: item.id
          });
     }
     render() {
@@ -50,15 +50,16 @@ class Pests extends React.Component {
                             <div className = 'card' key={item.id}> 
                                  <div className='accordion' key={item.id} onClick={this.expand.bind(this, item)}> <h5>{item.name}</h5>< FaPlus/></div>
                               
-                                    <div id='pest-card' className={this.state.id===item.id && this.state.toggle ? null: 'hidden'} >
-                                        <div className='pest-id'> 
+                                    <div id='pest-card' className={this.state.id===item.id && this.state.toggle ? 'show': 'hidden'} >
                                             <div className='img'><img className='image' src={item.img} alt={item.name}/></div>
-                                            <h5>{item.name}</h5>
-                                            <div className="subtitle2">Spot Them</div>
-                                            <p>{item.findThem}</p>
-                                            <div className="subtitle2">Treatment</div>
-                                            <p>{item.treatment}</p>
-                                        </div>
+                                            <div className='contnet'>
+                                                <h5>{item.name}</h5>
+                                                <div className="subtitle2">Spot Them</div>
+                                                <p>{item.findThem}</p>
+                                                <div className="subtitle2">Treatment</div>
+                                                <p>{item.treatment}</p>
+                                            </div>
+                                            
                                     </div> 
                                 </div>
                              ))}
