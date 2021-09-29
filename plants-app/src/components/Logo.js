@@ -4,13 +4,15 @@ import {ReactComponent as Leaf} from '../img/monstera.svg'
 import {ReactComponent as Dog} from '../img/dog.svg'
 import {ReactComponent as Sun} from '../img/sun.svg'
 import {ReactComponent as HangingPlant} from '../img/hanging-plant.svg'
+import {ReactComponent as Outline} from '../img/outline.svg'
 const logo = {
     Logo,
     Leaf, 
     Plant,
     Sun,
     Dog,
-    HangingPlant
+    HangingPlant,
+    Outline
 
 
 }
