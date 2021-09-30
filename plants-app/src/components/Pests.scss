@@ -1,4 +1,40 @@
 @import '../index.scss';
+#pestPage{
+    position: relative;
+    background-color: $periwinkle;
+    height: 600px;
+    .block{
+        height: 80%;
+        width: 45%;
+        // background-color: $peach;
+        position: absolute;
+        top: 0;
+        border-radius: 0 0 5rem 0;
+        .image{
+            height:80%;
+            width: 100%;
+            background-image: url('../img/gardening.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            bottom: -60px;
+            
+        }
+    }
+    .header{
+        position: relative;
+        z-index: 1;
+        width: 50%;
+        position: absolute;
+        right: 0;
+        bottom: 50%;
+        transform: translateY(50%);
+        .subtitle{
+            font-style: normal;
+            color: $gray;
+        }
+    }
+}
 .pestPage {
    
     .column{
@@ -22,18 +58,18 @@
                 padding: 0 2rem;
                 margin-right: 2rem;
                 border-radius: 3rem;
-                position: relative;
+                // position: relative;
                 
                
                 .title{
-                    padding-top: .95rem;
+                    padding-top: 1rem;
                     display: flex;
                     align-content: center;
                     align-items: center;
                     justify-content: space-between;
                     h5{
                         margin-bottom: unset;
-                        transform: unset;
+                        transform: translateY(0);
                         transition: transform .5s ease-in;
                         background-color: white;
                         padding: 0 1rem;
@@ -91,15 +127,6 @@
                    border-radius: 3rem;
                    overflow: hidden;
                    position: relative;
-//                    background-image: url('../img/plant-tracker.png');
-//                    background-size: COVER;
-//             background-position: center;
-//   background-repeat: no-repeat;
-//                    mask-image: url('../img/outline.svg');
-//                    mask-size: 100%;
-//   mask-repeat: no-repeat;
-//   mask-position: center;
-
                    @include bp-large{
                      height: 250px;
                    }
@@ -120,23 +147,18 @@
                        top: 0;
                    }
                    img{
-                 
                        position: absolute;
                        object-fit: cover;
                        height: 100%;
                        z-index:0;
                        top: 0;
                        mask-image: url('../img/outline.svg');
-                    //    mask-size: 100%;
                         mask-size: contain;
-      mask-repeat: no-repeat;
-      mask-position: center;
-                      
-                   }
-               }
-               
-
-           }
+                        mask-repeat: no-repeat;
+                        mask-position: center;
+                    }
+                }
+            }
             
             
             .hidden{

@@ -45,13 +45,19 @@ class Pests extends React.Component {
     console.log(this.state.id)
     console.log(this.state.cards)
         return (
+            <>
+            <div className="container" id='pestPage' >
+                <div className='header'>
+                    <h3>Houseplants can be troubled by small, unwelcomed guests</h3>
+                    <div className='subtitle'>Here is a quick reference guide to help you to identify the signs of 
+                    pest infestation and how to combat a potential outbreak.</div>
+                </div>
+                <div className='block'>
+                    <div className='image'></div>
+                </div>
+              
+            </div>
             <div className=' pestPage' >
-                <header className='cover'> 
-                    <div className='title'>
-                        <h3>Pests</h3> 
-                   </div>
-                </header>
-
                 {/* <div className='intro'>
                     <p> <b id='green'style={{fontSize: 30}}>Houseplants</b> can be troubled by small, 
                     unwelcomed guests. Here is a quick reference guide to help you to identify the signs of 
@@ -91,6 +97,7 @@ class Pests extends React.Component {
                         </div>
                     
                 </div>
+            </>
          
         )
     }
