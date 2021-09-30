@@ -166,7 +166,7 @@ handleClickExit = (e) => {
         </nav>
         <Router>
         <Switch>
-          <Route path={'/disease'} render={()=> <Disease />}/>
+          <Route path={'/diseases'} render={()=> <Disease />}/>
           <Route path={'/plants'} render={()=> <Plants />}/>
           <Route path={'/pests'} render={()=> <Pests/>}/>
           <Route path={'/care-tips'} render={()=> <CareTips/>}/>

@@ -10,56 +10,51 @@ class Disease extends React.Component {
         this.getDisease()
     }
     getDisease = () =>{
-        fetch('http://localhost:3001/diseases')
+        fetch('https://plantly111.herokuapp.com/diseases')
             .then(response => response.json())
             .then(json => this.setState({ disease: json }))
         .catch(error => console.error(error))
     }
     render() {
-        console.log(this.state.disease)
         return(
-            <div id ='main'>
-                <header className='cover diseasePage'>
-                    <div className='title'>
-                        <h3 >  Plant Disease</h3> 
-            
-                    </div>
-                </header>
-
-                <div className='intro purple'>
-                    <p><b id='purple'style={{fontSize: 30}}>Just</b> like people or pets, houseplants occasionally succumb to 
-                    disease. In the worst case, disease can kill a plant. But many times, if you know what to look for, you can 
-                    spot warning signs of an outbreak and act to defeat the disease.</p>
-
-                    <p><b id='purple'style={{fontSize: 30}}>If</b> for your houseplants correctly is the best defense
-                     against diseases. Pay attention to the needs of the plant like light, water, and humidity requirements.</p>
-
-                    <h3 className ='quote' id='purple'> "Overwatering is the number one killer of house plants."</h3>
-
-                    <p><b id='purple'style={{fontSize: 30}}>Many</b> common houseplant diseases operate in an opportunistic fashion,
-                     taking hold when plants are stressed due to unfavorable growing conditions. Just as with plant pests, 
-                     good plant care is key to prevention. And always keep in mind that overwatering is the number one killer of plants.</p>
+            <>
+            <div className="container" id='diseasePage' >
+                <div className='header'>
+                    <h3>House Plant Disease</h3>
+                    <div className='subtitle'>Just like people or pets, houseplants occasionally succumb to disease. But, if you know what to look for, you can 
+                    spot warning signs of an outbreak and act to defeat the disease.</div>
                 </div>
-
-                <div className='backgroundColor' id='lightPurple'>
-                    <h2 className= 'header2' id='purple'>Common House Plant Disease</h2>
-                        <div className='rowLayout'>
-                            {this.state.disease.map( disease =>{
-                                return (
-                                 <div className = 'cardItem' key={disease.id} >
-                                    <img className='cards' id='purpleBorder' src={disease.img} alt={disease.name}/>
-                                    <h3 className = 'itemName'id='purple' >{disease.name}</h3>
-                                    <p><b>Identification:</b> {disease.findThem}</p>
-                                    <p><b>Treatment:</b> {disease.treatment}</p>
-                                  </div>
-                                )
-                            })}
-                        </div>
+                <div className='block'>
+                    <div className='image'></div>
                 </div>
+              
             </div>
-        )
-    }
 
+            <div className='intro purple'>
+                <h4> "Overwatering is the number one killer of house plants."</h4>
+            </div>
+            <div className='rowLayout'>
+                {this.state.disease.map( disease =>{
+                    return (
+                     <div className = 'cardItem' key={disease.id} >
+                        <img className='cards' id='purpleBorder' src={disease.img} alt={disease.name}/>
+                        <h4 className = 'itemName'id='purple' >{disease.name}</h4>
+                        <div className='type'>
+                            <div>
+                                <div className='subtitle2'>Identification:</div>
+                                <p>{disease.findThem}</p>
+                            </div>
+                            <div>
+                                <div className='subtitle2'>Treatment:</div>
+                                <p> {disease.treatment}</p>
+                            </div>
+                        </div>
+                    </div>
+                    )
+                })}
+            </div>
+        </>
+        )}
 }
 
 export default Disease;
