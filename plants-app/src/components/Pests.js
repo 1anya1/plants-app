@@ -2,6 +2,7 @@ import React from 'react'
 import pestList from './pestList'
 import './Pests.scss'
 import { FaPlus } from "react-icons/fa";
+import logo from './Logo.js'
 
 
 class Pests extends React.Component {
@@ -17,10 +18,28 @@ class Pests extends React.Component {
     
     expand (item){
         console.log(item.id)
-        this.setState({
-            toggle: !this.state.toggle,
-            id: item.id
-         });
+        if(item.id===this.state.id){
+            this.setState({
+                toggle: !this.state.toggle,
+                id: null
+             });
+
+        } 
+        else if( this.state.id===null){
+            this.setState({
+                toggle: !this.state.toggle,
+                id: item.id
+            })
+            
+
+        }
+        else{
+            this.setState({
+                id: item.id,
+             });
+
+        }
+        
     }
     render() {
     console.log(this.state.id)
@@ -55,7 +74,7 @@ class Pests extends React.Component {
                                     </div>
                               
                                     <div id='pest-card' className={this.state.id===item.id && this.state.toggle ? 'show': 'hidden'} >
-                                            <div className='img'><img className='image' src={item.img} alt={item.name}/></div>
+                                            <div className='img'><logo.Outline/><img className='image' src={item.img} alt={item.name}/></div>
                                             <div className='contnet'>
                                   
                                                 {/* <h5>{item.name}</h5> */}
