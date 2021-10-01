@@ -2,7 +2,7 @@ import React from 'react'
 import pestList from './pestList'
 import './Pests.scss'
 import { FaPlus } from "react-icons/fa";
-import logo from './Logo.js'
+import logo from '../Logo.js'
 
 
 class Pests extends React.Component {
@@ -46,16 +46,13 @@ class Pests extends React.Component {
     console.log(this.state.cards)
         return (
             <>
-            <div className="container" id='pestPage' >
+            <div className="container intro" id='pestPage' >
                 <div className='header'>
                     <h3>Houseplants can be troubled by small, unwelcomed guests</h3>
                     <div className='subtitle'>Here is a quick reference guide to help you to identify the signs of 
                     pest infestation and how to combat a potential outbreak.</div>
                 </div>
-                <div className='block'>
-                    <div className='image'></div>
-                </div>
-              
+                <div className='image'></div>
             </div>
             <div className=' pestPage' >
                 {/* <div className='intro'>
@@ -81,7 +78,7 @@ class Pests extends React.Component {
                               
                                     <div id='pest-card' className={this.state.id===item.id && this.state.toggle ? 'show': 'hidden'} >
                                             <div className='img'><logo.Outline/><img className='image' src={item.img} alt={item.name}/></div>
-                                            <div className='contnet'>
+                                            <div className='content'>
                                   
                                                 {/* <h5>{item.name}</h5> */}
                                                 <div className="subtitle2">Spot Them</div>

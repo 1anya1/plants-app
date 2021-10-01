@@ -3,18 +3,16 @@ import axios from 'axios';
 import './App.scss';
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Home from './components/Home'
-import Disease from './components/Disease'
+import Disease from './components/disease/Disease'
 import Plants from './components/Plants/Plants'
-import Pests from './components/Pests'
+import Pests from './components/pests/Pests'
 import Footer from './components/Footer'
-import CareTips from './components/Plants/CareTips'
-
+import CareTips from './components/careTips/CareTips'
 import Registration from './components/Registration'
 import Login from './components/registrations/Login'
 import Signup from './components/registrations/Signup'
 import MyPlants  from './components/MyPlants.js'
 import AddNote from './components/AddNote.js'
-
 import logo from './components/Logo'
 const links = [
   { href: '/', text: 'Home' },

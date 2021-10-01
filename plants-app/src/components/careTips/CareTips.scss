@@ -1,10 +1,41 @@
 @import '../../index.scss';
-.care-tips{
-    .cover{
-        background-image: url(../../img/plant-care.png);
+#care-tips{
+    position: relative;
+    background-color: $blush;
+    height: 600px;
+    .block{
+        height: 80%;
+        width: 45%;
+        // background-color: $peach;
+        position: absolute;
+        top: 0;
+        border-radius: 0 0 5rem 0;
+        .image{
+            height:80%;
+            width: 100%;
+            background-image: url('../../img/woman-watering-plants.svg.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            bottom: -60px;
+            
+        }
+    }
+    .header{
+        position: relative;
+        z-index: 1;
+        width: 50%;
+        position: absolute;
+        right: 0;
+        bottom: 50%;
+        transform: translateY(50%);
+        .subtitle{
+            font-style: normal;
+            color: $gray;
+        }
     }
 }
-#care-tips{
+.care-tips{
     .careHeading{
        text-align: center;
     }

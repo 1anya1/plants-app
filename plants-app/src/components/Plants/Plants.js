@@ -2,7 +2,7 @@ import React from 'react'
 import plantList from '../data/plantList'
 import './Plants.scss'
 import Cards from "./Cards"
-import CareTips from './CareTips'
+
 
 
 

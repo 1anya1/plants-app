@@ -1,38 +1,8 @@
-@import '../index.scss';
+@import '../../index.scss';
 #pestPage{
-    position: relative;
     background-color: $periwinkle;
-    height: 600px;
-    .block{
-        height: 80%;
-        width: 45%;
-        // background-color: $peach;
-        position: absolute;
-        top: 0;
-        border-radius: 0 0 5rem 0;
-        .image{
-            height:80%;
-            width: 100%;
-            background-image: url('../img/gardening.svg');
-            background-repeat: no-repeat;
-            background-size: contain;
-            position: absolute;
-            bottom: -60px;
-            
-        }
-    }
-    .header{
-        position: relative;
-        z-index: 1;
-        width: 50%;
-        position: absolute;
-        right: 0;
-        bottom: 50%;
-        transform: translateY(50%);
-        .subtitle{
-            font-style: normal;
-            color: $gray;
-        }
+    .image{
+        background-image: url('../../img/pest-care.svg');
     }
 }
 .pestPage {
@@ -52,13 +22,13 @@
                 flex-direction: row;
                 width: 100%;
                 align-items: center;
-                border: 1px solid $forest-green;
+                border: 1px solid $gray;
+                height: fit-content;
                 min-height: 5rem;
-                height: 100%;
                 padding: 0 2rem;
                 margin-right: 2rem;
-                border-radius: 3rem;
-                // position: relative;
+                border-radius: 2.5rem;
+                position: relative;
                 
                
                 .title{
@@ -73,7 +43,9 @@
                         transition: transform .5s ease-in;
                         background-color: white;
                         padding: 0 1rem;
+                        color: $gray;
                     }
+
 
                     .translate{
                         transform: translateY(-2.5rem);
@@ -82,7 +54,7 @@
                         transition: transform .5s ease-in;
                     }
                     svg{
-                        fill: $forest-green;
+                        fill: $gray;
                         // position: absolute;
                         // right: 2rem;
                         height: 20px;
@@ -152,10 +124,15 @@
                        height: 100%;
                        z-index:0;
                        top: 0;
-                       mask-image: url('../img/outline.svg');
+                       mask-image: url('../../img/outline.svg');
                         mask-size: contain;
                         mask-repeat: no-repeat;
                         mask-position: center;
+                    }
+                }
+                .content{
+                    .subtitle2{
+                        color: $forest-green;
                     }
                 }
             }

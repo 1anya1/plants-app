@@ -10,74 +10,6 @@
     @include bp-medium{
         height: 650px;
     }
-    
-    // #blob{
-    //     width: 45%;
-    //     min-width: 1134px;
-    //     position: relative;
-    //     z-index: 0;
-    //     top: 53%;
-    //     left: 50%;
-    //     right: -50%;
-    //     transform: translate(-50%, -50%);
-    //     height: 75%;
-    //     @include bp-large{
-    //         width: unset;
-    //         min-width: unset;
-    //         height: 80%;   
-    //     }
-    //     @include bp-small{
-    //         width: 100%;
-    //         height: 65%;
-    //         top:55%;
-    //     }
-        
-    //     .blob{
-    //         position: absolute;
-    //         background-image: url('../../img/blob1.svg');
-    //         background-repeat: no-repeat;
-    //         background-position: center;
-    //         height: 100%;
-    //         width: 100%;
-    //         background-size: contain;
-    //         @include bp-medium{
-    //             width: unset;
-    //             left: 50%;
-    //             right: -50%;
-    //             transform: translate(-50%, 0);
-    //             background-size: cover;
-    //         }
-    //     }
-    //     .leaf{
-    //         position: absolute;
-    //         z-index: 3;
-    //         background-repeat: no-repeat;
-    //         background-position: center;
-    //         height: 100%;
-    //         width: 300px;
-    //         background-size: contain;
-    //         bottom: -53px;
-    //         right: -45px;
-    //         background-image: url('../../img/leaf-plants.svg');
-    //         transform: rotate(45deg);
-    //         @include bp-large{
-    //             width: 250px;
-    //             bottom: -124px;
-    //             right: -28px;
-    //         }
-    //         @include bp-medium{
-    //             width: 200px;
-    //         }
-    //         @include bp-small{
-    //             width: 28%;
-    //             min-width: 80px;
-    //             bottom: -44%;
-    //             right: 7px;
-                
-    //         }
-    //     }
-    // }
-    
     .header{
     position: absolute;
     z-index: 1;
@@ -115,7 +47,7 @@
         background-repeat: no-repeat;
         background-position: center;
         position: absolute;
-        bottom: 0;
+        bottom: 2em;
 
     }
     
@@ -316,7 +248,9 @@
 
     }
 }
-
+.card{
+    max-width: 250px;
+}
 @keyframes fadeIn {
     0% {
       opacity: 0;
