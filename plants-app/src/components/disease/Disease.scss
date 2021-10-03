@@ -18,14 +18,18 @@
                 max-width: unset;
                 background-position: center;
                 // background-size: 50%;
+                bottom: 5rem;
 
+            }
+            @include bp-small{
+                bottom: 3rem;
+                
             }
            
         }
         .header{
             right: 5%;
             top: 50%;
-            transform: translateY(-50%);
             width: 45%;
             .subtitle{
                 width: unset;
@@ -33,17 +37,16 @@
             @include bp-large{
                 width: 80%;
                 right: 50%;
-                transform: translateY(-50%);
                 transform: translateX(-50%);
-                top: 20%;
+                top: 15%;
             }
             
             
         }
 }
 .diseasePage{
-h4{
-    color: $gray;
+h3{
+    color: $forest-green;
     text-align: center;
 }
 

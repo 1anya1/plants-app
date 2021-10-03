@@ -2,7 +2,6 @@
 
 
 #plant-search{
-    height: 600px;
     background-color: white;
     position: relative;
     overflow: hidden;
@@ -13,10 +12,14 @@
     .header{
     position: absolute;
     z-index: 1;
-    top: 40%;
+    top: 18%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     width: 90%;
+    @include bp-medium{
+        top: 15%;
+
+    }
  
     h3{
         text-align: center;
@@ -30,17 +33,20 @@
     }
     .subtitle{
         font-style: normal;
-        width: 60%;
+        width: 75%;
         margin: 0 auto;
         text-align: center;
         color: $gray;
+        @include bp-large{
+            width: 100%;
+        }
         @include bp-small{
             width: 100%;
         }
     }
     }
     .hero{
-        height: 40%;
+        height: 60%;
         width: 100%;
         background-image: url(../../img/plants-line-style.svg);
         background-size: contain;
@@ -48,6 +54,12 @@
         background-position: center;
         position: absolute;
         bottom: 2em;
+        @include bp-large{
+            height: 55%;
+        }
+        @include bp-small{
+            height: 40%;
+        }
 
     }
     
