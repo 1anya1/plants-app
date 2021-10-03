@@ -4,13 +4,6 @@
     background-color: $blush;
     .image{
         background-image: url('../img/home-image.svg');
-        @include bp-x-large{
-            height: 45rem;
-        }
-        @include bp-large{
-            height: 250px;
-            background-position: center;
-        }
     }
     .header{
         .buttons{
