@@ -1,28 +1,28 @@
 @import '../../index.scss';
 #diseasePage{
-    background-color: white;
+    background-color:$blush;
         .image{
             background-image: url('../../img/plant-care.svg');
             height: 100%;
-            width: 45%;
-            background-color: white;
+            width: 40%;
             transform: unset;
-            left: 0;
+            left: 5rem;
             top: 0;
             @include bp-large{
                 bottom: 0;
                 top: unset;
                 height: 50%;
-                width: 100vw;
+                width: 70vw;
                 min-height: 300px;
                 max-width: unset;
                 background-position: center;
-                // background-size: 50%;
                 bottom: 5rem;
-
+                left: 50%;
+                transform: translateX(-50%);
             }
             @include bp-small{
                 bottom: 3rem;
+                max-height: unset;
                 
             }
            
@@ -64,8 +64,8 @@ h3{
         border: 1px solid $forest-green;
         border-radius: 50px;
         padding: 0 5rem 0 0;
-        max-width: 800px;
-        max-height: 350px;
+        max-width: 1000px;
+        max-height: 450px;
         @include bp-medium{
             display: flex;
             flex-direction: column;
@@ -124,7 +124,7 @@ h3{
             }
         }
         h4{
-            padding-top: 2rem;
+            padding-top: 5vw;
             color: $forest-green;
             @include bp-medium{
                 padding-right: 2rem;
@@ -132,7 +132,7 @@ h3{
             }
         }
         .type{
-            padding-bottom: 2rem;
+            padding-bottom: 5vw;
             @include bp-medium{
                 padding-right: 2rem;
                 padding-left: 2rem;

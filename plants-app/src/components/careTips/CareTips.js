@@ -11,7 +11,7 @@ class CareTips extends React.Component{
     render(){
        return (
         <>
-       <div className="container" id='care-tips' >
+       <div className="container intro" id='care-tips' >
             <div className='header'>
                 <h3>Tips to keep your green friends healthy and happy</h3>
                 <div className='subtitle'>The trick is to try to mimic the climate of the place that plant came from..</div>
@@ -46,7 +46,6 @@ class CareTips extends React.Component{
                     <>
                     <div className='overline' id={el}>{careType[idx]}</div>
                     {Data.map((el, idx)=>{
-                       
                         if(idx%2===0){
                            return  <h4>{el}</h4>
                         } else{

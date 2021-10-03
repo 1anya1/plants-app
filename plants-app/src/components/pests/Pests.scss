@@ -3,6 +3,20 @@
     background-color: $periwinkle;
     .image{
         background-image: url('../../img/pest-inspection.svg');
+        @include bp-large{
+            height: 50%;
+            width: 100vw;
+            min-width: unset;
+            max-width: unset;
+            top: unset;
+            bottom: 5rem;
+        }
+        @include bp-medium{
+            background-size: 100%;
+        }
+    }
+    .header{
+        width: 80%;
     }
 }
 .pestPage {

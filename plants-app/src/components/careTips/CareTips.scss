@@ -1,39 +1,11 @@
 @import '../../index.scss';
 #care-tips{
     position: relative;
-    background-color: $blush;
-    height: 600px;
-    .block{
-        height: 80%;
-        width: 45%;
-        // background-color: $peach;
-        position: absolute;
-        top: 0;
-        border-radius: 0 0 5rem 0;
-        .image{
-            height:80%;
-            width: 100%;
-            background-image: url('../../img/woman-watering-plants.svg.svg');
-            background-repeat: no-repeat;
-            background-size: contain;
-            position: absolute;
-            bottom: -60px;
-            
-        }
+    background-color: $light-gray;
+    .image{
+        background-image: url('../../img/woman-watering-plants.svg.svg');
     }
-    .header{
-        position: relative;
-        z-index: 1;
-        width: 50%;
-        position: absolute;
-        right: 0;
-        bottom: 50%;
-        transform: translateY(50%);
-        .subtitle{
-            font-style: normal;
-            color: $gray;
-        }
-    }
+   
 }
 .care-tips{
     .careHeading{
@@ -57,20 +29,15 @@
         }
         .symbols{
             @include bp-large{
-                border: 1px solid $peach;
+                border: 1px solid $forest-green;
                 border-radius: 4rem;
                 padding: 1rem 2rem;
                 background-color: white;
                 transition: all .5s ease-in-out;
                 &:hover{
                     transition: all .5s ease-in-out;
-                    background-color: $forest-green;
-                    border-color: $forest-green;
-                    svg{
-                        path{
-                            fill: $white;
-                        }
-                    }
+                    background-color: $blush;
+                    border-color: $blush;
                     h6{
                         color: $white;
                         
@@ -97,17 +64,17 @@
 
                 }
                 g{
-                    fill: $peach;
+                    fill: $forest-green;
                     transition: fill .5s ease-in-out;
                 }
                 path{
-                    fill: $peach;
+                    fill: $forest-green;
                     transition: fill .5s ease-in-out;
                 }
                
             }
             h5{
-                color: $peach;
+                color: $forest-green;
                 margin-bottom: unset;
                 margin-left: 1em;
                 @include bp-large{

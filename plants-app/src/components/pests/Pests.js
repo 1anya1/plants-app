@@ -48,7 +48,7 @@ class Pests extends React.Component {
             <>
             <div className="container intro" id='pestPage' >
                 <div className='header'>
-                    <h3>Houseplants can be troubled by small, unwelcomed guests</h3>
+                    <h3>Houseplants and unwelcomed guests</h3>
                     <div className='subtitle'>Here is a quick reference guide to help you to identify the signs of 
                     pest infestation and how to combat a potential outbreak.</div>
                 </div>
