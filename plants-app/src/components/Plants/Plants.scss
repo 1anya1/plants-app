@@ -3,7 +3,7 @@
 
 #plant-search{
     height: 600px;
-    background-color: $blush;
+    background-color: white;
     position: relative;
     overflow: hidden;
     
@@ -248,9 +248,7 @@
 
     }
 }
-.card{
-    max-width: 250px;
-}
+
 @keyframes fadeIn {
     0% {
       opacity: 0;

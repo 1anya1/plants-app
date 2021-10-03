@@ -298,6 +298,7 @@ input::-webkit-date-and-time-value {
       border: .1px $blush solid;
       display:flex;
       flex-direction: column;
+      max-width: 250px;
       @include bp-large{
           width: 30%;
       }
@@ -423,8 +424,7 @@ input::-webkit-date-and-time-value {
       height: 55%;
       width: 55%;
       position: absolute;
-      right: 0;
-      margin-right: 2%;
+      right: 2%;
       // max-width: 60rem;
       background-repeat: no-repeat;
       background-size: contain;

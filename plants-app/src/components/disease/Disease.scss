@@ -1,8 +1,21 @@
 @import '../../index.scss';
 #diseasePage{
-    background-color: $periwinkle;
+    background-color: white;
         .image{
             background-image: url('../../img/plant-care.svg');
+            height: 100%;
+            width: 40%;
+            background-color: $periwinkle;
+            transform: unset;
+            left: 0;
+            top: 0;
+           
+        }
+        .header{
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            
         }
 }
 .cards-layout{
@@ -10,31 +23,56 @@
     flex-direction: column;
     width: 90%;
     margin: 0 auto;
+    row-gap: 4rem;
+    
     .card{
         display: grid;
         grid-template-rows: .1fr .3fr;
         grid-template-columns: 1fr 1fr;
+        border: 1px solid $forest-green;
+        border-radius: 50px;
+        padding: 0 5rem 0 0;
+        max-width: 700px;
+        @include bp-medium{
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+        }
+        &:nth-of-type(even) {
+            padding: 0 0 0 5rem;
+            align-self: flex-end;
+            
+        }
         .image{
             grid-column:1/2;
             grid-row: 1/3;
-            height: 500px;
-            width: 80%;
+            height: 100%;
+            width: 90%;
             img{
                 object-fit: cover;
-                height: 80%;
-                border-radius:5rem;
-            overflow: hidden;
-            @include bp-large{
-                border-radius: 3rem;
-            }
+                height: 100%;
+                border-radius: 5rem 0 0 5rem;
+                overflow: hidden;
+                @include bp-large{
+                     border-radius: 3rem;
+            }   
         }
         }
         &:nth-child(even){
-
             .image{
                 grid-column:2/3;
                 grid-row: 1/3;
+                justify-self: end;
+                img{
+                    border-radius: 0 5rem 5rem 0 ;
+                }
             }
+        }
+        h4{
+            padding-top: 2rem;
+            color: $forest-green;
+        }
+        .type{
+            padding-bottom: 2rem;
         }
     }
 }
