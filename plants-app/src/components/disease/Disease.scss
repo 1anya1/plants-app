@@ -4,20 +4,49 @@
         .image{
             background-image: url('../../img/plant-care.svg');
             height: 100%;
-            width: 40%;
-            background-color: $periwinkle;
+            width: 45%;
+            background-color: white;
             transform: unset;
             left: 0;
             top: 0;
+            @include bp-large{
+                bottom: 0;
+                top: unset;
+                height: 50%;
+                width: 100vw;
+                min-height: 300px;
+                max-width: unset;
+                background-position: center;
+                // background-size: 50%;
+
+            }
            
         }
         .header{
             right: 5%;
             top: 50%;
             transform: translateY(-50%);
+            width: 45%;
+            .subtitle{
+                width: unset;
+            }
+            @include bp-large{
+                width: 80%;
+                right: 50%;
+                transform: translateY(-50%);
+                transform: translateX(-50%);
+                top: 20%;
+            }
+            
             
         }
 }
+.diseasePage{
+h4{
+    color: $gray;
+    text-align: center;
+}
+
 .cards-layout{
     display: flex;
     flex-direction: column;
@@ -37,10 +66,7 @@
         @include bp-medium{
             display: flex;
             flex-direction: column;
-            // grid-template-columns: 1fr;
-            // grid-template-rows: auto;
             padding: unset;
-            // // grid-template-rows: 50% 0 50%;
             max-height: 1000px;
         }
         &:nth-of-type(even) {
@@ -110,4 +136,5 @@
             }
         }
     }
+}
 }

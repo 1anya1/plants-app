@@ -17,7 +17,8 @@ class Disease extends React.Component {
                 </div>
                     <div className='image'></div>
             </div>
-            <h4> "Overwatering is the number one killer of house plants."</h4>
+            <div className='diseasePage'>
+            <h4 className='intro'> "Overwatering is the number one killer of house plants."</h4>
             <div className='cards-layout'>
                 {this.state.disease.map( (disease, idx) =>{
                     return (
@@ -39,6 +40,7 @@ class Disease extends React.Component {
                     </div>
                     )
                 })}
+            </div>
             </div>
         </>
         )}
