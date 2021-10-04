@@ -39,25 +39,22 @@ class CareTips extends React.Component{
                     )
                 })}
             </div>
-        <div>
             {careType.map((el, idx)=>{
                 const Data = careTips[el]
                 return(
-                    <>
-                    <div className='overline' id={el}>{careType[idx]}</div>
-                    {Data.map((el, idx)=>{
-                        if(idx%2===0){
-                           return  <h4>{el}</h4>
-                        } else{
-                           return  <p>{el}</p>
-                        }
-                })}
-                    
-                    </>
+                    <div className='contnet'>
+                        <div className='subtitle2' id={el}>{careType[idx]}</div>
+                        {Data.map((el, idx)=>{
+                            if(idx%2===0){
+                                return  <h5>{el}</h5>
+                            } else{
+                                return  <p>{el}</p>
+                            }
+                        })}
+                    </div>
                 )
                
             })}
-        </div>
         </div>
         </>
        ) 
