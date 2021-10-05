@@ -2,10 +2,33 @@
 
 #home{
     background-color: $blush;
-    .image{
-        background-image: url('../img/home-image.svg');
+    @include bp-large{
+        height: 900px;
     }
-    .header{
+    @include bp-medium{
+      height: 800px;
+    }
+    @include bp-small{
+        height: 750px;
+    }
+    .image{
+        background-image: url('../img/hero/home-image.svg');
+        height: 55%;
+        width: 50%;
+    }
+
+    .content{
+        top: 20%;
+        @include bp-large{
+            top: 15%;
+        }
+        // @include bp-medium{
+        //   top: 13%;
+    
+        // }
+        @include bp-small{
+          top: 12%;
+        }
         .buttons{
           display: flex;
           flex-direction: row;
@@ -15,7 +38,7 @@
           }
           @include bp-small{
             flex-direction:column;
-            width: 75%;
+            width: 100%;
             margin: 0 auto;
             padding-bottom: 2rem;
           }

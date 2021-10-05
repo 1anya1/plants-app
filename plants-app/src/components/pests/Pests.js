@@ -46,9 +46,9 @@ class Pests extends React.Component {
     console.log(this.state.cards)
         return (
             <>
-            <div className="container intro" id='pestPage' >
-                <div className='header'>
-                    <h3>Houseplants and unwelcomed guests</h3>
+            <div className="hero intro" id='pestPage' >
+                <div className='content'>
+                    <h2>Houseplants and unwelcomed guests</h2>
                     <div className='subtitle'>Here is a quick reference guide to help you to identify the signs of 
                     pest infestation and how to combat a potential outbreak.</div>
                 </div>

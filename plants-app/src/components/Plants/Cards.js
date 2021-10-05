@@ -95,12 +95,12 @@ class Cards extends Component {
     return (
       <>
      
-      <div className="container"  id='plant-search'>
-          <div className='header'>
-              <h3>Common House Plants</h3>
+      <div className="hero intro"  id='plant-search'>
+          <div className='content'>
+              <h2>Common House Plants</h2>
               <div className='subtitle'>Keeping plants around the house isn’t as scary as you might think; you just need to know what they like in order to keep your indoor garden both happy and green</div>
         </div>
-        <div className='hero'>
+        <div className='image'>
 
         </div>
         {/* <div id='blob'>

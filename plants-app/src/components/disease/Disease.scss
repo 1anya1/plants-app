@@ -1,54 +1,20 @@
 @import '../../index.scss';
 #diseasePage{
-    background-color:$blush;
+    background-color:white;
         .image{
-            background-image: url('../../img/plant-care.svg');
-            height: 100%;
-            width: 40%;
-            transform: unset;
-            left: 5rem;
-            top: 0;
-            @include bp-large{
-                bottom: 0;
-                top: unset;
-                height: 50%;
-                width: 70vw;
-                min-height: 300px;
-                max-width: unset;
-                background-position: center;
-                bottom: 5rem;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            @include bp-small{
-                bottom: 3rem;
-                max-height: unset;
-                
-            }
-           
+            background-image: url('../../img/hero/disease-hero-image.svg');
         }
-        .header{
-            right: 5%;
-            top: 50%;
-            width: 45%;
-            .subtitle{
-                width: unset;
+        .content{
+            h2{
+                color: $light-green;
             }
-            @include bp-large{
-                width: 80%;
-                right: 50%;
-                transform: translateX(-50%);
-                top: 15%;
-            }
-            
-            
         }
 }
+
 .diseasePage{
-h3{
-    color: $forest-green;
+h4{
+    color: $light-green;
     text-align: center;
-    padding: 15rem 0;
 }
 
 .cards-layout{

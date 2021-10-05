@@ -1,9 +1,8 @@
 @import '../../index.scss';
 #care-tips{
-    position: relative;
-    background-color: $light-gray;
+    background-color: white;
     .image{
-        background-image: url('../../img/woman-watering-plants.svg.svg');
+        background-image: url('../../img/hero/care-tips-hero-image.svg');
     }
    
 }
@@ -89,7 +88,7 @@
        }
         
     }
-    .contnet{
+    .paragraphs{
         padding-bottom: 4rem;
         .subtitle2{
             color: $yellow;

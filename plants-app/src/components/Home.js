@@ -10,9 +10,9 @@ class Home extends React.Component{
     render() {
         return (
             <>
-            <div className="container intro" id='home' >
-                <div className='header'>
-                    <h3>track and watch your plants grow</h3>
+            <div className="hero intro" id='home' >
+                <div className='content'>
+                    <h2>track and watch your plants grow</h2>
                     <div className='subtitle'>This is the subtitle text. Add some content here that will make it easier for user to make a desicion to search plants and create an account</div>
                     <div class='buttons'>
                         <button id='one'>Log In</button>
