@@ -23,8 +23,8 @@ h4{
     background-position: center;
     background-size: cover;
     position: relative;
-    z-index: 3;
     fill: $light-green;
+    top: 3px;
     @include bp-large{
         height: 13vw;
         
@@ -40,7 +40,7 @@ h4{
     flex-direction: column;
     margin: 0 auto;
     row-gap: 4rem;
-    background-color: #80b8af80;
+    background-color: $light-green;
     position: relative;
     z-index:0;
    
