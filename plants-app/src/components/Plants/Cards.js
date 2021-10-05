@@ -5,6 +5,7 @@ import {FaSistrix} from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa";
 
 
+const nav = document.querySelector('nav')
 class Cards extends Component {
   constructor(props) {
     super(props);
@@ -44,11 +45,17 @@ class Cards extends Component {
         modal: null
       });
       document.body.style.overflow = "unset";
+      document.querySelector('nav').classList.add('show-nav')
+      document.querySelector('nav').classList.remove('hide-nav')
     } else{
       this.setState({
         modal: card
       });
       document.body.style.overflow = "hidden";
+      document.querySelector('nav').classList.remove('show-nav')
+      document.querySelector('nav').classList.add('hide-nav')
+
+      console.log(document.querySelector('nav'))
     }
       
   }
