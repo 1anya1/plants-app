@@ -1,7 +1,6 @@
 @import '../index.scss';
 
 #home{
-    background-color: $blush;
     @include bp-large{
         height: 900px;
     }
@@ -13,8 +12,7 @@
     }
     .image{
         background-image: url('../img/hero/home-image.svg');
-        height: 55%;
-        width: 50%;
+
     }
 
     .content{
@@ -56,10 +54,12 @@
             }
           }
           #one{
-            background-color: $forest-green;
+            background-color: $peach;
+            border: 1px solid $peach;
             color: white;
             &:hover, &:focus{
                 background-color: $light-gray;
+                border-color: $light-gray;
                 color: $gray;
               }
             @include bp-x-large{
@@ -72,10 +72,12 @@
             }
           }
           #two{
-            background-color: white;
-            background-color: white;
+            
+            border: 1px solid $peach;
+       
             &:hover, &:focus{
                 background-color: $light-gray;
+                border-color: $light-gray;
               }
             @include bp-x-large{
               margin-right: unset;

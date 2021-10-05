@@ -97,8 +97,8 @@ class Cards extends Component {
      
       <div className="hero intro"  id='plant-search'>
           <div className='content'>
-              <h2>Common House Plants</h2>
-              <div className='subtitle'>Keeping plants around the house isn’t as scary as you might think; you just need to know what they like in order to keep your indoor garden both happy and green</div>
+              <h2> Search Common Indoor Plants</h2>
+              <div className='subtitle'>Get to know what your green friends and keep your garden both happy and green.</div>
         </div>
         <div className='image'>
 

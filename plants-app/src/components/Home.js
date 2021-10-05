@@ -12,8 +12,8 @@ class Home extends React.Component{
             <>
             <div className="hero intro" id='home' >
                 <div className='content'>
-                    <h2>track and watch your plants grow</h2>
-                    <div className='subtitle'>This is the subtitle text. Add some content here that will make it easier for user to make a desicion to search plants and create an account</div>
+                    <h2>keep your green friends healthy and happy</h2>
+                    <div className='subtitle'>Explore guides and tools that keep plants triving. Sign up to track and watch your plants grow.</div>
                     <div class='buttons'>
                         <button id='one'>Log In</button>
                         <button id='two'>View Plants</button>

@@ -20,21 +20,21 @@ class CareTips extends React.Component{
 
               
         </div>
-        <div className='intro care-tips'>
+        <div className='care-tips'>
             <div className='care-list'>
                 {Object.keys(mySVG).map((el,idx)=>{
                     const Component = mySVG[el]
                     const Data = careTips[careType[idx]]
                     return (
                     <>
-                        <div className='symbols'>
-                            <a href={ `#${careType[idx]}`} >
+                        <a href={ `#${careType[idx]}`} >
+                            <div className='symbols'>
                                 <div className='care'>
                                     < Component  />
                                     <h5>{careType[idx]}</h5>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                     </>
                     )
                 })}
@@ -42,7 +42,7 @@ class CareTips extends React.Component{
             {careType.map((el, idx)=>{
                 const Data = careTips[el]
                 return(
-                    <div className='paragraphs'>
+                    <div className='paragraphs intro'>
                         <div className='subtitle2' id={el}>{careType[idx]}</div>
                         {Data.map((el, idx)=>{
                             if(idx%2===0){

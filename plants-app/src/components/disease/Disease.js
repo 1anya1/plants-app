@@ -13,13 +13,14 @@ class Disease extends React.Component {
                 <div className='content'>
                     <h2>House Plant Disease</h2>
                     <div className='subtitle'>Just like people or pets, houseplants occasionally succumb to disease. But, if you know what to look for, you can 
-                    spot warning signs of an outbreak and act to defeat the disease.</div>
+                    spot warning signs of an outbreak and stop it.</div>
                 </div>
                     <div className='image'></div>
             </div>
             <div className='diseasePage'>
             <h4 className='intro'> "Overwatering is the number one killer of house plants."</h4>
-            <div className='cards-layout'>
+            <div className='wave'></div>
+            <div className='cards-layout intro'>
                 {this.state.disease.map( (disease, idx) =>{
                     return (
                      <div className = 'card' key={idx} >

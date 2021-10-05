@@ -49,7 +49,7 @@ class Pests extends React.Component {
             <div className="hero intro" id='pestPage' >
                 <div className='content'>
                     <h2>Houseplants and unwelcomed guests</h2>
-                    <div className='subtitle'>Here is a quick reference guide to help you to identify the signs of 
+                    <div className='subtitle'>Identify the signs of 
                     pest infestation and how to combat a potential outbreak.</div>
                 </div>
                 <div className='image'></div>
