@@ -445,10 +445,16 @@ input::-webkit-date-and-time-value {
         
       }
       @include bp-small{
-        max-height: 250px;
-        height: 60vw;
-        bottom:3rem;
-        width: 100%;
+        // max-height: 250px;
+        // height: 60vw;
+        // bottom:3rem;
+        // width: 100%;
+      
+    bottom: 0rem;
+    width: 125%;
+    max-height: unset;
+    height: 60vw;
+
 
        
       }
@@ -475,13 +481,14 @@ input::-webkit-date-and-time-value {
           // margin-bottom: 3rem;
           width: 55%;
           @include bp-x-large{
-            width:85%;
+            width:70%;
           }
           @include bp-large{
             width: 100%;
           }
-          @include bp-small{
-              margin-bottom: 1rem;
+          @include bp-medium{
+              margin-bottom: 3rem;
+              font-size: 4rem;
           }
           
       }
@@ -490,6 +497,7 @@ input::-webkit-date-and-time-value {
           width: 80rem;
           color: $gray;
           margin-bottom: 5rem;
+          font-size: 2.2rem;
           @include bp-large{
             width: 100%;
           }

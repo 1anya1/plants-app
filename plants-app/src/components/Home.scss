@@ -6,13 +6,26 @@
     }
     @include bp-medium{
       height: 800px;
-    }
+    } 
     @include bp-small{
-        height: 750px;
+        height: 780px;
     }
     .image{
         background-image: url('../img/hero/home-image.svg');
 
+        @include bp-small{
+            bottom: 3rem;
+            width: 110%;
+            max-height: unset;
+            height: 50vw;
+            max-height: 400px;
+            min-height: 250px;
+        @include bp-x-small{
+            
+            max-height: 200px;
+            min-height: 100px;
+        }
+        }
     }
 
     .content{
@@ -93,29 +106,46 @@
     }
     h4{
         color: $gray;
-        margin-bottom: 3rem;
+        margin: 5rem 0;
         text-align: center;
-        padding-top: 3rem;
+       
+        @include bp-small{
+            margin: 3rem 0;
+        }
     }
     .benefits{
-        padding-bottom: 5rem;
+        padding-bottom: 10rem;
+        @include bp-small{
+            padding-bottom: 5rem;
+        }
         ul{
             display: grid;
             grid-template-columns: 1fr 1fr;
-            column-gap: 5rem;
+            column-gap: 5vw;
             justify-content: space-evenly;
             align-items: start;
-            justify-items: stretch;
+            justify-items: center;
+            align-items: center;
             padding:0;
             list-style-type:none;
-            max-width: 1200px;
+            max-width: 1500px;
             justify-content: center;
             margin: 0 auto;
-
+            row-gap: 2rem;
+            max-width: 1300px;
             @include bp-small{
                 grid-template-columns: 1fr;
+                row-gap: 1rem;
             }
             li{
+                width: 90%;
+                @include bp-medium{
+                    text-align: center;
+                    text-transform: capitalize;
+                }
+                // &:nth-of-type(even){
+                //     text-align: right;
+                // }
                 svg{
                     margin-right: 1rem;
                 }
@@ -126,34 +156,81 @@
     .cards{
         display: flex;
         column-gap: 2rem;
-        @include bp-small{
+        justify-content: center;
+        padding-bottom: 10rem;
+        @include bp-large{
             flex-direction: row;
             flex-wrap: wrap;
             row-gap: 2rem;
+            width: 85%;
+            margin: 0 auto;
         }
-        .section{
+        @include bp-small{
+            padding-bottom: 5rem ;
+            width: 100%;
+        }
+        
+        a{
             border: 1px solid $peach;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             border-radius: 5rem;
+            width: 22%;
+            max-width: 300px;
+            text-decoration: unset;
+            &:hover, &:focus, &:active{ 
+            }
             @include bp-large{
                 border-radius: 3rem;
-                max-width: 200px;
+                width: 45%;
+                max-width: 260px;
             }
-            @include bp-small{
+            @include bp-medium{
                 width: 45%;
                 margin: 0 auto;
             }
-             svg{
-                width: 80%;
-                height: fit-content;
-                max-height: 200px;
-             }
+            @include bp-x-small{
+                width: 70%;
+            }
+            .section{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                &:hover, &:focus, &:active{ 
+                    svg{
+                        animation: shake 1s infinite;
+                        animation-timing-function: linear;   
+                    }
+                  }
+                svg{
+                    width: 80%;
+                    height: fit-content;
+                    // max-height: 200px;
+                 }
+                 h5{
+                     text-transform: uppercase;
+                     color: $gray;
+                     @include bp-small{
+                         font-size: 1.8rem;
+                     }
+                 }
+            }
         }
        
     }
+    .header{
+        margin-top: unset;
+    }
 }
+
+  
+  @keyframes shake {
+    0% { transform: rotate(10deg); }
+    50% { transform: rotate(-10deg); }
+    100% { transform: rotate(10deg); }
+  }
     
         
            

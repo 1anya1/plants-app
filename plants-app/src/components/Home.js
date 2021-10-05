@@ -29,35 +29,43 @@ class Home extends React.Component{
                     < h4>Plantly is a house plant app that has it all. </h4>
                     <div className='benefits'>
                         <ul>
-                            <li className='subtitle'><logo.Checkmark/>learn about plant care </li>
-                            <li className='subtitle'> <logo.Checkmark/>search common houseplants </li>
-                            <li className='subtitle'> <logo.Checkmark/>identify deisease and common pests</li>
-                            <li className='subtitle'> <logo.Checkmark/>identify deisease and common pests</li>
+                            <li className='subtitle'><logo.Checkmark/>learn about plant plants and their care needs </li>
+                            <li className='subtitle'> <logo.Checkmark/>search common houseplants and filter by category </li>
+                            <li className='subtitle'> <logo.Checkmark/>learn how to identify deisease and stop them at the tracks</li>
+                            <li className='subtitle'> <logo.Checkmark/>learn how to identify housepests and </li>
                             <li className='subtitle'> <logo.Checkmark/>Sign up to track and watch your plants grow.</li>
-                            <li className='subtitle'></li>
+                            <li className='subtitle'> <logo.Checkmark/> Learn tips and tricks that keep your plants thriving </li>
                         </ul>
                     </div>
                     <div className='cards'>
+                        <a href='/plants'>
                         <div className='section'>
                             <logo.Leafblob/>
                             <h5>Discover</h5>
                         </div>
+                        </a>
+                        <a href='/pests'>
                         <div className='section'>
                             <logo.Bugblob/>
                             <h5>Identify</h5>
                         </div>
+                        </a>
+                        <a href='/login'>
                         <div className='section'>
                             <logo.Todoblob/>
                             <h5>Track</h5>
                         </div>
+                        </a>
+                        <a href='care-tips'>
                         <div className='section'>
                             <logo.Thrive/>
                             <h5>Thrive</h5>
                         </div>
+                        </a>
                     </div>
                     
-                    <h4>Our plant library contains the most popular housepalnts.</h4>
-                    <button className = 'home-button'><Link to="/plants" className='buttonGreen'>Discover House Plants</Link></button>
+                    <h4 className='header'>Our plant library contains the most popular housepalnts.</h4>
+                    <a href='/plants'><button className = 'home-button'>Discover House Plants</button></a>
                     <div className='subtitle'>Keep track of your plants using our tracker. Add dates, notes, and photos that you can always refer back to.</div>
                     <button className = 'home-button'><Link to="/login" className='buttonGreen'>Log In</Link></button>
   

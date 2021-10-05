@@ -16,10 +16,10 @@ import AddNote from './components/AddNote.js'
 import logo from './components/Images'
 const links = [
   { href: '/', text: 'Home' },
-  { href: 'plants', text: 'Plants' },
-  { href: 'diseases', text: 'Disease' },
-  { href: 'pests', text: 'Pests' },
-  {href:'care-tips', text: 'Care Tips'}
+  { href: '/plants', text: 'Plants' },
+  { href: '/diseases', text: 'Disease' },
+  { href: '/pests', text: 'Pests' },
+  {href:'/care-tips', text: 'Care Tips'}
 ];
 
 const createNavItem = ({ href, text}) => (
