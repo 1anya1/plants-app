@@ -433,7 +433,7 @@ input::-webkit-date-and-time-value {
         background-position: center;
     
         right: 0;
-        height: 48%;
+        height: 40%;
         width: 80%;
         left: 50%;
         bottom: 5rem;
@@ -441,7 +441,7 @@ input::-webkit-date-and-time-value {
         
       }
       @include bp-medium{
-        height: 38%;
+        height: 35%;
         width: 90%;
         
       }
@@ -459,7 +459,7 @@ input::-webkit-date-and-time-value {
       width: 90%;
       @include bp-large{
           text-align: center;
-          width: 85%;
+          width: 80%;
           left: 50%;
           transform: translateX(-50%);
           top: 20%;
