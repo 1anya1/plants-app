@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import mySVG from './data/Svg.js'
 import './AddNote.scss'
-import logo from './Logo.js'
+import logo from './Images.js'
 import DeleteModal from './modaDelete/ModalDelete.js'
 
 class AddNote extends Component {

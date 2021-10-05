@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import './Home.scss'
 import './Nav.scss'
+import logo from './Images'
 
 import myData from './data/Homepage'
 
@@ -13,7 +14,7 @@ class Home extends React.Component{
             <div className="hero intro" id='home' >
                 <div className='content'>
                     <h2>keep your green friends healthy and happy</h2>
-                    <div className='subtitle'>Explore guides and tools that keep plants triving. Sign up to track and watch your plants grow.</div>
+                    <div className='subtitle'>Explore guides and tools that keep plants triving.</div>
                     <div class='buttons'>
                         <button id='one'>Log In</button>
                         <button id='two'>View Plants</button>
@@ -21,11 +22,47 @@ class Home extends React.Component{
                  </div>
                 <div className='image'></div>
             </div>
-                <div className='intro'>
-                    { myData.Part1.map((el, idx)=> <p key={idx}>{el}</p>)}
+                <div className='intro home'>
+                    {/* { myData.Part1.map((el, idx)=> <p key={idx}>{el}</p>)}
                     {myData.Header.map((el, idx)=><h2 key={idx}>{el}</h2>)}
-                    { myData.Part2.map((el, idx)=> <p key={idx}>{el}</p>)}
+                    { myData.Part2.map((el, idx)=> <p key={idx}>{el}</p>)} */}
+                    < h4>Plantly is a house plant app that has it all. </h4>
+                    <div className='cards'>
+                        <div className='section'>
+                            <logo.Leafblob/>
+                            <h5>Discover</h5>
+                        </div>
+                        <div className='section'>
+                            <logo.Bugblob/>
+                            <h5>Identify</h5>
+                        </div>
+                        <div className='section'>
+                            <logo.Todoblob/>
+                            <h5>Track</h5>
+                        </div>
+                        <div className='section'>
+                            <logo.Thrive/>
+                            <h5>Thrive</h5>
+                        </div>
+                    </div>
+                    <div className='benefits'>
+                        <ul>
+                            <li className='subtitle'>learn about plant care </li>
+                            <li className='subtitle'>search common houseplants </li>
+                            <li className='subtitle'>identify deisease and common pests</li>
+                            <li className='subtitle'>identify deisease and common pests</li>
+                            <li className='subtitle'>Sign up to track and watch your plants grow.</li>
+                            <li className='subtitle'></li>
+                        </ul>
+                    </div>
+                    <h4>Our plant library contains the most popular housepalnts.</h4>
                     <button className = 'home-button'><Link to="/plants" className='buttonGreen'>Discover House Plants</Link></button>
+                    <div className='subtitle'>Keep track of your plants using our tracker. Add dates, notes, and photos that you can always refer back to.</div>
+                    <button className = 'home-button'><Link to="/login" className='buttonGreen'>Log In</Link></button>
+  
+
+                   
+                  
                     
                 </div> 
             </>

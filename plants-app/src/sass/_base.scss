@@ -431,7 +431,6 @@ input::-webkit-date-and-time-value {
    
       @include bp-large{
         background-position: center;
-    
         right: 0;
         height: 40%;
         width: 80%;
@@ -449,6 +448,7 @@ input::-webkit-date-and-time-value {
         max-height: 250px;
         height: 60vw;
         bottom:3rem;
+        width: 100%;
 
        
       }

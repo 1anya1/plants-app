@@ -2,7 +2,7 @@ import React from 'react'
 import pestList from './pestList'
 import './Pests.scss'
 import { FaPlus } from "react-icons/fa";
-import logo from '../Logo.js'
+import logo from '../Images.js'
 
 
 class Pests extends React.Component {

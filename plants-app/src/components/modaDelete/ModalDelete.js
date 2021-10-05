@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../Logo.js'
+import logo from '../Images.js'
 import './ModalDelete.scss'
 
 class DeleteModal extends Component {

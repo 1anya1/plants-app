@@ -87,6 +87,47 @@
         }
     }
 }
+.home{
+    .subtitle{
+        font-style: normal;
+    }
+    h4{
+        color: $peach;
+        margin-bottom: 3rem;
+        text-align: center;
+        padding-top: 3rem;
+    }
+    .cards{
+        display: flex;
+        column-gap: 2rem;
+        @include bp-small{
+            flex-direction: row;
+            flex-wrap: wrap;
+            row-gap: 2rem;
+        }
+        .section{
+            border: 1px solid $peach;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 5rem;
+            @include bp-large{
+                border-radius: 3rem;
+                max-width: 200px;
+            }
+            @include bp-small{
+                width: 45%;
+                margin: 0 auto;
+            }
+             svg{
+                width: 80%;
+                height: fit-content;
+                max-height: 200px;
+             }
+        }
+       
+    }
+}
     
         
            
