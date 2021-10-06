@@ -31,11 +31,12 @@
                 position: relative;
                 @include bp-large{
                     min-height: 7rem;
+                    border-radius: 3.5rem;
                    
                 }
                 @include bp-medium{
                     min-height: 5rem;
-                    border-radius: 3rem;
+                    border-radius: 2.5rem;
                     padding: 0 1rem;
                 }
                 .title{

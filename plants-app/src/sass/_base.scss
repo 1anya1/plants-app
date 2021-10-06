@@ -445,15 +445,13 @@ input::-webkit-date-and-time-value {
         
       }
       @include bp-small{
-        // max-height: 250px;
-        // height: 60vw;
-        // bottom:3rem;
-        // width: 100%;
-      
-    bottom: 0rem;
-    width: 125%;
-    max-height: unset;
-    height: 60vw;
+        max-height: 250px;
+        height: 60vw;
+        bottom:3rem;
+        bottom: 0rem;
+        width: 115%;
+        height: 50vw;
+        min-height: 200px;
 
 
        
