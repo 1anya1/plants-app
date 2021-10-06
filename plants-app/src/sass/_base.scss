@@ -177,15 +177,26 @@ a{
     box-shadow: unset;
     text-transform: uppercase;
     margin: 0;
-    background-color: white;;
     padding: 1rem 1.5rem;
     color: $gray;
     transition: all .5s ease-in-out;
     border-radius: 3rem;
-      &:hover, &:focus{
-          transition: all .5s ease-in-out;
-      }
+    height: 5rem;
+    padding: 0 2rem;
+    color: $gray;
+    background-color: white;
+    &:hover, &:focus{
+      transition: all .5s ease-in-out;
+      background-color: $light-gray;
+      border-color: $light-gray;
+      color: $gray;
+  }
+    @include bp-small{
+        max-width: unset;
+        width: 100%;
     }
+
+}
 
 .button-bottom{
       font-size: 1.4rem;

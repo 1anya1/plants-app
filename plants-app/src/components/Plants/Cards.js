@@ -81,7 +81,7 @@ class Cards extends Component {
     const myData = filteredData.map((card, id) => ( 
       <div className='card' key={card.name}> 
           <div className="image">
-            <img className = 'img'  height='300px' width='400px' loading='lazy' src={require('../../img/plants/' + card.img).default} alt={card.name}></img>
+            <img className = 'img'   loading='lazy' src={require('../../img/plants/' + card.img).default} alt={card.name}></img>
           </div>
           <div className='plant-id'>
             <h5>{card.name}</h5>
@@ -102,21 +102,6 @@ class Cards extends Component {
     return (
       <>
      
-      <div className="hero intro"  id='plant-search'>
-          <div className='content'>
-              <h2> Search Common Indoor Plants</h2>
-              <div className='subtitle'>Get to know what your green friends and keep your garden both happy and green.</div>
-        </div>
-        <div className='image'>
-
-        </div>
-        {/* <div id='blob'>
-          <div class='blob'></div>
-          <div className='leaf'></div>
-          <div className='leaf2'></div>
-        </div> */}
-          
-        </div>
         <div className='search-menu'>
                <div className='dropDown'>
                 <select name="plants" id="plants" onChange={this.handleOption}> 

@@ -67,9 +67,9 @@
             }
           }
           #one{
-            background-color: $peach;
-            border: 1px solid $peach;
-            color: white;
+            background-color: $yellow;
+            border: 1px solid $yellow;
+            color: $gray;
             &:hover, &:focus{
                 background-color: $light-gray;
                 border-color: $light-gray;
@@ -171,7 +171,7 @@
         }
         
         a{
-            border: 1px solid $peach;
+            border: 1px solid $gray;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -233,6 +233,18 @@
     }
     .header{
         margin-top: unset;
+    }
+    .home-button{
+        background-color: $peach;
+        color: white;
+        margin: 0 auto;
+        &:hover, &:focus{
+            transition: all .5s ease-in-out;
+            background-color: $light-gray;
+            border-color: $light-gray;
+            color: $gray;
+        }
+        
     }
 }
 
