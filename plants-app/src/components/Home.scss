@@ -176,15 +176,19 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            align-items: stretch;
             border-radius: 5rem;
             width: 22%;
+            height: auto;
             max-width: 300px;
+            max-height: 300px;
             text-decoration: unset;
             &:hover, &:focus, &:active{ 
             }
             @include bp-large{
                 border-radius: 3rem;
                 width: 45%;
+                max-height: 300px;
                 max-width: 260px;
             }
             @include bp-medium{
@@ -192,12 +196,13 @@
                 margin: 0 auto;
             }
             @include bp-x-small{
-                width: 70%;
+                width: 80%;
             }
             .section{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                max-height: 300px;
                 &:hover, &:focus, &:active{ 
                     svg{
                         animation: shake 1s infinite;
@@ -206,12 +211,18 @@
                   }
                 svg{
                     width: 80%;
-                    height: fit-content;
-                    // max-height: 200px;
+                    height:auto;
+                    max-height: 200px;
+                    @include bp-small{
+                        max-height: 150px;
+                    }
                  }
                  h5{
                      text-transform: uppercase;
                      color: $gray;
+                     align-self: bottom;
+                     position: relative;
+                     margin-top: auto;
                      @include bp-small{
                          font-size: 1.8rem;
                      }

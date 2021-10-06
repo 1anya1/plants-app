@@ -1,6 +1,5 @@
 import React from "react";
 import SVG from '../Images.js'
-const nav = document.querySelector('nav')
 export default class Modal extends React.Component {
     constructor(props){
         super(props)
