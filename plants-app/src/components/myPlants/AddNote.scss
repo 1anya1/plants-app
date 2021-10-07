@@ -1,8 +1,9 @@
+
+
 @import '../../index.scss';
-.plant-logs{
-    background-image: url(../../img/plant-tracker.png);
-}
 #plant-logs{
+}
+.plant-logs{
    
 .notes{
     display: grid;
@@ -15,7 +16,7 @@
         grid-template-columns: 1fr 1fr;
     }
   
-    @include bp-medium{
+    @include bp-small{
         grid-template-columns: 1fr;
     }
   
@@ -23,12 +24,16 @@
     .note{
         border: $blush 1px solid;
         padding: 3rem 0;
-        border-radius: 1rem;
+        border-radius: 5rem;
         width: 100%;
         padding-bottom: 0rem;
         position: relative;
         display: flex;
         flex-direction: column;
+        overflow: hidden;
+        @include bp-medium{
+            border-radius: 3rem;
+        }
 
         .overline{
             color: $gray;
@@ -62,121 +67,13 @@
             margin-bottom: 2.6rem;
             padding: 0 3rem ;
         }
-      button{
-          height: 7rem;
-          width: 100%;
-          background-color: $blush;
-          border-radius: 0 0 1rem 1rem;
-          padding: 0 2rem; 
-          bottom: 0;
-          align-self: flex-end;
+        button{
+            align-self: flex-end;
           position: relative;
           margin-top:auto;
-      }
+        }
        
     }
 
-}
-.care-box{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    max-width: 285px;
-
-    
-    .care-type{
-        display: flex;
-        flex-direction: column;
-        input{
-            display: none;
-        }
-        label{
-            background-color: white;
-            padding: 1rem;
-            border-radius: 1rem;
-            svg{
-                height: 40px;
-                width: 40px;
-                }
-            }
-            .clicked{
-                background-color: $forest-green;
-                svg{
-                    path{
-                        fill:white;
-                    }
-                }
-            }
-        
-
-    }
-}
-form{
-    background-color: $blush;
-    // display: flex;
-    // flex-direction: column;
-    display: grid;
-    grid-template-rows: 1fr 3fr 1fr;
-    border-radius: 1rem;
-    overflow: hidden;
-    padding-bottom: 0;
-    border: unset;
-    grid-row: 1/3;
-    @include bp-medium{
-        grid-template-rows: unset;
-    }
-    .form-inputs{
-        margin-bottom: 2.6rem;
-        padding: 0 3rem;
-        input{
-            border: unset;
-            height: 4rem;
-            padding: 0 1rem;
-            border-radius: 1rem;
-            width: 100%;
-        }
-    }
-    h4{
-        margin-bottom: 3.6rem;
-        padding: 0 3rem;
-        color: $forest-green;
-        margin-top: 5.5rem;
-    }
-    textarea{
-        width: 100%;
-        border: unset;
-        border-radius: 1rem;
-        padding: 1rem;
-        // min-height: 10rem;
-        // height: 90%;
-        height: 80%;
-
-        @include bp-medium{
-            height: auto;
-        }
-    }
-    input,.care-type{
-        margin-bottom: 2.6rem;
-    }
-    button{
-        height: 7rem;
-        width: 100%;
-        background-color: $peach;
-        border-radius: 0 0 1rem 1rem;
-        padding: 0 2rem; 
-        bottom: 0;
-        align-self: flex-end;
-        position: relative;
-        margin-top:auto;
-        color: white;
-        border: $peach 1px solid;
-        transition: all .5s ease-in-out;
-        &:hover, &:focus, &:active{
-            background-color: $forest-green;
-            color: $white;
-            border-color: $blush;
-            transition: all .5s ease-in-out;
-        }
-    }
 }
 }

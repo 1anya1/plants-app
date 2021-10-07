@@ -1,0 +1,95 @@
+@import '../../index.scss';
+
+.new-note{
+    display: flex;
+    flex-direction: column;
+    background-color: $blush;
+    max-width: 750px;
+    border-radius: 5rem;
+    overflow: hidden;
+    @include bp-medium{
+        border-radius: 3rem;
+    }
+    .form-inputs{
+        margin-bottom: 2.6rem;
+        padding: 0 3rem;
+        input{
+            width: 100%;
+        }
+    }
+    h4{
+        margin-bottom: 3.6rem;
+        padding: 0 3rem;
+        color: $forest-green;
+        margin-top: 5.5rem;
+    }
+    
+    textarea{
+        width: 100%;
+        // border: unset;
+        // border-radius: 3rem;
+        // padding: 1rem;
+        // min-height: 10rem;
+        // height: 90%;
+       height: 20rem;
+       &::placeholder{
+           padding: 1rem 0 0 0;
+       }
+
+        @include bp-medium{
+            height: auto;
+            // border-radius: 1rem;
+        }
+    }
+    input,.care-type{
+        margin-bottom: 2.6rem;
+        label{
+            height: fit-content;
+        }
+    }
+    button{
+        background-color: $peach;
+    }
+    .care-box{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 285px;
+        @include bp-small{
+            flex-wrap: wrap;
+        }
+    
+        
+        .care-type{
+            display: flex;
+            flex-direction: column;
+            input{
+                display: none;
+            }
+            label{
+                background-color: white;
+                padding: 1rem;
+                border-radius: 1rem;
+                svg{
+                    height: 4rem;
+                    width: 4rem;
+                    @include  bp-x-small{
+                        height: 3rem;
+                        width: 3rem;
+                        }
+                    }
+                    
+                }
+                .clicked{
+                    background-color: $forest-green;
+                    svg{
+                        path{
+                            fill:white;
+                        }
+                    }
+                }
+            
+    
+        }
+    }
+}

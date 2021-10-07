@@ -190,7 +190,9 @@ class MyPlants extends React.Component {
                         <Link className='viewNotes' to={{
                           pathname: `/my-plants/logs`,
                           state: { 
-                            plant_id: el.id
+                            plant_id: el.id, 
+                            plant_name: el.title,
+                            plant_image: el.url
                           }}}>
                             <button className='button-bottom'>Notes</button>
                         </Link>
