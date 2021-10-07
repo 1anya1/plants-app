@@ -133,7 +133,10 @@
        
     }
     .all-plants{
-       
+      margin: 5rem 0;
+      @include bp-medium{
+        margin: 3rem 0;
+      }
         .accordion{
             border: 1px solid $peach;
             .title{
@@ -145,20 +148,18 @@
                 }
             } 
                 .plantsManage{
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    column-gap: 5rem;
-                    justify-content: center;
-                    align-content: flex-start;
+                    display:grid;
+                    grid-column: auto;
+                    width: 95%;
+                    margin: 0 auto;
+                    padding-left: 1rem;
+                    
                     .plant{
                         display: flex;
                         align-items: flex-start;
                         justify-content: space-between;
                         flex-direction: row;
                         padding-bottom: 2rem;
-                        width: 45%;
-                        max-width: 300px;
                         @include bp-large{
                             max-width: unset;
                             width: 100%;
@@ -183,7 +184,7 @@
                     transition: all .5s ease-in;
                     transition: opacity .3s ease-in;
                     opacity: 1;
-                    margin: 3rem;
+                    padding-top:3rem;
                 }
                 .hide{
                     height: 0px;
@@ -197,7 +198,20 @@
            }
     }
     .plants-list{
-        padding: 3rem 0;
+        padding: 5rem 0;
+        @include bp-medium{
+            padding: 3rem 0;
+        }
+        .row{
+            .card{
+                h5{
+                    color: $gray;
+                    padding-left: 2rem;
+                    text-transform: capitalize;
+                    
+                }
+            }
+        }
     }
 
 }

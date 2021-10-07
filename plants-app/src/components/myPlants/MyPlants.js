@@ -139,7 +139,6 @@ class MyPlants extends React.Component {
     render(){
         const title = this.state.title;
         const plants = this.state.plants.length
-      console.log(this.state.plants)
         return(
           <>
           <div className="hero intro" id='my-plants' >
@@ -167,8 +166,8 @@ class MyPlants extends React.Component {
                   value= {title}
                   onChange={this.handleChange}
               />
-              <label for="file-upload" className={this.state.imageName ? "custom-file-upload dark" : "custom-file-upload "}><FaFileImage />{this.state.imageName ? this.state.imageName : 'Upload Image...'}</label>
-              <input type='file'  id='file-upload' class="custom-file-input" required="required" onChange={this.imageUpload}/>
+              <label htmlFor="file-upload" className={this.state.imageName ? "custom-file-upload dark" : "custom-file-upload "}><FaFileImage />{this.state.imageName ? this.state.imageName : 'Upload Image...'}</label>
+              <input type='file'  id='file-upload' className="custom-file-input" required="required" onChange={this.imageUpload}/>
               </div>
               {this.state.image_uploaded  &&
                 <button id='active' placeholder="submit" type="submit"> Add Plant</button>
@@ -213,7 +212,7 @@ class MyPlants extends React.Component {
               </div>
               < div className={this.state.toggle?'plantsManage show': 'plantsManage hide'}>
               {this.state.plants.map((el, idx)=>{ 
-                return < div className='plant'>
+                return < div className='plant' key={idx}>
                 <h5>{el.title}</h5> 
                 <button id='delete' value={el.id} onClick={this.deleteNote}>Delete</button>
                 </div>
