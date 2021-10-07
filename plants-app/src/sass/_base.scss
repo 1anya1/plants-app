@@ -101,6 +101,9 @@ h6{
   letter-spacing: 0.15px;
   font-style: italic;
   font-optical-sizing: $gray;
+  @include bp-small{
+    font-size: 1.5rem;
+  }
 }
 .subtitle2, ul{
   font-family: $body-font;
@@ -221,10 +224,13 @@ a{
       margin-bottom: unset;
       color: $gray;
       border-radius: 0 0 3rem 3rem;
-      transition: background-color .5s ease-in-out,;
+      transition: background-color .5s ease-in-out;
+      @include bp-medium{
+        font-size: 1rem;
+      }
+
       @include bp-small{
         height: 5rem;
-        font-size: 1.2rem;
         margin-top: auto;
       }
       &:hover{

@@ -17,6 +17,10 @@
         @include bp-medium{
             padding-bottom:3rem;
         }
+        @include bp-small{
+            padding-top: 3rem;
+           
+        }
         a{
             color: $peach;
             margin-right: 5rem;
@@ -159,11 +163,13 @@
                         align-items: flex-start;
                         justify-content: space-between;
                         flex-direction: row;
-                        padding-bottom: 2rem;
+                        
                         @include bp-large{
                             max-width: unset;
                             width: 100%;
-                            
+                        @include bp-small{
+                            flex-direction: column;
+                        }   
                         }
                         h5{
                             text-transform: capitalize;
