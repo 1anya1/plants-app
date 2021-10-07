@@ -55,24 +55,13 @@ class Pests extends React.Component {
                 <div className='image'></div>
             </div>
             <div className=' pestPage' >
-                {/* <div className='intro'>
-                    <p> <b id='green'style={{fontSize: 30}}>Houseplants</b> can be troubled by small, 
-                    unwelcomed guests. Here is a quick reference guide to help you to identify the signs of 
-                    pest infestation and how to combat them.</p>
-                    <p><b id='green'style={{fontSize: 30}}>The</b> best way to avoid pests is to keep your 
-                    plant healthy. Healthy plants will be less likely to to fall prey to incects than stressed and unhalthy plants.</p>
-                    <h3 className ='quote' id='green'> "Healthy plants will be less likely to to fall prey to incects than stressed and unhalthy plants."</h3>
-                    <p> <b id='green'style={{fontSize: 30}}>In</b> addition these pests can also make their 
-                    way into your home on new plants, so it is very important to inspect new plants prior to bringing them home. 
-                    You are most likely to find these pests on buds, stems, leaves, and the soil of your plant</p>
-                </div>   */}
 
                     <div className='column intro' >
                                 {this.state.cards.map(item => (
                             <div className={this.state.id===item.id && this.state.toggle ? 'active card': 'card'} key={item.id}> 
                                  <div className='accordion' key={item.id} onClick={this.expand.bind(this, item)}> 
                                     <div className='title' >
-                                        <h4 className={this.state.id===item.id && this.state.toggle ? 'translate':null}>{item.name}</h4>
+                                        <h5 className={this.state.id===item.id && this.state.toggle ? 'translate':null}>{item.name}</h5>
                                         < FaPlus className={this.state.id===item.id && this.state.toggle ? 'open':null} />
                                     </div>
                               

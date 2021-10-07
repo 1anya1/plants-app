@@ -55,7 +55,7 @@ class Disease extends React.Component {
                             <div className={this.state.id===item.id && this.state.toggle ? 'active card': 'card'} key={item.id}> 
                                  <div className='accordion' key={item.id} onClick={this.expand.bind(this, item)}> 
                                     <div className='title' >
-                                        <h4 className={this.state.id===item.id && this.state.toggle ? 'translate':null}>{item.name}</h4>
+                                        <h5 className={this.state.id===item.id && this.state.toggle ? 'translate':null}>{item.name}</h5>
                                         < FaPlus className={this.state.id===item.id && this.state.toggle ? 'open':null} />
                                     </div>
                               

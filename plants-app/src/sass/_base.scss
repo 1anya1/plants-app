@@ -64,6 +64,12 @@ h4 {
   @include bp-large{
     font-size: 2.975rem;
   }
+  @include bp-medium{
+    font-size: 2.5em;
+  }
+  @include bp-small{
+    font-size: 2rem;
+  }
 }
 
 h5{
@@ -72,6 +78,9 @@ h5{
   color: $forest-green;
   @include bp-large{
     font-size: 2.1rem;
+  }
+  @include bp-medium{
+    font-size: 1.8rem;
   }
 }
 h6{
@@ -516,5 +525,88 @@ input::-webkit-date-and-time-value {
       }
   }
 }
+.accordion{
+      flex-direction: row;
+      align-items: center;
+      border: 1px solid $gray;
+      height: fit-content;
+      min-height: 7rem;
+      border-radius: 3.5rem;
+      padding: 0 2rem;
+      border-radius: 5rem;
+      position: relative;
+      @include bp-medium{
+          min-height: 5rem;
+          border-radius: 2.5rem;
+          padding: 0 1rem;
+      }
+      .title{
+          padding-top: 1.5rem;
+          display: flex;
+          align-content: center;
+          align-items: center;
+          justify-content: space-between;
+          margin: 0 auto;
+          width: 95%;
+          @include bp-medium{
+              padding-top: .8rem;
+          }
+          @include bp-small{
+              width: 100%;
+          }
+      
+          h4{
+              margin-bottom: unset;
+              transform: translateY(0);
+              transition: transform .5s ease-in;
+              background-color: white;
+              color: $gray;
+              padding: 0 1rem;
+          }
+
+
+          .translate{
+              transform: translateY(-3.5rem);
+              position: relative;
+              z-index: 2;
+              transition: transform .5s ease-in;
+              @include bp-medium{
+                  transform: translateY(-2.5rem);
+              }
+          }
+          svg{
+              fill: $gray;
+              height: 25px;
+              width: 25px;
+              margin: 0 1rem;
+              transform: unset;
+              transition: transform .5s ease-in;
+              background-color: white;
+              
+              @include bp-medium{
+                  height: 20px;
+                  width: 20px;
+              }
+              @include bp-x-small{
+                  height: 15px;
+                  width: 15px;
+              }
+              
+
+          }
+          .open{
+              transition: transform .5s ease-in;
+              transform: translateY(-3.5rem) rotate(45deg);
+              @include bp-medium{
+                  transform: translateY(-2.5rem)  rotate(45deg);
+              }
+                  
+              
+          }
+      }
+      
+     
+      
+ }
 
 

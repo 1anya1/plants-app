@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import mySVG from './data/Svg.js'
+import mySVG from '../data/Svg'
 import './AddNote.scss'
-import logo from './Images.js'
-import DeleteModal from './modaDelete/ModalDelete.js'
+// import logo from '../Images.js'
+import DeleteModal from '../modaDelete/ModalDelete.js'
 
 class AddNote extends Component {
     constructor(props){
