@@ -234,16 +234,17 @@ a{
 }
 
 
-input,select,textarea{
+input,select,textarea, label{
+    border: unset;
     font-size: 1.8rem;
+    padding-left: 2rem;
     font-weight: 500;
     color: $gray;
     font-family: $body-font;
-    border: $blush solid 1px ;
     background-color: white;
     width: 100%;
-    height: 7rem;
-    border-radius: 50rem;
+    height: 5rem;
+    border-radius: 5rem;
     -webkit-appearance: none;         
     -moz-appearance: none;
     appearance: none;
@@ -251,12 +252,9 @@ input,select,textarea{
       font-size: 1.6rem;
     }
     @include bp-medium{
-      border-radius: 30rem;
-      height: 5rem;
+      border-radius: 3rem;
+      height: 4rem;
     }
-    
-    
-    
 }
 option:disabled > select {
   color: $light-gray;
@@ -309,7 +307,7 @@ input::-webkit-date-and-time-value {
   .card{
       z-index: 0;
       position: relative;
-      border-radius: 3rem;
+      border-radius: 5rem;
       overflow: hidden;
       border: 1px $blush solid;
       display:flex;
@@ -325,7 +323,7 @@ input::-webkit-date-and-time-value {
       }
       @include bp-medium{
           width: 47%;
-          border-radius: 30px;
+          border-radius: 3rem;
       }
       @include bp-small{
           width: 48%;

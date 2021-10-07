@@ -156,8 +156,29 @@ class MyPlants extends React.Component {
               <a href='#manage-plants'> Manage Plants</a>
             </div>
             <DeleteModal delete={this.state.modal} deleteRoute={this.deleteRoute} cancelDelete={this.cancelDelete} />
+            <form onSubmit={this.handleSubmit}  id='add-plant'>
+            <h4>Add New Plant</h4>
+            <div className='inputs'>
+              <input
+                  placeholder="Name of the plant..."
+                  required="required"
+                  type="text"
+                  name="title"
+                  value= {title}
+                  onChange={this.handleChange}
+              />
+              <label for="file-upload" className={this.state.imageName ? "custom-file-upload dark" : "custom-file-upload "}><FaFileImage />{this.state.imageName ? this.state.imageName : 'Upload Image...'}</label>
+              <input type='file'  id='file-upload' class="custom-file-input" required="required" onChange={this.imageUpload}/>
+              </div>
+              {this.state.image_uploaded  &&
+                <button id='active' placeholder="submit" type="submit"> Add Plant</button>
+              }
+              {!this.state.image_uploaded &&
+                <button id='disabled' disabled> Add Plant</button>
+              }
+          </form>
             <div className='plants-list' id='plants'>
-              <h4> My Plants</h4>
+              {/* <h4> My Plants</h4> */}
               <div className='row'>
                 {plants > 0 && <>
                   {this.state.plants.map((el, idx)=>{
@@ -184,28 +205,6 @@ class MyPlants extends React.Component {
              }
            </div>
           </div>
-          <form onSubmit={this.handleSubmit}  id='add-plant'>
-            <h4>Add New Plant</h4>
-            <div className='inputs'>
-              <input
-                  placeholder="title"
-                  required="required"
-                  type="text"
-                  name="title"
-                  value= {title}
-                  onChange={this.handleChange}
-              />
-              <label for="file-upload" class="custom-file-upload"><FaFileImage />Image Upload</label>
-              <input type='file'  id='file-upload' class="custom-file-input" required="required" onChange={this.imageUpload}/>
-              <div>{this.state.imageName}</div>
-              </div>
-              {this.state.image_uploaded  &&
-                <button id='active' placeholder="submit" type="submit"> Add Plant</button>
-              }
-              {!this.state.image_uploaded &&
-                <button id='disabled' disabled> Add Plant</button>
-              }
-          </form>
            <div className='all-plants'  id='manage-plants'>
            <div className='accordion'  onClick={this.expand}>
               <div className='title' >
@@ -215,7 +214,7 @@ class MyPlants extends React.Component {
               < div className={this.state.toggle?'plantsManage show': 'plantsManage hide'}>
               {this.state.plants.map((el, idx)=>{ 
                 return < div className='plant'>
-                <h4>{el.title}</h4> 
+                <h5>{el.title}</h5> 
                 <button id='delete' value={el.id} onClick={this.deleteNote}>Delete</button>
                 </div>
               }

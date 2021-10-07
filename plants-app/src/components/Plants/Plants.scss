@@ -123,7 +123,7 @@
     margin: 0 auto;
     margin-top: 10rem;
     background-color: $blush;
-    border-radius: 50px;
+    border-radius: 5rem 0rem;
     padding: 4rem;
     column-gap: 4rem;
     margin-top: 0;
@@ -131,9 +131,14 @@
         flex-direction: column;
         margin-top: 5rem;
         row-gap: 2rem;
-        border-radius: 3rem;
-        padding: 3rem;
-        
+        padding: 3rem;   
+    }
+    @include bp-medium{
+        border-radius: 3rem 0;
+    }
+    h4{
+        align-self: flex-start;
+        color: $gray;
     }
     .search-bar{
         width: 100%;

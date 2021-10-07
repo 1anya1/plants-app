@@ -103,6 +103,7 @@ class Cards extends Component {
       <>
      
         <div className='search-menu'>
+            <h4>Search Plants</h4>
                <div className='dropDown'>
                 <select name="plants" id="plants" onChange={this.handleOption}> 
                     <option value="" disabled selected>All Plants</option>
