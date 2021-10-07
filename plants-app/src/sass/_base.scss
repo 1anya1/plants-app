@@ -225,7 +225,7 @@ a{
       color: $gray;
       border-radius: 0 0 3rem 3rem;
       transition: background-color .5s ease-in-out;
-      @include bp-medium{
+      @include bp-small{
         font-size: 1rem;
       }
 

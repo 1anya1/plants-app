@@ -157,23 +157,29 @@
                     width: 95%;
                     margin: 0 auto;
                     padding-left: 1rem;
+                    align-items: center;
+                    @include bp-x-small{
+                        row-gap: 2rem;
+                    }
                     
                     .plant{
                         display: flex;
-                        align-items: flex-start;
                         justify-content: space-between;
                         flex-direction: row;
-                        
+                        align-items: flex-end;
                         @include bp-large{
                             max-width: unset;
                             width: 100%;
-                        @include bp-small{
+                        @include bp-x-small{
                             flex-direction: column;
+                            justify-content: flex-start;
+                            align-items: flex-start;
                         }   
                         }
                         h5{
                             text-transform: capitalize;
                             color: $gray;
+                            margin-bottom: unset;
                         }
                         button{
                             background-color: $blush;
@@ -190,7 +196,6 @@
                     transition: all .5s ease-in;
                     transition: opacity .3s ease-in;
                     opacity: 1;
-                    padding-top:3rem;
                 }
                 .hide{
                     height: 0px;

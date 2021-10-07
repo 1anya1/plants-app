@@ -148,6 +148,10 @@
                 // }
                 svg{
                     margin-right: 1rem;
+                    path{
+                        stroke: $yellow;
+                    }
+                    
                 }
               
             }
@@ -217,15 +221,15 @@
                         max-height: 150px;
                     }
                  }
-                 h5{
+                 h6{
                      text-transform: uppercase;
                      color: $gray;
                      align-self: bottom;
                      position: relative;
                      margin-top: auto;
-                     @include bp-small{
-                         font-size: 1.8rem;
-                     }
+                    //  @include bp-small{
+                    //      font-size: 1.8rem;
+                    //  }
                  }
             }
         }

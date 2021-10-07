@@ -41,25 +41,25 @@ class Home extends React.Component{
                         <a href='/plants'>
                         <div className='section'>
                             <logo.Leafblob/>
-                            <h5>Discover</h5>
+                            <h6>Discover</h6>
                         </div>
                         </a>
                         <a href='/pests'>
                         <div className='section'>
                             <logo.Bugblob/>
-                            <h5>Identify</h5>
+                            <h6>Identify</h6>
                         </div>
                         </a>
                         <a href='/login'>
                         <div className='section'>
                             <logo.Todoblob/>
-                            <h5>Track</h5>
+                            <h6>Track</h6>
                         </div>
                         </a>
                         <a href='care-tips'>
                         <div className='section'>
                             <logo.Thrive/>
-                            <h5>Thrive</h5>
+                            <h6>Thrive</h6>
                         </div>
                         </a>
                     </div>
