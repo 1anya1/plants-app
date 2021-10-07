@@ -4,7 +4,7 @@ import './MyPlants.scss'
 import {uploadFile} from 'react-s3'
 import {Link} from 'react-router-dom'
 import DeleteModal from '../modaDelete/ModalDelete'
-import { FaPlus } from "react-icons/fa";
+import { FaPlus, FaFileImage } from "react-icons/fa";
 
 const config = {
   bucketName: 'plantly-user-uploads',
@@ -25,6 +25,7 @@ class MyPlants extends React.Component {
             modal: false,
             id: '',
             toggle: false,
+            imageName: false,
         }
         this.handleData = this.handleData.bind(this)
     }
@@ -75,17 +76,20 @@ class MyPlants extends React.Component {
             title: '',
             url:'',
             image_uploaded: false,
+            imageName: false,
           });
         
       };
 
     imageUpload=(e)=>{
+      let name = e.target.files[0].name
       uploadFile(e.target.files[0], config)
       .then((data)=>{
         if(data.location !== ''){
           this.setState({
             url: data.location,
-            image_uploaded: true
+            image_uploaded: true,
+            imageName: name,
            })
         }
       })
@@ -147,19 +151,19 @@ class MyPlants extends React.Component {
           </div>
           <div className='intro my-plants'>
             <div className='plant-links'>
-              <a>My Plants</a>
-              <a>Add New Plant</a>
-              <a>Manage Plants</a>
+              <a href='#plants'>My Plants</a>
+              <a href='#add-plant'>Add New Plant</a>
+              <a href='#manage-plants'> Manage Plants</a>
             </div>
             <DeleteModal delete={this.state.modal} deleteRoute={this.deleteRoute} cancelDelete={this.cancelDelete} />
-            <div className='plants-list'>
-              <h5> My Plants</h5>
-              <div className='my-list'>
+            <div className='plants-list' id='plants'>
+              <h4> My Plants</h4>
+              <div className='row'>
                 {plants > 0 && <>
                   {this.state.plants.map((el, idx)=>{
-                    return <div className='plant' key={el.id}>
-                      <div className = 'plant-img'>
-                        <img key={el.url} src={el.url} />
+                    return <div className='card' key={el.id}>
+                      <div className = 'image'>
+                        <img  className="img" key={el.url} src={el.url} />
                       </div>
                       <h5 key={idx}>{el.title}</h5>
                       <div className='buttons'>
@@ -180,7 +184,7 @@ class MyPlants extends React.Component {
              }
            </div>
           </div>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit}  id='add-plant'>
             <h4>Add New Plant</h4>
             <div className='inputs'>
               <input
@@ -191,7 +195,9 @@ class MyPlants extends React.Component {
                   value= {title}
                   onChange={this.handleChange}
               />
-              <input type='file' required="required" onChange={this.imageUpload}/>
+              <label for="file-upload" class="custom-file-upload"><FaFileImage />Image Upload</label>
+              <input type='file'  id='file-upload' class="custom-file-input" required="required" onChange={this.imageUpload}/>
+              <div>{this.state.imageName}</div>
               </div>
               {this.state.image_uploaded  &&
                 <button id='active' placeholder="submit" type="submit"> Add Plant</button>
@@ -200,7 +206,7 @@ class MyPlants extends React.Component {
                 <button id='disabled' disabled> Add Plant</button>
               }
           </form>
-           <div className='all-plants'>
+           <div className='all-plants'  id='manage-plants'>
            <div className='accordion'  onClick={this.expand}>
               <div className='title' >
                 <h4 className= {this.state.toggle ? 'translate':null}>ManagePlants</h4>

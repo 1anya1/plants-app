@@ -32,7 +32,7 @@
     }
     
     .buttons{
-        display: flex;
+        width: 100%;
         #notes{
             background-color: $peach;
             color: $gray;
@@ -49,7 +49,7 @@
             display: none
         }
     }
-    form{
+    #add-plant{
         display: flex;
         flex-direction: column;
         background-color: white;
@@ -57,7 +57,7 @@
         padding: 3rem;
         margin: 0 auto;
         border-radius: 5rem;
-        margin-bottom: 3rem;
+        margin: 3rem 0;
         @include bp-large{
             border-radius: 3rem;
         }
@@ -72,7 +72,13 @@
             @include bp-large{
                 flex-direction: column;
             }
-            input{
+            .custom-file-input::before {
+                content: 'Select some files';
+            }
+            webkit-file-upload-button {
+                visibility: hidden;
+            }
+            input, label{
                 font-size: 1.6rem;
                 width: 49%;
                 border: unset;
@@ -84,6 +90,9 @@
                     width: 100%;
                     margin-bottom: 1rem;
                 }
+            }
+            input[type="file"] {
+                display: none;
             }
             input[type=file]::file-selector-button {
                 appearance:none;
@@ -131,111 +140,8 @@
         }
        
     }
-    .my-list{
-        display: grid;
-        margin: 0 auto;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        @include bp-xx-large{
-            grid-template-columns: 1fr 1fr 1fr; 
-        }
-        @include bp-large{
-            grid-template-columns: 1fr 1fr;   
-        }
-        @include bp-medium{
-            grid-template-columns: 1fr 1fr;   
-        }
-        @include bp-small{
-            grid-template-columns: 1fr;   
-            margin: 0 auto;
-        }
-  
-        .plant{
-            height: fit-content;
-            margin: 1rem;
-            // box-shadow: 0px 0px 7px -1px lightgray;
-            border: 1px $blush solid;
-            overflow: hidden;
-            border-radius: 5rem;
-            position: relative;
-            max-width: 550px;
-            max-height:900px;
-            @include bp-large{
-                border-radius: 3rem;
-            }
-            .plant-img{
-                width: 100%;
-                position: relative;
-                overflow: hidden;
-                width: 100%;
-                height: 20vw;
-                max-width: 550px;
-                max-height:500px;
-                position: relative;
-                @include bp-large{
-                    height: 40vw;
-                }
-                @include bp-small{
-                    height: 75vw;
-                }
-                &:before{
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    bottom: 0;
-                    right: 0;
-                    z-index: 1;
-                    // background: rgba(234, 236, 232, .2);
-                    background-image: linear-gradient(
-                        rgba(255, 255, 255, 0) 0%,
-                        rgba(255, 255, 255, .1) 50%,
-                        rgba(255, 255, 255, 1) 100%
-                    );
-                }
-                img{
-                    object-fit: cover;
-                    object-position: top center;
-                    height: 100%;
-                    width: 100%;
-                    position: relative;
-                  
-                }
-
-            }
-            h5{
-                margin: 1rem 10% 3rem 10%;
-                text-transform: capitalize;
-            }
-            .buttons{
-                a{
-                    width: 100%;
-                }
-            }
-            
-        }
-    }
-    .manage-plants{
-        transition: background-color .5s ease-in-out, color .5s ease-in-out;
-                height: 7rem;
-                background-color: $blush;
-                margin-bottom: unset;
-                color: $gray;
-                padding: 0 2rem;
-                border-radius: 2rem;
-                margin: 0;
-                
-                &:hover{
-                    background-color: $peach;
-                    color: $white;
-                    transition: background-color .5s ease-in-out, color .5s ease-in-out;
-                    &:before {
-                    background: rgba(234, 236, 232, 1);
-                    }
-                }
-
-    }
     .all-plants{
-        margin-top: 3rem;
+        padding: 3rem 0;
         .accordion{
             border: 1px solid $forest-green;
             .title{
@@ -288,6 +194,9 @@
                
                 
            }
+    }
+    .plants-list{
+        padding: 3rem 0;
     }
 
 }
