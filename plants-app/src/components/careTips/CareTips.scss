@@ -1,6 +1,17 @@
 @import '../../index.scss';
 #care-tips{
     background-color: white;
+    grid-template-rows: 30% 70%;
+    @include bp-large{
+        height: 650px;
+    }
+    @include bp-medium{
+        height: 500px;
+    }
+    @include bp-small{
+        height: 450px;
+        grid-template-rows: 40% 70%;
+    }
     .image{
         background-image: url('../../img/hero/care-tips-hero-image.svg');
     }

@@ -14,12 +14,12 @@ class Home extends React.Component{
             <div className="hero intro" id='home' >
                 <div className='content'>
                     <h2>keep your green friends healthy and happy</h2>
-                    <div className='subtitle'>Explore guides and tools that keep plants triving.</div>
-                    <div className='buttons'>
+                    {/* <div className='subtitle'>Explore guides and tools that keep plants triving.</div> */}
+                 </div>
+                 <div className='buttons'>
                         <button id='one'>Log In</button>
                         <button id='two'>View Plants</button>
                     </div>
-                 </div>
                 <div className='image'></div>
             </div>
                 <div className='intro home'>
