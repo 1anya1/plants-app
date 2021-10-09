@@ -3,13 +3,7 @@
 @import '../../index.scss';
 #plant-logs{
     .image{
-        background-size: 860px;
-            -webkit-mask-image: url('../../img/brush-stroke.svg');
-            background-size: cover;
-            -webkit-mask-repeat: no-repeat;
-            -webkit-mask-size: auto;
-            -webkit-mask-position: right;
-            // -webkit-mask-position: center;
+        background-image: url('../../img/hero/plant-logs-hero.svg');
         }
 }
 .plant-logs{

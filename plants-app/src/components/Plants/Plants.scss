@@ -5,7 +5,15 @@
     .image{
         background-image: url('../../img/hero/plants-hero-image.svg');
     }
-    .content{
+   
+    @include bp-large{
+        height: 675px;
+    }
+    @include bp-medium{
+        height: 532px;
+    }
+    @include bp-small{
+        height: 472px;
     }
 }
 

@@ -93,9 +93,7 @@ class AddNote extends Component {
                     <h2> Notes for {this.state.name}</h2>
                     <div className='subtitle'>All of your notes and progress</div>
                 </div>
-                <div className='image'style={{ 
-                        backgroundImage: `url(${this.state.image })`
-                }} ></div>
+                <div className='image' ></div>
              </div>
             < div className='intro plant-logs'>
                 <div className='links'>

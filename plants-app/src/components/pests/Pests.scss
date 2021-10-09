@@ -1,8 +1,16 @@
 @import '../../index.scss';
 #pestPage{
-    background-color: white;
     .image{
         background-image: url('../../img/hero/pests-hero-image.svg');
+    }
+    @include bp-large{
+        height: 695px;
+    }
+    @include bp-medium{
+        height: 552px;
+    }
+    @include bp-small{
+        height: 472px;
     }
 }
 .pestPage {
