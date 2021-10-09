@@ -17,16 +17,15 @@ class Home extends React.Component{
                     {/* <div className='subtitle'>Explore guides and tools that keep plants triving.</div> */}
                  </div>
                  <div className='buttons'>
-                        <button id='one'>Log In</button>
-                        <button id='two'>View Plants</button>
-                    </div>
+                        <a href='/login'><button id='one'>Log In</button></a>
+                        <a href='/plants'><button id='two'>View Plants</button></a>                    </div>
                 <div className='image'></div>
             </div>
                 <div className='intro home'>
                     {/* { myData.Part1.map((el, idx)=> <p key={idx}>{el}</p>)}
                     {myData.Header.map((el, idx)=><h2 key={idx}>{el}</h2>)}
                     { myData.Part2.map((el, idx)=> <p key={idx}>{el}</p>)} */}
-                    < h4>Plantly is a house plant app that has it all. </h4>
+                    < h3> Plantly is a house plant app that has it all. </h3>
                     <div className='benefits'>
                         <ul>
                             <li className='subtitle'><logo.Checkmark/>learn about plant plants and their care needs </li>
@@ -63,10 +62,16 @@ class Home extends React.Component{
                         </div>
                         </a>
                     </div>
+                    <h3 className='header'>Our plant library contains the most popular housepalnts.</h3>
+                    <div className='plants-cta'>
+                        <div className='info'>
+                            <h5>Keep track of your plants using our tracker. Add dates, notes, and photos that you can always refer back to.</h5>  
+                            <a href='/plants'><button className = 'home-button'>Discover House Plants</button></a>
+                        </div>
+                        <div className='plants-image'></div>
+                    </div>
+                
                     
-                    <h4 className='header'>Our plant library contains the most popular housepalnts.</h4>
-                    <a href='/plants'><button className = 'home-button'>Discover House Plants</button></a>
-                    <div className='subtitle'>Keep track of your plants using our tracker. Add dates, notes, and photos that you can always refer back to.</div>
                     <button className = 'home-button'><Link to="/login" className='buttonGreen'>Log In</Link></button>
   
 

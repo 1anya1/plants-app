@@ -81,7 +81,7 @@ class NewNote extends Component {
     
     render(){
         return(
-            <form onSubmit={this.handleSubmit} className={this.props.newNote ? 'show new-note':'hide new-note'}>
+            <form onSubmit={this.handleSubmit} className='note'>
             <h4>Add A New Note</h4>
             <div className='form-inputs'>
             <input

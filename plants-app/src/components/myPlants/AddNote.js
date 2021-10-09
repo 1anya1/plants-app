@@ -75,9 +75,19 @@ class AddNote extends Component {
         })  
         document.body.style.overflow = "unset";
       }
-      
+      newNote = () =>{
+          this.setState({
+              newNote: !this.state.newNote
+          })
+      }
+      closeNote = () => {
+          this.setState({
+              newNote: !this.state.newNote
+          })
+      }      
       
     render(){
+        console.log(`new note ${this.state.newNote}`)
         console.log(`notes for ${this.state.image}`)
         let sortedNotes = this.state.notes.sort((a,b)=>{
             var c = new Date(a.date);
@@ -98,10 +108,12 @@ class AddNote extends Component {
             < div className='intro plant-logs'>
                 <div className='links'>
                     <a>Back To {this.props.name}'s Plants</a>
-                    <a>Add New Note</a>
+                    <a onClick={this.newNote}> Add New Note</a>
                 </div>
                 <DeleteModal delete={this.state.modal} deleteRoute={this.deleteRoute} cancelDelete={this.cancelDelete} />
+                    <div className={this.state.newNote ? 'new-note show':' new-note hide'} >
                 <NewNote userId={this.state.userId} id={this.state.id} handleNote = {this.handleNote} newNote={this.state.newNote} />
+                </div>
              
             <div className='notes'>
                 {sortedNotes.map((el, idx)=>{

@@ -24,8 +24,6 @@
         }
         h2{
             max-width: 1200px;
-           
-
         }
         
     }
@@ -49,20 +47,27 @@
           margin: 0 auto;
 
    
+        } 
+        a{
+            width: fit-content;
+            width: 45%;
+            max-width: 220px;
+            @include bp-small{
+                width: 100%;
+            }
         }
         button{
           height: 5rem;
           padding: 0 2rem;
           margin-right: 2rem;
-          width: 45%;
+          width: 100%;
           color: $gray;
-          max-width: 220px;
           border-radius: 3rem;
           
           
           @include bp-small{
               max-width: unset;
-              width: 100%;
+              
           }
         }
         #one{
@@ -85,7 +90,7 @@
         }
         #two{
           
-          border: 1px solid $peach;
+          border: 1px solid $yellow;
      
           &:hover, &:focus{
               background-color: $light-gray;
@@ -102,13 +107,12 @@
     .subtitle{
         font-style: normal;
     }
-    h4{
+    h3{
         color: $gray;
         margin: 5rem 0;
         text-align: center;
-       
-        @include bp-small{
-            margin: 3rem 0;
+        @include bp-large{
+            margin: 2rem 0;
         }
     }
     .benefits{
@@ -141,9 +145,6 @@
                     text-align: center;
                     text-transform: capitalize;
                 }
-                // &:nth-of-type(even){
-                //     text-align: right;
-                // }
                 svg{
                     margin-right: 1rem;
                     path{
@@ -225,9 +226,6 @@
                      align-self: bottom;
                      position: relative;
                      margin-top: auto;
-                    //  @include bp-small{
-                    //      font-size: 1.8rem;
-                    //  }
                  }
             }
         }
@@ -235,18 +233,73 @@
     }
     .header{
         margin-top: unset;
-    }
-    .home-button{
-        background-color: $peach;
-        color: white;
-        margin: 0 auto;
-        &:hover, &:focus{
-            transition: all .5s ease-in-out;
-            background-color: $light-gray;
-            border-color: $light-gray;
-            color: $gray;
+        padding-top: 5rem;
+        @include bp-large{
+            padding-top: 3rem;
         }
         
+    }
+    .plants-cta{
+        display: grid;
+        grid-template-columns: .75fr 1fr;
+        align-items: center;
+        @include bp-large{
+            grid-template-columns: 1fr;
+        }
+        .plants-image{
+            background-image: url('../img/home-page/plants-page.png');
+            height: 40vw;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: right;
+            @include bp-large{
+                height: 75vw;
+            }
+        }
+        .info{
+            @include bp-large{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-bottom: 4rem;
+            }
+            @include bp-medium{
+                padding-bottom: 5rem;
+            }
+            a{
+                .home-button{
+                    background-color: $yellow;
+                    color: $gray;
+                    margin: 0 auto;
+                    width: 100%;
+                    max-width: 350px;
+                    @include bp-small{
+                        max-width: unset;
+                    }
+                    &:hover, &:focus{
+                        transition: all .5s ease-in-out;
+                        background-color: $light-gray;
+                        border-color: $light-gray;
+                        color: $gray;
+                    }
+                }
+            }
+            h5{
+                text-transform: none;
+                padding-bottom: 5rem;
+                color: $gray;
+                @include bp-large{
+                    padding-bottom: 2rem;
+                    width: 90%;
+                    text-align: center;
+                }
+                @include bp-medium{
+                    width: 100%;
+                    padding-bottom: 1rem;
+                }
+                
+            }
+        }
     }
 }
 
