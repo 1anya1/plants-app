@@ -1,30 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import axios from 'axios';
 import './App.scss';
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import Home from './components/Home'
-import Disease from './components/disease/Disease'
-import Plants from './components/Plants/Plants'
-import Pests from './components/pests/Pests'
+import { BrowserRouter as Router, Switch, Route, Link, Redirect, useHistory, useLocation} from "react-router-dom";
+// import Home from './components/Home'
+// import Disease from './components/disease/Disease'
+// import Plants from './components/Plants/Plants'
+// import Pests from './components/pests/Pests'
 import Footer from './components/footer/Footer'
-import CareTips from './components/careTips/CareTips'
-import Registration from './components/Registration'
-import Login from './components/registrations/Login'
-import Signup from './components/registrations/Signup'
-import MyPlants  from './components/myPlants/MyPlants.js'
-import AddNote from './components/myPlants/AddNote.js'
-import logo from './components/Images'
-const links = [
-  { href: '/', text: 'Home' },
-  { href: '/plants', text: 'Plants' },
-  { href: '/diseases', text: 'Disease' },
-  { href: '/pests', text: 'Pests' },
-  {href:'/care-tips', text: 'Care Tips'}
-];
-
-const createNavItem = ({ href, text}) => (
-  <a className='link' key={href} href={href}>{text}</a>
-);
+// import CareTips from './components/careTips/CareTips'
+// import Registration from './components/Registration'
+// import Login from './components/registrations/Login'
+// import Signup from './components/registrations/Signup'
+// import MyPlants  from './components/myPlants/MyPlants.js'
+// import AddNote from './components/myPlants/AddNote.js'
+import Nav from './components/Nav'
+import MyRoutes from './components/Router'
 
 class App extends Component {
   constructor(props) {
@@ -107,6 +97,7 @@ handleLogout = () => {
   })
 } 
 handleClickExit = (e) => {
+  {console.log('handling logout')}
   e.preventDefault()
   axios.delete('https://salty-peak-61296.herokuapp.com/logout', {withCredentials: true})
   .then(response => {
@@ -123,77 +114,74 @@ handleClickExit = (e) => {
     
     return (
      
-      <main className={this.state.isToggleOn ? null : 'noscroll' } onScroll={console.log('scrolling')}>
-        <nav className={this.state.navShow}>
-          <a href='/' className='logo'> <logo.Logo /></a>
-          <div className='menu' >
-            {links.map(createNavItem)}
-            { !this.state.isLoggedIn  && <>
-              <a className='link' href='/signup'><button className='sign-up'>Sign Up</button></a>
-              <a  className='link' href='/login'><button className='log-in'>Log In</button></a>
-               </>
-            }
-            { this.state.isLoggedIn && <>
-            <a className='link' href='/my-plants'> My Plants</a>
-            <a className='link'  href='/' onClick={this.handleClickExit} >Log Out</a>
-            </>
-            }
-         </div>
-          <div className='hamburger' onClick={this.handleClick}>
-            <div className={this.state.isToggleOn ? 'bars' : 'bars active' }>
-              <div className='bar one'></div>
-              <div className='bar two'></div>
-              <div className='bar three'></div>
-            </div>
-            <div className={this.state.isToggleOn ? 'collapse mobile-nav' : 'show mobile-nav'}>
-              {links.map(createNavItem)}
-              { !this.state.isLoggedIn  && <>
-              <div className='mobile-login'>
-                <a className='link' href='/signup'><button className='sign-up'>Sign Up</button></a>
-                <a  className='link' href='/login'><button className='log-in'>Log In</button></a>
-              </div>
-               </>
-            }
-            { this.state.isLoggedIn && <>
-            <a className='link' href='/my-plants'> My Plants</a>
-            <a className='link'  href='/' onClick={this.handleClickExit} >Log Out</a>
-            </>
-            }
-              </div>
-          </div>
-        </nav>
-        <Router>
-        <Switch>
-          <Route path={'/diseases'} render={()=> <Disease />}/>
-          <Route path={'/plants'} render={()=> <Plants />}/>
-          <Route path={'/pests'} render={()=> <Pests/>}/>
-          <Route path={'/care-tips'} render={()=> <CareTips/>}/>
-          <Route path={'/registration'} render={props => (
-              <Registration {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn} />
-              )}/>
-          <Route path={'/login'} render={props => (
-              <Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
-              )} />
-          <Route path={'/signup'} render={props => (
-              <Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
-              )} />
-            {this.state.isLoggedIn  && 
-            <Route path={'/my-plants/logs'} render={props => (
-              < AddNote {...props} userId={this.state.user_id} name={this.state.username}/>
-              )}/>
+      <main className='main'>
+        <Nav isLoggedIn={this.state.isLoggedIn} navShow={this.state.navShow} />
+        <MyRoutes isLoggedIn={this.state.isLoggedIn} user_id={this.state.user_id} username={this.state.username} plant_id={this.state.plant_id} handleLogin={this.handleLogin} handleClickExit={this.handleClickExit}/>
+        
+        {/* <Router>
+          <Link to='/diseases'/>
+          <Link to='/plants'/>
+          <Link to='/pests'/>
+          <Link to='/care-tips'/>
+          <Link to='/registration'/>
+          <Link to='/login'/>
+          <Link to='/signup'/>
+          {this.state.isLoggedIn  && 
+            <Link to='/my-plants/logs'/>
           } 
           {this.state.isLoggedIn  && 
-            <Route path={'/my-plants'} render={props => (
-              < MyPlants {...props} userId={this.state.user_id} name={this.state.username} plant_id={this.state.plant_id}/>
-              )}/>
+            <Link to='/my-plants'/>
           } 
-          <Route path={'/'} render={()=> <Home/>}/>
-        </Switch>
-        </Router>
+          <Link to='/'/>
+          <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/diseases">
+            <Disease />
+          </Route>
+          <Route exact path="/plants">
+            <Plants />
+          </Route>
+          <Route exact path="/pests">
+            <Pests />
+          </Route>
+          <Route exact path="/pests">
+            <Pests />
+          </Route>
+          <Route exact path="/care-tips">
+            <CareTips />
+          </Route>
+          <Route exact path="/registration" render={props => (
+              <Registration {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn} />
+              )}>
+          </Route>
+          <Route exact path='/login' render={props => (
+              <Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
+              )} />
+          <Route exact path='/signup' render={props => (
+              <Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
+              )} />
+          {this.state.isLoggedIn  && 
+          <Route exact path='/my-plants/logs' render={props => (
+             < AddNote {...props} userId={this.state.user_id} name={this.state.username}/>
+              )} />
+          }
+           {this.state.isLoggedIn  && 
+          <Route exact path='/my-plants' render={props => (
+            < MyPlants {...props} userId={this.state.user_id} name={this.state.username} plant_id={this.state.plant_id}/>
+              )} />
+          }
+          <Route exact path="/">
+            <Home />
+          </Route>
+          </Switch>
+        </Router>  */}
         <Footer />
       </main>
     );
   }
 }
+
 
 export default App

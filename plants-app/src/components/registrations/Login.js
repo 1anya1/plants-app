@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, useHistory  } from 'react';
 import axios from 'axios'
-import {Link} from 'react-router-dom'
+import {Redirect, Link, Switch} from 'react-router-dom'
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -43,14 +44,15 @@ handleSubmit = (event) => {
     })
     .catch(error => console.log('api errors:', error))
   };
+
 redirect = () => {
-    this.props.history.push('/my-plants')
+  <Redirect to='/my-plants' />
   }
 handleErrors = () => {
     return (
       <div>
         <ul>
-        {this.state.errors.map(error => {
+        {this.state.errors(error => {
         return <li key={error}>{error}</li>
           })
         }

@@ -9,6 +9,7 @@ import NewNote from'../newNote/newNote.js'
 class AddNote extends Component {
     constructor(props){
         super(props)
+       console.log(this.props.location)
         this.state={
             id: this.props.history.location.state.plant_id,
             name: this.props.history.location.state.plant_name,
