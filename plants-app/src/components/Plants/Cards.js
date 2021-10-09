@@ -54,8 +54,6 @@ class Cards extends Component {
       document.body.style.overflow = "hidden";
       document.querySelector('nav').classList.remove('show-nav')
       document.querySelector('nav').classList.add('hide-nav')
-
-      console.log(document.querySelector('nav'))
     }
       
   }

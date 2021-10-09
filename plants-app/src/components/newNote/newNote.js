@@ -3,6 +3,8 @@ import logo from '../Images.js'
 import mySVG from '../data/Svg'
 import axios from 'axios'
 import './newNote.scss'
+import { FaTimesCircle } from "react-icons/fa";
+
 
 class NewNote extends Component {
     constructor(props){
@@ -23,6 +25,9 @@ class NewNote extends Component {
     }
         handleNote(){
             this.props.handleNote(this.props.handleNote)
+        }
+        exitNote = () => {
+            this.props.exitNote(this.props.exitNote)
         }
         
         handleInputChange = (event) => {
@@ -77,12 +82,16 @@ class NewNote extends Component {
     
             })
             this.handleNote()
+            this.exitNote()
           };
     
     render(){
         return(
-            <form onSubmit={this.handleSubmit} className='note'>
-            <h4>Add A New Note</h4>
+            <form onSubmit={this.handleSubmit} className='note-add'>
+            <div className = 'heading'>
+                <h4>Add A New Note</h4>
+                <FaTimesCircle  onClick={this.exitNote}/>
+            </div>
             <div className='form-inputs'>
             <input
                 type= 'date'
@@ -145,7 +154,7 @@ class NewNote extends Component {
             </div>
         
         
-        <button  className='button-bottom' placeholder="submit" type="submit">
+        <button  className='button-bottom' placeholder="submit" type="submit" >
         Add Note
         </button>
         

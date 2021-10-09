@@ -79,11 +79,17 @@ class AddNote extends Component {
           this.setState({
               newNote: !this.state.newNote
           })
+          document.querySelector('nav').classList.remove('show-nav')
+          document.querySelector('nav').classList.add('hide-nav')
+          document.body.style.overflow = "hidden";
       }
       closeNote = () => {
           this.setState({
               newNote: !this.state.newNote
           })
+          document.querySelector('nav').classList.remove('hide-nav')
+          document.querySelector('nav').classList.add('show-nav')
+          document.body.style.overflow = "unset";
       }      
       
     render(){
@@ -107,12 +113,12 @@ class AddNote extends Component {
              </div>
             < div className='intro plant-logs'>
                 <div className='links'>
-                    <a>Back To {this.props.name}'s Plants</a>
+                    <a href='/my-plants'>Back To {this.props.name}'s Plants</a>
                     <a onClick={this.newNote}> Add New Note</a>
                 </div>
                 <DeleteModal delete={this.state.modal} deleteRoute={this.deleteRoute} cancelDelete={this.cancelDelete} />
-                    <div className={this.state.newNote ? 'new-note show':' new-note hide'} >
-                <NewNote userId={this.state.userId} id={this.state.id} handleNote = {this.handleNote} newNote={this.state.newNote} />
+                <div className={this.state.newNote ? 'new-note show':' new-note hide'} >
+                    <NewNote userId={this.state.userId} id={this.state.id} handleNote = {this.handleNote} newNote={this.state.newNote} exitNote={this.closeNote} />
                 </div>
              
             <div className='notes'>

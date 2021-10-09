@@ -7,6 +7,31 @@
         }
 }
 .plant-logs{
+    .links{
+        
+        text-align: center;
+        padding-bottom: 5rem;
+        @include bp-medium{
+            padding-bottom:3rem;
+        }
+        a{
+            color: $forest-green;
+            margin-right: 5rem;
+            &:last-child{
+                margin-right: unset;
+            }
+            @include bp-small{
+                display: flex;
+                flex-direction: row;
+                row-gap: 1rem;
+                margin: unset;
+                justify-content: center;
+                padding-bottom: 1rem;
+            }
+        }
+
+
+    }
 .show{
     top: 0;
     left: 0;
@@ -26,24 +51,11 @@
     z-index: 1;
     display: flex;
     border-radius: unset;
-    .note{
-            animation: .5s fadeIn;
-            margin:2rem;
-            background-color: $blush;
-            width: 90%;
-            max-width: 500px;
-            border-radius: 50px;
-            margin: 15% 0;
-            @include bp-medium{
-                margin: 10% 0;
-                border-radius: 30px;
-            }
-        }
-
 }
 .hide{
     display: none;
 }
+
 
    
 .notes{
