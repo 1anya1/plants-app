@@ -1,6 +1,11 @@
 
 import React, { Component } from 'react';
 import Modal from './Modal';
+import {FaSistrix} from "react-icons/fa";
+import { FaCaretDown } from "react-icons/fa";
+
+
+const nav = document.querySelector('nav')
 class Cards extends Component {
   constructor(props) {
     super(props);
@@ -40,11 +45,15 @@ class Cards extends Component {
         modal: null
       });
       document.body.style.overflow = "unset";
+      document.querySelector('nav').classList.add('show-nav')
+      document.querySelector('nav').classList.remove('hide-nav')
     } else{
       this.setState({
         modal: card
       });
       document.body.style.overflow = "hidden";
+      document.querySelector('nav').classList.remove('show-nav')
+      document.querySelector('nav').classList.add('hide-nav')
     }
       
   }
@@ -68,10 +77,9 @@ class Cards extends Component {
       );
     });
     const myData = filteredData.map((card, id) => ( 
-      <div className='card' key={card.name}>
-
+      <div className='card' key={card.name}> 
           <div className="image">
-            <img className = 'img'  height='300px' width='400px' loading='lazy' src={require('../../img/plants/' + card.img).default} alt={card.name}></img>
+            <img className = 'img'   loading='lazy' src={require('../../img/plants/' + card.img).default} alt={card.name}></img>
           </div>
           <div className='plant-id'>
             <h5>{card.name}</h5>
@@ -92,25 +100,18 @@ class Cards extends Component {
     return (
       <>
      
-      <div className="container " >
-          <div className='search'>
-              <h3>Search Common House Plants</h3>
-        </div>
-        <div id='blob'>
-          <div class='blob'></div>
-          <div className='leaf'></div>
-          <div className='leaf2'></div>
-        </div>
-          
-        </div>
         <div className='search-menu'>
+            <h4>Search Plants</h4>
                <div className='dropDown'>
-                <select name="plants" id="plants" onChange={this.handleOption} value={this.state.defaultValue}> 
+                <select name="plants" id="plants" onChange={this.handleOption}> 
+                    <option value="" disabled selected>All Plants</option>
                    {options.map(opt=> Object.keys(opt).map((key, id)=> <option name={opt[key]} key={id} value={key} >{opt[key]}</option>))}
                 </select>
+                <FaCaretDown />
              </div>
              <div className='search-bar'>
-               <input className = 'searchBar' placeholder='search' value={filter} onChange={this.handleChange} />
+               <input className='searchBar'  placeholder='Search...' value={filter} onChange={this.handleChange} />
+               <FaSistrix />
              </div>
              </div>
         <div className="row intro">

@@ -1,0 +1,33 @@
+@import '../../index.scss';
+
+footer{
+    background-color: $blush;
+    .links{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .page-links{
+            display: flex;
+            flex-direction: column;
+            .link{
+                margin-bottom: 1rem;
+                &:last-child{
+                padding-bottom: unset;
+                }
+
+            }
+
+        }
+        .login-links{
+            display: flex;
+            flex-direction: column;
+            .link{
+                margin-bottom: 1rem;
+                align-self: flex-end;
+                &:last-child{
+                padding-bottom: unset;
+                }
+            }
+        }
+    }
+}

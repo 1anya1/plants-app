@@ -1,9 +1,10 @@
 @import '../../index.scss';
-#plant-logs, #my-plants{
+.plant-logs, .my-plants{
 .modal{
     display:none;
    
     .delete-modal-contnet{
+        border-radius: 30px;
         width: 650px;
         position: relative;
         height: fit-content;
@@ -20,6 +21,7 @@
         h4{
           width: 70%;
           margin-bottom: 3rem;
+          color: $forest-green;
             @include bp-medium{
                 width: 90%;
                 margin: auto;
@@ -51,6 +53,7 @@
                 border-radius: 1rem;
                 margin-top: 2rem;
                 transition: all .5s ease-in-out;
+                color: $white;
                 &:hover, &:focus, &:active{
                     background-color: $peach;
                     transition: all .5s ease-in-out;

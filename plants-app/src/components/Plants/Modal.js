@@ -1,5 +1,5 @@
 import React from "react";
-import SVG from '../Logo.js'
+import SVG from '../Images.js'
 export default class Modal extends React.Component {
     constructor(props){
         super(props)
@@ -21,35 +21,30 @@ export default class Modal extends React.Component {
                         <h4 className='itemName'> {this.props.modal.name}</h4>
                         <div className='plant-spec'>
                             <div className='subtitle2'>Scientific Name</div>
-                            <div className='body italic'>{this.props.modal.scientificName}</div>
+                            <div className='subtitle italic'>{this.props.modal.scientificName}</div>
                             
                         </div>
                         <div className='plant-spec'>
                             <div className='subtitle2'>Height</div>
-                            <div className='body'>{this.props.modal.height}</div>
+                            <div className='subtitle'>{this.props.modal.height}</div>
                         </div>
                         <div className='plant-spec'>
                             <div className='subtitle2'>Temperature</div>
-                            <div className='body'>{this.props.modal.temperature}</div> 
+                            <div className='subtitle'>{this.props.modal.temperature}</div> 
                         </div>
                         <div className='plant-spec'>
                             <div className='subtitle2'>Humidity</div>
-                            <div className='body'>{this.props.modal.humidity}</div>
+                            <div className='subtitle'>{this.props.modal.humidity}</div>
                         </div>
                         <div className='plant-spec'>
                             <div className='subtitle2'>Pests</div>
-                            <div className='body'>{this.props.modal.bugs}</div>
+                            <div className='subtitle'>{this.props.modal.bugs}</div>
                         </div>
                         <ul>Common Issues:
                              {this.props.modal.issues.map(item => (
-                               <li key={item}>{item}</li>
+                               <li className='subtitle' key={item}>{item}</li>
                                    ))}
                         </ul>
-                       <div className = 'highlights'>
-                           {this.props.modal.petFriendly===true ? <SVG.Dog/> : null}
-                           {this.props.modal.lowLight===true ? <SVG.Sun/>  : null}
-                           {this.props.modal.hangingPlant===true ? <SVG.HangingPlant/>  : null}
-                       </div>
                     </div>
                     <button  className='button-bottom'onClick = {this.handleClick}>Back to Plant</button>
                     </div>

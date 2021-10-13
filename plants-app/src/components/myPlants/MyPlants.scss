@@ -1,0 +1,228 @@
+@import '../../index.scss';
+
+#my-plants{
+  
+    .image{
+        background-image: url(../../img/hero/my-plants-hero.svg);
+    }
+   
+}
+
+.my-plants{
+    padding-top: unset;
+    .plant-links{
+        color: $gray;
+        text-align: center;
+        padding-bottom: 5rem;
+        @include bp-medium{
+            padding-bottom:3rem;
+        }
+        @include bp-small{
+            padding-top: 3rem;
+           
+        }
+        a{
+            color: $peach;
+            margin-right: 5rem;
+            &:last-child{
+                margin-right: unset;
+            }
+            @include bp-small{
+                display: flex;
+                flex-direction: row;
+                row-gap: 1rem;
+                margin: unset;
+                justify-content: center;
+                padding-bottom: 1rem;
+            }
+        }
+
+
+    }
+    
+    .buttons{
+        width: 100%;
+        #notes{
+            background-color: $peach;
+            color: $gray;
+            &:hover, &:focus, &:active{
+                background-color: $peach;
+            }
+            a{
+                width: 100%;
+                text-decoration: unset;
+            }
+        }
+        #delete{
+            width: 100%;
+            display: none
+        }
+    }
+    #add-plant{
+        display: flex;
+        flex-direction: column;
+        background-color: $blush;
+        padding: 3rem;
+        margin: 0 auto;
+        border-radius: 5rem 0rem;
+        margin: 3rem 0;
+        @include bp-medium{
+            border-radius: 3rem 0rem;
+        }
+        @include bp-small{
+            padding: 2rem;
+        }
+        h4{
+            margin-bottom: 3rem;
+            color: $gray;
+        }
+        .inputs{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include bp-large{
+                flex-direction: column;
+            }
+            input, label{
+                width: 49%;
+                display: flex;
+                align-items: center;
+                @include bp-large{
+                    width: 100%;
+                    margin-bottom: 1rem;
+                }
+            }
+            input[type="file"] {
+                display: none;
+            }
+            label{
+                color: $light-gray;
+                svg{
+                    fill: $light-gray;
+                    margin-right:1rem;
+                }
+            }
+            .dark{
+                color: $gray;
+                svg{
+                    fill: $gray;
+                }
+            }
+            input[type='file']{
+                padding-left: unset;
+            }
+        }
+        button{ 
+            margin: auto;
+            margin-top: 2rem;
+            height: 4rem;
+            width: fit-content;
+            background-color: $peach;
+            padding: 0 2rem; 
+            bottom: 0;
+            align-self: flex-end;
+            position: relative;
+            color: white;
+            border-radius: 3rem;
+        }
+        #disabled{
+            background-color: gray;
+            color:lightgray;
+            cursor: not-allowed;
+            
+        }
+        #active{
+            background-color: $peach;
+        }
+       
+    }
+    .all-plants{
+      margin: 5rem 0;
+      @include bp-medium{
+        margin: 3rem 0;
+      }
+        .accordion{
+            border: 1px solid $peach;
+            .title{
+                h4{
+                    color: $gray;
+                }
+                svg{
+                    fill: $gray;
+                }
+            } 
+                .plantsManage{
+                    display:grid;
+                    grid-column: auto;
+                    width: 95%;
+                    margin: 0 auto;
+                    padding-left: 1rem;
+                    align-items: center;
+                    @include bp-x-small{
+                        row-gap: 2rem;
+                    }
+                    
+                    .plant{
+                        display: flex;
+                        justify-content: space-between;
+                        flex-direction: row;
+                        align-items: flex-end;
+                        @include bp-large{
+                            max-width: unset;
+                            width: 100%;
+                        @include bp-x-small{
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            align-items: flex-start;
+                        }   
+                        }
+                        h5{
+                            text-transform: capitalize;
+                            color: $gray;
+                            margin-bottom: unset;
+                        }
+                        button{
+                            background-color: $blush;
+                            height: 3rem;
+                            width: fit-content;
+                        }
+                    }
+
+                }
+                .show{
+                    height: 300px;
+                    overflow:hidden;
+                    overflow-y: scroll;
+                    transition: all .5s ease-in;
+                    transition: opacity .3s ease-in;
+                    opacity: 1;
+                }
+                .hide{
+                    height: 0px;
+                    overflow: hidden;
+                    transition: all .5s ease-out;
+                    
+                    
+                }
+               
+                
+           }
+    }
+    .plants-list{
+        padding: 5rem 0;
+        @include bp-medium{
+            padding: 3rem 0;
+        }
+        .row{
+            .card{
+                h5{
+                    color: $gray;
+                    padding-left: 2rem;
+                    text-transform: capitalize;
+                    
+                }
+            }
+        }
+    }
+
+}

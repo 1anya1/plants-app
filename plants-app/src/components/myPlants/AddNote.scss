@@ -1,0 +1,132 @@
+
+
+@import '../../index.scss';
+#plant-logs{
+    .image{
+        background-image: url('../../img/hero/plant-logs-hero.svg');
+        }
+}
+.plant-logs{
+    .links{
+        
+        text-align: center;
+        padding-bottom: 5rem;
+        @include bp-medium{
+            padding-bottom:3rem;
+        }
+        a{
+            color: $forest-green;
+            margin-right: 5rem;
+            &:last-child{
+                margin-right: unset;
+            }
+            @include bp-small{
+                display: flex;
+                flex-direction: row;
+                row-gap: 1rem;
+                margin: unset;
+                justify-content: center;
+                padding-bottom: 1rem;
+            }
+        }
+
+
+    }
+.show{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    max-width: 100vw;
+    background-color:rgba(46, 44, 47, .6);
+    overflow: scroll;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color .5s ease-in-out;
+    z-index: 1;
+    display: flex;
+    border-radius: unset;
+}
+.hide{
+    display: none;
+}
+
+
+   
+.notes{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
+    @include bp-large{
+        grid-template-columns: 1fr 1fr;
+    }
+  
+    @include bp-small{
+        grid-template-columns: 1fr;
+    }
+  
+
+    .note{
+        border: $blush 1px solid;
+        padding: 3rem 0;
+        border-radius: 5rem;
+        width: 100%;
+        padding-bottom: 0rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        @include bp-medium{
+            border-radius: 3rem;
+        }
+
+        .overline{
+            color: $gray;
+            margin-bottom: 1rem;
+            padding-bottom: unset;
+            padding: 0 3rem ;
+            color: $gray;
+        }
+        h4{
+            margin-bottom: 2rem;
+            padding: 0 3rem ;
+            color: $forest-green;
+        }
+        .todos{
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: row;
+            padding: 0 3rem ;
+            padding-top: 1rem;
+            svg{
+                height: 45px;
+                width: 45px;
+                margin-right: 2rem;
+                path{
+                    fill: $gray;
+                }
+            }
+
+        }
+        p{
+            margin-bottom: 2.6rem;
+            padding: 0 3rem ;
+        }
+        button{
+            align-self: flex-end;
+          position: relative;
+          margin-top:auto;
+        }
+       
+    }
+
+}
+}

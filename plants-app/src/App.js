@@ -3,25 +3,23 @@ import axios from 'axios';
 import './App.scss';
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Home from './components/Home'
-import Disease from './components/Disease'
+import Disease from './components/disease/Disease'
 import Plants from './components/Plants/Plants'
-import Pests from './components/Pests'
-import Footer from './components/Footer'
-import CareTips from './components/Plants/CareTips'
-
+import Pests from './components/pests/Pests'
+import Footer from './components/footer/Footer'
+import CareTips from './components/careTips/CareTips'
 import Registration from './components/Registration'
 import Login from './components/registrations/Login'
 import Signup from './components/registrations/Signup'
-import MyPlants  from './components/MyPlants.js'
-import AddNote from './components/AddNote.js'
-
-import logo from './components/Logo'
+import MyPlants  from './components/myPlants/MyPlants.js'
+import AddNote from './components/myPlants/AddNote.js'
+import logo from './components/Images'
 const links = [
   { href: '/', text: 'Home' },
-  { href: 'plants', text: 'Plants' },
-  { href: 'diseases', text: 'Disease' },
-  { href: 'pests', text: 'Pests' },
-  {href:'care-tips', text: 'Care Tips'}
+  { href: '/plants', text: 'Plants' },
+  { href: '/diseases', text: 'Disease' },
+  { href: '/pests', text: 'Pests' },
+  {href:'/care-tips', text: 'Care Tips'}
 ];
 
 const createNavItem = ({ href, text}) => (
@@ -166,7 +164,7 @@ handleClickExit = (e) => {
         </nav>
         <Router>
         <Switch>
-          <Route path={'/disease'} render={()=> <Disease />}/>
+          <Route path={'/diseases'} render={()=> <Disease />}/>
           <Route path={'/plants'} render={()=> <Plants />}/>
           <Route path={'/pests'} render={()=> <Pests/>}/>
           <Route path={'/care-tips'} render={()=> <CareTips/>}/>

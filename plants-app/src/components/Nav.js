@@ -4,14 +4,16 @@ import Registration from './Registration'
 
 const links = [
     { href: '/', text: 'Home' },
-    { href: 'plants', text: 'Plants' },
-    { href: 'diseases', text: 'Disease' },
-    { href: 'pests', text: 'Pests' },
-    {href:'care-tips', text: 'Care Tips'}
+    { href: '/plants', text: 'Plants' },
+    { href: '/diseases', text: 'Disease' },
+    { href: '/pests', text: 'Pests' },
+    {href:'/care-tips', text: 'Care Tips'}
   ];
+const origin = window.location.origin;
+console.log(origin)
   
   const createNavItem = ({ href, text}) => (
-    <a className='link' key={href} href={href}>{text}</a>
+    <a className='link' key={href} href={`http://localhost:3000${href}`}>{text}</a>
   );
 class Nav extends Component{
     constructor(props) {

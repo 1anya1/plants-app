@@ -19,7 +19,7 @@ nav{
     transition: background-color .1s  ease;
     align-items: center;
     @include bp-small{
-        padding:  30px 20px 0;
+        padding:  30px 20px 20px;
     }
     
     .logo{
@@ -31,7 +31,7 @@ nav{
         svg{
             height: 3rem;
             width: 10rem;
-            @include bp-medium{
+            @include bp-small{
                 height: 2.5rem;
             }
                
@@ -115,8 +115,9 @@ nav{
 }
 .show-nav{
     top: 0;
-    background-color: $white;
+    background-color: white;
     transition: top .5s ease-in-out;
+    box-shadow: 0 0 4px 0px $light-gray;
 }
 .hide-nav{
     top: -100vh;

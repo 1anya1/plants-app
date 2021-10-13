@@ -1,10 +1,11 @@
 @import '../../index.scss';
-.care-tips{
-    .cover{
-        background-image: url(../../img/plant-care.png);
-    }
-}
 #care-tips{
+    .image{
+        background-image: url('../../img/hero/care-tips-hero-image.svg');
+    }
+   
+}
+.care-tips{
     .careHeading{
        text-align: center;
     }
@@ -15,7 +16,29 @@
         margin: 0 auto;
         row-gap: 1rem;
         column-gap: 1rem;
+        width: 90%;
+        padding-bottom: 3rem;
+        a{
+           text-decoration: none;
+           border: $forest-green solid 1px;
+           width: 100%;
+           padding: 1rem 0;
+           border-radius: 5rem;
+           transition: all .5s ease-in-out;
+           &:hover, &:active, &:focus{
+            transition: all .5s ease-in-out;
+            background-color: $yellow;
+            border-color: $yellow;
+            h6{
+                color: $white;
+            }
+            }
+            @include bp-large{
+                padding: unset;
+            }
+        }
         @include bp-large{
+            padding: 3rem 0;
             display: flex;
             flex-direction: row;
             overflow: hidden;
@@ -25,60 +48,42 @@
             }
         }
         .symbols{
+           
             @include bp-large{
-                border: 1px solid $peach;
                 border-radius: 4rem;
                 padding: 1rem 2rem;
-                background-color: white;
-                transition: all .5s ease-in-out;
-                &:hover{
-                    transition: all .5s ease-in-out;
-                    background-color: $forest-green;
-                    border-color: $forest-green;
-                    svg{
-                        path{
-                            fill: $white;
-                        }
-                    }
-                    h6{
-                        color: $white;
-                        
-                    }
-                }
             }
-        }
-       a{
-           @include bp-large{
-            text-decoration: none;
-           }
-          
+        
+       
+        
         .care{
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
             svg{
-                height: 5rem;
-                width: 5rem;
+                height: 4rem;
+                width: 4rem;
                 @include bp-large{
                     height: 3rem;
                     width: 3rem;
 
                 }
                 g{
-                    fill: $peach;
+                    fill: $forest-green;
                     transition: fill .5s ease-in-out;
                 }
                 path{
-                    fill: $peach;
+                    fill: $forest-green;
                     transition: fill .5s ease-in-out;
                 }
                
             }
             h5{
-                color: $peach;
+                color: $forest-green;
                 margin-bottom: unset;
                 margin-left: 1em;
+                font-size: 1.8rem ;
                 @include bp-large{
                     font-size: 1.4rem ;
                    
@@ -90,5 +95,19 @@
        }
         
     }
+    .paragraphs{
+        padding-bottom: unset;
+        .subtitle2{
+            color: $yellow;
+        }
+        h5{
+            color: $gray;
+            margin-bottom: 2rem;
+        }
+        p{
+            color: $gray;
+            margin-bottom: 3rem;
+        }
+    } 
 
 }
