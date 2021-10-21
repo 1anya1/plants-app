@@ -81,7 +81,9 @@ class App extends Component {
 loginStatus = () => {
   axios.get('https://salty-peak-61296.herokuapp.com/logged_in', {withCredentials: true})
   .then(response => {
+    console.log(response)
     if (response.data.logged_in) {
+      console.log(response.data)
       this.handleLogin(response)
     } else {
       this.handleLogout()
