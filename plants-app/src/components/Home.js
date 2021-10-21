@@ -17,8 +17,12 @@ class Home extends React.Component{
                     {/* <div className='subtitle'>Explore guides and tools that keep plants triving.</div> */}
                  </div>
                  <div className='buttons'>
+                 {this.props.isLoggedIn ?
+                        <a href='/my-plants'><button id='one'>{`${this.props.username}'s Plants`}</button></a> :
                         <a href='/login'><button id='one'>Log In</button></a>
-                        <a href='/plants'><button id='two'>View Plants</button></a>                    </div>
+                 }
+                        <a href='/plants'><button id='two'>Plant Care</button></a>                   
+                </div>
                 <div className='image'></div>
             </div>
                 <div className='intro home'>

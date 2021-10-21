@@ -189,7 +189,7 @@ handleClickExit = (e) => {
               < MyPlants {...props} userId={this.state.user_id} name={this.state.username} plant_id={this.state.plant_id}/>
               )}/>
           } 
-          <Route path={'/'} render={()=> <Home/>}/>
+          <Route path={'/'} render={()=> <Home isLoggedIn={this.state.isLoggedIn} username={this.state.username} /> }/>
         </Switch>
         </Router>
         <Footer />
