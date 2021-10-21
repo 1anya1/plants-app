@@ -124,25 +124,32 @@
 
 }
 .search-menu{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    width: 90%;
-    margin: 0 auto;
-    margin-top: 10rem;
     background-color: $blush;
     border-radius: 5rem 0rem;
     padding: 4rem;
+    margin-top: 10rem;
+    width: 90%;
+    margin: 0 auto;
+    @include bp-large{
+        margin-top: 5rem;
+        // row-gap: 2rem;
+        // padding: 3rem;   
+    }
+    @include bp-medium{
+        border-radius: 3rem 0;
+    }
+    @include bp-medium{
+        border-radius: 3rem 0;
+    }
+.search{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
     column-gap: 4rem;
     margin-top: 0;
     @include bp-large{
         flex-direction: column;
-        margin-top: 5rem;
         row-gap: 2rem;
-        padding: 3rem;   
-    }
-    @include bp-medium{
-        border-radius: 3rem 0;
     }
     h4{
         align-self: flex-start;
@@ -197,6 +204,7 @@
         }
 
     }
+}
 }
 
 @keyframes fadeIn {

@@ -48,9 +48,9 @@ class App extends Component {
     window.addEventListener('scroll', this.handleScroll, { passive: true });
     this.loginStatus()
   }
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener('scroll', this.handleScroll)
+  // }
 
   handleClick() {
     this.setState(prevState => ({
@@ -192,7 +192,7 @@ handleClickExit = (e) => {
           <Route path={'/'} render={()=> <Home isLoggedIn={this.state.isLoggedIn} username={this.state.username} /> }/>
         </Switch>
         </Router>
-        <Footer />
+        <Footer  isLoggedIn={this.state.isLoggedIn} handleLogout={this.handleClickExit} />
       </main>
     );
   }
