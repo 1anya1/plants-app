@@ -141,6 +141,11 @@
     @include bp-medium{
         border-radius: 3rem 0;
     }
+    h4{
+        align-self: flex-start;
+        color: $gray;
+        margin-bottom: 3rem;
+    }
 .search{
     display: flex;
     align-items: center;
@@ -150,10 +155,6 @@
     @include bp-large{
         flex-direction: column;
         row-gap: 2rem;
-    }
-    h4{
-        align-self: flex-start;
-        color: $gray;
     }
     .search-bar{
         width: 100%;

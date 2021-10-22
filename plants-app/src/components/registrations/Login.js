@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import './login.scss'
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -61,16 +62,16 @@ handleErrors = () => {
 render() {
     const {username, email, password} = this.state
 return (
-    <>
-         <div className="hero intro" id='plant-logs' >
-                <div className='content'>
-                    <h2> Log In</h2>
-                </div>
-                <div className='image' ></div>
-             </div>
-      <div>
-        <h1>Log In</h1>
-        <form onSubmit={this.handleSubmit}>
+    < div className='container'>
+        <div className="hero intro" id='login' >
+           <div className='content'>
+            <h2>Welcome Back!</h2>
+          </div> 
+          <div className='image' ></div>
+        </div>
+        <div className='form'>
+          <h4>Log In</h4>
+          <form onSubmit={this.handleSubmit}>
           <input
             placeholder="username"
             type="text"
@@ -78,13 +79,6 @@ return (
             value={username}
             onChange={this.handleChange}
           />
-          {/* <input
-            placeholder="email"
-            type="text"
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-          /> */}
           <input
             placeholder="password"
             type="password"
@@ -96,7 +90,7 @@ return (
             Log In
           </button>
           <div>
-            or <Link to='/signup'>sign up</Link>
+            or <Link to='/signup'> sign up</Link>
           </div>
           
           </form>
@@ -106,7 +100,7 @@ return (
           }
         </div>
       </div>
-      </>
+      </div>
     );
   }
 }
