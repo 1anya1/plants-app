@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import './signup.scss'
 class Signup extends Component {
   constructor(props) {
     super(props);
@@ -54,14 +55,15 @@ handleErrors = () => {
 render() {
     const {username, email, password, password_confirmation} = this.state
 return (
-  <>
-   <div className="hero intro" id='plant-logs' >
-                <div className='content'>
-                    <h2> Sign Up</h2>
-                </div>
-                <div className='image' ></div>
-             </div>
-      <div>
+  <div className='signup-container'>
+    <div className="hero intro" id='signup' >
+      <div className='content'>
+        <h2>Create Account</h2>
+      </div>
+      <div className='image' ></div>
+    </div>
+    <div className='form'>
+      <h4>Sign Up</h4>
         <form onSubmit={this.handleSubmit}>
           <input
             placeholder="username"
@@ -103,7 +105,7 @@ return (
           }
         </div>
       </div>
-    </>
+    </ div>
     );
   }
 }

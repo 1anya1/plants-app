@@ -13,8 +13,17 @@ const links = [
   );
 
 class Footer extends React.Component{
+  constructor(props){
+    super(props)
+    this.handleLogout = this.handleLogout.bind(this)
+}
+handleLogout(e){
+    this.props.handleLogout(e)
+}
+
     
     render() {
+      console.log(this.props.handleLogout)
         return (
           <footer>
             <div className='links intro'>
@@ -22,8 +31,17 @@ class Footer extends React.Component{
                 {links.map(createNavItem)}
               </div>
               <div className='login-links'>
-                <a className='link' href='/login'>Log In</a>
-                <a className='link' href='/signup'>Sign Up</a>
+                {this.props.isLoggedIn ? 
+                <>
+                  <a className='link' href='/my-plants'>My Plants</a>
+                  <a className='link' href='/' onClick={this.handleLogout}> Log Out</a>
+                </> :
+                <>
+                  <a className='link' href='/login'>Log In</a>
+                  <a className='link' href='/signup'>Sign Up</a>
+                </>
+                
+              }
               </div>
 
             </div>

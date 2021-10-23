@@ -511,9 +511,8 @@ input::-webkit-date-and-time-value {
       border: 1px solid $gray;
       height: fit-content;
       min-height: 7rem;
-      border-radius: 3.5rem;
       padding: 0 2rem;
-      border-radius: 5rem;
+      border-radius: 3.5rem;
       position: relative;
       @include bp-medium{
           min-height: 5rem;

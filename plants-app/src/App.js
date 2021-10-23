@@ -48,9 +48,9 @@ class App extends Component {
     window.addEventListener('scroll', this.handleScroll, { passive: true });
     this.loginStatus()
   }
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener('scroll', this.handleScroll)
+  // }
 
   handleClick() {
     this.setState(prevState => ({
@@ -81,7 +81,9 @@ class App extends Component {
 loginStatus = () => {
   axios.get('https://salty-peak-61296.herokuapp.com/logged_in', {withCredentials: true})
   .then(response => {
+    console.log(response)
     if (response.data.logged_in) {
+      console.log(response.data)
       this.handleLogin(response)
     } else {
       this.handleLogout()
@@ -187,10 +189,10 @@ handleClickExit = (e) => {
               < MyPlants {...props} userId={this.state.user_id} name={this.state.username} plant_id={this.state.plant_id}/>
               )}/>
           } 
-          <Route path={'/'} render={()=> <Home/>}/>
+          <Route path={'/'} render={()=> <Home isLoggedIn={this.state.isLoggedIn} username={this.state.username} /> }/>
         </Switch>
         </Router>
-        <Footer />
+        <Footer  isLoggedIn={this.state.isLoggedIn} handleLogout={this.handleClickExit} />
       </main>
     );
   }

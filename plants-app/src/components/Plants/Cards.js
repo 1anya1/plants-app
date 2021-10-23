@@ -102,6 +102,7 @@ class Cards extends Component {
      
         <div className='search-menu'>
             <h4>Search Plants</h4>
+            <div className='search'>
                <div className='dropDown'>
                 <select name="plants" id="plants" onChange={this.handleOption}> 
                     <option value="" disabled selected>All Plants</option>
@@ -113,7 +114,8 @@ class Cards extends Component {
                <input className='searchBar'  placeholder='Search...' value={filter} onChange={this.handleChange} />
                <FaSistrix />
              </div>
-             </div>
+          </div>
+        </div>
         <div className="row intro">
         {myData}
         <Modal modal={this.state.modal}  handleClick={this.toggle}/>
