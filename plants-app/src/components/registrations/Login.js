@@ -62,7 +62,7 @@ handleErrors = () => {
 render() {
     const {username, email, password} = this.state
 return (
-    < div className='container'>
+    < div className='login-container'>
         <div className="hero intro" id='login' >
            <div className='content'>
             <h2>Welcome Back!</h2>

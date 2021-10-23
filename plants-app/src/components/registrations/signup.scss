@@ -1,6 +1,6 @@
 @import '../../index.scss';
 
-.login-container{
+.signup-container{
     display: grid;
     grid-template-columns: 55% 45%;
     align-items: center;
@@ -8,13 +8,12 @@
         display: unset;
     }
 
-    #login{
+    #signup{
         margin-bottom: 100px;
         margin-top: 150px;
         padding: 50px;
-        
         .image{
-            background-image: url(../../img/login.svg);
+            background-image: url(../../img/signup.svg);
             background-position: left;
         }
         .content{
@@ -26,7 +25,6 @@
         @include bp-x-large{
             margin-bottom: unset;
             .image{
-                background-image: url(../../img/login.svg);
                 background-position: center;
             }
             .content{
@@ -44,6 +42,7 @@
         margin-top: 10rem;
         width: 90%;
         margin: 0 auto;
+        
         @include bp-x-large{
             margin-top: 3rem;
             margin-bottom: 10rem;
@@ -64,7 +63,14 @@
             display: flex;
             flex-direction: column;
             row-gap: 2rem;
+            button{
+                background-color: $peach;
+                &:hover, &:active{
+                    background-color: white;
+                }
+            }
         }
+
         
        
     }
