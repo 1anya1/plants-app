@@ -126,6 +126,9 @@ handleClickExit = (e) => {
     return (
      
       <main className={this.state.isToggleOn ? null : 'noscroll' } onScroll={console.log('scrolling')}>
+        { !this.state.isToggleOn &&
+        <div id='overlay'></div>
+        }
         <nav className={this.state.navShow}>
           <a href='/' className='logo'> <logo.Logo /></a>
           <div className='menu' >
