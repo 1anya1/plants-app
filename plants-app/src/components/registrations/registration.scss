@@ -1,0 +1,11 @@
+
+@import '../../index.scss';
+#toggle{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    width: 200vw;
+    .login-container, .signup-container{
+        width: 100vw;
+    }
+}

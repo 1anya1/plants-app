@@ -52,8 +52,8 @@ h3 {
   @include bp-large{
     font-size: 4.2rem;
   }
-  @include bp-small{
-    font-size: 3.8rem;
+  @include bp-medium{
+    font-size: 3rem;
 }
 }
 

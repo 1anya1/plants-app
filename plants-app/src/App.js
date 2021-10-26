@@ -8,9 +8,9 @@ import Plants from './components/Plants/Plants'
 import Pests from './components/pests/Pests'
 import Footer from './components/footer/Footer'
 import CareTips from './components/careTips/CareTips'
-import Registration from './components/Registration'
-import Login from './components/registrations/Login'
-import Signup from './components/registrations/Signup'
+// import Login from './components/registrations/Login'
+import Registration from './components/registrations/Registration'
+// import Signup from './components/registrations/Signup'
 import MyPlants  from './components/myPlants/MyPlants.js'
 import AddNote from './components/myPlants/AddNote.js'
 import logo from './components/Images'
@@ -134,8 +134,8 @@ handleClickExit = (e) => {
           <div className='menu' >
             {links.map(createNavItem)}
             { !this.state.isLoggedIn  && <>
-              <a className='link' href='/signup'><button className='sign-up'>Sign Up</button></a>
-              <a  className='link' href='/login'><button className='log-in'>Log In</button></a>
+              <a className='link' href='/registration#signup'><button className='sign-up'>Sign Up</button></a>
+              <a  className='link' href='/registration#login'><button className='log-in'>Log In</button></a>
                </>
             }
             { this.state.isLoggedIn && <>
@@ -154,8 +154,8 @@ handleClickExit = (e) => {
               {links.map(createNavItem)}
               { !this.state.isLoggedIn  && <>
               <div className='mobile-login'>
-                <a className='link' href='/signup'><button className='sign-up'>Sign Up</button></a>
-                <a  className='link' href='/login'><button className='log-in'>Log In</button></a>
+                <a className='link' href='/registration#signup'><button className='sign-up'>Sign Up</button></a>
+                <a  className='link' href='/registration#login'><button className='log-in'>Log In</button></a>
               </div>
                </>
             }
@@ -176,12 +176,12 @@ handleClickExit = (e) => {
           <Route path={'/registration'} render={props => (
               <Registration {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn} />
               )}/>
-          <Route path={'/login'} render={props => (
+          {/* <Route path={'/login'} render={props => (
               <Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
               )} />
           <Route path={'/signup'} render={props => (
               <Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
-              )} />
+              )} /> */}
             {this.state.isLoggedIn  && 
             <Route path={'/my-plants/logs'} render={props => (
               < AddNote {...props} userId={this.state.user_id} name={this.state.username}/>

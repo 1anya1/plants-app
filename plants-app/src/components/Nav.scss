@@ -99,14 +99,17 @@ nav{
             }
             .link{
                 display: unset;
-                margin: 0 0 1rem 10%;
+                margin: 0 0 1rem 15%;
+                font-size: 1.8rem;
+                padding-left: unset;
                 @include bp-medium{
+                    font-size: 1.5rem;
                     margin-left: unset;
-                    padding-left: unset;
+                   
                 }
             }
             .mobile-login{
-                margin-left: 10%;
+                margin-left: 15%;
                 flex-direction: column;
                 margin-top: 1rem;
                 @include bp-medium{
