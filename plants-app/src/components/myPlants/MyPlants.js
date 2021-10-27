@@ -4,6 +4,7 @@ import './MyPlants.scss'
 import {uploadFile} from 'react-s3'
 import {Link} from 'react-router-dom'
 import DeleteModal from '../modaDelete/ModalDelete'
+import UpdatePlant from './updatePlant'
 import { FaPlus, FaFileImage } from "react-icons/fa";
 
 const config = {
@@ -26,6 +27,7 @@ class MyPlants extends React.Component {
             id: '',
             toggle: false,
             imageName: false,
+            update: false,
         }
         this.handleData = this.handleData.bind(this)
     }
@@ -82,6 +84,7 @@ class MyPlants extends React.Component {
       };
 
     imageUpload=(e)=>{
+      console.log('image upload is working')
       let name = e.target.files[0].name
       uploadFile(e.target.files[0], config)
       .then((data)=>{
@@ -110,7 +113,7 @@ class MyPlants extends React.Component {
       })  
       document.body.style.overflow = "unset";
     }
-    deleteNote=(event)=>{
+    deletePlant=(event)=>{
       console.log(event)
       const id = event.target.value
       this.setState({
@@ -120,6 +123,16 @@ class MyPlants extends React.Component {
       document.body.style.overflow = "hidden";
       
   }
+  updatePlant=(event)=>{
+    console.log(event)
+    const id = event.target.value
+    this.setState({
+        id: id,
+        update: true
+    })
+    document.body.style.overflow = "hidden";
+    
+}
   cancelDelete=()=>{
     this.setState({
         modal: false,
@@ -154,7 +167,9 @@ class MyPlants extends React.Component {
               <a href='#add-plant'>Add New Plant</a>
               <a href='#manage-plants'> Manage Plants</a>
             </div>
-            <DeleteModal delete={this.state.modal} deleteRoute={this.deleteRoute} cancelDelete={this.cancelDelete} />
+            {this.state.modal &&
+                <DeleteModal delete={this.state.modal} deleteRoute={this.deleteRoute} cancelDelete={this.cancelDelete} />
+            }
             <form onSubmit={this.handleSubmit}  id='add-plant'>
             <h4>Add New Plant</h4>
             <div className='inputs'>
@@ -206,6 +221,10 @@ class MyPlants extends React.Component {
              }
            </div>
           </div>
+          {this.state.update &&
+            < UpdatePlant  imageName={this.state.imageName} user_id = {this.state.user_id} plant_id={this.state.id} imageUpload={this.imageUpload}/>
+          }
+          
            <div className='all-plants'  id='manage-plants'>
            <div className='accordion'  onClick={this.expand}>
               <div className='title' >
@@ -216,7 +235,8 @@ class MyPlants extends React.Component {
               {this.state.plants.map((el, idx)=>{ 
                 return < div className='plant' key={idx}>
                 <h5>{el.title}</h5> 
-                <button id='delete' value={el.id} onClick={this.deleteNote}>Delete</button>
+                  <button id='delete' value={el.id} onClick={this.deletePlant}>Delete</button>
+                  <button id='update' value={el.id} onClick={this.updatePlant}>Update</button>
                 </div>
               }
               )
