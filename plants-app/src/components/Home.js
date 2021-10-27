@@ -69,19 +69,25 @@ class Home extends React.Component{
                     <h3 className='header'>Our plant library contains the most popular housepalnts.</h3>
                     <div className='plants-cta'>
                         <div className='info'>
-                            <h5>Keep track of your plants using our tracker. Add dates, notes, and photos that you can always refer back to.</h5>  
+                            <h5>Keeping plants around the house isn’t as scary as you might think; you just need to know what they like in order to keep your indoor garden both happy and greens</h5>  
                             <a href='/plants'><button className = 'home-button'>Discover House Plants</button></a>
                         </div>
-                        <div className='plants-image'></div>
+                        <div className='plants-image'>
+                        </div>
                     </div>
-                
-                    
-                    <button className = 'home-button'><Link to="/login" className='buttonGreen'>Log In</Link></button>
-  
-
-                   
-                  
-                    
+                    <div className='quote'>"Plants provide health benefits and can be used in a variety of indoor décor themes."</div>
+                    <h3 className='header'>Manage and track your plants growth and progress.</h3>
+                    <div className='tracker-cta'>
+                        <div className='info'>
+                            <h5>Keep track of your plants using our tracker. Add dates, notes, and photos that you can always refer back to.</h5>  
+                            {this.props.isLoggedIn ?
+                            <a href='/my-plants'><button className = 'home-button'>{this.props.username}'s Plants</button></a> :
+                            <a href='/plants'><button className = 'home-button'>Log In</button></a>
+                            }
+                            
+                        </div>
+                        <div className='plants-image'></div>
+                    </div>  
                 </div> 
             </>
         )

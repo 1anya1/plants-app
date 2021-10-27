@@ -7,7 +7,7 @@
         height: 800px;
     }
     @include bp-medium{
-      height: 600px;
+      height: 650px;
   
     }
     .image{
@@ -21,6 +21,9 @@
         grid-row: 1/2;
         @include bp-large{
             top: 15%;
+        }
+        @include bp-medium{
+            margin-bottom: 5rem;
         }
         h2{
             max-width: 1200px;
@@ -54,6 +57,7 @@
             max-width: 220px;
             @include bp-small{
                 width: 100%;
+                max-width: unset;
             }
         }
         button{
@@ -71,16 +75,15 @@
           }
         }
         #one{
-          background-color: $yellow;
-          border: 1px solid $yellow;
+          background-color: $peach;
+          border: 1px solid $peach;
           color: $gray;
           &:hover, &:focus{
-              background-color: $light-gray;
-              border-color: $light-gray;
+              background-color: $blush;
+              border-color: $blush;
               color: $gray;
             }
           @include bp-x-large{
-            color: white;
             margin-right: unset;
             
           }
@@ -90,11 +93,11 @@
         }
         #two{
           
-          border: 1px solid $yellow;
+          border: 1px solid $peach;
      
           &:hover, &:focus{
-              background-color: $light-gray;
-              border-color: $light-gray;
+              background-color: $blush;
+              border-color: $blush;
             }
           @include bp-x-large{
             margin-right: unset;
@@ -109,17 +112,18 @@
     }
     h3{
         color: $gray;
-        margin: 5rem 0;
+        margin: 5rem 0 7rem 0;
         text-align: center;
+        font-weight: 400;
+    
         @include bp-large{
-            margin: 2rem 0;
+            margin: 2rem 0 5rem 0;
+        }
+        @include bp-medium{
+            margin: 0 0 3rem 0;
         }
     }
-    .benefits{
-        padding-bottom: 10rem;
-        @include bp-small{
-            padding-bottom: 5rem;
-        }
+    .benefits{ 
         ul{
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -135,20 +139,29 @@
             margin: 0 auto;
             row-gap: 2rem;
             max-width: 1300px;
+            @include bp-large{
+                justify-items: end ;
+            }
+           
             @include bp-small{
                 grid-template-columns: 1fr;
                 row-gap: 1rem;
+                justify-items: center;
             }
             li{
                 width: 90%;
                 @include bp-medium{
                     text-align: center;
                     text-transform: capitalize;
+                  
+                }
+                @include bp-small{
+                    font-size: 1.8rem;
                 }
                 svg{
                     margin-right: 1rem;
                     path{
-                        stroke: $yellow;
+                        stroke: $peach;
                     }
                     
                 }
@@ -160,16 +173,20 @@
         display: flex;
         column-gap: 2rem;
         justify-content: center;
-        padding-bottom: 10rem;
+        padding: 15rem 0;
         @include bp-large{
+            padding: 10rem 0;
             flex-direction: row;
             flex-wrap: wrap;
             row-gap: 2rem;
             width: 85%;
             margin: 0 auto;
         }
+        @include bp-medium{
+            // padding: 7rem 0 ;
+        }
         @include bp-small{
-            padding-bottom: 5rem ;
+           
             width: 100%;
         }
         
@@ -233,11 +250,13 @@
     }
     .header{
         margin-top: unset;
-        padding-top: 5rem;
+        padding-top: 0;
         @include bp-large{
-            padding-top: 3rem;
+            margin-bottom: 3rem;
         }
-        
+        @include bp-small{
+            margin-bottom:2rem;
+        }
     }
     .plants-cta{
         display: grid;
@@ -267,19 +286,26 @@
                 padding-bottom: 5rem;
             }
             a{
+                @include bp-small{
+                    width: 100%;
+                }
                 .home-button{
-                    background-color: $yellow;
+                    background-color: $peach;
                     color: $gray;
                     margin: 0 auto;
                     width: 100%;
                     max-width: 350px;
+                    @include bp-large{
+                        width: 350px;
+                    }
                     @include bp-small{
                         max-width: unset;
+                        width: 100%;
                     }
                     &:hover, &:focus{
                         transition: all .5s ease-in-out;
-                        background-color: $light-gray;
-                        border-color: $light-gray;
+                        background-color: $blush;
+                        border-color: $blush;
                         color: $gray;
                     }
                 }
@@ -288,6 +314,7 @@
                 text-transform: none;
                 padding-bottom: 5rem;
                 color: $gray;
+                font-weight: 400;
                 @include bp-large{
                     padding-bottom: 2rem;
                     width: 90%;
@@ -295,7 +322,102 @@
                 }
                 @include bp-medium{
                     width: 100%;
-                    padding-bottom: 1rem;
+                    padding-bottom: 5rem;
+                }
+                
+            }
+        }
+    }
+    .quote{
+        font-size: 5rem;
+        font-family: 'Raleway';
+        border-top: 1px $peach-dark solid;
+        border-bottom: 1px $peach-dark solid;
+        color: $peach-dark;
+        padding: 2rem 0;
+        font-weight: 500;
+        margin: 15rem auto;
+        text-align: center;
+        @include bp-large{
+            margin: 10rem 0;
+        }
+        @include bp-medium{
+            font-size: 3.5rem;
+            // margin:7rem auto;
+        }
+    }
+    .tracker-cta{
+        display: grid;
+        grid-template-columns:  1fr .75fr;
+        align-items: center;
+        @include bp-large{
+            grid-template-columns: 1fr;
+        }
+        .plants-image{
+            grid-column: 1/2;
+            grid-row: 1;
+            background-image: url('../img/home-page/tracker-cta.png');
+            height: 40vw;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: left;
+            @include bp-large{
+                height: 75vw;
+                grid-column: unset;
+                grid-row: unset;
+                background-position: center;
+            }
+        }
+        .info{
+            grid-column: 2/3;
+            @include bp-large{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-bottom: 4rem;
+                grid-column: unset;
+            }
+            @include bp-medium{
+                padding-bottom: 5rem;
+            }
+            a{
+                @include bp-small{
+                    width: 100%;
+                }
+                .home-button{
+                    background-color: $peach;
+                    color: $gray;
+                    margin: 0 auto;
+                    width: 100%;
+                    max-width: 350px;
+                    @include bp-large{
+                        width: 350px;
+                    }
+                    @include bp-small{
+                        max-width: unset;
+                        width: 100%;
+                    }
+                    &:hover, &:focus{
+                        transition: all .5s ease-in-out;
+                        background-color: $blush;
+                        border-color: $blush;
+                        color: $gray;
+                    }
+                }
+            }
+            h5{
+                text-transform: none;
+                padding-bottom: 5rem;
+                color: $gray;
+                font-weight: 400;
+                @include bp-large{
+                    padding-bottom: 2rem;
+                    width: 90%;
+                    text-align: center;
+                }
+                @include bp-medium{
+                    width: 100%;
+                    padding-bottom: 5rem;
                 }
                 
             }

@@ -8,7 +8,6 @@ import Plants from './components/Plants/Plants'
 import Pests from './components/pests/Pests'
 import Footer from './components/footer/Footer'
 import CareTips from './components/careTips/CareTips'
-import Registration from './components/Registration'
 import Login from './components/registrations/Login'
 import Signup from './components/registrations/Signup'
 import MyPlants  from './components/myPlants/MyPlants.js'
@@ -48,9 +47,6 @@ class App extends Component {
     window.addEventListener('scroll', this.handleScroll, { passive: true });
     this.loginStatus()
   }
-  // componentWillUnmount() {
-  //   window.removeEventListener('scroll', this.handleScroll)
-  // }
 
   handleClick() {
     this.setState(prevState => ({
@@ -126,6 +122,9 @@ handleClickExit = (e) => {
     return (
      
       <main className={this.state.isToggleOn ? null : 'noscroll' } onScroll={console.log('scrolling')}>
+        { !this.state.isToggleOn &&
+        <div id='overlay'></div>
+        }
         <nav className={this.state.navShow}>
           <a href='/' className='logo'> <logo.Logo /></a>
           <div className='menu' >
@@ -152,7 +151,7 @@ handleClickExit = (e) => {
               { !this.state.isLoggedIn  && <>
               <div className='mobile-login'>
                 <a className='link' href='/signup'><button className='sign-up'>Sign Up</button></a>
-                <a  className='link' href='/login'><button className='log-in'>Log In</button></a>
+                <a  className='link' href='/login '><button className='log-in'>Log In</button></a>
               </div>
                </>
             }
@@ -170,9 +169,6 @@ handleClickExit = (e) => {
           <Route path={'/plants'} render={()=> <Plants />}/>
           <Route path={'/pests'} render={()=> <Pests/>}/>
           <Route path={'/care-tips'} render={()=> <CareTips/>}/>
-          <Route path={'/registration'} render={props => (
-              <Registration {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn} />
-              )}/>
           <Route path={'/login'} render={props => (
               <Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
               )} />
