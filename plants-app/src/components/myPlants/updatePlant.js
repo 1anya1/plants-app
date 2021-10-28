@@ -94,8 +94,8 @@ class UpdatePlant extends Component {
               console.log(err)
             })
           }
-        closeNote=()=>{
-            this.props.closeNote()
+        closeUpdate=()=>{
+            this.props.closeUpdate()
         }
     render(){
         console.log(this.state.imageFile)
@@ -116,7 +116,7 @@ class UpdatePlant extends Component {
                 <input type='file'  id='file-change' className="custom-file-input" onChange={this.uploadImage}/>
               </div>
                 <button id='active' placeholder="submit" type="submit"> Update Plant</button>
-                <button onClick={this.closeNote}>Cancel</button>
+                <button onClick={this.closeUpdate}>Cancel</button>
           </form>
           
         </div>

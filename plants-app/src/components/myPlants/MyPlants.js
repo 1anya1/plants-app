@@ -229,7 +229,7 @@ class MyPlants extends React.Component {
            </div>
           </div>
           {this.state.update &&
-            < UpdatePlant  imageName={this.state.imageName} user_id = {this.state.user_id} plant_id={this.state.id} closeNote={this.exitUpdate}/>
+            < UpdatePlant  imageName={this.state.imageName} user_id = {this.state.user_id} plant_id={this.state.id} closeUpdate={this.exitUpdate}/>
           }
           
            <div className='all-plants'  id='manage-plants'>
