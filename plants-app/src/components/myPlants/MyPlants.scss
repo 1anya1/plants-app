@@ -123,6 +123,9 @@
             position: relative;
             color: white;
             border-radius: 3rem;
+            @include bp-medium{
+                width: 100%;
+            }
         }
         #disabled{
             background-color: gray;
@@ -136,9 +139,48 @@
        
     }
     #update-plant-form{
+        max-width: 1000px;
         width: 90%;
         margin: 0 auto;
         height: fit-content;
+        h4{
+            color: $forest-green;
+        }
+        .inputs{
+            flex-direction: column;
+            input, label{
+                width: 100%;
+            }
+            .overline{
+                align-self: flex-start;
+                // padding-bottom: 1rem;
+                color: $gray;
+                &:last-of-type{
+                    padding-top: 2rem;
+                }
+            }
+        }
+        .buttons{
+            display: flex;
+            flex-direction: row;
+            @include bp-medium{
+                flex-direction: column;
+            }
+            button{
+                background-color: $forest-green;
+                height: 5rem;
+                color: white;
+                width: 45%;
+                @include bp-medium{
+                    min-width: unset;
+                    width: 100%;
+                    height: 4rem;
+                }
+    
+            }
+            
+        }
+       
     }
     .all-plants{
       margin: 5rem 0;
@@ -157,32 +199,45 @@
             } 
                 .plantsManage{
                     display:grid;
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
                     grid-column: auto;
                     width: 95%;
                     margin: 0 auto;
                     padding-left: 1rem;
                     align-items: center;
-                    @include bp-x-small{
-                        row-gap: 2rem;
+                    row-gap: 3rem;
+                    @include bp-large{
+                        grid-template-columns: 1fr 1fr 1fr;
+                    }
+                    @include bp-medium{
+                       
+                        grid-template-columns: 1fr 1fr;
+                    }
+                    @include bp-small{
+                        grid-template-columns: 1fr;
                     }
                     
                     .plant{
                         display: flex;
                         justify-content: space-between;
                         flex-direction: row;
-                        align-items: flex-end;
-                        @include bp-large{
-                            max-width: unset;
-                            width: 100%;
-                        @include bp-x-small{
-                            flex-direction: column;
-                            justify-content: flex-start;
-                            align-items: flex-start;
-                        }   
-                        }
+                        flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            row-gap: 1rem;
+                        // @include bp-large{
+                        //     max-width: unset;
+                        //     width: 100%;
+                        // @include bp-medium{
+                        //     flex-direction: column;
+                        //     justify-content: center;
+                        //     align-items: center;
+                        //     row-gap: 1rem;
+                        // }   
+                        // }
                         h5{
                             text-transform: capitalize;
-                            color: $gray;
+                            color: $forest-green;
                             margin-bottom: unset;
                         }
                         button{

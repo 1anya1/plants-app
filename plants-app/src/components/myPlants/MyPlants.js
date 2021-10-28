@@ -208,6 +208,7 @@ class MyPlants extends React.Component {
                         <img  className="img" key={el.url} src={el.url} />
                       </div>
                       <h5 key={idx}>{el.title}</h5>
+                      
                       <div className='buttons'>
                         <Link className='viewNotes' to={{
                           pathname: `/my-plants/logs`,

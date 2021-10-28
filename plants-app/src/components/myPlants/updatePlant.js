@@ -64,6 +64,7 @@ class UpdatePlant extends Component {
            .then(response => {
              if (response) {
                console.log('yay its been updated ')
+               this.closeUpdate()
                
              } else {
                this.setState({
@@ -73,7 +74,7 @@ class UpdatePlant extends Component {
            })
            .catch(error => console.log('api errors:', error))
           
-           this.closeNote();
+           
          };
          uploadImage=(e)=>{
             console.log('image upload is working')
@@ -102,8 +103,9 @@ class UpdatePlant extends Component {
         return (
         <div id='update-plant' className={this.state.plant_id ==='' ? 'update-hide' : 'update-show' }>
             <form onSubmit={this.handleSubmit}  id='update-plant-form'>
-                <h4>Update {this.state.pastName} Plant</h4>
+                <h4>Update Plant: {this.state.pastName}</h4>
                 <div className='inputs'>
+                <div className='overline'>Plants Name:</div>
                 <input
                   placeholder="Name of the plant..."
                   required="required"
@@ -112,11 +114,14 @@ class UpdatePlant extends Component {
                   value= {this.state.title}
                   onChange={this.handleChange}
                 />
+                <div className='overline'>Image Upload:</div>
                 <label htmlFor="file-change" className={this.state.imageFile ? "custom-file-upload dark" : "custom-file-upload "}><FaFileImage />{this.state.imageFile}</label>
                 <input type='file'  id='file-change' className="custom-file-input" onChange={this.uploadImage}/>
               </div>
-                <button id='active' placeholder="submit" type="submit"> Update Plant</button>
-                <button onClick={this.closeUpdate}>Cancel</button>
+                <div className='buttons'>
+                    <button placeholder="submit" type="submit" > Update Plant</button>
+                    <button onClick={this.closeUpdate}>Cancel</button>
+                </div>
           </form>
           
         </div>

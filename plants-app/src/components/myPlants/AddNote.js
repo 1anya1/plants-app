@@ -93,8 +93,8 @@ class AddNote extends Component {
       }      
       
     render(){
-        console.log(`new note ${this.state.newNote}`)
-        console.log(`notes for ${this.state.image}`)
+     
+        console.log(this.state.notes.length)
         let sortedNotes = this.state.notes.sort((a,b)=>{
             var c = new Date(a.date);
             var d = new Date(b.date);
@@ -122,7 +122,9 @@ class AddNote extends Component {
                 </div>
              
             <div className='notes'>
-                {sortedNotes.map((el, idx)=>{
+                
+                { this.state.notes.length > 0 &&
+                    sortedNotes.map((el, idx)=>{
                     return(     
                         <div className='note' key={`entry${idx}`}>
                             <div className='overline'>{el.date}</div>    
@@ -138,7 +140,11 @@ class AddNote extends Component {
                         </div>
 
                     )
-                })}    
+                })}  
+                {this.state.notes.length===0 && 
+                    <h3> Sorry, but you do not have any entries yet. Add a new note to get started. </h3>
+                } 
+                
             </div>
             
             </div>
