@@ -4,7 +4,6 @@
     margin-top: unset;
     padding-top: 200px;
     grid-template-rows: auto  auto minmax(25%, 90%) ;
-    // background-image: url('../img/home-page/monstera.jpeg');
     background-color: $blush;
     height: 950px;
     @include bp-large{

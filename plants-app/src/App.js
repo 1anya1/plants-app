@@ -148,7 +148,6 @@ handleClickExit = (e) => {
             </div>
             <div className={this.state.isToggleOn ? 'collapse mobile-nav' : 'show mobile-nav'}>
               <div className='nav'>
-               <div className='image'></div>
                 {links.map(createNavItem)}
                 { !this.state.isLoggedIn  && <>
                   <div className='mobile-login'>

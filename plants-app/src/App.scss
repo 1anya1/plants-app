@@ -1,15 +1,9 @@
 @import './index.scss';
-.mobile-login{
-    display: flex;
-    flex-direction: row;
-    margin-left: 10%;
-    
-}
 .log-in{
-    background-color: white;
-    border: 1px solid $gray;
+    background-color: $forest-green;
+    border: 1px solid $forest-green;
+    color: white;
     padding: 1rem 1.5rem;
-    color: $gray;
     transition: all .5s ease-in-out;
     border-radius: 3rem;
     &:hover, &:focus{
