@@ -118,7 +118,7 @@ class AddNote extends Component {
                 </div>
                 <DeleteModal delete={this.state.modal} deleteRoute={this.deleteRoute} cancelDelete={this.cancelDelete} />
                 <div className={this.state.newNote ? 'new-note show':' new-note hide'} >
-                    <NewNote userId={this.state.userId} id={this.state.id} handleNote = {this.handleNote} newNote={this.state.newNote} exitNote={this.closeNote} />
+                    <NewNote userId={this.state.userId} id={this.state.id} handleNote = {this.handleNote} newNote={this.state.newNote} closeNote={this.closeNote} />
                 </div>
              
             <div className='notes'>

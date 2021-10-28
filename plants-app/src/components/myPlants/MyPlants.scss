@@ -11,7 +11,6 @@
 .my-plants{
     padding-top: unset;
     .plant-links{
-        color: $gray;
         text-align: center;
         padding-bottom: 5rem;
         @include bp-medium{
@@ -22,7 +21,7 @@
            
         }
         a{
-            color: $peach;
+            color: $forest-green;
             margin-right: 5rem;
             &:last-child{
                 margin-right: unset;
@@ -58,7 +57,7 @@
             display: none
         }
     }
-    #add-plant{
+    #add-plant, #update-plant-form{
         display: flex;
         flex-direction: column;
         background-color: $blush;
@@ -135,6 +134,11 @@
             background-color: $peach;
         }
        
+    }
+    #update-plant-form{
+        width: 90%;
+        margin: 0 auto;
+        height: fit-content;
     }
     .all-plants{
       margin: 5rem 0;
