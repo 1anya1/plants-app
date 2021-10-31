@@ -147,20 +147,22 @@ handleClickExit = (e) => {
               <div className='bar three'></div>
             </div>
             <div className={this.state.isToggleOn ? 'collapse mobile-nav' : 'show mobile-nav'}>
-              {links.map(createNavItem)}
-              { !this.state.isLoggedIn  && <>
-              <div className='mobile-login'>
-                <a className='link' href='/signup'><button className='sign-up'>Sign Up</button></a>
-                <a  className='link' href='/login '><button className='log-in'>Log In</button></a>
+              <div className='nav'>
+                {links.map(createNavItem)}
+                { !this.state.isLoggedIn  && <>
+                  <div className='mobile-login'>
+                    <a className='link' href='/signup'><button className='sign-up'>Sign Up</button></a>
+                    <a  className='link' href='/login '><button className='log-in'>Log In</button></a>
+                  </div>
+                 </>
+                }
+                { this.state.isLoggedIn && <>
+                  <a className='link' href='/my-plants'> My Plants</a>
+                  <a className='link'  href='/' onClick={this.handleClickExit} >Log Out</a>
+                </>
+                }
               </div>
-               </>
-            }
-            { this.state.isLoggedIn && <>
-            <a className='link' href='/my-plants'> My Plants</a>
-            <a className='link'  href='/' onClick={this.handleClickExit} >Log Out</a>
-            </>
-            }
-              </div>
+            </div>
           </div>
         </nav>
         <Router>

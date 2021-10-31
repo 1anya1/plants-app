@@ -62,13 +62,13 @@ h4 {
   font-weight: 500;
   letter-spacing: 0.25px;
   @include bp-large{
-    font-size: 2.975rem;
+    font-size: 3
   }
   @include bp-medium{
     font-size: 2.5em;
   }
   @include bp-small{
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -254,13 +254,15 @@ input,select,textarea, label{
     -webkit-appearance: none;         
     -moz-appearance: none;
     appearance: none;
+    padding-left: 2rem;
     @include bp-large{
       font-size: 1.6rem;
     }
     @include bp-medium{
-      border-radius: 1rem;
+      // border-radius: 1rem;
+      padding-left: 2rem;
       height: 4rem;
-      padding: 0 1rem;
+      // padding: 0 1rem;
     }
 }
 option:disabled > select {

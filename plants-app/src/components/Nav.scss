@@ -88,39 +88,87 @@ nav{
             top: 0;
             right: 0;
             background-color: $blush;
+            background-image: url(../img/nav/leaf-outline.svg);
+            display: flex;
+            @include bp-medium{
+                width: 75vw;
+                align-items:center;
+            }
+            .nav{
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
             z-index: 1;
+            padding-left: 10%;
+            @include bp-small{
+                align-items: center;
+                padding-left: unset;
+            }
+           
             @include bp-medium{
                 width: 75vw;
-                align-items:center;
+                
             }
             .link{
                 display: unset;
-                margin: 0 0 1rem 15%;
-                font-size: 1.8rem;
+                margin: 0 0 1rem 0;
+                font-size: 2rem;
                 padding-left: unset;
                 @include bp-medium{
-                    font-size: 1.5rem;
+                    font-size: 1.8rem;
                     margin-left: unset;
                    
                 }
             }
             .mobile-login{
-                margin-left: 15%;
+                display: flex;
                 flex-direction: column;
                 margin-top: 1rem;
                 @include bp-medium{
                     margin-left: unset;
+                    width: 90%;
+                    margin: 1rem auto auto;
                 }
                 a{
                     margin:unset;
                     padding: unset;
                     button{
                         border-color: $forest-green;
+                        height: 5rem;
+                        border-radius: 3rem;
+                        width: 15rem;
+                        @include bp-medium{
+                            width: 100%;
+                        }
                     }
+                    .log-in{
+                        background-color: $forest-green;
+                        border: 1px solid $forest-green;
+                        color: $white;
+                        transition: all .5s ease-in-out;
+                        &:hover, &:focus{
+                            transition: all .5s ease-in-out;
+                            background-color: $peach;
+                            border-color: $peach; 
+                            color: white;
+                        }
+                    }
+                    .sign-up{
+                        background-color: $blush;
+                        border: 1px solid $forest-green;
+                        color: $forest-green;
+                        transition: all .5s ease-in-out;
+                        border-radius: 3rem;
+                        &:hover, &:focus{
+                            transition: all .5s ease-in-out;
+                            background-color: $peach;
+                            border-color: $peach;
+                            color: white;
+                        }
+                       
+                    }
+                    
                     &:last-child{
                         margin-top: 1rem;
                     }
@@ -128,6 +176,7 @@ nav{
                 
 
             }
+        }
         }
         .show{
             right: 0;
