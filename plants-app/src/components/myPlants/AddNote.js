@@ -142,7 +142,7 @@ class AddNote extends Component {
                     )
                 })}  
                 {this.state.notes.length===0 && 
-                    <h3> Sorry, but you do not have any entries yet. Add a new note to get started. </h3>
+                    <h4> Sorry, but you do not have any entries yet. Add a new note to get started. </h4>
                 } 
                 
             </div>
