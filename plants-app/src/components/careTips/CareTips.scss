@@ -98,15 +98,16 @@
     .paragraphs{
         padding-bottom: unset;
         .subtitle2{
-            color: $yellow;
+            color: $forest-green;
         }
-        h5{
+        h4{
             color: $gray;
             margin-bottom: 2rem;
         }
-        p{
+        h5{
             color: $gray;
             margin-bottom: 3rem;
+            font-weight: 300;
         }
     } 
 
