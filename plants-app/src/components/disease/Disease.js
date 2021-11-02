@@ -65,9 +65,9 @@ class Disease extends React.Component {
                                   
                                                 {/* <h5>{item.name}</h5> */}
                                                 <div className="subtitle2">Identification</div>
-                                                <p>{item.identification}</p>
+                                                <p className='text'>{item.identification}</p>
                                                 <div className="subtitle2">Treatment</div>
-                                                <p>{item.treatment}</p>
+                                                <p className='text'>{item.treatment}</p>
                                             </div>
                                             
                                     </div> 

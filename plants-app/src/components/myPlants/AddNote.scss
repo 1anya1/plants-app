@@ -72,6 +72,11 @@
     @include bp-small{
         grid-template-columns: 1fr;
     }
+    h4{
+        grid-column: 1/4;
+        text-align: center;
+        color: $gray;
+    }
   
 
     .note{
@@ -95,7 +100,7 @@
             padding: 0 3rem ;
             color: $gray;
         }
-        h4{
+        h5{
             margin-bottom: 2rem;
             padding: 0 3rem ;
             color: $forest-green;

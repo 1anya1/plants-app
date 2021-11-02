@@ -84,6 +84,9 @@
                 .content{
                     .subtitle2{
                         color: $forest-green;
+                        &:last-of-type{
+                            padding-top: 2rem;
+                        }
                     }
                 }
             }
@@ -100,7 +103,7 @@
                 // padding-top: 5rem;
                 margin-bottom: 3rem;
                 height: fit-content;
-                max-height: 500px;
+                max-height: 900px;
                 transition: max-height .5s ease-in-out, opacity 1s ease-in-out; 
                 opacity:1;
                 @include bp-small{

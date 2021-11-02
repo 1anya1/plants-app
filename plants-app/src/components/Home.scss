@@ -5,6 +5,7 @@
     padding-top: 200px;
     grid-template-rows: auto  auto minmax(25%, 90%) ;
     background-color: $blush;
+    background-image: url(../img/nav/leaf-outline.svg);
     height: 950px;
     @include bp-large{
         height: 800px;
@@ -56,6 +57,7 @@
         width: 45%;
         @include bp-large{
           justify-content: center; 
+          width: 100%;
         }
         @include bp-small{
           flex-direction:column;
@@ -85,8 +87,6 @@
           
           @include bp-small{
               max-width: unset;
-              height: 4rem;
-              
           }
         }
         #one{

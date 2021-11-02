@@ -80,9 +80,10 @@
             margin-bottom: 2rem;
             color: $gray;
         }
-        .subtitle{
+        .text{
             font-style:normal;
             color: $gray;
+            text-transform:capitalize;
         }
         .italic{
             font-style: italic;

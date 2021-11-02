@@ -5,6 +5,7 @@ import './AddNote.scss'
 // import logo from '../Images.js'
 import DeleteModal from '../modaDelete/ModalDelete.js'
 import NewNote from'../newNote/newNote.js'
+import moment from 'moment'
 
 class AddNote extends Component {
     constructor(props){
@@ -126,9 +127,8 @@ class AddNote extends Component {
                 { this.state.notes.length > 0 &&
                     sortedNotes.map((el, idx)=>{
                     return(     
-                        <div className='note' key={`entry${idx}`}>
-                            <div className='overline'>{el.date}</div>    
-                            <h4>Notes:</h4>
+                        <div className='note' key={`entry${idx}`}>  
+                            <h5>{(moment(el.date).format('MM/DD/YYYY'))}</h5>
                             <div className='todos'>
                             {el.water===true && <mySVG.Watering  />}
                             {el.fertilize===true && <mySVG.Fertilizer />}
@@ -142,7 +142,7 @@ class AddNote extends Component {
                     )
                 })}  
                 {this.state.notes.length===0 && 
-                    <h3> Sorry, but you do not have any entries yet. Add a new note to get started. </h3>
+                    <h4> Sorry, but you do not have any entries yet. Add a new note to get started. </h4>
                 } 
                 
             </div>

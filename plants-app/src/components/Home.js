@@ -82,7 +82,7 @@ class Home extends React.Component{
                             <h5>Keep track of your plants using our tracker. Add dates, notes, and photos that you can always refer back to.</h5>  
                             {this.props.isLoggedIn ?
                             <a href='/my-plants'><button className = 'home-button'>{this.props.username}'s Plants</button></a> :
-                            <a href='/plants'><button className = 'home-button'>Log In</button></a>
+                            <a href='/login'><button className = 'home-button'>Log In</button></a>
                             }
                             
                         </div>
