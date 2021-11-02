@@ -21,28 +21,28 @@ export default class Modal extends React.Component {
                         <h4 className='itemName'> {this.props.modal.name}</h4>
                         <div className='plant-spec'>
                             <div className='subtitle2'>Scientific Name</div>
-                            <div className='subtitle italic'>{this.props.modal.scientificName}</div>
+                            <div className='text italic'>{this.props.modal.scientificName}</div>
                             
                         </div>
                         <div className='plant-spec'>
                             <div className='subtitle2'>Height</div>
-                            <div className='subtitle'>{this.props.modal.height}</div>
+                            <div className='text'>{this.props.modal.height}</div>
                         </div>
                         <div className='plant-spec'>
                             <div className='subtitle2'>Temperature</div>
-                            <div className='subtitle'>{this.props.modal.temperature}</div> 
+                            <div className='text'>{this.props.modal.temperature}</div> 
                         </div>
                         <div className='plant-spec'>
                             <div className='subtitle2'>Humidity</div>
-                            <div className='subtitle'>{this.props.modal.humidity}</div>
+                            <div className='text'>{this.props.modal.humidity}</div>
                         </div>
                         <div className='plant-spec'>
                             <div className='subtitle2'>Pests</div>
-                            <div className='subtitle'>{this.props.modal.bugs}</div>
+                            <div className='text'>{this.props.modal.bugs}</div>
                         </div>
                         <ul>Common Issues:
                              {this.props.modal.issues.map(item => (
-                               <li className='subtitle' key={item}>{item}</li>
+                               <li className='text' key={item}>{item}</li>
                                    ))}
                         </ul>
                     </div>
