@@ -71,9 +71,9 @@ class Pests extends React.Component {
                                   
                                                 {/* <h5>{item.name}</h5> */}
                                                 <div className="subtitle2">Spot Them</div>
-                                                <p>{item.findThem}</p>
+                                                <p className='text'>{item.findThem}</p>
                                                 <div className="subtitle2">Treatment</div>
-                                                <p>{item.treatment}</p>
+                                                <p className='text'>{item.treatment}</p>
                                             </div>
                                             
                                     </div> 
