@@ -88,7 +88,7 @@ nav{
             top: 0;
             right: 0;
             background-color: $blush;
-            background-image: url(../img/nav/leaf-outline.svg);
+            // background-image: url(../img/nav/leaf-outline.svg);
             display: flex;
             @include bp-medium{
                 width: 75vw;
