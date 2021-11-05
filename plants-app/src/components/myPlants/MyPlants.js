@@ -90,7 +90,7 @@ class MyPlants extends React.Component {
       if(name === 'image.jpg'){
         name = `${Date.now().toString()}.jpg`
       }
-      uploadFile(e.target.files[0], config)
+      uploadFile(name, config)
       .then((data)=>{
         if(data.location !== ''){
           this.setState({
