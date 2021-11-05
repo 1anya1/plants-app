@@ -64,7 +64,6 @@ class UpdatePlant extends Component {
            .then(response => {
              if (response) {
                console.log('yay its been updated ')
-               this.closeUpdate()
                
              } else {
                this.setState({
@@ -74,15 +73,12 @@ class UpdatePlant extends Component {
            })
            .catch(error => console.log('api errors:', error))
           
-           
+           this.props.closeUpdate()
          };
          uploadImage=(e)=>{
             console.log('image upload is working')
             let name = e.target.files[0].name
-            if(name === 'image.jpg'){
-              name = `${Date.now().toString()}.jpg`
-            }
-            uploadFile(name, config)
+            uploadFile(e.target.files[0], config)
             .then((data)=>{
               if(data.location !== ''){
                 this.setState({

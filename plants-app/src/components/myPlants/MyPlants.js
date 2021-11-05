@@ -86,11 +86,7 @@ class MyPlants extends React.Component {
     imageUpload=(e)=>{
       console.log('image upload is working home page ')
       let name = e.target.files[0].name
-      console.log(name)
-      if(name === 'image.jpg'){
-        name = `${Date.now().toString()}.jpg`
-      }
-      uploadFile(name, config)
+      uploadFile(e.target.files[0], config)
       .then((data)=>{
         if(data.location !== ''){
           this.setState({
