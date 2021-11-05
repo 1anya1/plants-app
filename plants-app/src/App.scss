@@ -6,6 +6,7 @@
     padding: 1rem 1.5rem;
     transition: all .5s ease-in-out;
     border-radius: 3rem;
+    max-height: 5rem;
     &:hover, &:focus{
         transition: all .5s ease-in-out;
         background-color: $forest-green;
@@ -21,12 +22,13 @@
    
 }
 .sign-up{
-    background-color: unset;
+    background-color: white;
     border: 1px solid $forest-green;
     padding: 1rem 1.5rem;
     color: $forest-green;
     transition: all .5s ease-in-out;
     border-radius: 3rem;
+    max-height: 5rem;
     &:hover, &:focus{
         background-color: $blush;
         transition: all .5s ease-in-out;
