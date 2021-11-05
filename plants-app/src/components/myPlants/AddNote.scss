@@ -20,13 +20,26 @@
             &:last-child{
                 margin-right: unset;
             }
-            @include bp-small{
+            @include bp-medium{
                 display: flex;
                 flex-direction: row;
                 row-gap: 1rem;
                 margin: unset;
                 justify-content: center;
                 padding-bottom: 1rem;
+            }
+            button{
+                border: $forest-green 1px solid;
+                width: 40%;
+                transition: .5s ease-in-out;
+                @include bp-medium{
+                    width: 100%;
+                }
+                &:hover, &:active{
+                    background-color: $forest-green;
+                    color: white;
+                    transition: .5s ease-in-out;
+                }
             }
         }
 
@@ -56,7 +69,45 @@
     display: none;
 }
 
+#leger{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $forest-green;
+    padding: 2rem;
+    border-radius: 5rem;
+    width: fit-content;
+    .subtitle2{
+        align-self: center;
+        padding-bottom: 1rem;
+    }
+    .items{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        @include bp-small{
+            grid-template-columns: 1fr 1fr;
+        }
+       
+        .leger{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .overline{
+                color: $light-gray;
+                padding-bottom: 0;
+            }
+           svg{
+               height: 50px;
+               width: 50px;
+               path{
+                   fill: $light-gray;
+               }
 
+           }
+        }
+
+    }
+    
+}
    
 .notes{
     display: grid;
@@ -77,7 +128,7 @@
         text-align: center;
         color: $gray;
     }
-  
+    
 
     .note{
         border: $blush 1px solid;

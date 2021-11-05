@@ -82,22 +82,22 @@
           height: 7rem;
         
           @include bp-medium{
-            height: 5rem;
             border-radius: 3rem;
           }
           
           @include bp-small{
               max-width: unset;
+              height: 5rem;
           }
         }
         #one{
-          background-color: $forest-green;
-          border: 1px solid $forest-green;
-          color: $white;
+        border: 1px solid $peach;
+          background-color: white;
           &:hover, &:focus{
-              background-color: $white;
-              color: $gray;
-            }
+            background-color: $forest-green;
+            border-color: $forest-green;
+            color: white
+          }
           @include bp-x-large{
             margin-right: unset;
             
@@ -107,12 +107,14 @@
           }
         }
         #two{
-          border: 1px solid $peach;
-          background-color: $peach;
-          &:hover, &:focus{
-            background-color: $white;
+            background-color: $peach;
+            border: 1px solid $peach;
             color: $gray;
-          }
+            &:hover, &:focus{
+                background-color: $forest-green;
+                border-color: $forest-green;
+                color: white
+              }
           @include bp-x-large{
             margin-right: unset;
            
