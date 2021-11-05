@@ -22,17 +22,30 @@
         }
         a{
             color: $forest-green;
-            margin-right: 5rem;
+            margin-right:1rem;
+            text-decoration: unset;
             &:last-child{
                 margin-right: unset;
             }
-            @include bp-small{
+            @include bp-medium{
                 display: flex;
                 flex-direction: row;
                 row-gap: 1rem;
                 margin: unset;
                 justify-content: center;
                 padding-bottom: 1rem;
+            }
+            button{
+                width: 30%;
+                border: $peach 1px solid;
+                @include bp-medium{
+                    width: 100%;
+                }
+                &:hover, &:active{
+                    background-color: $peach;
+                    color: white;
+                    transition: .5s ease-in-out;
+                }
             }
         }
 
@@ -114,15 +127,13 @@
         button{ 
             margin: auto;
             margin-top: 2rem;
-            height: 4rem;
-            width: fit-content;
+            width: 50%;
             background-color: $peach;
             padding: 0 2rem; 
             bottom: 0;
             align-self: flex-end;
             position: relative;
             color: white;
-            border-radius: 3rem;
             @include bp-medium{
                 width: 100%;
             }

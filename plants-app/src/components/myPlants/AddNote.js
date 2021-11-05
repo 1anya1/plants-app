@@ -110,20 +110,42 @@ class AddNote extends Component {
                     <h2> Notes for {this.state.name}</h2>
                     <div className='subtitle'>All of your notes and progress</div>
                 </div>
-                <div className='image' ></div>
+                <div className='image' >
+                </div>
              </div>
             < div className='intro plant-logs'>
                 <div className='links'>
-                    <a href='/my-plants'>Back To {this.props.name}'s Plants</a>
-                    <a onClick={this.newNote}> Add New Note</a>
+                    <a href='/my-plants'><button >Back To {this.props.name}'s Plants</button></a>
+                    <a><button onClick={this.newNote}> Add New Note</button></a>
                 </div>
                 <DeleteModal delete={this.state.modal} deleteRoute={this.deleteRoute} cancelDelete={this.cancelDelete} />
                 <div className={this.state.newNote ? 'new-note show':' new-note hide'} >
                     <NewNote userId={this.state.userId} id={this.state.id} handleNote = {this.handleNote} newNote={this.state.newNote} exitNote={this.closeNote} />
                 </div>
+                {/* <div id='leger'>
+                    <div className='subtitle2'>Icon Leger</div>
+                    <div className='items'>
+                        <div className='leger'>
+                            <div className='overline'>Water</div>
+                            <mySVG.Watering  />
+                        </div>
+                        <div className='leger'>
+                            <div className='overline'>Ferltilize</div>
+                            <mySVG.Fertilizer />
+                        </div>
+                        <div className='leger'>
+                            <div className='overline'>Propagate</div>
+                            <mySVG.Propagating />
+                        </div>
+                        <div className='leger'>
+                            <div className='overline'>Repot</div>
+                            <mySVG.Repotting />
+                        </div>
+                    </div>
+                </div> */}
+                
              
             <div className='notes'>
-                
                 { this.state.notes.length > 0 &&
                     sortedNotes.map((el, idx)=>{
                     return(     

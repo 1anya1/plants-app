@@ -170,9 +170,9 @@ class MyPlants extends React.Component {
           </div>
           <div className='intro my-plants'>
             <div className='plant-links'>
-              <a href='#plants'>My Plants</a>
-              <a href='#add-plant'>Add New Plant</a>
-              <a href='#manage-plants'> Manage Plants</a>
+              <a href='#plants'><button>My Plants</button></a>
+              <a href='#add-plant'><button>Add New Plant</button></a>
+              <a href='#manage-plants'> <button>Manage Plants</button></a>
             </div>
             {this.state.modal &&
                 <DeleteModal delete={this.state.modal} deleteRoute={this.deleteRoute} cancelDelete={this.cancelDelete} />
