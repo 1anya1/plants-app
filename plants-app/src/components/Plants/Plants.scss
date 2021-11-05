@@ -35,6 +35,7 @@
     transition: background-color .5s ease-in-out;
     z-index: 1;
     display: flex;
+    
     .modal-card{
         animation: .5s fadeIn;
         margin:2rem;
@@ -43,6 +44,7 @@
         max-width: 500px;
         border-radius: 50px;
         margin-top: 100px ;
+        background: linear-gradient($peach 0%, white 50%);
         @include bp-medium{
             margin: 10% 0;
             border-radius: 30px;
@@ -64,6 +66,7 @@
             position: relative;
             @include bp-medium{
                  width: 90%;
+                 -webkit-mask-size: 85%;
             }
         }
                 
@@ -84,12 +87,16 @@
             font-style:normal;
             color: $gray;
             text-transform:capitalize;
+            margin-bottom: 0;
         }
         .italic{
             font-style: italic;
+            font-weight: 400;
+            letter-spacing: 0.15px;
         }
-        .subtitle2{
+        .overline{
             color: $forest-green;
+            padding-bottom: 0.5rem;
         }
         .plant-spec{
             padding: 1rem 0;
@@ -107,12 +114,6 @@
                 font-family: $body-font;
                 margin-bottom: unset;
                 text-transform: lowercase;
-                &:first-child{
-                    margin-top: 1.5rem;
-                }
-                &::marker{
-                    // color: $forest-green;
-                }
             }
         }
     }
@@ -133,14 +134,13 @@
     margin: 0 auto;
     @include bp-large{
         margin-top: 5rem;
-        // row-gap: 2rem;
-        // padding: 3rem;   
     }
     @include bp-medium{
         border-radius: 3rem 0;
     }
     @include bp-medium{
         border-radius: 3rem 0;
+        padding: 2rem;
     }
     h4{
         align-self: flex-start;
