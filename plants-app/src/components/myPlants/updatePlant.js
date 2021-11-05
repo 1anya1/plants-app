@@ -79,6 +79,10 @@ class UpdatePlant extends Component {
          uploadImage=(e)=>{
             console.log('image upload is working')
             let name = e.target.files[0].name
+            let name = e.target.files[0].name
+            if(name === 'image.jpg'){
+              name = `${Date.now().toString()}.jpg`
+            }
             uploadFile(e.target.files[0], config)
             .then((data)=>{
               if(data.location !== ''){
