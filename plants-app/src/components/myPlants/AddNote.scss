@@ -59,11 +59,14 @@
     flex-direction: column;
     align-content: center;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     transition: background-color .5s ease-in-out;
     z-index: 1;
     display: flex;
     border-radius: unset;
+    @include bp-medium{
+        justify-content: unset;
+    }
 }
 .hide{
     display: none;
