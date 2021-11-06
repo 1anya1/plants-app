@@ -44,7 +44,7 @@
         max-width: 500px;
         border-radius: 50px;
         margin-top: 100px ;
-        background: linear-gradient($peach 0%, white 50%);
+        // background: linear-gradient($peach 0%, white 50%);
         @include bp-medium{
             margin: 10% 0;
             border-radius: 30px;
@@ -53,14 +53,23 @@
     .image{
         overflow: hidden;
         position: relative;
-        padding-top: 5%;
+        background-color: $peach;
+        -webkit-mask-image: url('../../img/blob-modal.svg');
+        -webkit-mask-size: 62%;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        margin-top: 5%;
+        @include bp-medium{
+            width: 90%;
+            -webkit-mask-size: 85%;
+       }
         img{
             position: absolute;
             top: 0;
             -webkit-mask-image: url('../../img/blob-modal.svg');
             -webkit-mask-repeat: no-repeat;
-            -webkit-mask-position: top;
-            -webkit-mask-size: 95%;
+            -webkit-mask-position: center;
+            -webkit-mask-size: 85%;
             width: 65%;
             object-fit: cover;
             position: relative;
