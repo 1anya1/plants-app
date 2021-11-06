@@ -344,10 +344,10 @@ input::-webkit-date-and-time-value {
       }
       @include bp-medium{
           width: 47%;
-          border-radius: 3rem;
       }
       @include bp-small{
           width: 48%;
+          border-radius: 3rem;
          
       }
       @include bp-x-small{
