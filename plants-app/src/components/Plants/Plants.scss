@@ -44,7 +44,6 @@
         max-width: 500px;
         border-radius: 50px;
         margin-top: 100px ;
-        // background: linear-gradient($peach 0%, white 50%);
         @include bp-medium{
             margin: 10% 0;
             border-radius: 30px;
@@ -53,7 +52,7 @@
     .image{
         overflow: hidden;
         position: relative;
-        background-color: $peach;
+        background: linear-gradient($peach 0%, $blush 50%);
         -webkit-mask-image: url('../../img/blob-modal.svg');
         -webkit-mask-size: 62%;
         -webkit-mask-repeat: no-repeat;
