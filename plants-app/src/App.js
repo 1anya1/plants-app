@@ -45,7 +45,20 @@ class App extends Component {
   }
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll, { passive: true });
-    this.loginStatus()
+    // this.loginStatus()
+    if(localStorage.token){
+      axios.get('https://salty-peak-61296.herokuapp.com/logged_in', {withCredentials: true})
+      .then(response => {
+      if (response.data.logged_in) {
+    //   console.log(response.data)
+    //   this.handleLogin(response)
+    // } else {
+    //   this.handleLogout()
+    console.log(response)
+    }
+  })
+  .catch(error => console.log('api errors:', error))
+    }
   }
 
   handleClick() {
@@ -74,19 +87,9 @@ class App extends Component {
     }
   }
 }
-loginStatus = () => {
-  axios.get('https://salty-peak-61296.herokuapp.com/logged_in', {withCredentials: true})
-  .then(response => {
-    console.log(response)
-    if (response.data.logged_in) {
-      console.log(response.data)
-      this.handleLogin(response)
-    } else {
-      this.handleLogout()
-    }
-  })
-  .catch(error => console.log('api errors:', error))
-}
+// loginStatus = () => {
+  
+// }
 handleLogin = (response) => {
   console.log(response)
   this.setState({
@@ -97,7 +100,7 @@ handleLogin = (response) => {
   })
 }
 handleLogout = () => {
-  console.log('logged out')
+  localStorage.clear();
   this.setState({
   isLoggedIn: false,
   user: {},
@@ -116,8 +119,8 @@ handleClickExit = (e) => {
 }
 
   render() {
-   
-
+    console.log(this.state.isLoggedIn)
+    console.log(this.state.user_id)
     
     return (
      
