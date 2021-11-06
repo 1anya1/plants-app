@@ -32,7 +32,9 @@ handleSubmit = (event) => {
     axios.post('https://salty-peak-61296.herokuapp.com/login', {user}, {withCredentials: true})
     
     .then(response => {
+      console.log(response.data.token)
       if (response.data.logged_in) {
+        localStorage.token = response.data.token;
         this.props.handleLogin(response)
         this.redirect()
       } else {
