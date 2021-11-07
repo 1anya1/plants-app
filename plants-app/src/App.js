@@ -116,8 +116,8 @@ handleClickExit = (e) => {
 }
 
   render() {
-    console.log(this.state.isLoggedIn)
-    console.log(this.state.user_id)
+   
+
     
     return (
      

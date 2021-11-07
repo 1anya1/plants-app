@@ -200,6 +200,7 @@
       }
         .accordion{
             border: 1px solid $peach;
+           
             .title{
                 h4{
                     color: $gray;
@@ -217,6 +218,8 @@
                     padding-left: 1rem;
                     align-items: center;
                     row-gap: 3rem;
+                   
+                   
                     @include bp-large{
                         grid-template-columns: 1fr 1fr 1fr;
                     }
@@ -233,9 +236,10 @@
                         justify-content: space-between;
                         flex-direction: row;
                         flex-direction: column;
-                            justify-content: center;
-                            align-items: center;
-                            row-gap: 1rem;
+                        justify-content: center;
+                        align-items: center;
+                        row-gap: 1rem;
+                       
                         // @include bp-large{
                         //     max-width: unset;
                         //     width: 100%;

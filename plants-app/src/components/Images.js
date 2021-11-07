@@ -10,6 +10,8 @@ import {ReactComponent as Bugblob} from '../img/home-page/bug-blob.svg'
 import {ReactComponent as Todoblob} from '../img/home-page/todo-blob.svg'
 import {ReactComponent as Thrive} from '../img/home-page/thrive-blob.svg'
 import {ReactComponent as Checkmark} from '../img/checkmark.svg'
+import {ReactComponent as Github} from '../img/footer/github.svg'
+import {ReactComponent as LinkedIn} from '../img/footer/linkedin.svg'
 const logo = {
     Logo,
     Leaf, 
@@ -22,7 +24,9 @@ const logo = {
     Bugblob,
     Todoblob,
     Thrive,
-    Checkmark
+    Checkmark,
+    Github,
+    LinkedIn
 
 
 
