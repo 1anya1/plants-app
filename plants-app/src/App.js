@@ -53,7 +53,7 @@ class App extends Component {
       isToggleOn: !prevState.isToggleOn
     }));
   }
-  handleScroll(e){
+  handleScroll(){
     let currentScroll = window.scrollY;
     if(currentScroll < 100){
       this.setState({
