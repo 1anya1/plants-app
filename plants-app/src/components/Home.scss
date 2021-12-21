@@ -307,9 +307,9 @@
                 }
                 .home-button{
                     transition: all .5s ease-in-out;
-                    background-color: white;
-                    color: $gray;
+                    color: white; 
                     border: $forest-green solid 1px;
+                    background-color: $forest-green;
                     margin: 0 auto;
                     width: 100%;
                     max-width: 350px;
@@ -322,9 +322,9 @@
                     }
                     &:hover, &:focus{
                         transition: all .5s ease-in-out;
-                        background-color: $forest-green;
+                        background-color: white;
                         border: $forest-green solid 1px;
-                        color: white;
+                        color: $gray;
                     }
                 }
             }
@@ -407,8 +407,8 @@
                 }
                 .home-button{
                     transition: all .5s ease-in-out;
-                    background-color: white;
-                    color: $gray;
+                    background-color: $forest-green;
+                    color: white;
                     border: $forest-green solid 1px;
                     margin: 0 auto;
                     width: 100%;
@@ -422,9 +422,9 @@
                     }
                     &:hover, &:focus{
                         transition: all .5s ease-in-out;
-                        background-color: $forest-green;
+                        background-color: $white;
                         border: $forest-green solid 1px;
-                        color: white;
+                        color: $gray;
                     }
                 }
             }

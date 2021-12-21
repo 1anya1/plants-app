@@ -42,5 +42,7 @@
   },
   "devDependencies": {
     "babel-plugin-emotion": "^10.0.28"
-  }
+  },
+  "main": "index.js",
+  "license": "MIT"
 }
