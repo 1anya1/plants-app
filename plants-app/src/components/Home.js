@@ -3,9 +3,10 @@ import {Link} from 'react-router-dom'
 import './Home.scss'
 import './Nav.scss'
 import logo from './Images'
-
-import myData from './data/Homepage'
 class Home extends React.Component{
+    componentDidMount(){
+        window.scrollTo(0,0)
+    }
     render() {
         return (
             <>

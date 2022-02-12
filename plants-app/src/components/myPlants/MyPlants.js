@@ -33,8 +33,11 @@ class MyPlants extends React.Component {
         this.handleData = this.handleData.bind(this)
     }
     componentDidMount() {
-        this.handleData()
+      window.scrollTo(0,0)
+      this.handleData()
+        
     }
+ 
     handleData(){
         axios.get(`https://salty-peak-61296.herokuapp.com/users/${this.props.userId}`)
         .then(response => {

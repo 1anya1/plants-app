@@ -48,6 +48,7 @@ class App extends Component {
     window.addEventListener('scroll', this.handleScroll, { passive: true });
     this.loginStatus()
   }
+ 
 
   handleClick() {
     this.setState(prevState => ({

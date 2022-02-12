@@ -15,9 +15,11 @@ class Pests extends React.Component {
         }
         this.expand = this.expand.bind(this);
     }
+    componentDidMount(){
+        window.scrollTo(0,0)
+    }
     
     expand (item){
-        console.log(item.id)
         if(item.id===this.state.id){
             this.setState({
                 toggle: !this.state.toggle,
@@ -42,8 +44,6 @@ class Pests extends React.Component {
         
     }
     render() {
-    console.log(this.state.id)
-    console.log(this.state.cards)
         return (
             <>
             <div className="hero intro" id='pestPage' >

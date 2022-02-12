@@ -21,6 +21,7 @@ class Cards extends Component {
     this.handleChange = this.handleChange.bind(this) 
   }
   componentDidMount = () => {
+    window.scrollTo(0,0)
     this.setState({
         cards: this.props.cards,
         option: 'allPlants',
@@ -95,7 +96,6 @@ class Cards extends Component {
      {lowLight: 'Low Light Plants'},
      {hangingPlant: 'Hanging Plants'}
    ]
-   console.log(option)
 
     return (
       <>

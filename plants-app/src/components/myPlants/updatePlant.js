@@ -23,7 +23,9 @@ class UpdatePlant extends Component {
        }
     }
     componentDidMount() {
-        this.getData()
+      window.scrollTo(0,0)
+      this.getData()
+        
     }
     getData(){
         axios.get(`https://salty-peak-61296.herokuapp.com/users/${this.state.user_id}/todos/${this.state.plant_id}/edit`)
