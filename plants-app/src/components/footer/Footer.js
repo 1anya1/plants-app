@@ -1,6 +1,7 @@
 import React from 'react'
 import './footer.scss'
 import logo from '../Images'
+import {Link} from 'react-router-dom'
 const links = [
     { href: '/', text: 'Home' },
     { href: '/plants', text: 'Plants' },
@@ -10,7 +11,7 @@ const links = [
   ];
   
   const createNavItem = ({ href, text}) => (
-    <a className='link' key={href} href={href}>{text}</a>
+    <Link className='link' to={{pathname: href}}>{text}</Link>
   );
 
 class Footer extends React.Component{
@@ -24,7 +25,6 @@ handleLogout(e){
 }
 handleSubmit(e){
   e.preventDefault();
-  console.log(e.target.value)
 	fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSciDbFyUe4pagYagqgu1CQav8aLnTE-CQm7laSIfjEcem8ePg/formResponse', {
 		method: 'POST',
     mode: 'no-cors', 
@@ -36,13 +36,11 @@ handleSubmit(e){
 		body: new FormData(e.target),
 	}).then(function (response) {
 		if (response.ok) {
-      console.log(response.json())
 			return response.json();
       
 		}
 		return Promise.reject(response);
 	}).then(function (data) {
-		console.log(data);
 	}).catch(function (error) {
 		console.warn(error);
 	});
@@ -51,7 +49,6 @@ handleSubmit(e){
 
     
     render() {
-      console.log(this.props.handleLogout)
         return (
           <footer>
             <div className='links intro'>
@@ -61,12 +58,12 @@ handleSubmit(e){
               <div className='login-links'>
                 {this.props.isLoggedIn ? 
                 <>
-                  <a className='link' href='/my-plants'>My Plants</a>
-                  <a className='link' href='/' onClick={this.handleLogout}> Log Out</a>
+                <Link className='link' to={{pathname: '/my-plants'}}>My Plants</Link>
+                <a className='link'  href='/' onClick={this.handleLogout} >Log Out</a>
                 </> :
                 <>
-                  <a className='link' href='/login'>Log In</a>
-                  <a className='link' href='/signup'>Sign Up</a>
+                  <Link className='link' to={{pathname: '/login'}}>Log In</Link>
+                  <Link className='link' to={{pathname: '/signup'}}>Sign Up</Link>
                 </>  
               }
               </div>

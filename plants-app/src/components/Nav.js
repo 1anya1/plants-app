@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import logo from './Logo'
 import Registration from './Registration'
+import {Link } from 'react-router-dom'
 
 const links = [
     { href: '/', text: 'Home' },
@@ -10,9 +11,9 @@ const links = [
     {href:'/care-tips', text: 'Care Tips'}
   ];
 const origin = window.location.origin;
-console.log(origin)
-  
+
   const createNavItem = ({ href, text}) => (
+    // <Link to={{href}}>(text)</Link>
     <a className='link' key={href} href={`http://localhost:3000${href}`}>{text}</a>
   );
 class Nav extends Component{
