@@ -88,7 +88,6 @@ class MyPlants extends React.Component {
       };
 
     imageUpload=(e)=>{
-      console.log('image upload is working home page ')
       let name = e.target.files[0].name
       uploadFile(e.target.files[0], config)
       .then((data)=>{
@@ -118,7 +117,6 @@ class MyPlants extends React.Component {
       document.body.style.overflow = "unset";
     }
     deletePlant=(event)=>{
-      console.log(event)
       const id = event.target.value
       this.setState({
           modal: true,
@@ -128,7 +126,6 @@ class MyPlants extends React.Component {
       
   }
   updatePlant=(event)=>{
-    console.log(event)
     const id = event.target.value
     this.setState({
         id: id,
@@ -209,7 +206,7 @@ class MyPlants extends React.Component {
                   {this.state.plants.map((el, idx)=>{
                     return <div className='card' key={el.id}>
                       <div className = 'image'>
-                        <img  className="img" key={el.url} src={el.url} />
+                        <img alt='' className="img" key={el.url} src={el.url} />
                       </div>
                       <h5 key={idx}>{el.title}</h5>
                       

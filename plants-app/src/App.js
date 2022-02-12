@@ -13,6 +13,7 @@ import Signup from './components/registrations/Signup'
 import MyPlants  from './components/myPlants/MyPlants.js'
 import AddNote from './components/myPlants/AddNote.js'
 import logo from './components/Images'
+import history from './history.js'
 
 const links = [
   { href: '/', text: 'Home' },
@@ -101,13 +102,13 @@ handleLogout = () => {
   user: {},
   user_id: null
   })
+  history.push('/')
 } 
 handleClickExit = (e) => {
   e.preventDefault()
   axios.delete('https://salty-peak-61296.herokuapp.com/logout', {withCredentials: true})
   .then(response => {
     this.handleLogout()
-    this.history.push('/')
   })
   .catch(error => console.log(error))
 }

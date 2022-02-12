@@ -46,15 +46,15 @@ class Cards extends Component {
         modal: null
       });
       document.body.style.overflow = "unset";
-      document.querySelector('nav').classList.add('show-nav')
-      document.querySelector('nav').classList.remove('hide-nav')
+      nav.classList.add('show-nav')
+      nav.classList.remove('hide-nav')
     } else{
       this.setState({
         modal: card
       });
       document.body.style.overflow = "hidden";
-      document.querySelector('nav').classList.remove('show-nav')
-      document.querySelector('nav').classList.add('hide-nav')
+      nav.classList.remove('show-nav')
+      nav.classList.add('hide-nav')
     }
       
   }

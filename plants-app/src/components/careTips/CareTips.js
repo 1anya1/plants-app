@@ -27,7 +27,7 @@ class CareTips extends React.Component{
             <div className='care-list'>
                 {Object.keys(mySVG).map((el,idx)=>{
                     const Component = mySVG[el]
-                    const Data = careTips[careType[idx]]
+                
                     return (
                     <>
                         <a href={ `#${careType[idx]}`} >

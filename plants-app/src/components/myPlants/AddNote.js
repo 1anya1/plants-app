@@ -32,7 +32,6 @@ class AddNote extends Component {
          if(response.data){
              for(let i=0; i<response.data.todos.length; i++){
                  if(response.data.todos[i].id === this.state.id){
-                     console.log(response.data.todos[i].plants)
                     this.setState({
                         notes: response.data.todos[i].plants
                     })
@@ -96,14 +95,12 @@ class AddNote extends Component {
       
     render(){
      
-        console.log(this.state.notes.length)
         let sortedNotes = this.state.notes.sort((a,b)=>{
             var c = new Date(a.date);
             var d = new Date(b.date);
             return d-c;
         });
          
-        console.log(sortedNotes)
         return(
             <>
             <div className="hero intro" id='plant-logs' >

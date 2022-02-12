@@ -15,7 +15,6 @@ class DeleteModal extends Component {
         this.props.deleteRoute(this.props.delete)
     }
     render(){
-        console.log(this.props.delete)
         return(
             <div className='modal' className={this.props.delete ? 'modal modal-show' : 'modal'}>
             <div className='delete-modal-contnet'>

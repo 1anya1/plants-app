@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import './updatePlant.scss'
-import { FaPlus, FaFileImage } from "react-icons/fa";
+import { FaFileImage } from "react-icons/fa";
 import {uploadFile} from 'react-s3'
 
 const config = {
@@ -81,6 +81,7 @@ class UpdatePlant extends Component {
             console.log('image upload is working')
             let name = e.target.files[0].name
             const newName = new Date().getTime() + e.target.files[0].name;  
+            console.log(newName)
             uploadFile(e.target.files[0], config)
             .then((data)=>{
               console.log(data)

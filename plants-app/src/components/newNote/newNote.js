@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../Images.js'
 import mySVG from '../data/Svg'
 import axios from 'axios'
 import './newNote.scss'
