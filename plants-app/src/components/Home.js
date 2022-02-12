@@ -5,8 +5,6 @@ import './Nav.scss'
 import logo from './Images'
 
 import myData from './data/Homepage'
-
-console.log(myData.Part1)
 class Home extends React.Component{
     render() {
         return (
@@ -18,10 +16,10 @@ class Home extends React.Component{
                  </div>
                  <div className='buttons'>
                  {this.props.isLoggedIn ?
-                        <a href='/my-plants'><button id='one'>{`${this.props.username}'s Plants`}</button></a> :
-                        <a href='/login'><button id='one'>Log In</button></a>
+                  <Link to={{pathname: '/my-plants'}}><button id='one'>{`${this.props.username}'s Plants`}</button></Link>:
+                  <Link to={{pathname: '/login'}}><button id='one'>Log In</button></Link>
                  }
-                        <a href='/plants'><button id='two'>Plant Care</button></a>                   
+                 <Link to={{pathname: '/plants'}}><button id='two'>Plant Care</button></Link>                
                 </div>
                 <div className='image'></div>
             </div>
@@ -41,36 +39,36 @@ class Home extends React.Component{
                         </ul>
                     </div>
                     <div className='cards'>
-                        <a href='/plants'>
+                        <Link to={{pathname: '/plants'}}>
                         <div className='section'>
                             <logo.Leafblob/>
                             <h6>Discover</h6>
                         </div>
-                        </a>
-                        <a href='/pests'>
+                        </ Link>
+                        <Link to={{pathname: '/pests'}}>
                         <div className='section'>
                             <logo.Bugblob/>
                             <h6>Identify</h6>
                         </div>
-                        </a>
-                        <a href='/login'>
+                        </Link>
+                        <Link to={{pathname: '/login'}}>
                         <div className='section'>
                             <logo.Todoblob/>
                             <h6>Track</h6>
                         </div>
-                        </a>
-                        <a href='care-tips'>
+                        </Link>
+                        <Link to={{pathname: '/care-tips'}}>
                         <div className='section'>
                             <logo.Thrive/>
                             <h6>Thrive</h6>
                         </div>
-                        </a>
+                        </Link>
                     </div>
                     <h3 className='header'>Our plant library contains the most popular housepalnts.</h3>
                     <div className='plants-cta'>
                         <div className='info'>
                             <h5>Keeping plants around the house isn’t as scary as you might think; you just need to know what they like in order to keep your indoor garden both happy and greens</h5>  
-                            <a href='/plants'><button className = 'home-button'>Discover House Plants</button></a>
+                            <Link to={{pathname: '/plants'}}><button className = 'home-button'>Discover House Plants</button></Link>
                         </div>
                         <div className='plants-image'>
                         </div>
@@ -81,8 +79,8 @@ class Home extends React.Component{
                         <div className='info'>
                             <h5>Keep track of your plants using our tracker. Add dates, notes, and photos that you can always refer back to.</h5>  
                             {this.props.isLoggedIn ?
-                            <a href='/my-plants'><button className = 'home-button'>{this.props.username}'s Plants</button></a> :
-                            <a href='/login'><button className = 'home-button'>Log In</button></a>
+                            <Link to={{pathname: '/my-plants'}}><button className = 'home-button'>{this.props.username}'s Plants</button></Link> :
+                            <Link to={{pathname: '/login'}}><button className = 'home-button'>Log In</button></Link>
                             }
                             
                         </div>

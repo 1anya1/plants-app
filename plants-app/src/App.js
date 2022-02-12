@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.scss';
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { Switch, Route, Link} from "react-router-dom";
 import Home from './components/Home'
 import Disease from './components/disease/Disease'
 import Plants from './components/Plants/Plants'
@@ -13,6 +13,7 @@ import Signup from './components/registrations/Signup'
 import MyPlants  from './components/myPlants/MyPlants.js'
 import AddNote from './components/myPlants/AddNote.js'
 import logo from './components/Images'
+
 const links = [
   { href: '/', text: 'Home' },
   { href: '/plants', text: 'Plants' },
@@ -22,7 +23,7 @@ const links = [
 ];
 
 const createNavItem = ({ href, text}) => (
-  <a className='link' key={href} href={href}>{text}</a>
+  <Link className='link' to={{pathname: href}}>{text}</Link>
 );
 
 class App extends Component {
@@ -53,7 +54,7 @@ class App extends Component {
       isToggleOn: !prevState.isToggleOn
     }));
   }
-  handleScroll(e){
+  handleScroll(){
     let currentScroll = window.scrollY;
     if(currentScroll < 100){
       this.setState({
@@ -77,9 +78,7 @@ class App extends Component {
 loginStatus = () => {
   axios.get('https://salty-peak-61296.herokuapp.com/logged_in', {withCredentials: true})
   .then(response => {
-    console.log(response)
     if (response.data.logged_in) {
-      console.log(response.data)
       this.handleLogin(response)
     } else {
       this.handleLogout()
@@ -88,7 +87,6 @@ loginStatus = () => {
   .catch(error => console.log('api errors:', error))
 }
 handleLogin = (response) => {
-  console.log(response)
   this.setState({
     isLoggedIn: true,
     user: response.data.user,
@@ -97,7 +95,6 @@ handleLogin = (response) => {
   })
 }
 handleLogout = () => {
-  console.log('logged out')
   this.setState({
   isLoggedIn: false,
   user: {},
@@ -108,7 +105,6 @@ handleClickExit = (e) => {
   e.preventDefault()
   axios.delete('https://salty-peak-61296.herokuapp.com/logout', {withCredentials: true})
   .then(response => {
-    console.log(response)
     this.handleLogout()
     this.history.push('/')
   })
@@ -116,27 +112,25 @@ handleClickExit = (e) => {
 }
 
   render() {
-   
-
-    
     return (
      
-      <main className={this.state.isToggleOn ? null : 'noscroll' } onScroll={console.log('scrolling')}>
+      <main className={this.state.isToggleOn ? null : 'noscroll' } >
         { !this.state.isToggleOn &&
         <div id='overlay'></div>
         }
         <nav className={this.state.navShow}>
-          <a href='/' className='logo'> <logo.Logo /></a>
+          <Link className='logo' to={{pathname: '/'}}><logo.Logo /></Link> 
           <div className='menu' >
             {links.map(createNavItem)}
             { !this.state.isLoggedIn  && <>
-              <a className='link' href='/signup'><button className='sign-up'>Sign Up</button></a>
-              <a  className='link' href='/login'><button className='log-in'>Log In</button></a>
+              <Link className='link'to={{pathname: '/signup'}}><button className='sign-up'>Sign Up</button></Link>
+              <Link className='link 'to={{pathname: '/login'}}><button className='log-in'>Log In</button></Link>
                </>
             }
             { this.state.isLoggedIn && <>
-            <a className='link' href='/my-plants'> My Plants</a>
-            <a className='link'  href='/' onClick={this.handleClickExit} >Log Out</a>
+              <Link className='link' to={{pathname: '/my-plants'}}>My Plants</Link>
+              {/* <Link lassName='link' to= {{pathname:"/", state: {onClick: this.handleClickExit} }}>Log Out</Link>  */}
+              <a className='link'  href='/' onClick={this.handleClickExit} >Log Out</a>
             </>
             }
          </div>
@@ -151,13 +145,14 @@ handleClickExit = (e) => {
                 {links.map(createNavItem)}
                 { !this.state.isLoggedIn  && <>
                   <div className='mobile-login'>
-                    <a className='link' href='/signup'><button className='sign-up'>Sign Up</button></a>
-                    <a  className='link' href='/login '><button className='log-in'>Log In</button></a>
+                    <Link className='link' to={{pathname: '/signup'}}><button className='sign-up'>Sign Up</button></Link>
+                    <Link className='link' to={{pathname: '/login'}}><button className='log-in'>Log In</button></Link>
                   </div>
                  </>
                 }
                 { this.state.isLoggedIn && <>
-                  <a className='link' href='/my-plants'> My Plants</a>
+                  <Link className = 'link' to={{pathname: '/my-plants'}}>My Plants</Link>
+                  {/* <Link lassName='link' to= {{pathname:"/", state: {onClick: this.handleClickExit} }}>Log Out</Link>  */}
                   <a className='link'  href='/' onClick={this.handleClickExit} >Log Out</a>
                 </>
                 }
@@ -165,7 +160,6 @@ handleClickExit = (e) => {
             </div>
           </div>
         </nav>
-        <Router>
         <Switch>
           <Route path={'/diseases'} render={()=> <Disease />}/>
           <Route path={'/plants'} render={()=> <Plants />}/>
@@ -189,7 +183,6 @@ handleClickExit = (e) => {
           } 
           <Route path={'/'} render={()=> <Home isLoggedIn={this.state.isLoggedIn} username={this.state.username} /> }/>
         </Switch>
-        </Router>
         <Footer  isLoggedIn={this.state.isLoggedIn} handleLogout={this.handleClickExit} />
       </main>
     );
