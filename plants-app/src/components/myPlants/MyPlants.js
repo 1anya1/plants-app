@@ -7,6 +7,7 @@ import DeleteModal from '../modaDelete/ModalDelete'
 import UpdatePlant from './updatePlant'
 import { FaPlus, FaFileImage } from "react-icons/fa";
 
+
 const config = {
   bucketName: 'plantly-user-uploads',
   region: 'us-west-1',

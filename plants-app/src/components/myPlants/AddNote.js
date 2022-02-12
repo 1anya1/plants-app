@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import mySVG from '../data/Svg'
 import './AddNote.scss'
-// import logo from '../Images.js'
 import DeleteModal from '../modaDelete/ModalDelete.js'
 import NewNote from'../newNote/newNote.js'
 import moment from 'moment'
+import {Link} from 'react-router-dom'
 
 class AddNote extends Component {
     constructor(props){
@@ -115,7 +115,7 @@ class AddNote extends Component {
              </div>
             < div className='intro plant-logs'>
                 <div className='links'>
-                    <a href='/my-plants'><button >Back To {this.props.name}'s Plants</button></a>
+                    <Link to={{pathname: '/my-plants'}}><button >Back To {this.props.name}'s Plants</button></Link>
                     <a><button onClick={this.newNote}> Add New Note</button></a>
                 </div>
                 <DeleteModal delete={this.state.modal} deleteRoute={this.deleteRoute} cancelDelete={this.cancelDelete} />

@@ -11,7 +11,7 @@ const links = [
   ];
   
   const createNavItem = ({ href, text}) => (
-    <Link className='link' to={{pathname: href}}>{text}</Link>
+    <Link className='link' key={href} to={{pathname: href}}>{text}</Link>
   );
 
 class Footer extends React.Component{
