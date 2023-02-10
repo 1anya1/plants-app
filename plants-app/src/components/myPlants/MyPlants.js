@@ -205,7 +205,7 @@ class MyPlants extends React.Component {
                   {this.state.plants.map((el, idx)=>{
                     return <div className='card' key={el.id}>
                       <div className = 'image'>
-                        <img  className="img" key={el.url} src={el.url} />
+                        <img alt={el.id} className="img" key={el.url} src={el.url} />
                       </div>
                       <h5 key={idx}>{el.title}</h5>
                       

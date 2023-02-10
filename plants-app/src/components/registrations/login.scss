@@ -5,7 +5,7 @@
     grid-template-columns: 55% 45%;
     align-items: center;
     @include bp-x-large{
-        display: unset;
+        display: block;
     }
 
     #login{

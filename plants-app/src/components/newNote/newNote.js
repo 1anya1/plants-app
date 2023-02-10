@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../Images.js'
 import mySVG from '../data/Svg'
 import axios from 'axios'
 import './newNote.scss'
@@ -110,7 +109,7 @@ class NewNote extends Component {
                     onChange={this.handleInputChange}
                     checked={this.state.water}
                 />
-                <label className='option' htmlFor="watered" className={this.state.water ? 'clicked' : null} ><mySVG.Watering /></label>
+                <label  htmlFor="watered" className={`${this.state.water ? 'clicked' : ''} option`} ><mySVG.Watering /></label>
             </div>
             <div className='care-type'>
                 <input
@@ -120,7 +119,7 @@ class NewNote extends Component {
                     onChange={this.handleInputChange}
                     checked={this.state.fertilize}
                 />
-                <label className='option'  htmlFor="fertilize" className={this.state.fertilize ? 'clicked' : null}><mySVG.Fertilizer /></label>
+                <label htmlFor="fertilize" className={`${this.state.fertilize ? 'clicked' : ''} option`}><mySVG.Fertilizer /></label>
                 
             </div>
              <div className='care-type'>
@@ -131,7 +130,7 @@ class NewNote extends Component {
                     onChange={this.handleInputChange}
                     checked={this.state.prune}
                 /> 
-                <label className='option'  htmlFor="prune" className={this.state.prune ? 'clicked' : null}><mySVG.Propagating /></label>
+                <label   htmlFor="prune" className={`${this.state.prune ? 'clicked' : ''} option`}><mySVG.Propagating /></label>
             </div>
             <div className='care-type'>
                 <input
@@ -141,7 +140,7 @@ class NewNote extends Component {
                     onChange={this.handleInputChange}
                     checked={this.state.repot}
                 />
-                <label className='option'  htmlFor="repot"  className={this.state.repot ? 'clicked' : null} ><mySVG.Repotting/></label>
+                <label  htmlFor="repot" className={`${this.state.repot ? 'clicked' : ''} option`}  ><mySVG.Repotting/></label>
             </div>
             </div>
             <textarea

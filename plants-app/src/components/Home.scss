@@ -1,461 +1,428 @@
-@import '../index.scss';
+@import "../index.scss";
 
-#home{
-    margin-top: unset;
-    padding-top: 200px;
-    grid-template-rows: auto  auto minmax(25%, 90%) ;
-    background-color: $blush;
-    background-image: url(../img/nav/leaf-outline.svg);
-    height: 1100px;
-    @include bp-large{
-        height: 950px;
-        padding-top: 150px;
+#home {
+  margin-top: unset;
+  //   background-image: linear-gradient(to right, #4e3cc775 0%, #f582aea3 100%);
+  //   background-image: linear-gradient(to right, #4e3cc754 0%, #f582aebd 100%);
+  background-image: linear-gradient(to right, #4e3cc736 0%, #f582ae5e 100%);
+  padding-top: 170px;
+  padding-top: 170px;
+  position: relative;
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include bp-large {
+    padding-top: 100px;
+  }
+  @include bp-medium {
+    padding-top: 80px;
+  }
+
+  .content {
+    margin-bottom: 5rem;
+    width: "100% !important";
+
+    h2 {
+      width: 65%;
+      //   text-shadow: 2px -1px 2px #3a3a3a;
+      font-weight: 600;
+      text-align: left !important;
+      @include bp-medium {
+        width: unset;
+      }
     }
-    @include bp-medium{
-      height: 850px;
-      padding-top: 100px;
-  
+    h6 {
+      width: 50%;
     }
-    @include bp-small{
-        height: 800px;
+  }
+
+  .cta-hero {
+    width: fit-content;
+
+    max-width: 300px;
+    @include bp-small {
+      width: 100%;
+      max-width: unset;
     }
-    .image{
-        background-image: url('../img/hero/home-image.svg');
-        grid-column: 1/3 ;
-        grid-row: 3/4;
+  }
+  button {
+    padding: 0 2rem;
+    margin-right: 2rem;
+    width: 100%;
+    max-width: 300px;
+    color: $gray;
+    border-radius: 5rem;
+    height: 6rem;
+    background-color: $forest-green;
+    border: 1px solid $forest-green;
+    color: $white;
+    cursor: poiner;
+    &:hover,
+    &:focus {
+      background-color: $forest-green;
+      border-color: $forest-green;
+      color: white;
+      opacity: 0.7;
+    }
+    @include bp-x-large {
+      margin-right: unset;
     }
 
-    .content{
-        grid-column: 1/3;
-        grid-row: 1/2;
-        @include bp-large{
-            top: 15%;
-        }
-        @include bp-medium{
-            margin-bottom: 5rem;
-        }
-        h2{
-            max-width: 1200px;
-            width: 80%;
-            @include bp-large{
-                width: unset;
-            }
-        }
-        
+    @include bp-medium {
+      border-radius: 3rem;
     }
-    .buttons{
-        grid-column: 1/3;
-        grid-row: 2/3;
-        display: flex;
-        flex-direction: row;
-        column-gap: 1rem;
-        align-items: center;
-        padding-bottom: 5rem;
-        width: 100%;
-    
-        @include bp-large{
-          justify-content: center; 
-          width: 100%;
+
+    @include bp-small {
+      max-width: unset;
+      height: 5rem;
+    }
+  }
+}
+.lottie-plant {
+  height: auto;
+  width: 45vw;
+  max-width: 500px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 250px;
+}
+
+.home {
+  .subtitle {
+    font-style: normal;
+  }
+  h3 {
+    color: $gray;
+    margin: 5rem 0 7rem 0;
+    text-align: center;
+    font-weight: 400;
+
+    @include bp-large {
+      margin: 2rem 0 5rem 0;
+    }
+    @include bp-medium {
+      margin: 0 0 3rem 0;
+    }
+  }
+  .benefits {
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 5vw;
+      justify-content: space-evenly;
+      align-items: start;
+      justify-items: center;
+      align-items: center;
+      padding: 0;
+      list-style-type: none;
+      max-width: 1500px;
+      justify-content: center;
+      margin: 0 auto;
+      row-gap: 2rem;
+      max-width: 1300px;
+      @include bp-large {
+        justify-items: end;
+      }
+
+      @include bp-small {
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+        justify-items: center;
+      }
+      li {
+        width: 90%;
+        @include bp-medium {
+          text-align: center;
+          text-transform: capitalize;
         }
-        @include bp-small{
-          flex-direction:column;
-          width: 100%;
-          margin: 0 auto;
-          padding-bottom: 3rem;
-        } 
-        a{
-            width: fit-content;
-            width: 45%;
-            max-width: 300px;
-            @include bp-small{
-                width: 100%;
-                max-width: unset;
-                
-            }
+        @include bp-small {
+          font-size: 1.8rem;
         }
-        button{
-          padding: 0 2rem;
-          margin-right: 2rem;
-          width: 100%;
-          color: $gray;
-          border-radius: 5rem;
-          height: 7rem;
-        
-          @include bp-medium{
-            border-radius: 3rem;
-          }
-          
-          @include bp-small{
-              max-width: unset;
-              height: 5rem;
-          }
-        }
-        #one{
-        border: 1px solid $peach;
-          background-color: white;
-          &:hover, &:focus{
-            background-color: $forest-green;
-            border-color: $forest-green;
-            color: white
-          }
-          @include bp-x-large{
-            margin-right: unset;
-            
-          }
-          @include bp-small{
-              margin-bottom: 1.5rem;
-          }
-        }
-        #two{
-            background-color: $peach;
-            border: 1px solid $peach;
-            color: $gray;
-            &:hover, &:focus{
-                background-color: $forest-green;
-                border-color: $forest-green;
-                color: white
-              }
-          @include bp-x-large{
-            margin-right: unset;
-           
+        svg {
+          margin-right: 1rem;
+          path {
+            stroke: $peach;
           }
         }
       }
-}
-.home{
-    .subtitle{
-        font-style: normal;
     }
-    h3{
-        color: $gray;
-        margin: 5rem 0 7rem 0;
-        text-align: center;
-        font-weight: 400;
-    
-        @include bp-large{
-            margin: 2rem 0 5rem 0;
-        }
-        @include bp-medium{
-            margin: 0 0 3rem 0;
-        }
+  }
+  .cards {
+    display: flex;
+    column-gap: 2rem;
+    justify-content: center;
+    padding: 15rem 0;
+    @include bp-large {
+      padding: 10rem 0;
+      flex-direction: row;
+      flex-wrap: wrap;
+      row-gap: 2rem;
+      width: 85%;
+      margin: 0 auto;
     }
-    .benefits{ 
-        ul{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            column-gap: 5vw;
-            justify-content: space-evenly;
-            align-items: start;
-            justify-items: center;
-            align-items: center;
-            padding:0;
-            list-style-type:none;
-            max-width: 1500px;
-            justify-content: center;
-            margin: 0 auto;
-            row-gap: 2rem;
-            max-width: 1300px;
-            @include bp-large{
-                justify-items: end ;
-            }
-           
-            @include bp-small{
-                grid-template-columns: 1fr;
-                row-gap: 1rem;
-                justify-items: center;
-            }
-            li{
-                width: 90%;
-                @include bp-medium{
-                    text-align: center;
-                    text-transform: capitalize;
-                  
-                }
-                @include bp-small{
-                    font-size: 1.8rem;
-                }
-                svg{
-                    margin-right: 1rem;
-                    path{
-                        stroke: $peach;
-                    }
-                    
-                }
-              
-            }
-        }
-    }   
-    .cards{
+    @include bp-medium {
+      padding: 7rem 0;
+    }
+    @include bp-small {
+      padding: 5rem 0;
+      width: 100%;
+    }
+
+    a {
+      border: 1px solid $gray;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      align-items: stretch;
+      border-radius: 5rem;
+      width: 22%;
+      height: auto;
+      max-width: 300px;
+      max-height: 300px;
+      text-decoration: unset;
+      &:hover,
+      &:focus,
+      &:active {
+      }
+      @include bp-large {
+        border-radius: 3rem;
+        width: 45%;
+        max-height: 300px;
+        max-width: 260px;
+      }
+      @include bp-medium {
+        width: 45%;
+        margin: 0 auto;
+      }
+      @include bp-x-small {
+        width: 80%;
+      }
+      .section {
         display: flex;
-        column-gap: 2rem;
-        justify-content: center;
-        padding: 15rem 0;
-        @include bp-large{
-            padding: 10rem 0;
-            flex-direction: row;
-            flex-wrap: wrap;
-            row-gap: 2rem;
-            width: 85%;
-            margin: 0 auto;
+        flex-direction: column;
+        align-items: center;
+        max-height: 300px;
+        &:hover,
+        &:focus,
+        &:active {
+          svg {
+            animation: shake 1s infinite;
+            animation-timing-function: linear;
+          }
         }
-        @include bp-medium{
-            padding: 7rem 0 ;
+        svg {
+          width: 80%;
+          height: auto;
+          max-height: 200px;
+          @include bp-small {
+            max-height: 150px;
+          }
         }
-        @include bp-small{
-            padding: 5rem 0 ;
+        h6 {
+          text-transform: uppercase;
+          color: $gray;
+          align-self: bottom;
+          position: relative;
+          margin-top: auto;
+        }
+      }
+    }
+  }
+  .header {
+    margin-top: unset;
+    padding-top: 0;
+    @include bp-large {
+      margin-bottom: 3rem;
+    }
+    @include bp-small {
+      margin-bottom: 2rem;
+    }
+  }
+  .plants-cta {
+    display: grid;
+    grid-template-columns: 0.75fr 1fr;
+    align-items: center;
+    @include bp-large {
+      grid-template-columns: 1fr;
+    }
+    .plants-image {
+      background-image: url("../img/home-page/plants-page.png");
+      height: 40vw;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: right;
+      @include bp-large {
+        height: 75vw;
+      }
+    }
+    .info {
+      @include bp-large {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 4rem;
+      }
+      @include bp-medium {
+        padding-bottom: 5rem;
+      }
+      a {
+        @include bp-small {
+          width: 100%;
+        }
+        .home-button {
+          transition: all 0.5s ease-in-out;
+          color: white;
+          border: $forest-green solid 1px;
+          background-color: $forest-green;
+          margin: 0 auto;
+          width: 100%;
+          max-width: 350px;
+          @include bp-large {
+            width: 350px;
+          }
+          @include bp-small {
+            max-width: unset;
             width: 100%;
+          }
+          &:hover,
+          &:focus {
+            transition: all 0.5s ease-in-out;
+            background-color: white;
+            border: $forest-green solid 1px;
+            color: $gray;
+          }
         }
-        
-        a{
-            border: 1px solid $gray;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            align-items: stretch;
-            border-radius: 5rem;
-            width: 22%;
-            height: auto;
-            max-width: 300px;
-            max-height: 300px;
-            text-decoration: unset;
-            &:hover, &:focus, &:active{ 
-            }
-            @include bp-large{
-                border-radius: 3rem;
-                width: 45%;
-                max-height: 300px;
-                max-width: 260px;
-            }
-            @include bp-medium{
-                width: 45%;
-                margin: 0 auto;
-            }
-            @include bp-x-small{
-                width: 80%;
-            }
-            .section{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                max-height: 300px;
-                &:hover, &:focus, &:active{ 
-                    svg{
-                        animation: shake 1s infinite;
-                        animation-timing-function: linear;   
-                    }
-                  }
-                svg{
-                    width: 80%;
-                    height:auto;
-                    max-height: 200px;
-                    @include bp-small{
-                        max-height: 150px;
-                    }
-                 }
-                 h6{
-                     text-transform: uppercase;
-                     color: $gray;
-                     align-self: bottom;
-                     position: relative;
-                     margin-top: auto;
-                 }
-            }
+      }
+      h5 {
+        text-transform: none;
+        padding-bottom: 5rem;
+        color: $gray;
+        font-weight: 400;
+        @include bp-large {
+          padding-bottom: 2rem;
+          width: 90%;
+          text-align: center;
         }
-       
+        @include bp-medium {
+          width: 100%;
+          padding-bottom: 5rem;
+        }
+      }
     }
-    .header{
-        margin-top: unset;
-        padding-top: 0;
-        @include bp-large{
-            margin-bottom: 3rem;
-        }
-        @include bp-small{
-            margin-bottom:2rem;
-        }
+  }
+  .quote {
+    font-size: 5rem;
+    font-family: "Raleway";
+    border-top: 1px $peach-dark solid;
+    border-bottom: 1px $peach-dark solid;
+    color: $peach-dark;
+    padding: 2rem 0;
+    font-weight: 500;
+    margin: 15rem auto;
+    text-align: center;
+    @include bp-large {
+      margin: 10rem 0;
     }
-    .plants-cta{
-        display: grid;
-        grid-template-columns: .75fr 1fr;
+    @include bp-medium {
+      font-size: 3.5rem;
+      margin: 7rem auto;
+    }
+    @include bp-small {
+      padding: 5rem 0;
+    }
+  }
+  .tracker-cta {
+    display: grid;
+    grid-template-columns: 1fr 0.75fr;
+    align-items: center;
+    @include bp-large {
+      grid-template-columns: 1fr;
+    }
+    .plants-image {
+      grid-column: 1/2;
+      grid-row: 1;
+      background-image: url("../img/home-page/tracker-cta.png");
+      height: 40vw;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: left;
+      @include bp-large {
+        height: 75vw;
+        grid-column: unset;
+        grid-row: unset;
+        background-position: center;
+      }
+    }
+    .info {
+      grid-column: 2/3;
+      @include bp-large {
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        @include bp-large{
-            grid-template-columns: 1fr;
+        padding-bottom: 4rem;
+        grid-column: unset;
+      }
+      @include bp-medium {
+        padding-bottom: 5rem;
+      }
+      a {
+        @include bp-small {
+          width: 100%;
         }
-        .plants-image{
-            background-image: url('../img/home-page/plants-page.png');
-            height: 40vw;
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: right;
-            @include bp-large{
-                height: 75vw;
-            }
+        .home-button {
+          transition: all 0.5s ease-in-out;
+          background-color: $forest-green;
+          color: white;
+          border: $forest-green solid 1px;
+          margin: 0 auto;
+          width: 100%;
+          max-width: 350px;
+          @include bp-large {
+            width: 350px;
+          }
+          @include bp-small {
+            max-width: unset;
+            width: 100%;
+          }
+          &:hover,
+          &:focus {
+            transition: all 0.5s ease-in-out;
+            background-color: $white;
+            border: $forest-green solid 1px;
+            color: $gray;
+          }
         }
-        .info{
-            @include bp-large{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                padding-bottom: 4rem;
-            }
-            @include bp-medium{
-                padding-bottom: 5rem;
-            }
-            a{
-                @include bp-small{
-                    width: 100%;
-                }
-                .home-button{
-                    transition: all .5s ease-in-out;
-                    color: white; 
-                    border: $forest-green solid 1px;
-                    background-color: $forest-green;
-                    margin: 0 auto;
-                    width: 100%;
-                    max-width: 350px;
-                    @include bp-large{
-                        width: 350px;
-                    }
-                    @include bp-small{
-                        max-width: unset;
-                        width: 100%;
-                    }
-                    &:hover, &:focus{
-                        transition: all .5s ease-in-out;
-                        background-color: white;
-                        border: $forest-green solid 1px;
-                        color: $gray;
-                    }
-                }
-            }
-            h5{
-                text-transform: none;
-                padding-bottom: 5rem;
-                color: $gray;
-                font-weight: 400;
-                @include bp-large{
-                    padding-bottom: 2rem;
-                    width: 90%;
-                    text-align: center;
-                }
-                @include bp-medium{
-                    width: 100%;
-                    padding-bottom: 5rem;
-                }
-                
-            }
+      }
+      h5 {
+        text-transform: none;
+        padding-bottom: 5rem;
+        color: $gray;
+        font-weight: 400;
+        @include bp-large {
+          padding-bottom: 2rem;
+          width: 90%;
+          text-align: center;
         }
+        @include bp-medium {
+          width: 100%;
+          padding-bottom: 5rem;
+        }
+      }
     }
-    .quote{
-        font-size: 5rem;
-        font-family: 'Raleway';
-        border-top: 1px $peach-dark solid;
-        border-bottom: 1px $peach-dark solid;
-        color: $peach-dark;
-        padding: 2rem 0;
-        font-weight: 500;
-        margin: 15rem auto;
-        text-align: center;
-        @include bp-large{
-            margin: 10rem 0;
-        }
-        @include bp-medium{
-            font-size: 3.5rem;
-            margin:7rem auto;
-        }
-        @include bp-small{
-            padding: 5rem 0 ;
-        }
-    }
-    .tracker-cta{
-        display: grid;
-        grid-template-columns:  1fr .75fr;
-        align-items: center;
-        @include bp-large{
-            grid-template-columns: 1fr;
-        }
-        .plants-image{
-            grid-column: 1/2;
-            grid-row: 1;
-            background-image: url('../img/home-page/tracker-cta.png');
-            height: 40vw;
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: left;
-            @include bp-large{
-                height: 75vw;
-                grid-column: unset;
-                grid-row: unset;
-                background-position: center;
-            }
-        }
-        .info{
-            grid-column: 2/3;
-            @include bp-large{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                padding-bottom: 4rem;
-                grid-column: unset;
-            }
-            @include bp-medium{
-                padding-bottom: 5rem;
-            }
-            a{
-                @include bp-small{
-                    width: 100%;
-                }
-                .home-button{
-                    transition: all .5s ease-in-out;
-                    background-color: $forest-green;
-                    color: white;
-                    border: $forest-green solid 1px;
-                    margin: 0 auto;
-                    width: 100%;
-                    max-width: 350px;
-                    @include bp-large{
-                        width: 350px;
-                    }
-                    @include bp-small{
-                        max-width: unset;
-                        width: 100%;
-                    }
-                    &:hover, &:focus{
-                        transition: all .5s ease-in-out;
-                        background-color: $white;
-                        border: $forest-green solid 1px;
-                        color: $gray;
-                    }
-                }
-            }
-            h5{
-                text-transform: none;
-                padding-bottom: 5rem;
-                color: $gray;
-                font-weight: 400;
-                @include bp-large{
-                    padding-bottom: 2rem;
-                    width: 90%;
-                    text-align: center;
-                }
-                @include bp-medium{
-                    width: 100%;
-                    padding-bottom: 5rem;
-                }
-                
-            }
-        }
-    }
+  }
 }
 
-  
-  @keyframes shake {
-    0% { transform: rotate(10deg); }
-    50% { transform: rotate(-10deg); }
-    100% { transform: rotate(10deg); }
+@keyframes shake {
+  0% {
+    transform: rotate(10deg);
   }
-    
-        
-           
-            
-        
+  50% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}

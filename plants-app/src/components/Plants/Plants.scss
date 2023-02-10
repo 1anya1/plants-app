@@ -1,227 +1,276 @@
-@import '../../index.scss';
+@import "../../index.scss";
 
-
-#plant-search{
-    .image{
-        background-image: url('../../img/hero/plants-hero-image.svg');
-    }
-   
-    @include bp-large{
-        height: 675px;
-    }
-    @include bp-medium{
-        height: 532px;
-    }
-    @include bp-small{
-        height: 472px;
-    }
+#plant-search {
+  height: fit-content;
+  .image {
+    background-image: url("../../img/hero/plants-hero-image.svg");
+  }
 }
 
-.modal{
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    max-width: 100vw;
-    background-color:rgba(46, 44, 47, .6);
-    overflow: scroll;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    justify-content: space-between;
-    transition: background-color .5s ease-in-out;
-    z-index: 1;
-    display: flex;
-    
-    .modal-card{
-        animation: .5s fadeIn;
-        margin:2rem;
-        background-color: white;
-        width: 90%;
-        max-width: 500px;
-        border-radius: 50px;
-        margin-top: 100px ;
-        @include bp-medium{
-            margin: 10% 0;
-            border-radius: 30px;
-        }
-    }
-    .image{
-        overflow: hidden;
-        position: relative;
-        background: linear-gradient($peach 0%, $blush 50%);
-        -webkit-mask-image: url('../../img/blob-modal.svg');
-        -webkit-mask-size: 62%;
-        -webkit-mask-repeat: no-repeat;
-        -webkit-mask-position: center;
-        margin-top: 5%;
-        @include bp-medium{
-            width: 90%;
-            -webkit-mask-size: 85%;
-       }
-        img{
-            position: absolute;
-            top: 0;
-            -webkit-mask-image: url('../../img/blob-modal.svg');
-            -webkit-mask-repeat: no-repeat;
-            -webkit-mask-position: center;
-            -webkit-mask-size: 85%;
-            width: 65%;
-            object-fit: cover;
-            position: relative;
-            @include bp-medium{
-                 width: 90%;
-                 -webkit-mask-size: 85%;
-            }
-        }
-                
-    }
-        
+.modal {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  max-width: 100vw;
+  background-color: rgba(46, 44, 47, 0.6);
+  overflow: scroll;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.5s ease-in-out;
+  z-index: 1;
+  display: flex;
 
-       
-
-    .plant-info{
-        width: 80%;
-        margin: 0 auto;
-        padding: 3rem 0;
-        h4{
-            margin-bottom: 2rem;
-            color: $gray;
-        }
-        .text{
-            font-style:normal;
-            color: $gray;
-            text-transform:capitalize;
-            margin-bottom: 0;
-        }
-        .italic{
-            font-style: italic;
-            font-weight: 400;
-            letter-spacing: 0.15px;
-        }
-        .overline{
-            color: $forest-green;
-            padding-bottom: 0.5rem;
-        }
-        .plant-spec{
-            padding: 1rem 0;
-        }
-        ul{
-            padding-left: unset;
-            color: $gray;
-            margin-top: unset;
-            padding: 1rem 0;
-            color: $forest-green;
-            li{
-                list-style: inside;
-                margin-top: .5rem;
-                color: $gray;
-                font-family: $body-font;
-                margin-bottom: unset;
-                text-transform: lowercase;
-            }
-        }
-    }
-}
-.hide{
-  
-    top: -100%;
-    background-color:rgba(46, 44, 47, 0);
-    transition: background-color 10s ease-in-out;
-
-}
-.search-menu{
-    background-color: $blush;
-    border-radius: 5rem 0rem;
-    padding: 4rem;
-    margin-top: 10rem;
+  .modal-card {
+    animation: 0.5s fadeIn;
+    margin: 2rem;
+    background-color: white;
     width: 90%;
+    max-width: 650px;
+    border-radius: 50px;
+    margin-top: 100px;
+    @include bp-medium {
+      margin: 10% 0;
+      border-radius: 30px;
+    }
+  }
+  .image {
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(#4e3cc76e 0%, #f582aeb5 100%);
+    -webkit-mask-image: url("../../img/blob-modal.svg");
+    -webkit-mask-size: 47%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    margin-top: 5%;
+    @include bp-medium {
+      width: 90%;
+      -webkit-mask-size: 85%;
+    }
+    img {
+      position: absolute;
+      top: 0;
+      -webkit-mask-image: url("../../img/blob-modal.svg");
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      -webkit-mask-size: 67%;
+      width: 65%;
+      object-fit: cover;
+      position: relative;
+      @include bp-medium {
+        width: 90%;
+        -webkit-mask-size: 85%;
+      }
+    }
+  }
+
+  .plant-info {
+    width: 80%;
     margin: 0 auto;
-    @include bp-large{
-        margin-top: 5rem;
+    padding: 3rem 0;
+    h4 {
+      margin-bottom: 2rem;
+      color: $gray;
     }
-    @include bp-medium{
-        border-radius: 3rem 0;
+    .text {
+      font-style: normal;
+      color: $gray;
+      text-transform: capitalize;
+      margin-bottom: 0;
     }
-    @include bp-medium{
-        border-radius: 3rem 0;
-        padding: 2rem;
+    .italic {
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: 0.15px;
     }
-    h4{
-        align-self: flex-start;
+    .overline {
+      color: $forest-green;
+      padding-bottom: 0.5rem;
+      font-size: 16px;
+    }
+    .plant-spec {
+      padding: 1rem 0;
+    }
+    ul {
+      padding-left: unset;
+      color: $gray;
+      margin-top: unset;
+      padding: 1rem 0;
+      color: $forest-green;
+      li {
+        list-style: inside;
+        margin-top: 14px;
         color: $gray;
-        margin-bottom: 3rem;
+        font-family: $body-font;
+        margin-bottom: unset;
+        text-transform: lowercase;
+      }
+      li::marker {
+        // content: '🌱  ';
+        content: "🪴";
+        font-size: 1.2em;
+        color: $gray;
+        padding-left: 2rem;
+      }
     }
-.search{
+  }
+  .button {
+    border: 1px solid $forest-green;
+    background-color: $forest-green;
+    color: white;
+    width: 80%;
     display: flex;
+    justify-content: center;
     align-items: center;
-    flex-direction: row;
-    column-gap: 4rem;
-    margin-top: 0;
-    @include bp-large{
-        flex-direction: column;
-        row-gap: 2rem;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    &:hover {
+      opacity: 0.7;
     }
-    .search-bar{
-        width: 100%;
-        position: relative;
-        input{
-            margin-bottom: 0;
-            padding: 0 8rem 0;
-            @include bp-medium{
-                padding: 0 6rem 0;
-            }
-        }
-        svg{
-            position: absolute;
-            left: 0;
-            height: 30px;
-            width: 30px;
-            top: 50%;
-            transform: translate(0, -50%);
-            margin-left: 3rem;
-            @include bp-medium{
-                height: 20px;
-                width: 20px;
-             
-            }
-           
-        }
-
-    }
-    .dropDown{
-        width: 100%;
-        position: relative;
-        select{
-            margin-bottom: 0;
-            padding-left: 3rem;
-        }
-        svg{
-            position: absolute;
-            right: 0;
-            height: 30px;
-            width: 30px;
-            top: 50%;
-            transform: translate(0, -50%);
-            margin-right: 3rem;
-            @include bp-medium{
-                height: 20px;
-                width: 20px;
-            }
-        }
-
-    }
+  }
 }
+.hide {
+  top: -100%;
+  background-color: rgba(46, 44, 47, 0);
+  transition: background-color 10s ease-in-out;
+}
+.search-menu {
+  padding-bottom: 2rem;
+  .search {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 1rem;
+
+    @include bp-small {
+      flex-direction: column;
+    }
+
+    .search-bar {
+      width: 100%;
+      position: relative;
+      border: 1px solid $gray;
+      max-width: 500px;
+      border-radius: 35px;
+      @include bp-small {
+        max-width: unset;
+      }
+      input {
+        height: 50px;
+        margin-bottom: 0;
+        padding: 0 40px 0;
+        @include bp-medium {
+          height: 35px;
+        }
+      }
+
+      svg {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        margin-left: 14px;
+        height: 20px;
+        width: 20px;
+      }
+    }
+    .options {
+      height: 50px;
+      width: 220px;
+      display: flex;
+      justify-items: center;
+      align-items: center;
+      justify-content: space-between;
+      @include bp-medium {
+        height: 35px;
+      }
+      @include bp-small {
+        width: 100%;
+      }
+    }
+    .dropDown {
+      position: relative;
+      border: 1px solid $gray;
+      border-radius: 35px;
+      @include bp-small {
+        width: 100%;
+      }
+
+      select {
+        margin-bottom: 0;
+        padding-left: 3rem;
+        height: 50px;
+      }
+      .input {
+        margin-bottom: 0;
+        padding-left:20px;
+        font-weight: 600;
+      }
+      svg {
+        height: 24px;
+        width: 24px;
+        margin-right: 20px;
+      }
+    }
+    .option {
+      padding: 10px 0px 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 14px;
+      margin-bottom: 0;
+    }
+    .active-dropdown {
+      display: flex;
+      height: 136px;
+      flex-direction: column;
+      position: absolute;
+      z-index: 10;
+      background-color: white;
+      width: 100%;
+      transition: 0.5s opacity ease-in-out;
+      opacity: 1;
+      top: -1px;
+      left: -1px;
+      width: 101%;
+      border: $gray 1px solid;
+      border-radius: 20px;
+      overflow: hidden;
+
+      .active-key {
+        background-color: #d9d3e9;
+        &:hover {
+          background-color: #bcbcbc29;
+        }
+      }
+      .inactive-key {
+        background-color: white;
+        &:hover {
+          background-color: #bcbcbc29;
+        }
+      }
+    }
+    .inactive-dropdown {
+      display: none;
+      opacity: 0;
+      transition: 0.5s opacity ease-in-out;
+      height: 0px;
+    }
+  }
+}
+.allPlants {
+  padding-top: 0 !important;
 }
 
 @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  0% {
+    opacity: 0;
   }
+  100% {
+    opacity: 1;
+  }
+}

@@ -14,6 +14,7 @@
         flex-direction: column;
         width: 100%;
         row-gap: 2rem;
+        padding-top:0;
         .active{
             padding-top: 2rem;
         }
@@ -29,10 +30,10 @@
                     }
                 }    
            }
-           #disease-card{
+           .disease-card{
                display: grid;
                grid-template-columns: 350px 1fr;
-               align-items: center;
+               align-items: start;
                @include bp-large{
                 grid-template-columns: 250px 1fr;
                }
@@ -75,13 +76,18 @@
                        height: 100%;
                        z-index:0;
                        top: 0;
-                       mask-image: url('../../img/outline.svg');
-                        mask-size: contain;
-                        mask-repeat: no-repeat;
-                        mask-position: center;
+                    //    mask-image: url('../../img/outline.svg');
+                    //     mask-size: contain;
+                    //     mask-repeat: no-repeat;
+                    //     mask-position: center;
                     }
                 }
                 .content{
+                    .title{
+                        h5{
+                            color:$gray;
+                        }
+                    }
                     .subtitle2{
                         color: $forest-green;
                         &:last-of-type{

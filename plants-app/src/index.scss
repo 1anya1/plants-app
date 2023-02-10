@@ -8,5 +8,24 @@ body {
 
   
 }
+main{
+  max-width: 2000px;
+  margin: 0 auto;
+  
+ 
+  padding-top:100px;
+  @include bp-large {
+   
+   
+    padding-top: 70px;
+  }
+  @include bp-medium {
+    padding-top: 60px;
+  }
+  
+}
+.homepage{
+  padding-top:0;
+}
 
 

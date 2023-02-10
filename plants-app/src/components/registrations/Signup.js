@@ -29,6 +29,7 @@ handleSubmit = (event) => {
     }
 axios.post('https://salty-peak-61296.herokuapp.com/users', {user}, {withCredentials: true})
     .then(response => {
+      console.log({response})
       if (response.data.status === 'created') {
         this.props.handleLogin(response)
         this.redirect()
@@ -38,7 +39,8 @@ axios.post('https://salty-peak-61296.herokuapp.com/users', {user}, {withCredenti
         })
       }
     })
-    .catch(error => console.log('api errors:', error))
+    .catch(error => 
+      console.log('api errors:', error))
   };
 redirect = () => {
     this.props.history.push('/')

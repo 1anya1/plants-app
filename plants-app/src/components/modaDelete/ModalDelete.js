@@ -17,7 +17,7 @@ class DeleteModal extends Component {
     render(){
         console.log(this.props.delete)
         return(
-            <div className='modal' className={this.props.delete ? 'modal modal-show' : 'modal'}>
+            <div  className={this.props.delete ? 'modal modal-show' : 'modal'}>
             <div className='delete-modal-contnet'>
             <h4>Are you sure you want to delete this?</h4>
             < logo.Plant />

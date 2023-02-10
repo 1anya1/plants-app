@@ -1,114 +1,34 @@
-@import '../../index.scss';
-#care-tips{
-    .image{
-        background-image: url('../../img/hero/care-tips-hero-image.svg');
-    }
-   
-}
-.care-tips{
-    .careHeading{
-       text-align: center;
-    }
-    .care-list{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        justify-items: start;
-        margin: 0 auto;
-        row-gap: 1rem;
-        column-gap: 1rem;
-        width: 90%;
-        padding-bottom: 3rem;
-        a{
-           text-decoration: none;
-           border: $forest-green solid 1px;
-           width: 100%;
-           padding: 1rem 0;
-           border-radius: 5rem;
-           transition: all .5s ease-in-out;
-           &:hover, &:active, &:focus{
-            transition: all .5s ease-in-out;
-            background-color: $yellow;
-            border-color: $yellow;
-            h6{
-                color: $white;
-            }
-            }
-            @include bp-large{
-                padding: unset;
-            }
-        }
-        @include bp-large{
-            padding: 3rem 0;
-            display: flex;
-            flex-direction: row;
-            overflow: hidden;
-            overflow: scroll;
-            &::-webkit-scrollbar { 
-                display: none;  
-            }
-        }
-        .symbols{
-           
-            @include bp-large{
-                border-radius: 4rem;
-                padding: 1rem 2rem;
-            }
-        
-       
-        
-        .care{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            svg{
-                height: 4rem;
-                width: 4rem;
-                @include bp-large{
-                    height: 3rem;
-                    width: 3rem;
+@import "../../index.scss";
 
-                }
-                g{
-                    fill: $forest-green;
-                    transition: fill .5s ease-in-out;
-                }
-                path{
-                    fill: $forest-green;
-                    transition: fill .5s ease-in-out;
-                }
-               
-            }
-            h5{
-                color: $forest-green;
-                margin-bottom: unset;
-                margin-left: 1em;
-                font-size: 1.8rem ;
-                @include bp-large{
-                    font-size: 1.4rem ;
-                   
-                }
-            }
-    
-        }
-
+.care-tips {
+    padding-top: 0 !important;
+  .careHeading {
+    text-align: center;
+  }
+  .care-list{
+    padding-bottom:40px;
+    @include bp-medium{
+        padding-bottom:20px;
        }
-        
-    }
-    .paragraphs{
-        padding-bottom: unset;
-        .subtitle2{
-            color: $forest-green;
-        }
-        h4{
-            color: $gray;
-            margin-bottom: 2rem;
-        }
-        h5{
-            color: $gray;
-            margin-bottom: 3rem;
-            font-weight: 300;
-        }
-    } 
+  }
+  .paragraphs {
+    padding-bottom: 20px;
 
+    .subtitle2 {
+      color: $forest-green;
+      font-weight: 600;
+    }
+
+    h6 {
+      color: $gray;
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    h5 {
+      color: $gray;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+  }
 }

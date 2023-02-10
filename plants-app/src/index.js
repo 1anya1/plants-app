@@ -7,7 +7,7 @@ import history from './history.js'
 
 
 
-ReactDOM.render( <Router history={history}>
+ReactDOM.render( <Router history={history}  >
     <App />
 </Router>, document.getElementById('root'));
 

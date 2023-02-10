@@ -116,7 +116,8 @@ class AddNote extends Component {
             < div className='intro plant-logs'>
                 <div className='links'>
                     <a href='/my-plants'><button >Back To {this.props.name}'s Plants</button></a>
-                    <a><button onClick={this.newNote}> Add New Note</button></a>
+                    {/* TODO - removed anchor tag around this buuton  */}
+                    <button onClick={this.newNote}> Add New Note</button>
                 </div>
                 <DeleteModal delete={this.state.modal} deleteRoute={this.deleteRoute} cancelDelete={this.cancelDelete} />
                 <div className={this.state.newNote ? 'new-note show':' new-note hide'} >
