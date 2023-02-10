@@ -3,6 +3,7 @@ import Modal from "./Modal";
 import { FaSistrix } from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa";
 
+
 class Cards extends Component {
   constructor(props) {
     super(props);
@@ -76,6 +77,7 @@ class Cards extends Component {
         );
       });
     });
+    console.log(filteredData)
     const myData = filteredData.map((card, id) => (
       <div
         className="card"
@@ -87,7 +89,7 @@ class Cards extends Component {
           <img
             className="img"
             loading="lazy"
-            src={require("../../img/plants/" + card.img).default}
+            src={`./static/images/plants/${card.img}`}
             alt={card.name}
           ></img>
         </div>

@@ -4,7 +4,7 @@ import "./Home.scss";
 import "./Nav.scss";
 import logo from "./Images";
 import { Player } from "@lottiefiles/react-lottie-player";
-import plantImage from "../img/lottie/plant.json";
+import plantImage from "../img/lottie/plant.json"
 
 class Home extends React.Component {
   constructor(props) {
