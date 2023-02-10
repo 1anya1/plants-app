@@ -1,3 +1,5 @@
 
 [build]
  base = "plants-app/"
+ publish = "plants-app//public/"
+ command = "npm run build"
