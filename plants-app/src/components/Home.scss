@@ -18,11 +18,10 @@
   }
   @include bp-small {
     padding-top: 0;
-    height:max-content;
-    min-height:450px;
-    padding:100px 3% 40px 3%;
-    justify-content: flex-end
-    
+    height: max-content;
+    min-height: 450px;
+    padding: 100px 3% 40px 3%;
+    justify-content: flex-end;
   }
 
   .content {
@@ -37,9 +36,8 @@
       @include bp-medium {
         width: unset;
       }
-      @include bp-small{
+      @include bp-small {
         font-size: 32px;
-        
       }
     }
     h6 {
@@ -49,8 +47,7 @@
         width: 65%;
       }
       @include bp-small {
-        width:100%
-      
+        width: 100%;
       }
     }
   }
@@ -111,10 +108,9 @@
     max-width: unset;
     height: 100%;
     min-width: 500px;
-   
   }
-  @include bp-small{
-    position:absolute;
+  @include bp-small {
+    position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
@@ -164,22 +160,27 @@
         grid-template-columns: 1fr;
         row-gap: 1rem;
         justify-items: center;
+        padding-left: 20px;
       }
       li {
         width: 90%;
+        padding-left: 10px;
+        text-transform: capitalize;
+        font-size: 24px;
         @include bp-medium {
-          text-align: center;
-          text-transform: capitalize;
+          // text-align: center;
+          // text-transform: capitalize;
+          font-size: 20px;
         }
         @include bp-small {
           font-size: 1.8rem;
         }
-        svg {
-          margin-right: 1rem;
-          path {
-            stroke: $peach;
-          }
-        }
+      }
+      li::marker {
+        content: "🌱";
+
+        font-size: 1.4em;
+        color: $gray;
       }
     }
   }
@@ -187,21 +188,19 @@
     display: flex;
     column-gap: 2rem;
     justify-content: center;
-    padding: 15rem 0;
+    padding: 80px 0;
     @include bp-large {
-      padding: 10rem 0;
       flex-direction: row;
       flex-wrap: wrap;
       row-gap: 2rem;
-      width: 85%;
       margin: 0 auto;
+      padding: 60px 0;
     }
-    @include bp-medium {
-      padding: 7rem 0;
-    }
+  
     @include bp-small {
-      padding: 5rem 0;
-      width: 100%;
+      row-gap: 1rem;
+      column-gap: 1rem;
+      padding: 40px 0;
     }
 
     a {
@@ -223,16 +222,15 @@
       }
       @include bp-large {
         border-radius: 3rem;
-        width: 45%;
         max-height: 300px;
         max-width: 260px;
       }
       @include bp-medium {
-        width: 45%;
         margin: 0 auto;
+        // width: 24%;
       }
-      @include bp-x-small {
-        width: 80%;
+      @include bp-small {
+        width: calc(50% - 5px);
       }
       .section {
         display: flex;
@@ -261,6 +259,9 @@
           align-self: bottom;
           position: relative;
           margin-top: auto;
+          @include bp-small {
+            font-size: 14px;
+          }
         }
       }
     }
@@ -283,7 +284,7 @@
       grid-template-columns: 1fr;
     }
     .plants-image {
-      background-image: url("../img/home-page/plants-page.png");
+      background-image: url("https://res.cloudinary.com/dwz87zxoy/image/upload/v1676090917/plants-cover_ijwzrp.png");
       height: 40vw;
       background-repeat: no-repeat;
       background-size: contain;

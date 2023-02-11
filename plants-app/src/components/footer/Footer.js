@@ -50,7 +50,7 @@ handleSubmit(e){
     
     render() {
         return (
-          <footer>
+          <footer style={{maxWidth:'2000px', margin: '0 auto', width:'100%'}}>
             <div className='links intro'>
               <div className='page-links'>
                 {links.map(createNavItem)}

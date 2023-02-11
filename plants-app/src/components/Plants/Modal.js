@@ -24,7 +24,7 @@ export default class Modal extends React.Component {
               <img
                 className="popUpCardPink"
                 loading="lazy"
-                src={`./static/images/plants/${this.props.modal.img}`}
+                src={this.props.modal.url}
                 alt={this.props.modal.name}
               />
             </div>

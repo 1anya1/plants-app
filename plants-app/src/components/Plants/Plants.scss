@@ -1,11 +1,6 @@
 @import "../../index.scss";
 
-#plant-search {
-  height: fit-content;
-  .image {
-    background-image: url("../../img/hero/plants-hero-image.svg");
-  }
-}
+
 
 .modal {
   top: 0;
@@ -31,7 +26,7 @@
     margin: 2rem;
     background-color: white;
     width: 90%;
-    max-width: 650px;
+    max-width: 550px;
     border-radius: 50px;
     margin-top: 100px;
     @include bp-medium {
@@ -44,7 +39,7 @@
     position: relative;
     background: linear-gradient(#4e3cc76e 0%, #f582aeb5 100%);
     -webkit-mask-image: url("../../img/blob-modal.svg");
-    -webkit-mask-size: 47%;
+    -webkit-mask-size: 60%;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
     margin-top: 5%;
@@ -58,7 +53,7 @@
       -webkit-mask-image: url("../../img/blob-modal.svg");
       -webkit-mask-repeat: no-repeat;
       -webkit-mask-position: center;
-      -webkit-mask-size: 67%;
+      -webkit-mask-size: 85%;
       width: 65%;
       object-fit: cover;
       position: relative;
@@ -111,8 +106,8 @@
         text-transform: lowercase;
       }
       li::marker {
-        // content: '🌱  ';
-        content: "🪴";
+        // content: '🌱 ';
+        content: "🪴  ";
         font-size: 1.2em;
         color: $gray;
         padding-left: 2rem;
@@ -264,6 +259,7 @@
 }
 .allPlants {
   padding-top: 0 !important;
+  width:100vw;
 }
 
 @keyframes fadeIn {

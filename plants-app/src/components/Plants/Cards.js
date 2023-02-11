@@ -1,8 +1,9 @@
-import React, { Component } from "react";
-import Modal from "./Modal";
+import React, { Component, Suspense } from "react";
+// import Modal from "./Modal";
 import { FaSistrix } from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa";
 
+const Modal = React.lazy(() => import("./Modal"));
 
 class Cards extends Component {
   constructor(props) {
@@ -77,7 +78,7 @@ class Cards extends Component {
         );
       });
     });
-    console.log(filteredData)
+    console.log(filteredData);
     const myData = filteredData.map((card, id) => (
       <div
         className="card"
@@ -89,7 +90,7 @@ class Cards extends Component {
           <img
             className="img"
             loading="lazy"
-            src={`./static/images/plants/${card.img}`}
+            src={card.url}
             alt={card.name}
           ></img>
         </div>
@@ -115,6 +116,9 @@ class Cards extends Component {
 
     return (
       <>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Modal modal={this.state.modal} handleClick={this.toggle} />
+        </Suspense>
         <div className="search-menu">
           <div className="search">
             <div className="search-bar">
@@ -167,13 +171,10 @@ class Cards extends Component {
           </div>
         </div>
         {myData.length > 0 ? (
-          <div className="row ">
-            {myData}
-            <Modal modal={this.state.modal} handleClick={this.toggle} />
-          </div>
-        ) :
-        <div>{noData}</div>
-        }
+          <div className="row ">{myData}</div>
+        ) : (
+          <div>{noData}</div>
+        )}
       </>
     );
   }

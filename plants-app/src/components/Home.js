@@ -48,32 +48,22 @@ class Home extends React.Component {
           <div className="benefits">
             <ul>
               <li className="subtitle">
-                <logo.Checkmark />
                 learn about plant plants and their care needs{" "}
               </li>
               <li className="subtitle">
-                {" "}
-                <logo.Checkmark />
                 search common houseplants and filter by category{" "}
               </li>
               <li className="subtitle">
-                {" "}
-                <logo.Checkmark />
                 learn how to identify deisease and stop them at the tracks
               </li>
               <li className="subtitle">
-                {" "}
-                <logo.Checkmark />
                 learn how to identify housepests and{" "}
               </li>
               <li className="subtitle">
-                {" "}
-                <logo.Checkmark />
                 Sign up to track and watch your plants grow.
               </li>
               <li className="subtitle">
-                {" "}
-                <logo.Checkmark /> Learn tips and tricks that keep your plants
+               Learn tips and tricks that keep your plants
                 thriving{" "}
               </li>
             </ul>

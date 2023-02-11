@@ -3,6 +3,7 @@ import plantList from "../data/plantList";
 import "./Plants.scss";
 import Cards from "./Cards";
 
+
 class Plants extends React.Component {
   constructor() {
     super();
@@ -16,16 +17,17 @@ class Plants extends React.Component {
       <>
         <div className="hero intro" id="plant-search">
           <div className="content">
-            <h4 >House Plants</h4>
+            <h4>House Plants</h4>
             <div className="subtitle">
               Get to know what your green friends and keep your garden both
               happy and green.
             </div>
           </div>
-         
         </div>
         <div className="allPlants intro">
-          <Cards cards={this.state.plants} />
+          
+            <Cards cards={this.state.plants} />
+          
         </div>
       </>
     );
