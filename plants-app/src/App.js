@@ -143,79 +143,75 @@ class App extends Component {
       <>
         {!this.state.isToggleOn && <div id="overlay"></div>}
         <nav className={this.state.navShow}>
-            <Link className="logo" to={{ pathname: "/" }}>
-              <logo.Logo />
-            </Link>
-            <div className="menu">
-              {links.map(createNavItem)}
-              {!this.state.isLoggedIn && (
-                <>
-                  <Link className="link" to={{ pathname: "/signup" }}>
-                    <button className="sign-up">Sign Up</button>
-                  </Link>
-                  <Link className="link " to={{ pathname: "/login" }}>
-                    <button className="log-in">Log In</button>
-                  </Link>
-                </>
-              )}
-              {this.state.isLoggedIn && (
-                <>
-                  <Link className="link" to={{ pathname: "/my-plants" }}>
-                    My Plants
-                  </Link>
-                  {/* <Link lassName='link' to= {{pathname:"/", state: {onClick: this.handleClickExit} }}>Log Out</Link>  */}
-                  <a className="link" href="/" onClick={this.handleClickExit}>
-                    Log Out
-                  </a>
-                </>
-              )}
+          <Link className="logo" to={{ pathname: "/" }}>
+            <logo.Logo />
+          </Link>
+          <div className="menu">
+            {links.map(createNavItem)}
+            {!this.state.isLoggedIn && (
+              <>
+                <Link className="link" to={{ pathname: "/signup" }}>
+                  <button className="sign-up">Sign Up</button>
+                </Link>
+                <Link className="link " to={{ pathname: "/login" }}>
+                  <button className="log-in">Log In</button>
+                </Link>
+              </>
+            )}
+            {this.state.isLoggedIn && (
+              <>
+                <Link className="link" to={{ pathname: "/my-plants" }}>
+                  My Plants
+                </Link>
+                {/* <Link lassName='link' to= {{pathname:"/", state: {onClick: this.handleClickExit} }}>Log Out</Link>  */}
+                <a className="link" href="/" onClick={this.handleClickExit}>
+                  Log Out
+                </a>
+              </>
+            )}
+          </div>
+          <div className="hamburger" onClick={this.handleClick}>
+            <div className={this.state.isToggleOn ? "bars" : "bars active"}>
+              <div className="bar one"></div>
+              <div className="bar two"></div>
+              <div className="bar three"></div>
             </div>
-            <div className="hamburger" onClick={this.handleClick}>
-              <div className={this.state.isToggleOn ? "bars" : "bars active"}>
-                <div className="bar one"></div>
-                <div className="bar two"></div>
-                <div className="bar three"></div>
-              </div>
-              <div
-                className={
-                  this.state.isToggleOn
-                    ? "collapse mobile-nav"
-                    : "show mobile-nav"
-                }
-              >
-                <div className="nav">
-                  {links.map(createNavItem)}
-                  {!this.state.isLoggedIn && (
-                    <>
-                      <div className="mobile-login">
-                        <Link className="link" to={{ pathname: "/signup" }}>
-                          <button className="sign-up">Sign Up</button>
-                        </Link>
-                        <Link className="link" to={{ pathname: "/login" }}>
-                          <button className="log-in">Log In</button>
-                        </Link>
-                      </div>
-                    </>
-                  )}
-                  {this.state.isLoggedIn && (
-                    <>
-                      <Link className="link" to={{ pathname: "/my-plants" }}>
-                        My Plants
+            <div
+              className={
+                this.state.isToggleOn
+                  ? "collapse mobile-nav"
+                  : "show mobile-nav"
+              }
+            >
+              <div className="nav">
+                {links.map(createNavItem)}
+                {!this.state.isLoggedIn && (
+                  <>
+                    <div className="mobile-login">
+                      <Link className="link" to={{ pathname: "/signup" }}>
+                        <button className="sign-up">Sign Up</button>
                       </Link>
-                      {/* <Link lassName='link' to= {{pathname:"/", state: {onClick: this.handleClickExit} }}>Log Out</Link>  */}
-                      <a
-                        className="link"
-                        href="/"
-                        onClick={this.handleClickExit}
-                      >
-                        Log Out
-                      </a>
-                    </>
-                  )}
-                </div>
+                      <Link className="link" to={{ pathname: "/login" }}>
+                        <button className="log-in">Log In</button>
+                      </Link>
+                    </div>
+                  </>
+                )}
+                {this.state.isLoggedIn && (
+                  <>
+                    <Link className="link" to={{ pathname: "/my-plants" }}>
+                      My Plants
+                    </Link>
+                    {/* <Link lassName='link' to= {{pathname:"/", state: {onClick: this.handleClickExit} }}>Log Out</Link>  */}
+                    <a className="link" href="/" onClick={this.handleClickExit}>
+                      Log Out
+                    </a>
+                  </>
+                )}
               </div>
             </div>
-          </nav>
+          </div>
+        </nav>
 
         <div
           style={{
@@ -225,80 +221,78 @@ class App extends Component {
             justifyContent: "space-between",
           }}
         >
-         
-          <main
-            className={`${this.state.isToggleOn ? "" : "noscroll"}  ${
-              this.state.url === "/" ? "homepage" : ""
-            }`}
-          >
-            {!this.state.isToggleOn && <div id="overlay"></div>}
-            <Suspense fallback={<div style={{ height: "90vh" }}></div>}>
-              <Switch>
-                <Route path={"/diseases"} render={() => <Disease />} />
-                <Route path={"/plants"} render={() => <Plants />} />
-                <Route path={"/pests"} render={() => <Pests />} />
-                <Route path={"/care-tips"} render={() => <CareTips />} />
-                <Route
-                  path={"/login"}
-                  render={(props) => (
-                    <Login
-                      {...props}
-                      handleLogin={this.handleLogin}
-                      loggedInStatus={this.state.isLoggedIn}
-                    />
-                  )}
-                />
-                <Route
-                  path={"/signup"}
-                  render={(props) => (
-                    <Signup
-                      {...props}
-                      handleLogin={this.handleLogin}
-                      loggedInStatus={this.state.isLoggedIn}
-                    />
-                  )}
-                />
-                {this.state.isLoggedIn && (
+          <div className={`${this.state.isToggleOn ? "" : "noscroll"} `}>
+            <main className={`${this.state.url === "/" ? "homepage" : ""}`}>
+              {!this.state.isToggleOn && <div id="overlay"></div>}
+              <Suspense fallback={<div style={{ height: "90vh" }}></div>}>
+                <Switch>
+                  <Route path={"/diseases"} render={() => <Disease />} />
+                  <Route path={"/plants"} render={() => <Plants />} />
+                  <Route path={"/pests"} render={() => <Pests />} />
+                  <Route path={"/care-tips"} render={() => <CareTips />} />
                   <Route
-                    path={"/my-plants/logs"}
+                    path={"/login"}
                     render={(props) => (
-                      <AddNote
+                      <Login
                         {...props}
-                        userId={this.state.user_id}
-                        name={this.state.username}
+                        handleLogin={this.handleLogin}
+                        loggedInStatus={this.state.isLoggedIn}
                       />
                     )}
                   />
-                )}
-                {this.state.isLoggedIn && (
                   <Route
-                    path={"/my-plants"}
+                    path={"/signup"}
                     render={(props) => (
-                      <MyPlants
+                      <Signup
                         {...props}
-                        userId={this.state.user_id}
-                        name={this.state.username}
-                        plant_id={this.state.plant_id}
+                        handleLogin={this.handleLogin}
+                        loggedInStatus={this.state.isLoggedIn}
                       />
                     )}
                   />
-                )}
-                <Route
-                  path={"/"}
-                  render={() => (
-                    <Home
-                      isLoggedIn={this.state.isLoggedIn}
-                      username={this.state.username}
+                  {this.state.isLoggedIn && (
+                    <Route
+                      path={"/my-plants/logs"}
+                      render={(props) => (
+                        <AddNote
+                          {...props}
+                          userId={this.state.user_id}
+                          name={this.state.username}
+                        />
+                      )}
                     />
                   )}
-                />
-              </Switch>
-            </Suspense>
-          </main>
-          <Footer
-            isLoggedIn={this.state.isLoggedIn}
-            handleLogout={this.handleClickExit}
-          />
+                  {this.state.isLoggedIn && (
+                    <Route
+                      path={"/my-plants"}
+                      render={(props) => (
+                        <MyPlants
+                          {...props}
+                          userId={this.state.user_id}
+                          name={this.state.username}
+                          plant_id={this.state.plant_id}
+                        />
+                      )}
+                    />
+                  )}
+                  <Route
+                    path={"/"}
+                    render={() => (
+                      <Home
+                        isLoggedIn={this.state.isLoggedIn}
+                        username={this.state.username}
+                      />
+                    )}
+                  />
+                </Switch>
+              </Suspense>
+            </main>
+
+            <Footer
+              isLoggedIn={this.state.isLoggedIn}
+              handleLogout={this.handleClickExit}
+            />
+          </div>
         </div>
       </>
     );
