@@ -1,72 +1,45 @@
 @import '../../index.scss';
 
-.login-container{
-    display: grid;
-    grid-template-columns: 55% 45%;
-    align-items: center;
-    @include bp-x-large{
-        display: block;
-    }
+// .intro{
+   
+//     .registration{
+//         display:flex;
+//         flex-direction: row;
+//         justify-content: space-around;
+//         @include bp-large{
+//             flex-direction: column;
+//         }
+//         .lottie-login{
+//            height:auto;
+//             width: 40vw;
+//             max-width:600px;
+//             @include bp-large{
+//                 width: 100%;
+//                 margin-bottom: 20px !important;
+//             }
+//         }
+//         h4{
+//             color: #16314f;
+//             margin-bottom: 1rem;
+//             font-weight: 600;
+//             padding-bottom: 20px;
+//         }
+//         .form{
+//             background-color:#f1d3e7;
+//             padding:40px;
+//             border-radius: 34px;
+//             display: flex;
+//             flex-direction: column;
+//             width: 40vw;
+//             gap: 10px;
+//             @include bp-large{
+//                 width: 100%;
+               
+//             }
+//             .submit{
+//              margin-top: 10px;
+//             }
+//         }
+//     }
 
-    #login{
-        margin-bottom: 100px;
-        margin-top: 150px;
-        padding: 50px;
-        
-        .image{
-            background-image: url(../../img/login.svg);
-            background-position: left;
-        }
-        .content{
-            h2{
-                text-align: left;
-            }
-
-        }
-        @include bp-x-large{
-            margin-bottom: unset;
-            .image{
-                background-image: url(../../img/login.svg);
-                background-position: center;
-            }
-            .content{
-                h2{
-                    text-align: center;
-                }
-            }
-        }
-        
-    }
-    .form{
-        background-color: $blush;
-        border-radius: 5rem 0rem;
-        padding: 4rem;
-        margin-top: 10rem;
-        width: 90%;
-        margin: 0 auto;
-        @include bp-x-large{
-            margin-top: 3rem;
-            margin-bottom: 10rem;
-        }
-        @include bp-medium{
-            border-radius: 3rem 0;
-        }
-        @include bp-medium{
-            border-radius: 3rem 0;
-            margin-top: 2rem;
-            margin-bottom: 5rem;
-        }
-        h4{
-            margin-bottom: 3rem;
-            color: $gray;
-        }
-        form{
-            display: flex;
-            flex-direction: column;
-            row-gap: 2rem;
-        }
-        
-       
-    }
-  
-}
+//     }

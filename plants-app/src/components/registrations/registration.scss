@@ -9,3 +9,60 @@
         width: 100vw;
     }
 }
+.intro{
+   
+    .registration{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+        @include bp-large{
+            flex-direction: column;
+        }
+        .lottie-login{
+           height:auto;
+            width: 40vw;
+            max-width:600px;
+            @include bp-large{
+                width: 100%;
+                margin-bottom: 20px !important;
+            }
+        }
+        h4{
+            color: #16314f;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            padding-bottom: 20px;
+        }
+        .form{
+            background-color:#f1d3e7;
+            padding:40px;
+            border-radius: 34px;
+            display: flex;
+            flex-direction: column;
+            width: 40vw;
+            gap: 10px;
+           
+            input{
+                box-shadow: 0px 0px 13px -8px black;
+            }
+            button{
+                margin-top:20px;
+                background-color: #b998ee;
+                width:300px;
+                @include bp-large{
+                    width:100%;
+                }
+            }
+            @include bp-large{
+                width: 100%;
+               
+            }
+            @include bp-medium{
+                padding:20px;
+            
+            }
+            
+        }
+    }
+
+    }

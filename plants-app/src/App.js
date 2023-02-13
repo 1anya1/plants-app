@@ -219,9 +219,10 @@ class App extends Component {
             flexDirection: "column",
             minHeight: "100vh",
             justifyContent: "space-between",
+            
           }}
         >
-          <div className={`${this.state.isToggleOn ? "" : "noscroll"} `}>
+          <div >
             <main className={`${this.state.url === "/" ? "homepage" : ""}`}>
               {!this.state.isToggleOn && <div id="overlay"></div>}
               <Suspense fallback={<div style={{ height: "90vh" }}></div>}>
@@ -288,11 +289,12 @@ class App extends Component {
               </Suspense>
             </main>
 
-            <Footer
+            
+          </div>
+          <Footer
               isLoggedIn={this.state.isLoggedIn}
               handleLogout={this.handleClickExit}
             />
-          </div>
         </div>
       </>
     );

@@ -193,6 +193,7 @@ a {
   }
 }
 .intro {
+  width:100%;
   padding: 50px 5%;
   margin: 0 auto;
   @include bp-large {
@@ -274,10 +275,11 @@ label {
   padding: 0 2rem;
   font-weight: 500;
   color: $gray;
+  
   font-family: $body-font;
   background-color: white;
   width: 100%;
-  height: 7rem;
+  height: 5rem;
   border-radius: 5rem;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -285,12 +287,13 @@ label {
   padding-left: 2rem;
   @include bp-large {
     font-size: 1.6rem;
+    height: 4rem;
   }
   @include bp-medium {
     padding-left: 2rem;
+
   }
   @include bp-small {
-    height: 5rem;
     border-radius: 3rem;
   }
 }
@@ -334,10 +337,10 @@ input::-webkit-date-and-time-value {
   column-gap: 2rem;
   align-items: stretch;
   @include bp-xx-large {
-    grid-template-columns: repeat(4, 24%);
+    grid-template-columns: repeat(4, 23%);
   }
   @include bp-medium {
-    grid-template-columns: repeat(3, 32%);
+    grid-template-columns: repeat(3, 31.5%);
   }
   @include bp-small {
     grid-template-columns: repeat(2, 48%);
