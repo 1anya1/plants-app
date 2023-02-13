@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./login.scss";
+import "./registration.scss";
 import { Player } from "@lottiefiles/react-lottie-player";
 import logInImage from "../../img/lottie/login.json";
 class Login extends Component {
@@ -81,7 +81,7 @@ class Login extends Component {
             src={logInImage}
             className="lottie-login"
           ></Player>
-          <div>
+          <div className='form-container'>
             <h4>Welcome Back!</h4>
             <div >
               <form onSubmit={this.handleSubmit} className="form">

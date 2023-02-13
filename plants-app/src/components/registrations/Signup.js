@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import './registration.scss'
+import "./registration.scss";
 import { Player } from "@lottiefiles/react-lottie-player";
 import logInImage from "../../img/lottie/login.json";
 class Signup extends Component {
@@ -71,7 +71,7 @@ return (
             className="lottie-login"
           ></Player>
  
-    <div>
+    <div className='form-container'>
       <h4>Create a free account today</h4>
         <form onSubmit={this.handleSubmit}  className='form'>
           <input
