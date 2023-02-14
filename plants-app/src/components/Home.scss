@@ -167,7 +167,8 @@
         }
       }
       li::marker {
-        content: "🌱";
+        // content: &#127793;
+        content:"\1F331 ";
 
         font-size: 1.4em;
         color: $gray;
