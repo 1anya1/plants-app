@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom'
 import DeleteModal from '../modaDelete/ModalDelete'
 import UpdatePlant from './updatePlant'
 import { FaPlus, FaFileImage } from "react-icons/fa";
+import { Buffer } from 'buffer';
 
 const config = {
   bucketName: 'plantly-user-uploads',
@@ -38,6 +39,7 @@ class MyPlants extends React.Component {
         axios.get(`https://salty-peak-61296.herokuapp.com/users/${this.props.userId}`)
         .then(response => {
                 if(response.data){
+                  console.log(response.data)
                     this.setState({
                         plants: response.data.todos,
                         user_id: this.props.userId
@@ -85,6 +87,7 @@ class MyPlants extends React.Component {
 
     imageUpload=(e)=>{
       console.log('image upload is working home page ')
+    
       let name = e.target.files[0].name
       uploadFile(e.target.files[0], config)
       .then((data)=>{
@@ -159,6 +162,7 @@ class MyPlants extends React.Component {
     render(){
         const title = this.state.title;
         const plants = this.state.plants.length
+        window.Buffer = window.Buffer || require("buffer").Buffer;
         return(
           <>
           <div className="hero intro" id='my-plants' >

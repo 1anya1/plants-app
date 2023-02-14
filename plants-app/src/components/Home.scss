@@ -125,15 +125,10 @@
   }
   h3 {
     color: $gray;
-    margin: 5rem 0 7rem 0;
+    margin: 0 0 4rem 0;
     text-align: center;
-    font-weight: 400;
-
-    @include bp-large {
-      margin: 2rem 0 5rem 0;
-    }
     @include bp-medium {
-      margin: 0 0 3rem 0;
+      margin: 0 0 2.6rem 0;
     }
   }
   .benefits {
@@ -150,7 +145,7 @@
       max-width: 1500px;
       justify-content: center;
       margin: 0 auto;
-      row-gap: 2rem;
+      row-gap: 1rem;
       max-width: 1300px;
       @include bp-large {
         justify-items: end;
@@ -166,14 +161,9 @@
         width: 90%;
         padding-left: 10px;
         text-transform: capitalize;
-        font-size: 24px;
+        font-size: 20px;
         @include bp-medium {
-          // text-align: center;
-          // text-transform: capitalize;
-          font-size: 20px;
-        }
-        @include bp-small {
-          font-size: 1.8rem;
+          font-size: 18px;
         }
       }
       li::marker {
@@ -184,23 +174,34 @@
       }
     }
   }
+  .paragraph {
+    padding: 4rem 0 0 0;
+    @include bp-medium {
+      padding:  2.6rem 0 0 0 ;
+    }
+    p {
+      font-size: 2rem;
+      @include bp-medium {
+        font-size: 1.8rem;
+      }
+    }
+  }
   .cards {
     display: flex;
     column-gap: 2rem;
-    justify-content: center;
-    padding: 80px 0;
+    justify-content: space-between;
+    padding: 4rem 0;
     @include bp-large {
       flex-direction: row;
       flex-wrap: wrap;
       row-gap: 2rem;
       margin: 0 auto;
-      padding: 60px 0;
     }
-  
+
     @include bp-small {
       row-gap: 1rem;
       column-gap: 1rem;
-      padding: 40px 0;
+      padding: 2.6rem 0;
     }
 
     a {
@@ -351,23 +352,23 @@
   .quote {
     font-size: 5rem;
     font-family: "Raleway";
-    border-top: 1px $peach-dark solid;
-    border-bottom: 1px $peach-dark solid;
-    color: $peach-dark;
+    border-top: 1px #9278d3 solid;
+    border-bottom: 1px #9278d3 solid;
+    color: #9278d3;
     padding: 2rem 0;
     font-weight: 500;
-    margin: 15rem auto;
     text-align: center;
-    @include bp-large {
-      margin: 10rem 0;
-    }
+    margin: 4rem 0;
     @include bp-medium {
-      font-size: 3.5rem;
+      font-size: 3.4rem;
       margin: 7rem auto;
+      margin: 2.6rem 0;
     }
     @include bp-small {
-      padding: 5rem 0;
+      font-size: 2.8rem;
+     
     }
+   
   }
   .tracker-cta {
     display: grid;

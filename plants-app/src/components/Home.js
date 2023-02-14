@@ -68,6 +68,7 @@ class Home extends React.Component {
               </li>
             </ul>
           </div>
+          
           <div className="cards">
             <Link to={{ pathname: "/plants" }}>
               <div className="section">
@@ -94,6 +95,7 @@ class Home extends React.Component {
               </div>
             </Link>
           </div>
+          
           <h3 className="header">
             Our plant library contains the most popular housepalnts.
           </h3>
@@ -111,8 +113,7 @@ class Home extends React.Component {
             <div className="plants-image"></div>
           </div>
           <div className="quote">
-            "Plants provide health benefits and can be used in a variety of
-            indoor décor themes."
+            No more guesswork – our app provides expert advice and guidance to keep your plants healthy and thriving.
           </div>
           <h3 className="header">
             Manage and track your plants growth and progress.
@@ -137,7 +138,11 @@ class Home extends React.Component {
             </div>
             <div className="plants-image"></div>
           </div>
+          <div className='paragraph'>
+          <p className='p'>Transform your green thumb dreams into a reality with our all-in-one app! Discover a wide variety of home plants and learn about their specific disease and care needs. No more guesswork – our app provides expert advice and guidance to keep your plants healthy and thriving. Plus, with the ability to track your plants, you'll always know when it's time to care for your green friend. Get ready to turn your home into a lush and vibrant oasis with the ultimate plant care companion.</p>
+          </div>
         </div>
+        
       </>
     );
   }
