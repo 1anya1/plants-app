@@ -20,24 +20,24 @@ class Nav extends Component {
     this.state = {
       isToggleOn: true,
       scrolling: "",
-      navShow: null,
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    this.setState((prevState) => ({
-      isToggleOn: !prevState.isToggleOn,
-    }));
+    if (this.state.isToggleOn) {
+      document.body.classList.add("active-overlay");
+    }
   }
 
   render() {
-    console.log(this.props, 'hello')
     return (
-      <nav className={this.state.navShow}>
-        <a href="/" className="logo">
-          {/* <logo.Logo /> */}
-        </a>
+      <nav>
+        <a
+          href="/"
+          className="logo"
+          
+        ></a>
         <div className="menu">{links.map(createNavItem)}</div>
 
         <div className="hamburger" onClick={this.handleClick}>

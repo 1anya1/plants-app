@@ -5,6 +5,7 @@ $size-large: 1024px;
 $size-medium: 768px;
 $size-small: 568px;
 $size-x-small: 440px;
+$size-xx-small: 340px;
 //Breakpoints for mobile
 @mixin bp-xx-large {
   @media only screen and (max-width: $size-xx-large) {
@@ -37,6 +38,11 @@ $size-x-small: 440px;
   }
   @mixin bp-x-small {
     @media only screen and (max-width: $size-x-small) {
+      @content;
+    }
+  }
+  @mixin bp-xx-small {
+    @media only screen and (max-width: $size-xx-small) {
       @content;
     }
   }

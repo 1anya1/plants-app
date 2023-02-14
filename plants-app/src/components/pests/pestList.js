@@ -5,7 +5,8 @@ const pestList = [
         treatment: 'Sticky trap is a good way to get rid of whiteflies and to keep them under control. You can also spray the area with water or dunk the plant in luke warm water to get rid of them.',
         img:'https://i.imgur.com/IUdmpLW.png',
         id: 1,
-        open: false
+        open: false,
+        hash:'whiteflies',
     },
     {
         name: 'Fungus Gnats',
@@ -13,7 +14,8 @@ const pestList = [
         treatment: 'Allow 1/2 - 1 inch of top soil to dry out before watering your plants. Yellow sticky trap is a good solution to keep these insects at bay. Laying pebbles or sand can prevent the gnats from lying eggs',
         img:'https://i.imgur.com/rJkqKPQ.png',
         id: 2,
-        open: false
+        open: false,
+        hash:'gnats',
     },
     {
         name: 'Leaf Miners',
@@ -21,7 +23,8 @@ const pestList = [
         treatment: 'Best way to get rid is to cut off affected leaves and treat your plant with insecticide.',
         img:'https://i.imgur.com/LscGPYa.png',
         id: 3,
-        open: false
+        open: false,
+        hash:'miners',
     },
     {
         name: 'Thrips',
@@ -29,7 +32,8 @@ const pestList = [
         treatment: 'Sticky traps can reduce numbers of thrips. Spray your plant with incesticide or biological control to get rid og this pest.',
         img:'https://i.imgur.com/iK0IAIO.png',
         id: 4,
-        open: false
+        open: false,
+        hash:'thrips',
     },
     {
         name: 'Spider Mites',
@@ -37,7 +41,8 @@ const pestList = [
         treatment: 'First thing quarantine infected plant, then spray the plant with insecticide to controll the population. ',
         img:'https://i.imgur.com/NoxGr5d.png',
         id: 5,
-        open: false
+        open: false,
+        hash:'mites',
     },
     {
         name: 'Aphids',
@@ -45,7 +50,8 @@ const pestList = [
         treatment: 'Yellow sticky trap and water spray works well to get rid of this pest.',
         img:'https://i.imgur.com/Tb06kaO.png',
         id: 6,
-        open: false
+        open: false,
+        hash:'aphids',
     },
     {
         name: 'Scale Insects',
@@ -53,7 +59,8 @@ const pestList = [
         treatment: 'Rub them off or use insecticide otr biological control.',
         img:'https://i.imgur.com/PrspHvw.png',
         id: 7,
-        open: false
+        open: false,
+        hash:'scale',
     },
     {
         name: 'Mealybugs',
@@ -61,7 +68,8 @@ const pestList = [
         treatment: 'Rub insects off with damp cloth soaked in insecticide or try to spray the plant with incesticide weekly. It is very hard to get rid of this bug and best solution at times id to disgard the plant.',
         img:'https://i.imgur.com/5PIBIzs.png',
         id: 8,
-        open: false
+        open: false,
+        hash:'mealybugs',
     },
 ]
 

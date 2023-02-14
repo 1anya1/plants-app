@@ -24,6 +24,7 @@ const CareTips = lazy(() => import("./components/careTips/CareTips"));
 const Signup = lazy(() => import("./components/registrations/Signup"));
 const MyPlants = lazy(() => import("./components/myPlants/MyPlants.js"));
 const AddNote = lazy(() => import("./components/myPlants/AddNote.js"));
+const ManagePlants = lazy(() => import("./components/myPlants/ManagePlants"));
 
 const links = [
   { href: "/", text: "Home" },
@@ -34,7 +35,7 @@ const links = [
 ];
 
 const createNavItem = ({ href, text }) => (
-  <Link className="link" to={{ pathname: href }}>
+  <Link key={href} className="link" to={{ pathname: href }}>
     {text}
   </Link>
 );
@@ -63,7 +64,6 @@ class App extends Component {
     this.loginStatus();
     window.addEventListener("click", () => {
       this.setState({ url: window.location.pathname });
-      console.log(window.location.pathname);
     });
     window.addEventListener("load", () => {
       this.setState({ url: window.location.pathname });
@@ -74,6 +74,11 @@ class App extends Component {
     this.setState((prevState) => ({
       isToggleOn: !prevState.isToggleOn,
     }));
+    if (this.state.isToggleOn) {
+      document.body.classList.add("active-overlay");
+    } else {
+      document.body.classList.remove("active-overlay");
+    }
   }
   handleScroll() {
     let currentScroll = window.scrollY;
@@ -141,9 +146,13 @@ class App extends Component {
   render() {
     return (
       <>
-        {!this.state.isToggleOn && <div id="overlay"></div>}
+        {!this.state.isToggleOn && <div className="overlay"></div>}
         <nav className={this.state.navShow}>
-          <Link className="logo" to={{ pathname: "/" }}>
+          <Link
+            className="logo"
+            to={!this.state.isToggleOn ? null : { pathname: "/" }}
+            style={!this.state.isToggleOn ? { opacity: 0.5 } : {}}
+          >
             <logo.Logo />
           </Link>
           <div className="menu">
@@ -219,10 +228,9 @@ class App extends Component {
             flexDirection: "column",
             minHeight: "100vh",
             justifyContent: "space-between",
-            
           }}
         >
-          <div >
+          <div>
             <main className={`${this.state.url === "/" ? "homepage" : ""}`}>
               {!this.state.isToggleOn && <div id="overlay"></div>}
               <Suspense fallback={<div style={{ height: "90vh" }}></div>}>
@@ -265,6 +273,18 @@ class App extends Component {
                   )}
                   {this.state.isLoggedIn && (
                     <Route
+                      path={"/my-plants/manage"}
+                      render={(props) => (
+                        <ManagePlants
+                          {...props}
+                          userId={this.state.user_id}
+                          name={this.state.username}
+                        />
+                      )}
+                    />
+                  )}
+                  {this.state.isLoggedIn && (
+                    <Route
                       path={"/my-plants"}
                       render={(props) => (
                         <MyPlants
@@ -288,13 +308,11 @@ class App extends Component {
                 </Switch>
               </Suspense>
             </main>
-
-            
           </div>
           <Footer
-              isLoggedIn={this.state.isLoggedIn}
-              handleLogout={this.handleClickExit}
-            />
+            isLoggedIn={this.state.isLoggedIn}
+            handleLogout={this.handleClickExit}
+          />
         </div>
       </>
     );

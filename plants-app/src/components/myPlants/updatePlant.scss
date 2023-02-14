@@ -1,17 +1,90 @@
 @import '../../index.scss';
 
 #update-plant{
-       overflow: hidden;
-       position: fixed;
-       top: 0;
-       bottom: 0;
-       right: 0;
-       left: 0;
-       background-color:rgba(46, 44, 47, .6);
-       z-index: 10;
-       display: flex;
-       align-content: center;
-       align-items: center;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, .9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    #update-plant-form{
+        max-width: 600px;
+        width: 90%;
+        box-shadow: 0px 0px 5px -2px #16314f;
+        background-color: #f6f7f8;
+        padding:40px;
+        border-radius:30px;
+        .inputs{
+            display:flex;
+            flex-direction: column;
+            gap:20px;
+            padding-bottom: 40px;
+            @include bp-small{
+                gap:14px;
+            }
+            input{
+                border:1px solid $gray;
+            }
+        
+            // input::file-selector-button {
+            //    display: none;
+            // }
+           
+            .custom-file-input {
+                display:none;
+            }
+            .custom-file-upload {
+                border: 1px solid #16314f;
+                font-size: 1.8rem;
+                padding: 0 2rem;
+                font-weight: 500;
+                color: #16314f;
+                font-family: "Montserrat", sans-serif;
+                background-color: white;
+                width: 100%;
+                height: 5rem;
+                border-radius: 5rem;
+                appearance: none;
+                padding-left: 2rem;
+                display:flex;
+                overflow: hidden;
+                align-items: center
+                
+            }
+            label{
+                display:flex;
+                height:max-content;
+                padding: unset;
+            }
+            p{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 1.8rem;;
+                margin-bottom: unset;
+                font-weight: 500;
+            }
+        }
+      
+        .buttons{
+            display:flex;
+            flex-direction: row;
+            gap:10px;
+            button{
+                width: 200px;
+                @include bp-medium{
+                    width: 100%;
+                }
+            }
+
+            @include bp-medium{
+                flex-direction:column;
+            }
+        }
+    }
        
 }
 .update-show{

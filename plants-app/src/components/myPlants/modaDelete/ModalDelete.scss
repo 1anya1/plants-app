@@ -1,0 +1,62 @@
+@import '../../../index.scss';
+
+.modal{
+    display:none;
+   
+    .delete-modal-contnet{
+        border-radius: 30px;
+        width: 650px;
+        position: relative;
+        height: fit-content;
+        top: 30%;
+        margin: 0 auto;
+        box-shadow: 0px 0px 5px -2px #16314f;
+        background-color: #f6f7f8;
+        padding: 4rem;
+        z-index:100;
+        @include bp-medium{
+            width: 90%;
+        }
+        @include bp-small{
+            padding: 2rem;
+        }
+       h5{
+        color:$gray;
+        padding-bottom: 20px;
+        @include bp-small{
+            padding-bottom: 14px;
+        }
+       }
+     
+        .confirm-delete{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            @include bp-medium{
+                flex-direction: column;   
+            }
+            button{
+                width: 48%;
+                @include bp-medium{
+                    width:100%;
+                    margin-right: unset;
+                    margin: auto;
+                    margin-top: 2rem; 
+                   
+                }
+                
+            }
+        }
+    }
+}
+.modal-show{
+    
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, .9);
+    display: flex;
+
+}

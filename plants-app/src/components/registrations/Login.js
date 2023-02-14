@@ -99,7 +99,7 @@ class Login extends Component {
                   value={password}
                   onChange={this.handleChange}
                 />
-                <button placeholder="submit" type="submit" className='submit'>
+                <button placeholder="submit" type="submit" className='submit button-large'>
                   Log In
                 </button>
                 <div>

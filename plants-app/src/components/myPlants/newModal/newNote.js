@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import mySVG from "../data/Svg";
+import mySVG from "../../data/Svg";
 import axios from "axios";
 import "./newNote.scss";
 import { FaTimesCircle } from "react-icons/fa";
@@ -89,7 +89,7 @@ class NewNote extends Component {
     return (
       <form onSubmit={this.handleSubmit} className="note-add">
         <div className="heading">
-          <h4>Add A New Note</h4>
+          <h5>Add A New Note</h5>
           <FaTimesCircle onClick={this.exitNote} />
         </div>
         <div className="form-inputs">
@@ -173,7 +173,7 @@ class NewNote extends Component {
           />
         </div>
 
-        <button className="button-bottom" placeholder="submit" type="submit">
+        <button className="button-large" placeholder="submit" type="submit">
           Add Note
         </button>
       </form>

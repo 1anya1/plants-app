@@ -1,51 +1,25 @@
-
-
-@import '../../index.scss';
-#plant-logs{
-    .image{
-        background-image: url('../../img/hero/plant-logs-hero.svg');
-        }
+@import "../../index.scss";
+#plant-logs {
+  .image {
+    background-image: url("../../img/hero/plant-logs-hero.svg");
+  }
 }
-.plant-logs{
-    .links{
-        
-        text-align: center;
-        padding-bottom: 5rem;
-        @include bp-medium{
-            padding-bottom:3rem;
-        }
-        a{
-            color: $forest-green;
-            margin-right: 5rem;
-            &:last-child{
-                margin-right: unset;
-            }
-            @include bp-medium{
-                display: flex;
-                flex-direction: row;
-                row-gap: 1rem;
-                margin: unset;
-                justify-content: center;
-                padding-bottom: 1rem;
-            }
-            button{
-                border: $forest-green 1px solid;
-                width: 40%;
-                transition: .5s ease-in-out;
-                @include bp-medium{
-                    width: 100%;
-                }
-                &:hover, &:active{
-                    background-color: $forest-green;
-                    color: white;
-                    transition: .5s ease-in-out;
-                }
-            }
-        }
-
-
+.plant-logs {
+  padding-top: 0px !important;
+  .links {
+    text-align: left;
+    padding-bottom: 5rem;
+    @include bp-medium {
+      padding-bottom: 3rem;
     }
-.show{
+    button {
+      width: 300px;
+      @include bp-medium {
+        width: 100%;
+      }
+    }
+  }
+  .show {
     top: 0;
     left: 0;
     right: 0;
@@ -54,138 +28,135 @@
     height: 100%;
     width: 100%;
     max-width: 100vw;
-    background-color:rgba(46, 44, 47, .6);
+    background-color: #9a959d99;
     overflow: scroll;
     flex-direction: column;
     align-content: center;
     align-items: center;
     justify-content: center;
-    transition: background-color .5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
     z-index: 1;
     display: flex;
     border-radius: unset;
-    @include bp-medium{
-        justify-content: unset;
+    @include bp-medium {
+      justify-content: unset;
     }
-}
-.hide{
+  }
+  .hide {
     display: none;
-}
+  }
 
-#leger{
+  #leger {
     display: flex;
     flex-direction: column;
     border: 1px solid $forest-green;
     padding: 2rem;
     border-radius: 5rem;
     width: fit-content;
-    .subtitle2{
-        align-self: center;
-        padding-bottom: 1rem;
+    .subtitle2 {
+      align-self: center;
+      padding-bottom: 1rem;
     }
-    .items{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        @include bp-small{
-            grid-template-columns: 1fr 1fr;
-        }
-       
-        .leger{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            .overline{
-                color: $light-gray;
-                padding-bottom: 0;
-            }
-           svg{
-               height: 50px;
-               width: 50px;
-               path{
-                   fill: $light-gray;
-               }
+    .items {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      @include bp-small {
+        grid-template-columns: 1fr 1fr;
+      }
 
-           }
+      .leger {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .overline {
+          color: $light-gray;
+          padding-bottom: 0;
         }
-
+        svg {
+          height: 50px;
+          width: 50px;
+          path {
+            fill: $light-gray;
+          }
+        }
+      }
     }
-    
-}
-   
-.notes{
+  }
+
+  .notes {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 2rem;
     row-gap: 2rem;
     justify-content: center;
     align-items: stretch;
-    @include bp-large{
-        grid-template-columns: 1fr 1fr;
+    @include bp-large {
+      grid-template-columns: 1fr 1fr;
     }
-  
-    @include bp-small{
-        grid-template-columns: 1fr;
+
+    @include bp-small {
+      grid-template-columns: 1fr;
     }
-    h4{
-        grid-column: 1/4;
-        text-align: center;
+    h4 {
+      grid-column: 1/4;
+      text-align: center;
+      color: $gray;
+    }
+
+    .note {
+      // border: $gray 1px solid;
+      box-shadow: 0px 0px 6px -1px #16314f5c;
+      padding: 3rem 0;
+      border-radius: 5rem;
+      width: 100%;
+      padding-bottom: 0rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      @include bp-medium {
+        border-radius: 3rem;
+      }
+
+      .overline {
         color: $gray;
-    }
-    
-
-    .note{
-        border: $blush 1px solid;
-        padding: 3rem 0;
-        border-radius: 5rem;
-        width: 100%;
-        padding-bottom: 0rem;
-        position: relative;
+        margin-bottom: 1rem;
+        padding-bottom: unset;
+        padding: 0 3rem;
+        color: $gray;
+      }
+      h5 {
+        margin-bottom: 2rem;
+        padding: 0 3rem;
+        color: $forest-green;
+      }
+      .todos {
+        margin-bottom: 2rem;
         display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        @include bp-medium{
-            border-radius: 3rem;
+        flex-direction: row;
+        padding: 0 3rem;
+        padding-top: 1rem;
+        svg {
+          height: 45px;
+          width: 45px;
+          margin-right: 2rem;
+          path {
+            fill: $gray;
+          }
         }
-
-        .overline{
-            color: $gray;
-            margin-bottom: 1rem;
-            padding-bottom: unset;
-            padding: 0 3rem ;
-            color: $gray;
-        }
-        h5{
-            margin-bottom: 2rem;
-            padding: 0 3rem ;
-            color: $forest-green;
-        }
-        .todos{
-            margin-bottom: 2rem;
-            display: flex;
-            flex-direction: row;
-            padding: 0 3rem ;
-            padding-top: 1rem;
-            svg{
-                height: 45px;
-                width: 45px;
-                margin-right: 2rem;
-                path{
-                    fill: $gray;
-                }
-            }
-
-        }
-        p{
-            margin-bottom: 2.6rem;
-            padding: 0 3rem ;
-        }
-        button{
-            align-self: flex-end;
-          position: relative;
-          margin-top:auto;
-        }
-       
+      }
+      p {
+        margin-bottom: 2.6rem;
+        padding: 0 3rem;
+      }
+      button {
+        align-self: flex-end;
+        position: relative;
+        width: 90%;
+        margin: auto;
+        margin-bottom: 20px;
+        background-color: #fce3ef;
+      }
     }
-
-}
+  }
 }

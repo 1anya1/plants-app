@@ -120,6 +120,27 @@
 }
 
 .home {
+  .text{
+    font-size: 20px;
+    padding-bottom:20px;
+    @include bp-large {
+      font-size: 18px;
+    }
+  }
+  .section-homepage {
+    padding-bottom: 50px;
+    
+  }
+  .section-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap:2rem;
+    @include bp-x-large{
+      flex-direction: column;
+    }
+  }
   .subtitle {
     font-style: normal;
   }
@@ -133,20 +154,17 @@
   }
   .benefits {
     ul {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
       column-gap: 5vw;
-      justify-content: space-evenly;
-      align-items: start;
       justify-items: center;
       align-items: center;
       padding: 0;
       list-style-type: none;
-      max-width: 1500px;
       justify-content: center;
       margin: 0 auto;
       row-gap: 1rem;
-      max-width: 1300px;
+     
       @include bp-large {
         justify-items: end;
       }
@@ -155,29 +173,30 @@
         grid-template-columns: 1fr;
         row-gap: 1rem;
         justify-items: center;
-        padding-left: 20px;
+        
       }
       li {
-        width: 90%;
+        width: 100%;
         padding-left: 10px;
-        text-transform: capitalize;
         font-size: 20px;
-        @include bp-medium {
+        text-transform: none;
+        @include bp-large {
           font-size: 18px;
         }
+       
       }
-      li::marker {
-        content: "🌱";
 
-        font-size: 1.4em;
-        color: $gray;
+      li:before {
+        content: "\1F331 ";
+        font-size: 170%; /* or whatever */
+        padding-right: 5px;
       }
     }
   }
   .paragraph {
     padding: 4rem 0 0 0;
     @include bp-medium {
-      padding:  2.6rem 0 0 0 ;
+      padding: 2.6rem 0 0 0;
     }
     p {
       font-size: 2rem;
@@ -188,9 +207,13 @@
   }
   .cards {
     display: flex;
-    column-gap: 2rem;
-    justify-content: space-between;
-    padding: 4rem 0;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    max-width: 540px;
+    @include bp-x-large{
+     max-width: unset;
+    }
     @include bp-large {
       flex-direction: row;
       flex-wrap: wrap;
@@ -205,21 +228,25 @@
     }
 
     a {
-      border: 1px solid $gray;
+      box-shadow: 0px 0px 5px 0px #9e9e9ea1;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       align-items: stretch;
       border-radius: 5rem;
-      width: 22%;
+      width: 45%;
       height: auto;
-      max-width: 300px;
-      max-height: 300px;
+      max-width: 180px;
+      // max-width: 300px;
+      // max-height: 300px;
       text-decoration: unset;
       &:hover,
       &:focus,
       &:active {
+      }
+      @include bp-x-large{
+        width: 22%;
       }
       @include bp-large {
         border-radius: 3rem;
@@ -255,7 +282,7 @@
           }
         }
         h6 {
-          text-transform: uppercase;
+          // text-transform: uppercase;
           color: $gray;
           align-self: bottom;
           position: relative;
@@ -334,7 +361,7 @@
       }
       h5 {
         text-transform: none;
-        padding-bottom: 5rem;
+        padding-bottom: 2rem;
         color: $gray;
         font-weight: 400;
         @include bp-large {
@@ -344,13 +371,12 @@
         }
         @include bp-medium {
           width: 100%;
-          padding-bottom: 5rem;
         }
       }
     }
   }
   .quote {
-    font-size: 5rem;
+    font-size: 3.8rem;
     font-family: "Raleway";
     border-top: 1px #9278d3 solid;
     border-bottom: 1px #9278d3 solid;
@@ -366,9 +392,7 @@
     }
     @include bp-small {
       font-size: 2.8rem;
-     
     }
-   
   }
   .tracker-cta {
     display: grid;
@@ -380,7 +404,7 @@
     .plants-image {
       grid-column: 1/2;
       grid-row: 1;
-      background-image: url("../img/home-page/tracker-cta.png");
+      background-image: url("https://res.cloudinary.com/dwz87zxoy/image/upload/v1676435307/Group_2_1_jv9rl1.png");
       height: 40vw;
       background-repeat: no-repeat;
       background-size: contain;
@@ -434,7 +458,7 @@
       }
       h5 {
         text-transform: none;
-        padding-bottom: 5rem;
+        padding-bottom: 2rem;
         color: $gray;
         font-weight: 400;
         @include bp-large {
@@ -444,7 +468,6 @@
         }
         @include bp-medium {
           width: 100%;
-          padding-bottom: 5rem;
         }
       }
     }

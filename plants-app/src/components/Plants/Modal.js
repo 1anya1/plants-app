@@ -61,7 +61,7 @@ export default class Modal extends React.Component {
                 ))}
               </ul>
             </div>
-            <button className="button" onClick={this.handleClick}>
+            <button className="button button-large" onClick={this.handleClick}>
               Back to Plant
             </button>
           </div>
