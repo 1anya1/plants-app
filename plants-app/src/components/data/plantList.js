@@ -14,7 +14,8 @@ const plantList= [
         petFriendly: false,
         lowLight: true,
         hangingPlant: false,
-        id:1
+        id:1,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077250/monstera_qvafer.png'
     },
     {
         name: "Prayer Plant",
@@ -30,7 +31,8 @@ const plantList= [
         petFriendly: true,
         lowLight: true,
         hangingPlant: true,
-        id:2
+        id:2,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077251/prayer-plant_jfgo6r.png'
     },
     {
         name: "Anthurium",
@@ -46,7 +48,8 @@ const plantList= [
         petFriendly: false,
         lowLight: false,
         hangingPlant: false,
-        id:3
+        id:3,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077249/anthrium_a7i744.png'
     },
     {
         name: "Begonia",
@@ -62,7 +65,8 @@ const plantList= [
         petFriendly: false,
         lowLight: true,
         hangingPlant: false,
-        id:4
+        id:4,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077249/begonia_nv5jxs.png'
     },
     {
         name: "Bromeliad",
@@ -78,7 +82,8 @@ const plantList= [
         petFriendly: true,
         lowLight: true,
         hangingPlant: false,
-        id:5
+        id:5,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077249/bromeliad_l99fpc.png'
     },
     {
         name: "Peacock Plant",
@@ -94,7 +99,8 @@ const plantList= [
         petFriendly: true,
         lowLight: true,
         hangingPlant: false,
-        id:6
+        id:6,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077249/calethia_v9yxoc.png'
     },
     {
         name: "Aloe Vera",
@@ -110,7 +116,8 @@ const plantList= [
         petFriendly: false,
         lowLight: false,
         hangingPlant: false,
-        id:7
+        id:7, 
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077248/aloe-vera_bubpba.png'
     }, 
     {
         name: "Spider Plant",
@@ -126,7 +133,8 @@ const plantList= [
         petFriendly: true,
         lowLight: true,
         hangingPlant: true,
-        id:8
+        id:8,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077251/spider-plant_xb0mwv.png'
     },
     {
         name: "Pothos / Devil's Ivy",
@@ -142,7 +150,8 @@ const plantList= [
         petFriendly: false,
         lowLight: true,
         hangingPlant: true,
-        id:9
+        id:9,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077251/pothos_w7vepf.png'
     },
     {
         name: "Jade Plant",
@@ -158,7 +167,8 @@ const plantList= [
         petFriendly: false,
         lowLight: false,
         hangingPlant: false,
-        id:10
+        id:10,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077250/jade-plant_apchj8.png'
     },
     {
         name: "Philodendron",
@@ -174,7 +184,8 @@ const plantList= [
         petFriendly: false,
         lowLight: true,
         hangingPlant: true,
-        id:11
+        id:11,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077250/philodendron_tfaqzb.png'
     },
     {
         name: "Dracaena",
@@ -190,10 +201,11 @@ const plantList= [
         petFriendly: false,
         lowLight: false,
         hangingPlant: false,
-        id:12
+        id:12,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077250/dracaena-1_rjigmg.png'
     },
     {
-        name: "Lucky Bamboo ",
+        name: "Lucky Bamboo    ",
         scientificName: 'Dracaena sanderiana',
         height: 'up to 3 feet',
         temperature: '60-75 F',
@@ -206,7 +218,8 @@ const plantList= [
         petFriendly: false,
         lowLight: true,
         hangingPlant: false,
-        id:13
+        id:13,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077248/bamboo_f6norz.png'
     },
     {
         name: "Succulent ",
@@ -222,7 +235,8 @@ const plantList= [
         petFriendly: false,
         lowLight: false,
         hangingPlant: false,
-        id:14
+        id:14,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077252/succulent_wtq88t.png'
     },
     {
         name: "Christmas Plant ",
@@ -238,7 +252,8 @@ const plantList= [
         petFriendly: false,
         lowLight: false,
         hangingPlant: false,
-        id:15
+        id:15,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077250/monstera_qvafer.png'
     },
     {
         name: "Fiddle Leaf Fig ",
@@ -254,7 +269,8 @@ const plantList= [
         petFriendly: false,
         lowLight: false,
         hangingPlant: false,
-        id:16
+        id:16,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077250/ficus_tqeyqo.png'
     },
     {
         name: "Rubber Plant ",
@@ -270,7 +286,8 @@ const plantList= [
         petFriendly: false,
         lowLight: false,
         hangingPlant: false,
-        id:17
+        id:17,
+        url: 'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077251/rubber-tree_axjwyx.png'
     },
     {
         name: "Nerve Plant",
@@ -286,7 +303,8 @@ const plantList= [
         petFriendly: false,
         lowLight: true,
         hangingPlant: false,
-        id:18
+        id:18,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077250/nerve-plant_npaa8m.png'
     },
     {
         name: "Polka Dot Plant",
@@ -302,7 +320,8 @@ const plantList= [
         petFriendly: true,
         lowLight: false,
         hangingPlant: false,
-        id:19
+        id:19,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077251/polkadot-plant_ypmlqq.png'
     },
     {
         name: "Hoya",
@@ -318,7 +337,8 @@ const plantList= [
         petFriendly: false,
         lowLight: false,
         hangingPlant: true,
-        id:20
+        id:20,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077250/hoya_fvdgsp.png'
     },
     {
         name: "English Ivy",
@@ -334,7 +354,8 @@ const plantList= [
         petFriendly: false,
         lowLight: false,
         hangingPlant: true,
-        id:21
+        id:21,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077250/english-ivy_zyctqt.png'
     },
     {
         name: "Money Tree",
@@ -350,7 +371,8 @@ const plantList= [
         petFriendly: false,
         lowLight: false,
         hangingPlant: false,
-        id:22
+        id:22,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077251/qoegZJ3ybOY_bq6fdx.png'
     },
     {
         name: "Boston Fern",
@@ -366,7 +388,8 @@ const plantList= [
         petFriendly: true,
         lowLight: false,
         hangingPlant: true,
-        id:23
+        id:23,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077249/boston-fern_o85dnx.png'
     },
     {
         name: "Birds Nest",
@@ -382,7 +405,8 @@ const plantList= [
         petFriendly: true,
         lowLight: true,
         hangingPlant: false,
-        id:24
+        id:24,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077249/birds-nest_llpvsj.png'
     },
     {
         name: "Orchid",
@@ -398,7 +422,8 @@ const plantList= [
         petFriendly: true,
         lowLight: false,
         hangingPlant: false,
-        id:25
+        id:25,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676080120/Screen_Shot_2023-02-10_at_5.48.28_PM_a8dizc.png'
     },
     {
         name: "Elephants Ear",
@@ -414,7 +439,8 @@ const plantList= [
         petFriendly: false,
         lowLight: false,
         hangingPlant: false,
-        id: 26
+        id: 26,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077130/alocasia_x0kepz.png'
 
     },
     {
@@ -431,7 +457,8 @@ const plantList= [
         petFriendly: false,
         lowLight: true,
         hangingPlant: false,
-        id: 27
+        id: 27,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077251/snake-plant_pzxfqd.png'
 
     },
     {
@@ -448,7 +475,8 @@ const plantList= [
         petFriendly: false,
         lowLight: true,
         hangingPlant: false,
-        id: 28
+        id: 28,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077252/zz-plant_q4rirb.png'
 
     },
     {
@@ -465,7 +493,8 @@ const plantList= [
         petFriendly: false,
         lowLight: false,
         hangingPlant: false,
-        id: 29
+        id: 29,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077249/bonsai_mek43q.png'
 
     },
     {
@@ -482,7 +511,8 @@ const plantList= [
         petFriendly: false,
         lowLight: false,
         hangingPlant: false,
-        id: 30
+        id: 30,
+        url:'https://res.cloudinary.com/dwz87zxoy/image/upload/c_scale,w_250/v1676077249/croton_xz1gxt.png'
 
     },
 

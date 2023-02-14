@@ -10,18 +10,28 @@ main{
 
   }
 nav{
-    padding:  30px 50px;
+    padding:  23px 5% ;
+    background: linear-gradient(to right, #4e3cc71c 0%, #f582ae3d 100%);
+    background-color: unset !important;
     display: flex !important;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     z-index: 100;
-    width: 100vw;
+    width: 100%;
     transition: background-color .1s  ease;
     align-items: center;
+    // padding: 16px 5%;
+    margin: 0 auto;
+    max-width: 2000px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin:0 auto;
+    
+    
     @include bp-small{
-        padding:  30px 20px 20px;
+       padding:20px 3%;
     }
     
     .logo{
@@ -87,7 +97,9 @@ nav{
             position: absolute;
             top: 0;
             right: 0;
-            background-color: $blush;
+            // background-color: $blush;
+            background-image: linear-gradient( #deceeb, #fbe3ed);
+
             // background-image: url(../img/nav/leaf-outline.svg);
             display: flex;
             justify-content: center;
@@ -189,9 +201,10 @@ nav{
 }
 .show-nav{
     top: 0;
-    background-color: white;
+    background-color: white !important;
     transition: top .5s ease-in-out;
-    box-shadow: 0 0 4px 0px $light-gray;
+    // box-shadow: 0 0 4px 0px $light-gray;
+    box-shadow: 0px 15px 10px -15px #e7e7e7;
 }
 .hide-nav{
     top: -100vh;

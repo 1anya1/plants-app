@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import './signup.scss'
+import "./registration.scss";
+import { Player } from "@lottiefiles/react-lottie-player";
+import logInImage from "../../img/lottie/login.json";
 class Signup extends Component {
   constructor(props) {
     super(props);
@@ -29,6 +31,7 @@ handleSubmit = (event) => {
     }
 axios.post('https://salty-peak-61296.herokuapp.com/users', {user}, {withCredentials: true})
     .then(response => {
+      console.log({response})
       if (response.data.status === 'created') {
         this.props.handleLogin(response)
         this.redirect()
@@ -38,7 +41,8 @@ axios.post('https://salty-peak-61296.herokuapp.com/users', {user}, {withCredenti
         })
       }
     })
-    .catch(error => console.log('api errors:', error))
+    .catch(error => 
+      console.log('api errors:', error))
   };
 redirect = () => {
     this.props.history.push('/')
@@ -55,16 +59,21 @@ handleErrors = () => {
 render() {
     const {username, email, password, password_confirmation} = this.state
 return (
-  <div className='signup-container'>
-    <div className="hero intro" id='signup' >
-      <div className='content'>
-        <h2>Create Account</h2>
-      </div>
-      <div className='image' ></div>
-    </div>
-    <div className='form'>
-      <h4>Sign Up</h4>
-        <form onSubmit={this.handleSubmit}>
+  <div className='intro'>
+   
+   <div className="registration">
+          <Player
+            ref={this.player}
+            autoplay={true}
+            loop={true}
+            controls={false}
+            src={logInImage}
+            className="lottie-login"
+          ></Player>
+ 
+    <div className='form-container'>
+      <h4>Create a free account today</h4>
+        <form onSubmit={this.handleSubmit}  className='form'>
           <input
             placeholder="username"
             type="text"
@@ -105,6 +114,7 @@ return (
           }
         </div>
       </div>
+    </ div>
     </ div>
     );
   }
