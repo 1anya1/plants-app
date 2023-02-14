@@ -11,7 +11,7 @@ import { Buffer } from "buffer";
 const config = {
   bucketName: "plantly-user-uploads",
   region: "us-west-1",
-  accessKeyId: "AKIAZPFXNYTK5DVV5PGZ",
+  accessKeyId: "AKIAZPFXNYTK3RIIDN43",
   secretAccessKey: process.env.REACT_APP_API_KEY,
 };
 
