@@ -3,12 +3,13 @@
   .plants-table {
     padding-top: 20px;
     overflow: scroll;
+    position: relative;
     @include bp-small {
       padding-top: 20px;
     }
     table {
       width: 100%;
-      position: relative;
+
       .actions {
         width: 250px;
       }
