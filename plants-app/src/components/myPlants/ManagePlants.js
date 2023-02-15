@@ -124,43 +124,43 @@ class ManagePlants extends Component {
               <p>Manage Plants</p>
             </div>
 
-            <div className="plants-table ">
+            <div className="plants-table " style={this.state.modal || this.state.update ? {zIndex:'-1'} : {zIndex:0}}>
               <table cellSpacing="0">
                 <thead>
-                <tr>
-                  <th>Plant's Name</th>
-                  <th className="actions">Actions</th>
-                </tr>
+                  <tr>
+                    <th>Plant's Name</th>
+                    <th className="actions">Actions</th>
+                  </tr>
                 </thead>
                 <tbody>
-                {this.state.plants.map((el) => (
-                  <tr key={el.id}>
-                    <td className="name cell">
-                      <div className="plant-image">
-                        <img src={el.url} alt="plant" />
-                      </div>
-                      <p>{el.title}</p>
-                    </td>
-                    <td className="cell">
-                      <div className="buttons">
-                        <button
-                          className="button-small"
-                          value={el.id}
-                          onClick={this.deletePlant}
-                        >
-                          Delete
-                        </button>
-                        <button
-                          className="button-small"
-                          value={el.id}
-                          onClick={this.updatePlant}
-                        >
-                          Update
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
+                  {this.state.plants.map((el) => (
+                    <tr key={el.id}>
+                      <td className="name cell">
+                        <div className="plant-image">
+                          <img src={el.url} alt="plant" />
+                        </div>
+                        <p>{el.title}</p>
+                      </td>
+                      <td className="cell">
+                        <div className="buttons">
+                          <button
+                            className="button-small"
+                            value={el.id}
+                            onClick={this.deletePlant}
+                          >
+                            Delete
+                          </button>
+                          <button
+                            className="button-small"
+                            value={el.id}
+                            onClick={this.updatePlant}
+                          >
+                            Update
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
