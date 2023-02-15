@@ -124,8 +124,8 @@ class ManagePlants extends Component {
               <p>Manage Plants</p>
             </div>
 
-            <div className="plants-table " style={this.state.modal || this.state.update ? {zIndex:'-1'} : {zIndex:0}}>
-              <table cellSpacing="0">
+            <div className="plants-table ">
+              <table cellSpacing="0" style={this.state.modal || this.state.update ? {zIndex:'-1'} : {zIndex:0}}>
                 <thead>
                   <tr>
                     <th>Plant's Name</th>

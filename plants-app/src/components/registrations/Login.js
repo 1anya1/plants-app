@@ -41,6 +41,7 @@ class Login extends Component {
       )
 
       .then((response) => {
+        console.log(response)
         if (response.data.logged_in) {
           this.props.handleLogin(response);
           this.redirect();

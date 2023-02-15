@@ -8,7 +8,8 @@
     }
     table {
       width: 100%;
-      .actions{
+      position: relative;
+      .actions {
         width: 250px;
       }
       th {
@@ -33,11 +34,11 @@
           padding-right: 20px;
         }
       }
-      tbody{
-      tr:nth-child(odd) {
-        background-color: #f6f5f7;
+      tbody {
+        tr:nth-child(odd) {
+          background-color: #f6f5f7;
+        }
       }
-    }
 
       .name {
         display: flex;
