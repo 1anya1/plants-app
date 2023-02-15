@@ -13,7 +13,6 @@ class Disease extends React.Component {
     this.expand = this.expand.bind(this);
   }
   expand(item) {
-    console.log(item.id);
     if (item.id === this.state.id) {
       this.setState({
         toggle: !this.state.toggle,
@@ -31,7 +30,6 @@ class Disease extends React.Component {
     }
   }
   render() {
-    console.log(this.state.disease);
     return (
       <>
         <div className="hero intro" id="diseasePage">
@@ -48,17 +46,17 @@ class Disease extends React.Component {
           
           <div className="column intro">
           <div className="care-list">
-            {this.state.cards.map((el, idx) => {
+            {this.state.cards.map((el) => {
               return (
-                <>
-                  <a href={`#${el.hash}`}>
+      
+                  <a href={`#${el.hash}`} key={el.hash}>
                     <div className="symbols">
                       <div className="care">
                         <h5>{el.name}</h5>
                       </div>
                     </div>
                   </a>
-                </>
+          
               );
             })}
           </div>

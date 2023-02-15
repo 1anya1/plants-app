@@ -2,7 +2,6 @@ import React from "react";
 import pestList from "./pestList";
 import "./Pests.scss";
 
-
 class Pests extends React.Component {
   constructor() {
     super();
@@ -15,7 +14,6 @@ class Pests extends React.Component {
   }
 
   expand(item) {
-    console.log(item.id);
     if (item.id === this.state.id) {
       this.setState({
         toggle: !this.state.toggle,
@@ -33,8 +31,6 @@ class Pests extends React.Component {
     }
   }
   render() {
-    console.log(this.state.id);
-    console.log(this.state.cards);
     return (
       <>
         <div className="hero intro" id="pestPage">
@@ -48,31 +44,30 @@ class Pests extends React.Component {
         </div>
         <div className="pestPage intro">
           <div className="column ">
-          <div className="care-list">
-            {this.state.cards.map((el, idx) => {
-              return (
-                <>
-                  <a href={`#${el.hash}`}>
-                    <div className="symbols">
-                      <div className="care">
-                        <h5>{el.name}</h5>
+            <div className="care-list">
+              {this.state.cards.map((el, idx) => {
+                return (
+
+                    <a href={`#${el.hash}`} key={el.hash}>
+                      <div className="symbols">
+                        <div className="care">
+                          <h5>{el.name}</h5>
+                        </div>
                       </div>
-                    </div>
-                  </a>
-                </>
-              );
-            })}
-          </div>
+                    </a>
+          
+                );
+              })}
+            </div>
             {this.state.cards.map((item) => (
               <div className="card " key={item.id}>
-                <div id="pest-card" className="show">
+                <div id={item.hash} className="show pest-card ">
                   <div className="img">
                     <img className="image" src={item.img} alt={item.name} />
                   </div>
                   <div>
-                    <h5 className="title">{item.name}</h5>
-
                     <div className="content">
+                      <h5 className="title">{item.name}</h5>
                       <div className="subtitle2">Spot Them</div>
                       <p className="text">{item.findThem}</p>
                       <div className="subtitle2">Treatment</div>

@@ -33,7 +33,6 @@ class Cards extends Component {
   };
 
   handleOption = (value, name) => {
-    console.log(value, name);
     this.setState({
       option: value,
       filter: "",
@@ -45,14 +44,14 @@ class Cards extends Component {
       this.setState({
         modal: null,
       });
-      document.body.style.overflow = "unset";
+      document.body.classList.remove("active-overlay");
       document.querySelector("nav").classList.add("show-nav");
       document.querySelector("nav").classList.remove("hide-nav");
     } else {
       this.setState({
         modal: card,
       });
-      document.body.style.overflow = "hidden";
+      document.body.classList.add("active-overlay");
       document.querySelector("nav").classList.remove("show-nav");
       document.querySelector("nav").classList.add("hide-nav");
     }
@@ -78,7 +77,6 @@ class Cards extends Component {
         );
       });
     });
-    console.log(filteredData);
     const myData = filteredData.map((card, id) => (
       <div
         className="card"
@@ -112,11 +110,10 @@ class Cards extends Component {
       { lowLight: "Low Light Plants" },
       { hangingPlant: "Hanging Plants" },
     ];
-    console.log(option);
 
     return (
       <>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Loading..=</div>}>
           <Modal modal={this.state.modal} handleClick={this.toggle} />
         </Suspense>
         <div className="search-menu">
@@ -148,6 +145,7 @@ class Cards extends Component {
                 {options.map((opt) =>
                   Object.keys(opt).map((key, id) => (
                     <div
+                    key={key}
                       onClick={() => this.handleOption(key, opt[key])}
                       className={`${
                         this.state.option === key

@@ -3,19 +3,9 @@
   "name": "House Plant",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "./images/Plantly.png",
+      "src": "Plantly.png",
       "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "./images/Plantly.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "64x64 32x32 24x24 16x16"
     }
   ],
   "start_url": ".",

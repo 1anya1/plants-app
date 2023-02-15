@@ -1,302 +1,322 @@
-@import '../../index.scss';
-
-#my-plants{
-  
-    .image{
-        background-image: url(../../img/hero/my-plants-hero.svg);
+@import "../../index.scss";
+#add-plant {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.89);
+  display: flex;
+  justify-content: top;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  .form {
+    margin-top: 30vh;
+    box-shadow: 0px 0px 5px -2px #16314f;
+    background-color: #f6f7f8;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 20px;
+    padding: 4rem;
+    @include bp-medium {
+      padding: 2rem;
     }
-   
+    .heading {
+      h5 {
+        margin: 0;
+        font-weight: 600;
+        color: $gray;
+      }
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 2rem;
+    }
+    .inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      input,
+      label {
+        border: 1px solid $gray;
+      }
+    }
+  }
+}
+#add-plant,
+#update-plant-form {
+  display: flex;
+  flex-direction: column;
+
+  padding: 3rem;
+  margin: 0 auto;
+  border-radius: 5rem 0rem;
+  margin: 3rem 0;
+  @include bp-medium {
+    border-radius: 3rem 0rem;
+  }
+  @include bp-small {
+    padding: 2rem;
+  }
+  h4 {
+    margin-bottom: 3rem;
+    color: $gray;
+  }
+  .inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include bp-large {
+      flex-direction: column;
+    }
+    input,
+    label {
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      align-items: center;
+      @include bp-large {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+    }
+    input[type="file"] {
+      display: none;
+    }
+    label {
+      color: $light-gray;
+      svg {
+        fill: $light-gray;
+        margin-right: 1rem;
+      }
+    }
+    .dark {
+      color: $gray;
+      svg {
+        fill: $gray;
+      }
+    }
+    input[type="file"] {
+      padding-left: unset;
+    }
+  }
+  button {
+    margin: auto;
+    margin-top: 2rem;
+    width: 50%;
+    padding: 0 2rem;
+    bottom: 0;
+    align-self: flex-end;
+    position: relative;
+    @include bp-medium {
+      width: 100%;
+    }
+  }
+  #disabled {
+    background-color: gray;
+    color: lightgray;
+    cursor: not-allowed;
+  }
+  #active {
+    background-color: $peach;
+  }
 }
 
-.my-plants{
-    padding-top: unset;
-    .plant-links{
-        text-align: center;
-        padding-bottom: 5rem;
-        @include bp-medium{
-            padding-bottom:3rem;
-        }
-        @include bp-small{
-            padding-top: 3rem;
-           
-        }
-        a{
-            color: $forest-green;
-            margin-right:1rem;
-            text-decoration: unset;
-            &:last-child{
-                margin-right: unset;
-            }
-            @include bp-medium{
-                display: flex;
-                flex-direction: row;
-                row-gap: 1rem;
-                margin: unset;
-                justify-content: center;
-                padding-bottom: 1rem;
-            }
-            button{
-                width: 30%;
-                border: $peach 1px solid;
-                @include bp-medium{
-                    width: 100%;
-                }
-                &:hover, &:active{
-                    background-color: $peach;
-                    color: white;
-                    transition: .5s ease-in-out;
-                }
-            }
-        }
+#my-plants {
+  .image {
+    background-image: url(../../img/hero/my-plants-hero.svg);
+  }
+}
 
-
+.my-plants {
+  padding-top: 0 !important;
+  .plant-links {
+    text-align: left;
+    padding-bottom: 3rem;
+    @include bp-medium {
+      padding-bottom: 2rem;
     }
-    
-    .buttons{
+    @include bp-small {
+      padding-top: 1.4rem;
+    }
+
+    button {
+      width: 300px;
+      margin-right: 20px;
+      @include bp-medium {
         width: 100%;
-        #notes{
-            background-color: $peach;
-            color: $gray;
-            &:hover, &:focus, &:active{
-                background-color: $peach;
-            }
-            a{
-                width: 100%;
-                text-decoration: unset;
-            }
-        }
-        #delete{
-            width: 100%;
-            display: none
-        }
-    }
-    #add-plant, #update-plant-form{
-        display: flex;
-        flex-direction: column;
-        background-color: $blush;
-        padding: 3rem;
-        margin: 0 auto;
-        border-radius: 5rem 0rem;
-        margin: 3rem 0;
-        @include bp-medium{
-            border-radius: 3rem 0rem;
-        }
-        @include bp-small{
-            padding: 2rem;
-        }
-        h4{
-            margin-bottom: 3rem;
-            color: $gray;
-        }
-        .inputs{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            @include bp-large{
-                flex-direction: column;
-            }
-            input, label{
-                width: 49%;
-                display: flex;
-                align-items: center;
-                @include bp-large{
-                    width: 100%;
-                    margin-bottom: 1rem;
-                }
-            }
-            input[type="file"] {
-                display: none;
-            }
-            label{
-                color: $light-gray;
-                svg{
-                    fill: $light-gray;
-                    margin-right:1rem;
-                }
-            }
-            .dark{
-                color: $gray;
-                svg{
-                    fill: $gray;
-                }
-            }
-            input[type='file']{
-                padding-left: unset;
-            }
-        }
-        button{ 
-            margin: auto;
-            margin-top: 2rem;
-            width: 50%;
-            background-color: $peach;
-            padding: 0 2rem; 
-            bottom: 0;
-            align-self: flex-end;
-            position: relative;
-            color: white;
-            @include bp-medium{
-                width: 100%;
-            }
-        }
-        #disabled{
-            background-color: gray;
-            color:lightgray;
-            cursor: not-allowed;
-            
-        }
-        #active{
-            background-color: $peach;
-        }
-       
-    }
-    #update-plant-form{
-        max-width: 1000px;
-        width: 90%;
-        margin: 0 auto;
-        height: fit-content;
-        h4{
-            color: $forest-green;
-        }
-        .inputs{
-            flex-direction: column;
-            input, label{
-                width: 100%;
-            }
-            .overline{
-                align-self: flex-start;
-                // padding-bottom: 1rem;
-                color: $gray;
-                &:last-of-type{
-                    padding-top: 2rem;
-                }
-            }
-        }
-        .buttons{
-            display: flex;
-            flex-direction: row;
-            @include bp-medium{
-                flex-direction: column;
-            }
-            button{
-                background-color: $forest-green;
-                height: 5rem;
-                color: white;
-                width: 45%;
-                @include bp-medium{
-                    min-width: unset;
-                    width: 100%;
-                    height: 4rem;
-                }
-    
-            }
-            
-        }
-       
-    }
-    .all-plants{
-      margin: 5rem 0;
-      @include bp-medium{
-        margin: 3rem 0;
+        margin-right: unset;
+        margin-bottom: 14px;
       }
-        .accordion{
-            border: 1px solid $peach;
-           
-            .title{
-                h4{
-                    color: $gray;
-                }
-                svg{
-                    fill: $gray;
-                }
-            } 
-                .plantsManage{
-                    display:grid;
-                    grid-template-columns: 1fr 1fr 1fr 1fr;
-                    grid-column: auto;
-                    width: 95%;
-                    margin: 0 auto;
-                    padding-left: 1rem;
-                    align-items: center;
-                    row-gap: 3rem;
-                   
-                   
-                    @include bp-large{
-                        grid-template-columns: 1fr 1fr 1fr;
-                    }
-                    @include bp-medium{
-                       
-                        grid-template-columns: 1fr 1fr;
-                    }
-                    @include bp-small{
-                        grid-template-columns: 1fr;
-                    }
-                    
-                    .plant{
-                        display: flex;
-                        justify-content: space-between;
-                        flex-direction: row;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        row-gap: 1rem;
-                       
-                        // @include bp-large{
-                        //     max-width: unset;
-                        //     width: 100%;
-                        // @include bp-medium{
-                        //     flex-direction: column;
-                        //     justify-content: center;
-                        //     align-items: center;
-                        //     row-gap: 1rem;
-                        // }   
-                        // }
-                        h5{
-                            text-transform: capitalize;
-                            color: $forest-green;
-                            margin-bottom: unset;
-                        }
-                        button{
-                            background-color: $blush;
-                            height: 3rem;
-                            width: fit-content;
-                        }
-                    }
-
-                }
-                .show{
-                    height: 300px;
-                    overflow:hidden;
-                    overflow-y: scroll;
-                    transition: all .5s ease-in;
-                    transition: opacity .3s ease-in;
-                    opacity: 1;
-                }
-                .hide{
-                    height: 0px;
-                    overflow: hidden;
-                    transition: all .5s ease-out;
-                    
-                    
-                }
-               
-                
-           }
+      &:hover,
+      &:active {
+        filter: brightness(90%);
+        transition: 0.5s ease-in-out;
+      }
     }
-    .plants-list{
-        padding: 5rem 0;
-        @include bp-medium{
-            padding: 3rem 0;
-        }
-        .row{
-            .card{
-                h5{
-                    color: $gray;
-                    padding-left: 2rem;
-                    text-transform: capitalize;
-                    
-                }
-            }
-        }
-    }
+  }
 
+  .buttons {
+    width: 100%;
+    #notes {
+      background-color: $peach;
+      color: $gray;
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $peach;
+      }
+      a {
+        width: 100%;
+        text-decoration: unset;
+      }
+    }
+    #delete {
+      width: 100%;
+      display: none;
+    }
+  }
+  #add-plant {
+    position: absolute;
+  }
+  #add-plant,
+  #update-plant-form {
+    display: flex;
+    flex-direction: column;
+    background-color: $blush;
+    padding: 3rem;
+    margin: 0 auto;
+    border-radius: 5rem 0rem;
+    margin: 3rem 0;
+    @include bp-medium {
+      border-radius: 3rem 0rem;
+    }
+    @include bp-small {
+      padding: 2rem;
+    }
+    h4 {
+      margin-bottom: 3rem;
+      color: $gray;
+    }
+    .inputs {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include bp-large {
+        flex-direction: column;
+      }
+      input,
+      label {
+        width: 49%;
+        display: flex;
+        align-items: center;
+        @include bp-large {
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+      }
+      input[type="file"] {
+        display: none;
+      }
+      label {
+        color: $light-gray;
+        svg {
+          fill: $light-gray;
+          margin-right: 1rem;
+        }
+      }
+      .dark {
+        color: $gray;
+        svg {
+          fill: $gray;
+        }
+      }
+      input[type="file"] {
+        padding-left: unset;
+      }
+    }
+    button {
+      margin: auto;
+      margin-top: 2rem;
+      width: 50%;
+      background-color: $peach;
+      padding: 0 2rem;
+      bottom: 0;
+      align-self: flex-end;
+      position: relative;
+      color: white;
+      @include bp-medium {
+        width: 100%;
+      }
+    }
+    #disabled {
+      background-color: gray;
+      color: lightgray;
+      cursor: not-allowed;
+    }
+    #active {
+      background-color: $peach;
+    }
+  }
+  #update-plant-form {
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+    height: fit-content;
+    h4 {
+      color: $forest-green;
+    }
+    .inputs {
+      flex-direction: column;
+      input,
+      label {
+        width: 100%;
+      }
+      .overline {
+        align-self: flex-start;
+        // padding-bottom: 1rem;
+        color: $gray;
+        &:last-of-type {
+          padding-top: 2rem;
+        }
+      }
+    }
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      @include bp-medium {
+        flex-direction: column;
+      }
+      button {
+        background-color: $forest-green;
+        height: 5rem;
+        color: white;
+        width: 45%;
+        @include bp-medium {
+          min-width: unset;
+          width: 100%;
+          height: 4rem;
+        }
+      }
+    }
+  }
+
+  .plants-list {
+    .row {
+      .card {
+        h5 {
+          // color: $gray;
+          padding-left: 2rem;
+          text-transform: capitalize;
+          z-index: 10;
+          padding-top: 10px;
+        }
+      }
+    }
+  }
 }

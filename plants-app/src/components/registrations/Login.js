@@ -41,6 +41,7 @@ class Login extends Component {
       )
 
       .then((response) => {
+        console.log(response)
         if (response.data.logged_in) {
           this.props.handleLogin(response);
           this.redirect();
@@ -99,7 +100,7 @@ class Login extends Component {
                   value={password}
                   onChange={this.handleChange}
                 />
-                <button placeholder="submit" type="submit" className='submit'>
+                <button placeholder="submit" type="submit" className='submit button-large'>
                   Log In
                 </button>
                 <div>

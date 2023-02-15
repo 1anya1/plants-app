@@ -13,7 +13,7 @@
       padding-top: 2rem;
     }
     .card {
-      #pest-card {
+      .pest-card {
         display: grid;
         grid-template-columns: 350px 1fr;
 
@@ -23,6 +23,7 @@
         }
         @include bp-medium {
           grid-template-columns: 200px 1fr;
+          row-gap: 20px;
         }
         @include bp-small {
           grid-template-columns: 1fr;
@@ -61,13 +62,18 @@
             top: 0;
           }
         }
-        .title {
-          color: $gray;
-        }
+
         .content {
-          grid-column: 2/3;
+          .title {
+            color: $gray;
+            padding-bottom: 16px;
+            margin-bottom: unset;
+          }
           .subtitle2 {
             color: $forest-green;
+            &:last-of-type {
+              padding-top: 2rem;
+            }
           }
         }
       }
