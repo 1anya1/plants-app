@@ -7,7 +7,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "aws-sdk": "^2.987.0",
+    "aws-sdk": "^2.1354.0",
     "axios": "^0.21.3",
     "buffer": "^6.0.3",
     "font-awesome": "^4.7.0",
